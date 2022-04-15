@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <title>快易購後台-存提匯款紀錄</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <?php include("header.html");?>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <?php include("left.html");?>
+
+    <!--右側內容-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>單筆訂單明細</span>
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <!-- 表格 -->
+                <table class="col_tb">
+                    <tbody>
+                        <tr>
+                            <th>訂單編號</th>
+                            <td data-th="訂單編號"><span name="OrderNumber"></span></td>
+                        </tr>
+                        <tr>
+                            <th>商品編號</th>
+                            <td data-th="訂單編號"><span name="ProductNumber"></span></td>
+                        </tr>
+                        <tr>
+                            <th>商品標題</th>
+                            <td data-th="商品標題" class="text_bold"><span name="ProductTitle"></span></td>
+                        </tr>
+                        <tr>
+                            <th>上架人</th>
+                            <td data-th="上架人帳號">
+                                <div>層級：<span name="LevelName"></span></div>
+                                <div>帳號：<a class="col_inline" name="SellMember"></a></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>庫存量</th>
+                            <td data-th="庫存量"><span name="KuTsuenQuantity"></span></td>
+                        </tr>
+                        <tr>
+                            <th>訂單單價</th>
+                            <td data-th="訂單單價" class="text_bold"><span name="Price"></span></td>
+                        </tr>
+                        <tr>
+                            <th>下單時間</th>
+                            <td data-th="下單時間"><span name="CreateDate"></span></td>
+                        </tr>
+                        <tr>
+                            <th>購買人</th>
+                            <td data-th="購買人">
+                                <div>會員編號：<span name="MemberId"></span></div>
+                                <div>會員帳號：<a class="col_inline" name="BuyMember"></a></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>購買數量</th>
+                            <td data-th="購買數量"><span name="Quantity"></span></td>
+                        </tr>
+                        <tr>
+                            <th>付款金額</th>
+                            <td data-th="付款金額" class="text_bold text_green"><span name="SumPrice"></span></td>
+                        </tr>
+                        <tr>
+                            <th>退貨數量</th>
+                            <td data-th="退貨數量"><span name="RefundQuantity"></span></td>
+                        </tr>
+                        <tr>
+                            <th>退款金額</th>
+                            <td data-th="退款金額" class="text_bold text_red"><span name="RefundAmount"></span></td>
+                        </tr>
+                        <tr>
+                            <th>手續費</th>
+                            <td data-th="手續費" class="text_bold"><span name="HandlingFee"></span></td>
+                        </tr>
+                        <tr>
+                            <th>訂單處理方式</th>
+                            <td data-th="訂單處理方式">
+                                <div class="text_bold text_blue"></div>
+                                <div>付款方式：<span name="PaymentMethod"></span></div>
+                                <!-- <div>店號：<span>112190</span></div>
+                                <div>地址：<span>台中市西屯區逢甲里西屯路二段256巷8、10號1樓</span></div>
+                                <div>電話：<span>04-24529273</span></div> -->
+                                <div>繳款代碼：<span class="text_bold text_pink" name="CopyText" id="PayCode"></span></div>
+                                <input type="button" id="copy_code" name="CopyText" value="複製代碼" class="btn_small" onclick="copycode('PayCode')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>付款時間</th>
+                            <td data-th="付款時間"><span name="PayDate"></span></td>
+                        </tr>
+                        <tr>
+                            <th>收款狀態</th>
+                            <td data-th="收款狀態">
+                                <!--狀態2選1-->
+                                <div id="PaymentStatus"><span name="PaymentStatus"></span></div>
+                                <!-- <div class="text_pink" style="display: none;">未收款</div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>退款狀態</th>
+                            <td data-th="退款狀態">
+                                <!--狀態2選1-->
+                                <!-- <div style="display: none;">已退款</div> -->
+                                <div id="Status"><span name="Status"></span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>審核狀態</th>
+                            <td data-th="審核狀態">
+                                <!--狀態2選1-->
+                                <div id="ShenHeuState"><span name="ShenHeuState"></span></div>
+                                <!-- <div class="text_red" style="display: none;">失敗</div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>審核人員</th>
+                            <td data-th="審核人員">
+                                <a class="col_inline" name="ShenHeuPerson"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>訂單備註</th>
+                            <td data-th="訂單備註">
+                                <textarea placeholder="限300字" maxlength="300" class="textarea100" name="Remark"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 按鈕 -->
+                <div class="col_btn">
+                    <!-- <input type="button" onclick="javascript:location.href='payment_record.html';" value="回存提匯款" class="btn_big btn_yellow"> -->
+                    <input type="button" onclick="history.back()" value="回交易明細" class="btn_big">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_複製代碼-->
+    <div id="popup_copyCode" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_copyCode').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>訊息</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">已複製代碼。</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_copyCode').style.display='none'" value="關閉" class="btn_center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_JS-->
+    <script>
+        //複製代碼
+        let modal_copy_code = document.getElementById('copy_code');
+        modal_copy_code.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_copyCode').style.display='block';
+        });
+
+        function copycode($id)
+        {
+            selectText($id);
+            document.execCommand("Copy"); // 執行瀏覽器複製命令
+        }
+
+        function selectText(element) {
+            var text = document.getElementById(element);
+            //做下相容
+            if (document.body.createTextRange) {  //如果支援
+                var range = document.body.createTextRange(); //獲取range
+                range.moveToElementText(text); //游標移上去
+                range.select();  //選擇
+            } else if (window.getSelection) {
+                var selection = window.getSelection(); //獲取selection
+                var range = document.createRange(); //建立range
+                range.selectNodeContents(text);  //選擇節點內容
+                selection.removeAllRanges(); //移除所有range
+                selection.addRange(range);  //新增range
+            } else {
+                alert("複製失敗");
+            }
+        }
+    </script>
+    <script src="js/order.js"></script>
+</body>
+</html>

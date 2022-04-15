@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--動畫效果-->
+	<link href="css/animate.css" rel="stylesheet">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!--輪播圖JQ(class、ID名稱不能改會跑版)-->
+    <link href="css/splide.css" rel="stylesheet" type="text/css">
+    <script src="js/splide-2.4.12.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 最新消息+輪播 -->
+    <div class="wrap banner_wrap">
+        <!-- 輪播圖(固定結構勿變更) -->
+        <div class="slider_box home_pic5 animated bounceInDown animate__slower">
+            <div id="slider_cm" class="cm">
+                <div class="cm_track">
+                    <ul class="cm_list" id="Banner">
+                        <!-- <li class="cm_slide">
+                            <img src="images/cm/cm1.jpg">
+                        </li>
+                        <li class="cm_slide">
+                            <img src="images/cm/cm2.jpg">
+                        </li>
+                        <li class="cm_slide">
+                            <img src="images/cm/cm3.jpg">
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 輪播圖js -->
+        <script>
+            // document.addEventListener( 'DOMContentLoaded', function () {
+            //     new Splide( '#slider_cm', {
+            //         type: 'loop', //輪播循環
+            //         autoplay: true,   //自動播放
+            //         interval: 3500    //播放速度
+            //     } ).mount();
+            // } );
+        </script>
+
+        <!-- 最新消息+新手幫助 -->
+        <div class="news_info animated fadeInRight">
+            <div class="news_item">
+                <div class="title">最新消息</div>
+                <ul class="txt" id="NewsList">
+                    <!-- <li><a href="#" class="jsNews">本平台僅提供會員間交易之用，不得視為銀行等本平台僅提供會員間交易之用</a></li>
+                    <li><a href="#" class="jsNews">本平台僅提供會員間交易之用，不得視為銀行等本平台僅提供會員間交易之用</a></li>
+                    <li><a href="#" class="jsNews">本平台僅提供會員間交易之用，不得視為銀行等本平台僅提供會員間交易之用</a></li>
+                    <li><a href="#" class="jsNews">本平台僅提供會員間交易之用，不得視為銀行等本平台僅提供會員間交易之用</a></li>
+                    <li><a href="#" class="jsNews">本平台僅提供會員間交易之用，不得視為銀行等本平台僅提供會員間交易之用</a></li>
+                    <li><a href="#" class="jsNews">本平台僅提供會員間交易之用，不得視為銀行等本平台僅提供會員間交易之用</a></li> -->
+                </ul>
+            </div>
+            <div class="help_item">
+                <div class="title">新手幫助</div>
+                <ul class="txt">
+                    <li><a href="Index/Help">註冊會員</a></li>
+                    <li><a href="Index/Help">交易紀錄</a></li>
+                    <li><a href="Index/Help">會員登入</a></li>
+                    <li><a href="Index/Help">取消交易</a></li>
+                    <li><a href="Index/Help">資料修改</a></li>
+                    <li><a href="Index/Help">會員停權</a></li>
+                    <li><a href="Index/Help">忘記密碼</a></li>
+                    <li><a href="Index/Help">安全須知</a></li>
+                    <li><a href="Index/Help">客服服務</a></li>
+                    <li><a href="Index/Help">其他問題</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 買賣流程+搜尋列 -->
+    <div class="wrap search_wrap animated rubberBand">
+        <div class="se_item1">
+            <div class="se_info buy_info">
+                <div class="title">買家</div>
+                <ul class="txt">
+                    <li>註冊登入</li>
+                    <li>選擇商品</li>
+                    <li>付款</li>
+                    <li>聯絡賣家</li>
+                    <li>領取商品</li>
+                </ul>
+            </div>
+            <div class="se_info sell_info">
+                <div class="title">賣家</div>
+                <ul class="txt">
+                    <li>註冊登入</li>
+                    <li>實名認證</li>
+                    <li>刊登商品</li>
+                    <li>移交商品</li>
+                    <li>收款</li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="search_item">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="請輸入關鍵字" class="se_input">
+            <input type="button" value="搜尋" class="jsSentFail se_btn btn_yellow">
+        </div> -->
+    </div>
+
+    <!-- 遊戲頁籤 -->
+    <div class="wrap game_wrap">
+        <!-- 頁籤類別1 (input中的id用來對應 label_for 效果，刪除則無法點選) -->
+        <input type="radio" id="game_tab_a1" name="game_tabsel" class="game_radio1" checked>
+        <label for="game_tab_a1" class="game_label1">
+            <div class="gali_text" data-value="3" name="ga_page1">點數卡</div>
+        </label>
+        <!-- 頁籤類別2 -->
+        <input type="radio" id="game_tab_a2" name="game_tabsel" class="game_radio2">
+        <label for="game_tab_a2" class="game_label2">
+            <div class="gali_text" data-value="1" name="ga_page2">手機遊戲</div>
+        </label>
+        <!-- 頁籤類別3 -->
+        <input type="radio" id="game_tab_a3" name="game_tabsel" class="game_radio3">
+        <label for="game_tab_a3" class="game_label3">
+            <div class="gali_text" data-value="2" name="ga_page3">線上遊戲</div>
+        </label>
+        <!-- 頁籤內容 -->
+        <div class="game_content">
+            <!-- 分頁1(點數卡) -->
+            <div class="gametype ga_page1" id="GameList">
+            </div>
+            <!-- 分頁2(手機遊戲) -->
+            <div class="gametype ga_page2" id="GameList">
+            </div>
+            <!-- 分頁3(線上遊戲) -->
+            <div class="gametype ga_page3" id="GameList">
+                <!-- <div class="ga_item" onclick="window.open('game_list.html','_self');">
+                    <div class="ga_pic">
+                        <img src="images/game/game_a00014.jpg" alt="遊戲" class="ga_pic">
+                    </div>
+                    <div class="ga_title">采花樓采花樓采花樓采花樓采花樓</div>
+                    <div class="ga_shopping">
+                        <input type="button" value="" class="fa fa-cart-plus-w">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <!-- 頁碼選項 -->
+        <!-- <div class="pagination_wrap">
+            <div class="page_number">
+                <span class="title">第</span>
+                <span class="title text_red">1</span>
+                <span class="title">&frasl;</span>
+                <span class="title">62100</span>
+                <span class="title">頁</span>
+            </div> -->
+            <!-- 頁碼 -->
+            <!-- <div class="pagination_box">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" class="previous"></a>
+                    </li>
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" class="next"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page_jump">
+                <div class="page_input">
+                    <span class="title">跳至第</span>
+                    <input type="text" class="btn_page">
+                    <span class="title">頁</span>
+                </div>
+                <div class="page_btn">
+                    <input type="button" value="確定" class="btn_small btn_green">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <?php include("jump.html");?>
+
+
+    <!-- 跳框_最新消息 -->
+    <div id="popup_News" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup popup_news">
+                <!-- 標題+關閉按鈕 -->
+                <div onclick="document.getElementById('popup_News').style.display='none'" class="btn_close"></div>
+                <div class="popup_title">
+                    <span>最新消息</span>
+                </div>
+                <!-- 內容 -->
+                <div class="popup_in newstab_in">
+                    <div class="newstab_content" id="NewsListAll">
+                        <!--訊息
+                        <ul class="dissbox">
+                            <li class="diss_qa">
+                                <div class="diss_main">
+                                    <div class="diss_list">
+                                            <div class="title">本站提款限制異動本站提款限制異動本站提款限制異動本站提款限制異動</div>
+                                            <div class="date">2020/04/15</div>
+                                    </div>
+                                </div>
+                                <ul class="diss_subs">
+                                    <li>本站提款限制將於7/28(星期二) 凌晨00:00起更改成：一天提款上限1次，可享有免手續費。提醒各位會員，頻繁存提款容易引起銀行的關注，為避免不必要的麻煩，建議不要頻繁進行存提款。如有任何問題請聯繫24小時線上客服，造成不便敬請見諒，謝謝！</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>-->
+
+                    <!-- 頁碼選項 -->
+                    <div class="pagination_wrap">
+                        <div class="page_number">
+                            <span class="title">第</span>
+                            <span class="title text_red">1</span>
+                            <span class="title">&frasl;</span>
+                            <span class="title">62100</span>
+                            <span class="title">頁</span>
+                        </div>
+                        <!-- 頁碼 -->
+                        <div class="pagination_box">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" class="previous"></a>
+                                </li>
+                                <li><a href="#" class="active">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" class="next"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="page_jump">
+                            <div class="page_input">
+                                <span class="title">跳至第</span>
+                                <input type="text" class="btn_page">
+                                <span class="title">頁</span>
+                            </div>
+                            <div class="page_btn">
+                                <input type="button" value="確定" class="btn_small btn_green">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+</body>
+</html>

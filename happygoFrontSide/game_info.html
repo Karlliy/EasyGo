@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!--表格首尾列凍結-->
+    <script src="js/jquery.fixedheadertable.min.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購-商品訊息</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 商品訊息 -->
+    <div class="wrap buystore_wrap">
+        <!-- 標題 -->
+        <div class="main_title">
+            <img src="images/member/fa-gamepad-w.png" alt="">
+            <span>商品訊息</span>
+        </div>
+
+        <!-- 搜尋區 -->
+        <div class="search_list">
+            <!-- <select class="search_select">
+                <option value="" selected="">平台</option>
+                <option value="">Android</option>
+                <option value="">iOS</option>
+                <option value="">電腦</option>
+                <option value="">Steam</option>
+            </select>
+            <select class="search_select">
+                <option value="" selected="">伺服器</option>
+                <option value="">台服</option>
+                <option value="">日服</option>
+                <option value="">陸服</option>
+            </select>
+            <select class="search_select">
+                <option value="" selected="">商品類型</option>
+                <option value="">點數卡</option>
+                <option value="">遊戲幣</option>
+                <option value="">帳號</option>
+                <option value="">代儲</option>
+                <option value="">代練</option>
+                <option value="">寶物</option>
+                <option value="">商城</option>
+                <option value="">送禮</option>
+                <option value="">其他</option>
+            </select>
+            <div class="search_item">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="請輸入關鍵字" class="se_input">
+                <input type="button" value="搜尋" class="jsSentFail se_btn btn_yellow">
+            </div> -->
+            <input type="button" onclick="window.open('Order/AddOrder');" value="免費刊登販售" class="float_r btn_big btn_blue">
+            <!--清除float浮動跑版(此行不可刪)-->
+            <div class="clear"></div>
+        </div>
+
+        <!-- 麵包屑 -->
+        <div class="sequence_content">
+            <ul class="item">
+                <li><a href="Index/index">首頁</a></li>
+                <li><a href="Index/index" id="TopGameType"></a></li>
+                <li><a id="TopGameName"></a></li>
+                <li>商品訊息</li>
+            </ul>
+        </div>
+        <!-- 賣場商品內容 -->
+        <div class="sell_info_content">
+            <div class="item">
+                <!-- 商品標題 -->
+                <div class="info_title" name="ProductTitle"><?php echo $Row["ProductTitle"]?></div>
+                <!-- 商品說明 -->
+                <div class="info_description">
+                    <div class="goods_price">
+                        <div class="txt">
+                            <span>單價</span>
+                            <span class="text_big text_pink">NT $<?php echo $Row["Price"]?></span>
+                            <span>元</span>
+                        </div>
+                        <div class="btn">
+                            <div class="track">
+                                <i class="heart"></i>
+                                <input type="button" value="加入追蹤">
+                            </div>
+                            <div class="notice">
+                                <i class="fa fa-frown"></i>
+                                <input type="button" onclick="window.open('Order/Complain','_self');" value="申訴檢舉">
+                            </div>
+                        </div>
+                        <!--清除float浮動跑版(此行不可刪)-->
+                        <div class="clear"></div>
+                    </div>
+                    <div class="goods_info">
+                        <ul class="txt">
+                            <li>
+                                <span class="li_title">商品編號：</span><span class="li_txt" id="ProductNumber" name="ProductNumber"><?php echo $Row["ProductNumber"]?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">遊戲名稱：</span><span class="li_txt" name="GameName"><?php echo $Row["GameName"]?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">商品種類：</span><span class="li_txt border_blue" name="TypeName"><?php echo $Row["TypeName"]?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">點卡種類：</span><span class="li_txt" name="PointCardKind"><?php echo $PointCardKind?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">遊戲平台：</span><span class="li_txt" name="GamePlatform"><?php echo $Row["GamePlatform"]?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">伺&ensp;服&ensp;器：</span><span class="li_txt" name="GameServer"><?php echo $Row["GameServer"]?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">單件數量：</span><span class="li_txt" name="OrderQuantity"><?php echo $Row["OrderQuantity"]?></span>
+                            </li>
+                            <li>
+                                <span class="li_title">遊戲幣值：</span><span class="li_txt" name="CurrencyValue"><?php echo $CurrencyValue?></span>
+                            </li>
+                            <!-- <li>
+                                <span class="li_title">交易時段：</span><span class="li_txt" name="OrderTime">10:00 - 21:00</span>
+                            </li> -->
+                        </ul>
+                        <div class="pic">
+                            <img src="../快易購FrontSide(前台20211025)/picturedata/<?php echo $Row['FileName']?>" alt="商品圖">
+                            <div class="time">
+                                <span class="li_title">刊登日期：</span>
+                                <span class="li_txt" name="CreateDate"><?php echo $Row["CreateDate"]?></span>
+                            </div>
+                            <div class="time">
+                                <span class="li_title">瀏覽次數：</span>
+                                <span class="li_txt"><?php echo $Row["Scan"]?></span>
+                            </div>
+                        </div>
+                        <!--清除float浮動跑版(此行不可刪)-->
+                        <div class="clear"></div>
+                    </div>
+                    <!--清除float浮動跑版(此行不可刪)-->
+                    <div class="clear"></div>
+                </div>
+                <!-- 商品按鈕 -->
+                <div class="info_btn">
+                    <div class="stock_btn">
+                        <div class="btn">
+                            <span>數量：</span>
+                            <input type="button" id="minus" name="minus" value="" class="st_btn_l">
+                            <!-- <a href="javascript:;" class="st_btn_l"></a> -->
+                            <input type="text" id="Quantity" name="Quantity" value="1" readonly="true" class="st_input"><!-- placeholder="1" -->
+                            <!-- <a href="javascript:;" class="st_btn_r"></a> -->
+                            <input type="button" id="plus" name="plus" value="" class="st_btn_r">
+                            <span class="st_tips" id="KuTsuenQuantity">(庫存量 <i class="st_num" id="KuTsuenQuantity"><?php echo $Row["KuTsuenQuantity"]?></i> 件)</span>
+                        </div>
+                        <div class="txt">
+                            <!-- <span>共</span>
+                            <span class="text_blod text_pink" id="Sum">1700 遊戲幣，</span> -->
+                            <span>需支付</span>
+                            <span class="text_blod text_pink">NT $<span name="NeedPay" id="NeedPay"><?php echo $Row["Price"]?></span></span>
+                        </div>
+                    </div>
+                    <!-- <a href="Order/Shopping_cart"> -->
+                        <div class="buy_btn">
+                            <input type="button" id="CheckBuy" name="CheckBuy" value="我要購買" class="btn_big btn_gradual">
+                        </div>
+                    <!-- </a> -->
+                    <!--清除float浮動跑版(此行不可刪)-->
+                    <div class="clear"></div>
+                </div>
+                <!--清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+            </div>
+            <!-- 賣家資料 -->
+            <div id="slider_menu" class="slider_menu sell_info_menu">
+                <!-- 會員資料 -->
+                <div class="title">賣家資訊</div>
+                <div class="section">
+                    <div class="member_info">
+                        <div class="in_pic">
+                            <img src="images/member/pic01.png" alt="大頭照">
+                            <ul class="state_box">
+                                <!-- 在線狀態(三選一，只能同時存在一個) -->
+                                <li class="online_state"><span id="SellOnline_state"></span></li>
+                                <!-- <li class="leave_state">離開</li> -->
+                                <li class="offline_state"><span id="SellOffline_state"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="member_list">
+                        <li>
+                            <span class="li_title">會員帳號：</span>
+                            <span class="li_txt" name="SellMemberAccount" id="SellMemberAccount"></span>
+                        </li>
+                        <li>
+                            <span class="li_title">好評評價：</span>
+                            <span class="li_txt text_pink" name="SellEvalu"></span>
+                        </li>
+                        <li>
+                            <span class="li_title">交易次數：</span>
+                            <span class="li_txt" name="SellCountOrder"></span>
+                        </li>
+                        <li>
+                            <span class="li_title">最近登入：</span>
+                            <span class="li_txt" id="SellLastLoginDate"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 商品說明頁籤 -->
+        <div class="ga_in_page_box">
+            <!-- 頁籤 -->
+            <input type="radio" id="game_info_tab_a1" name="game_info_tabsel" class="game_info_radio1" checked>
+            <label for="game_info_tab_a1" class="game_info_label">商品說明</label>
+            <input type="radio" id="game_info_tab_a2" name="game_info_tabsel" class="game_info_radio2">
+            <label for="game_info_tab_a2" class="game_info_label">問與答</label>
+            <input type="radio" id="game_info_tab_a3" name="game_info_tabsel" class="game_info_radio3">
+            <label for="game_info_tab_a3" class="game_info_label">查看評價</label>
+            <!-- 頁籤內容 -->
+            <div class="ga_in_page_wrap">
+                <!-- 分頁1(商品說明) -->
+                <div class="ga_in_con1">
+                    <!--內容-->
+                    <div class="gi_boxset">
+                        <img src="images/sell_info/pt01.jpg" alt=""><br>
+                        <br>
+                        <p>
+                            <?php echo $Row["ProductInfo"]?>
+                        </p>
+                    </div>
+                </div>
+                <!-- 分頁2(問與答) -->
+                <div class="ga_in_con2">
+                    <!--標題-->
+                    <div class="gi_qa">
+                        <textarea name="QuesInfo" id="QuesInfo" placeholder="登入後才可提問，限100字內(為保障交易安全，請勿留下聯絡電話、遊戲帳密或ID等內容，以免被騙)" maxlength=""></textarea>
+                        <div class="qa_btn">
+                            <input type="button" name="QuesConfirm" id="QuesConfirm" value="提出問題" class="btn_big btn_green">
+                        </div>
+                    </div>
+                    <!--內容-->
+                    <div class="gi_boxset">
+                        <div class="qa_title">
+                            <span>問答專區</span>
+                            <!-- <div class="qa_radio">
+                                <input type="radio" id="game_info_qa2_1" name="qa_tabsel" class="qa_radio2_1" checked>
+                                <label for="game_info_qa2_1" class="qa_label">所有問答</label>
+                                <input type="radio" id="game_info_qa2_2" name="qa_tabsel" class="qa_radio2_2">
+                                <label for="game_info_qa2_2" class="qa_label">我的問答</label> -->
+                                <!--清除float浮動跑版(此行不可刪)-->
+                                <!-- <div class="clear"></div>
+                            </div> -->
+                            <!--清除float浮動跑版(此行不可刪)-->
+                            <div class="clear"></div>
+                        </div>
+                        <!--問答對話區塊(1日內)-->
+                        <div id="ProductQAList">
+                            <!-- <div class="qa_content" id="ProductQAList"> -->
+                                <!--問-->
+                                <!-- <div class="ask_main">
+                                    <div class="qa_box">
+                                        <img src="images/sell_info/fa-user-circlei-r.png" alt="" class="qa_head_l">
+                                        <div class="txt">
+                                            <div class="name text_deepred">會員 1234567890 問：</div>
+                                            <div class="date text_deepred">2021-09-23 10:28:37</div> -->
+                                            <!--清除float浮動跑版(此行不可刪)-->
+                                            <!-- <div class="clear"></div>
+                                            <div class="info">安安！在嗎？我的今日購買上限達到了，要繼續購買怎麼辦？安~我的今日購買上限達到了，要繼續購買怎麼辦？安~我的今日購買上限達到了，要繼續購買怎麼辦？</div>
+                                        </div> -->
+                                        <!--清除float浮動跑版(此行不可刪)-->
+                                        <!-- <div class="clear"></div>
+                                    </div>
+                                </div> -->
+                                <!--答-->
+                                <!-- <div class="answer_main">
+                                    <div class="qa_box">
+                                        <img src="images/sell_info/fa-user-circlei-g.png" alt="" class="qa_head_r">
+                                        <div class="txt">
+                                            <div class="name text_blue">賣家回覆：</div>
+                                            <div class="date text_blue">2021-09-23 14:04:18</div>
+                                            <div class="info">安安~在的，我另外開一個賣場給你，可直接下標~</div>
+                                        </div> -->
+                                        <!--清除float浮動跑版(此行不可刪)-->
+                                        <!-- <div class="clear"></div>
+                                    </div> -->
+                                    <!--清除float浮動跑版(此行不可刪)-->
+                                    <!-- <div class="clear"></div>
+                                </div> -->
+                                <!--清除float浮動跑版(此行不可刪)-->
+                                <!-- <div class="clear"></div> -->
+                            <!-- </div> -->
+                        </div>
+
+                        <!--問答對話區塊(1日內)-->
+                        <!-- <div class="qa_content"> -->
+                            <!--問-->
+                            <!-- <div class="ask_main">
+                                <div class="qa_box">
+                                    <img src="images/sell_info/fa-user-circlei-r.png" alt="" class="qa_head_l">
+                                    <div class="txt">
+                                        <div class="name text_deepred">會員 186****877 問：</div>
+                                        <div class="date text_deepred">2021-09-16 22:39:19</div> -->
+                                        <!--清除float浮動跑版(此行不可刪)-->
+                                        <!-- <div class="clear"></div>
+                                        <div class="info">我有練一隻刺客有點膩了，請問有推薦甚麼別的職業嗎? 主教沒玩過，請問價錢多少呢?</div>
+                                    </div> -->
+                                    <!--清除float浮動跑版(此行不可刪)-->
+                                    <!-- <div class="clear"></div>
+                                </div>
+                            </div> -->
+                            <!--答-->
+                            <!-- <div class="answer_main">
+                                <div class="qa_box">
+                                    <img src="images/sell_info/fa-user-circlei-g.png" alt="" class="qa_head_r">
+                                    <div class="txt">
+                                        <div class="name text_blue">賣家回覆：</div>
+                                        <div class="date text_blue">2021-09-11 22:39:19</div> -->
+                                        <!--清除float浮動跑版(此行不可刪)-->
+                                        <!-- <div class="clear"></div>
+                                        <div class="info">我私你喔！</div>
+                                    </div> -->
+                                    <!--清除float浮動跑版(此行不可刪)-->
+                                    <!-- <div class="clear"></div>
+                                </div> -->
+                                <!--清除float浮動跑版(此行不可刪)-->
+                                <!-- <div class="clear"></div>
+                            </div> -->
+                            <!--清除float浮動跑版(此行不可刪)-->
+                            <!-- <div class="clear"></div>
+                        </div> -->
+                        <!-- 頁碼選項 -->
+                        <!-- <div class="pagination_wrap">
+                            <div class="page_number">
+                                <span class="title">第</span>
+                                <span class="title text_red">1</span>
+                                <span class="title">&frasl;</span>
+                                <span class="title">62100</span>
+                                <span class="title">頁</span>
+                            </div> -->
+                            <!-- 頁碼 -->
+                            <!-- <div class="pagination_box">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" class="previous"></a>
+                                    </li>
+                                    <li><a href="#" class="active">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" class="next"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="page_jump">
+                                <div class="page_input">
+                                    <span class="title">跳至第</span>
+                                    <input type="text" class="btn_page">
+                                    <span class="title">頁</span>
+                                </div>
+                                <div class="page_btn">
+                                    <input type="button" value="確定" class="btn_small btn_green">
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- 分頁3(查看評價) -->
+                <div class="ga_in_con3">
+                    <!--內容-->
+                    <div class="gi_boxset">
+                        <div class="qa_title">
+                            <span>賣家評價</span>
+                            <div class="qa_radio">
+                                <input type="radio" id="game_info_qa3_1" name="as_tabsel" value="99" class="qa_radio3_1" checked>
+                                <label for="game_info_qa3_1" class="qa_label">全部評價</label>
+                                <input type="radio" id="game_info_qa3_2" name="as_tabsel" value="1" class="qa_radio3_2">
+                                <label for="game_info_qa3_2" class="qa_label">好評</label>
+                                <input type="radio" id="game_info_qa3_3" name="as_tabsel" value="2" class="qa_radio3_3">
+                                <label for="game_info_qa3_3" class="qa_label">普通</label>
+                                <input type="radio" id="game_info_qa3_4" name="as_tabsel" value="3" class="qa_radio3_4">
+                                <label for="game_info_qa3_4" class="qa_label">差評</label>
+                                <!--清除float浮動跑版(此行不可刪)-->
+                                <div class="clear"></div>
+                            </div>
+                            <!--清除float浮動跑版(此行不可刪)-->
+                            <div class="clear"></div>
+                        </div>
+                        <!-- 評價表格 -->
+                        <div class="qa_content">
+                            <div class="sk_tbbox qa_tbbox">
+                                <table class="sk_fixed_table qa_tb">
+                                    <thead>
+                                        <tr>
+                                            <th class="sticky cell_m">評價</th>
+                                            <th class="sticky">評價意見</th>
+                                            <th class="sticky cell_l">買家會員編號</th>
+                                            <th class="sticky cell_l">交易日期</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="EvaluList">
+                                        <!-- <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/like.png" alt="">
+                                                <sapn>好評</sapn>
+                                            </td>
+                                            <td class="text_left">服務很棒，速度快</td>
+                                            <td>1234567890</td>
+                                            <td>2021/09/22 12:30:05</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/neutral.png" alt="">
+                                                <sapn>普通</sapn>
+                                            </td>
+                                            <td class="text_left"></td>
+                                            <td>8411439100</td>
+                                            <td>2021/09/21 00:08:49</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/dislike.png" alt="">
+                                                <sapn>差評</sapn>
+                                            </td>
+                                            <td class="text_left">拖了兩天才回我，爛死了</td>
+                                            <td>5132971009</td>
+                                            <td>2021/09/20 20:09:45</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/like.png" alt="">
+                                                <sapn>好評</sapn>
+                                            </td>
+                                            <td class="text_left">好</td>
+                                            <td>1234567890</td>
+                                            <td>2021/09/21 00:08:49</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/like.png" alt="">
+                                                <sapn>好評</sapn>
+                                            </td>
+                                            <td class="text_left">還不錯</td>
+                                            <td>9652320208</td>
+                                            <td>2021/09/20 20:09:45</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/like.png" alt="">
+                                                <sapn>好評</sapn>
+                                            </td>
+                                            <td class="text_left">cp值很高</td>
+                                            <td>3284911465</td>
+                                            <td>2021/09/20 20:09:45</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/like.png" alt="">
+                                                <sapn>好評</sapn>
+                                            </td>
+                                            <td class="text_left">優質賣家</td>
+                                            <td>5132971009</td>
+                                            <td>2021/09/20 20:09:45</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/neutral.png" alt="">
+                                                <sapn>普通</sapn>
+                                            </td>
+                                            <td class="text_left">還可以</td>
+                                            <td>1234567890</td>
+                                            <td>2021/09/21 00:08:49</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/neutral.png" alt="">
+                                                <sapn>普通</sapn>
+                                            </td>
+                                            <td class="text_left">嗯嗯</td>
+                                            <td>6816020548</td>
+                                            <td>2021/09/21 00:08:49</td>
+                                        </tr>
+                                        <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/dislike.png" alt="">
+                                                <sapn>差評</sapn>
+                                            </td>
+                                            <td class="text_left">騙子還我錢騙子還我錢騙子還我錢騙子還我錢騙子還我錢騙子還我
+                                                錢騙子還我錢騙子還我錢騙子還我錢</td>
+                                            <td>5132971009</td>
+                                            <td>2021/09/20 20:09:45</td>
+                                        </tr>
+                                            <tr class="text_darkgray">
+                                            <td>
+                                                <img src="images/sell_info/like.png" alt="">
+                                                <sapn>好評</sapn>
+                                            </td>
+                                            <td class="text_left">優質賣家</td>
+                                            <td>5132971009</td>
+                                            <td>2021/09/20 20:09:45</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- 頁碼選項 -->
+                            <!-- <div class="pagination_wrap">
+                                <div class="page_number">
+                                    <span class="title">第</span>
+                                    <span class="title text_red">1</span>
+                                    <span class="title">&frasl;</span>
+                                    <span class="title">62100</span>
+                                    <span class="title">頁</span>
+                                </div> -->
+                                <!-- 頁碼 -->
+                                <!-- <div class="pagination_box">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" class="previous"></a>
+                                        </li>
+                                        <li><a href="#" class="active">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" class="next"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="page_jump">
+                                    <div class="page_input">
+                                        <span class="title">跳至第</span>
+                                        <input type="text" class="btn_page">
+                                        <span class="title">頁</span>
+                                    </div>
+                                    <div class="page_btn">
+                                        <input type="button" value="確定" class="btn_small btn_green">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <?php include("jump.html");?>
+
+    <!--跳框_登入才可刊登-->
+    <div id="popup_LoginPublish" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup" id="LoginPublish">
+                <div class="btn_close"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="col_1 listset text_center">請先登入會員，方可購買商品</div>
+                    <!--按鈕-->
+                    <div class="col_1">
+                        <input type="button" value="關閉" onclick="document.getElementById('popup_LoginPublish').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

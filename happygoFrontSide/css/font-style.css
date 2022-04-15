@@ -1,0 +1,1708 @@
+.fa, .fas, .far {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    text-align: center;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+}
+/********** font-awesome(白) *********/
+.fa-home-w {
+    background: url(../font-awesome/white/fa-home-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-circle-o-w {
+    background: url(../font-awesome/white/fa-user-circle-o-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-circlei-w {
+    background: url(../font-awesome/white/fa-user-circlei-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-w {
+    background: url(../font-awesome/white/fa-user-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-users-w {
+    background: url(../font-awesome/white/fa-users-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-tie-w {
+    background: url(../font-awesome/white/fa-user-tie-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-plus-w {
+    background: url(../font-awesome/white/fa-user-plus-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-man-w {
+    background: url(../font-awesome/white/fa-man-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sign-in-w {
+    background: url(../font-awesome/white/fa-sign-in-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-key-w {
+    background: url(../font-awesome/white/fa-key-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-eye-w {
+    background: url(../font-awesome/white/fa-eye-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-eye-slash-w {
+    background: url(../font-awesome/white/fa-eye-slash-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lock-w {
+    background: url(../font-awesome/white/fa-lock-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lock-open-w {
+    background: url(../font-awesome/white/fa-lock-open-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-registered-w {
+    background: url(../font-awesome/white/fa-registered-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sign-out-alt-w {
+    background: url(../font-awesome/white/fa-sign-out-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-external-link-alt-w {
+    background: url(../font-awesome/white/fa-external-link-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-power-off-w {
+    background: url(../font-awesome/white/fa-power-off-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-undo-w {
+    background: url(../font-awesome/white/fa-undo-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-redo-w {
+    background: url(../font-awesome/white/fa-redo-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-history-w {
+    background: url(../font-awesome/white/fa-history-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sync-alt-w {
+    background: url(../font-awesome/white/fa-sync-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-exchange-alt-w {
+    background: url(../font-awesome/white/fa-exchange-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-random-w {
+    background: url(../font-awesome/white/fa-random-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-recycle-w {
+    background: url(../font-awesome/white/fa-recycle-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crown-w {
+    background: url(../font-awesome/white/fa-crown-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cut-w {
+    background: url(../font-awesome/white/fa-cut-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-video-w {
+    background: url(../font-awesome/white/fa-video-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file-text-o-w {
+    background: url(../font-awesome/white/fa-file-text-o-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-coins-w {
+    background: url(../font-awesome/white/fa-coins-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gift-w {
+    background: url(../font-awesome/white/fa-gift-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-clipboard-check-w {
+    background: url(../font-awesome/white/fa-clipboard-check-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-dollar-sign-w {
+    background: url(../font-awesome/white/fa-dollar-sign-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-cog-w {
+    background: url(../font-awesome/white/fa-cog-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-qrcode-w {
+    background: url(../font-awesome/white/fa-qrcode-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-info-w {
+    background: url(../font-awesome/white/fa-info-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-info-circle-w {
+    background: url(../font-awesome/white/fa-info-circle-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-exclamation-w {
+    background: url(../font-awesome/white/fa-exclamation-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-exclamation-circle-w {
+    background: url(../font-awesome/white/fa-exclamation-circle-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-exclamation-triangle-w {
+    background: url(../font-awesome/white/fa-exclamation-triangle-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-share-square-w {
+    background: url(../font-awesome/white/fa-share-square-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-keyboard-w {
+    background: url(../font-awesome/white/fa-keyboard-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lightbulb-w {
+    background: url(../font-awesome/white/fa-lightbulb-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-holding-usd-w {
+    background: url(../font-awesome/white/fa-hand-holding-usd-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-donate-w {
+    background: url(../font-awesome/white/fa-donate-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-landmark-w {
+    background: url(../font-awesome/white/fa-landmark-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-credit-card-w {
+    background: url(../font-awesome/white/fa-credit-card-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crop-alt-w {
+    background: url(../font-awesome/white/fa-crop-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-database-w {
+    background: url(../font-awesome/white/fa-database-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-money-w {
+    background: url(../font-awesome/white/fa-money-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-piggy-bank-w {
+    background: url(../font-awesome/white/fa-piggy-bank-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-shopping-bag-w {
+    background: url(../font-awesome/white/fa-shopping-bag-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-shopping-cart-w {
+    background: url(../font-awesome/white/fa-shopping-cart-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-store-w {
+    background: url(../font-awesome/white/fa-store-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-wallet-w {
+    background: url(../font-awesome/white/fa-wallet-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-address-book-w {
+    background: url(../font-awesome/white/fa-address-book-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-address-card-w {
+    background: url(../font-awesome/white/fa-address-card-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-alipay-w {
+    background: url(../font-awesome/white/fa-alipay-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-apple-w {
+    background: url(../font-awesome/white/fa-apple-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-android-w {
+    background: url(../font-awesome/white/fa-android-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-down-w {
+    background: url(../font-awesome/white/fa-angle-double-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-left-w {
+    background: url(../font-awesome/white/fa-angle-double-left-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-right-w {
+    background: url(../font-awesome/white/fa-angle-double-right-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-up-w {
+    background: url(../font-awesome/white/fa-angle-double-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-down-w {
+    background: url(../font-awesome/white/fa-angle-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-left-w {
+    background: url(../font-awesome/white/fa-angle-left-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-right-w {
+    background: url(../font-awesome/white/fa-angle-right-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-up-w {
+    background: url(../font-awesome/white/fa-angle-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-down-w {
+    background: url(../font-awesome/white/fa-arrow-alt-circle-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-left-w {
+    background: url(../font-awesome/white/fa-arrow-alt-circle-left-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-right-w {
+    background: url(../font-awesome/white/fa-arrow-alt-circle-right-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-up-w {
+    background: url(../font-awesome/white/fa-arrow-alt-circle-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-down-w {
+    background: url(../font-awesome/white/fa-arrow-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-left-w {
+    background: url(../font-awesome/white/fa-arrow-left-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-right-w {
+    background: url(../font-awesome/white/fa-arrow-right-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrows-alt-w {
+    background: url(../font-awesome/white/fa-arrows-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-up-w {
+    background: url(../font-awesome/white/fa-arrow-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-asterisk-w {
+    background: url(../font-awesome/white/fa-asterisk-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-baby-w {
+    background: url(../font-awesome/white/fa-baby-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-backspace-w {
+    background: url(../font-awesome/white/fa-backspace-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-backward-w {
+    background: url(../font-awesome/white/fa-backward-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-forward-w {
+    background: url(../font-awesome/white/fa-forward-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-fast-backward-w {
+    background: url(../font-awesome/white/fa-fast-backward-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-fast-forward-w {
+    background: url(../font-awesome/white/fa-fast-forward-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-ban-w {
+    background: url(../font-awesome/white/fa-ban-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bars-w {
+    background: url(../font-awesome/white/fa-bars-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bell-slash-w {
+    background: url(../font-awesome/white/fa-bell-slash-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bell-w {
+    background: url(../font-awesome/white/fa-bell-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bookmark-w {
+    background: url(../font-awesome/white/fa-bookmark-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-book-w {
+    background: url(../font-awesome/white/fa-book-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-box-open-w {
+    background: url(../font-awesome/white/fa-box-open-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-briefcase-w {
+    background: url(../font-awesome/white/fa-briefcase-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-buffer-w {
+    background: url(../font-awesome/white/fa-buffer-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bullhorn-w {
+    background: url(../font-awesome/white/fa-bullhorn-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calculator-w {
+    background: url(../font-awesome/white/fa-calculator-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calendar-alt-w {
+    background: url(../font-awesome/white/fa-calendar-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calendar-check-w {
+    background: url(../font-awesome/white/fa-calendar-check-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calendar-times-w {
+    background: url(../font-awesome/white/fa-calendar-times-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-camera-w {
+    background: url(../font-awesome/white/fa-camera-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-down-w {
+    background: url(../font-awesome/white/fa-caret-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-left-w {
+    background: url(../font-awesome/white/fa-caret-left-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-right-w {
+    background: url(../font-awesome/white/fa-caret-right-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-up-w {
+    background: url(../font-awesome/white/fa-caret-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sort-w {
+    background: url(../font-awesome/white/fa-sort-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cart-plus-w {
+    background: url(../font-awesome/white/fa-cart-plus-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-chart-bar-w {
+    background: url(../font-awesome/white/fa-chart-bar-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-chart-line-w {
+    background: url(../font-awesome/white/fa-chart-line-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check-circle-w {
+    background: url(../font-awesome/white/fa-check-circle-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check-square-w {
+    background: url(../font-awesome/white/fa-check-square-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check-w {
+    background: url(../font-awesome/white/fa-check-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-clipboard-list-w {
+    background: url(../font-awesome/white/fa-clipboard-list-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-clock-w {
+    background: url(../font-awesome/white/fa-clock-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-clone-w {
+    background: url(../font-awesome/white/fa-clone-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cloud-download-alt-w {
+    background: url(../font-awesome/white/fa-cloud-download-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cloud-upload-alt-w {
+    background: url(../font-awesome/white/fa-cloud-upload-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comment-dollar-w {
+    background: url(../font-awesome/white/fa-comment-dollar-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comment-dots-w {
+    background: url(../font-awesome/white/fa-comment-dots-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comments-dollar-w {
+    background: url(../font-awesome/white/fa-comments-dollar-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comments-w {
+    background: url(../font-awesome/white/fa-comments-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-link-w {
+    background: url(../font-awesome/white/fa-link-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-line-w {
+    background: url(../font-awesome/white/fa-line-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-weixin-w {
+    background: url(../font-awesome/white/fa-weixin-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-whatsapp-w {
+    background: url(../font-awesome/white/fa-whatsapp-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-qq-w {
+    background: url(../font-awesome/white/fa-qq-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-volume-up-w {
+    background: url(../font-awesome/white/fa-volume-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-phone-volume-w {
+    background: url(../font-awesome/white/fa-phone-volume-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-microphone-w {
+    background: url(../font-awesome/white/fa-microphone-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-headphones-alt-w {
+    background: url(../font-awesome/white/fa-headphones-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-headphones-w {
+    background: url(../font-awesome/white/fa-headphones-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-ellipsis-h-w {
+    background: url(../font-awesome/white/fa-ellipsis-h-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-ellipsis-v-w {
+    background: url(../font-awesome/white/fa-ellipsis-v-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-mobile-w {
+    background: url(../font-awesome/white/fa-mobile-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tablet-alt-w {
+    background: url(../font-awesome/white/fa-tablet-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tv-w {
+    background: url(../font-awesome/white/fa-tv-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-pen-w {
+    background: url(../font-awesome/white/fa-pen-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-edit-w {
+    background: url(../font-awesome/white/fa-edit-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tasks-w {
+    background: url(../font-awesome/white/fa-tasks-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-th-list-w {
+    background: url(../font-awesome/white/fa-th-list-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-server-w {
+    background: url(../font-awesome/white/fa-server-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-download-w {
+    background: url(../font-awesome/white/fa-download-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-upload-w {
+    background: url(../font-awesome/white/fa-upload-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file-w {
+    background: url(../font-awesome/white/fa-file-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-copy-w {
+    background: url(../font-awesome/white/fa-copy-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-paste-w {
+    background: url(../font-awesome/white/fa-paste-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-window-restore-w {
+    background: url(../font-awesome/white/fa-window-restore-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-save-w {
+    background: url(../font-awesome/white/fa-save-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sd-card-w {
+    background: url(../font-awesome/white/fa-sd-card-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sim-card-w {
+    background: url(../font-awesome/white/fa-sim-card-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file-image-w {
+    background: url(../font-awesome/white/fa-file-image-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-id-card-o-w {
+    background: url(../font-awesome/white/fa-id-card-o-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-image-w {
+    background: url(../font-awesome/white/fa-image-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-images-w {
+    background: url(../font-awesome/white/fa-images-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-newspaper-w {
+    background: url(../font-awesome/white/fa-newspaper-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-folder-open-w {
+    background: url(../font-awesome/white/fa-folder-open-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-plus-w {
+    background: url(../font-awesome/white/fa-plus-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-plus-square-w {
+    background: url(../font-awesome/white/fa-plus-square-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-minus-w {
+    background: url(../font-awesome/white/fa-minus-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-minus-square-w {
+    background: url(../font-awesome/white/fa-minus-square-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-minus-circle-w {
+    background: url(../font-awesome/white/fa-minus-circle-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-times-w {
+    background: url(../font-awesome/white/fa-times-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-window-close-w {
+    background: url(../font-awesome/white/fa-window-close-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-times-circle-w {
+    background: url(../font-awesome/white/fa-times-circle-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-question-w {
+    background: url(../font-awesome/white/fa-question-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crosshairs-w {
+    background: url(../font-awesome/white/fa-crosshairs-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-diamond-w {
+    background: url(../font-awesome/white/fa-diamond-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-dice-w {
+    background: url(../font-awesome/white/fa-dice-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-fish-w {
+    background: url(../font-awesome/white/fa-fish-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-football-ball-w {
+    background: url(../font-awesome/white/fa-football-ball-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-futbol-w {
+    background: url(../font-awesome/white/fa-futbol-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-baseball-ball-w {
+    background: url(../font-awesome/white/fa-baseball-ball-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-basketball-ball-w {
+    background: url(../font-awesome/white/fa-basketball-ball-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gamepad-w {
+    background: url(../font-awesome/white/fa-gamepad-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-globe-asia-w {
+    background: url(../font-awesome/white/fa-globe-asia-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-globe-w {
+    background: url(../font-awesome/white/fa-globe-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-heart-w {
+    background: url(../font-awesome/white/fa-heart-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-star-w {
+    background: url(../font-awesome/white/fa-star-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tag-w {
+    background: url(../font-awesome/white/fa-tag-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-trash-alt-w {
+    background: url(../font-awesome/white/fa-trash-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-flag-w {
+    background: url(../font-awesome/white/fa-flag-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-skull-w {
+    background: url(../font-awesome/white/fa-skull-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-skull-crossbones-w {
+    background: url(../font-awesome/white/fa-skull-crossbones-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-envelope-w {
+    background: url(../font-awesome/white/fa-envelope-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-envelope-open-text-w {
+    background: url(../font-awesome/white/fa-envelope-open-text-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hourglass-w {
+    background: url(../font-awesome/white/fa-hourglass-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-down-w {
+    background: url(../font-awesome/white/fa-hand-point-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-up-w {
+    background: url(../font-awesome/white/fa-hand-point-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-left-w {
+    background: url(../font-awesome/white/fa-hand-point-left-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-right-w {
+    background: url(../font-awesome/white/fa-hand-point-right-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-handshake-w {
+    background: url(../font-awesome/white/fa-handshake-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-w {
+    background: url(../font-awesome/white/fa-search-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-dollar-w {
+    background: url(../font-awesome/white/fa-search-dollar-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-plus-w {
+    background: url(../font-awesome/white/fa-search-plus-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-minus-w {
+    background: url(../font-awesome/white/fa-search-minus-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-share-w {
+    background: url(../font-awesome/white/fa-share-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-share-alt-w {
+    background: url(../font-awesome/white/fa-share-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sitemap-w {
+    background: url(../font-awesome/white/fa-sitemap-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-life-ring-w {
+    background: url(../font-awesome/white/fa-life-ring-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-location-arrow-w {
+    background: url(../font-awesome/white/fa-location-arrow-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-map-marker-alt-w {
+    background: url(../font-awesome/white/fa-map-marker-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-mouse-w {
+    background: url(../font-awesome/white/fa-mouse-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-paperclip-w {
+    background: url(../font-awesome/white/fa-paperclip-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-plug-w {
+    background: url(../font-awesome/white/fa-plug-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-print-w {
+    background: url(../font-awesome/white/fa-print-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-shield-alt-w {
+    background: url(../font-awesome/white/fa-shield-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-dolly-w {
+    background: url(../font-awesome/white/fa-dolly-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-frown-w {
+    background: url(../font-awesome/white/fa-frown-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-grin-w {
+    background: url(../font-awesome/white/fa-grin-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-meh-w {
+    background: url(../font-awesome/white/fa-meh-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gavel-w {
+    background: url(../font-awesome/white/fa-gavel-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-thumbs-up-w {
+    background: url(../font-awesome/white/fa-thumbs-up-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-thumbs-down-w {
+    background: url(../font-awesome/white/fa-thumbs-down-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-star-half-alt-w {
+    background: url(../font-awesome/white/fa-star-half-alt-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+/********** font-awesome(黑) *********/
+.fa-home {
+    background: url(../font-awesome/black/fa-home.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-circle-o {
+    background: url(../font-awesome/black/fa-user-circle-o.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-circlei {
+    background: url(../font-awesome/black/fa-user-circlei.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user {
+    background: url(../font-awesome/black/fa-user.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-users {
+    background: url(../font-awesome/black/fa-users.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-tie {
+    background: url(../font-awesome/black/fa-user-tie.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-plus {
+    background: url(../font-awesome/black/fa-user-plus.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-man {
+    background: url(../font-awesome/black/fa-man.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sign-in {
+    background: url(../font-awesome/black/fa-sign-in.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-key {
+    background: url(../font-awesome/black/fa-key.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-eye {
+    background: url(../font-awesome/black/fa-eye.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-eye-slash {
+    background: url(../font-awesome/black/fa-eye-slash.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lock {
+    background: url(../font-awesome/black/fa-lock.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lock-open {
+    background: url(../font-awesome/black/fa-lock-open.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-registered {
+    background: url(../font-awesome/black/fa-registered.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sign-out-alt {
+    background: url(../font-awesome/black/fa-sign-out-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-external-link-alt {
+    background: url(../font-awesome/black/fa-external-link-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-power-off {
+    background: url(../font-awesome/black/fa-power-off.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-undo {
+    background: url(../font-awesome/black/fa-undo.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-redo {
+    background: url(../font-awesome/black/fa-redo.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-history {
+    background: url(../font-awesome/black/fa-history.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sync-alt {
+    background: url(../font-awesome/black/fa-sync-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-exchange-alt {
+    background: url(../font-awesome/black/fa-exchange-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-random {
+    background: url(../font-awesome/black/fa-random.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-recycle {
+    background: url(../font-awesome/black/fa-recycle.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crown {
+    background: url(../font-awesome/black/fa-crown.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cut {
+    background: url(../font-awesome/black/fa-cut.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-video {
+    background: url(../font-awesome/black/fa-video.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file-text-o {
+    background: url(../font-awesome/black/fa-file-text-o.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-coins {
+    background: url(../font-awesome/black/fa-coins.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gift {
+    background: url(../font-awesome/black/fa-gift.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-clipboard-check {
+    background: url(../font-awesome/black/fa-clipboard-check.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-dollar-sign {
+    background: url(../font-awesome/black/fa-dollar-sign.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-cog {
+    background: url(../font-awesome/black/fa-cog.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-qrcode {
+    background: url(../font-awesome/black/fa-qrcode.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-info {
+    background: url(../font-awesome/black/fa-info.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-info-circle {
+    background: url(../font-awesome/black/fa-info-circle.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-exclamation {
+    background: url(../font-awesome/black/fa-exclamation.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-exclamation-circle {
+    background: url(../font-awesome/black/fa-exclamation-circle.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-exclamation-triangle {
+    background: url(../font-awesome/black/fa-exclamation-triangle.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-share-square {
+    background: url(../font-awesome/black/fa-share-square.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-keyboard {
+    background: url(../font-awesome/black/fa-keyboard.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lightbulb {
+    background: url(../font-awesome/black/fa-lightbulb.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-holding-usd {
+    background: url(../font-awesome/black/fa-hand-holding-usd.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-donate {
+    background: url(../font-awesome/black/fa-donate.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-landmark {
+    background: url(../font-awesome/black/fa-landmark.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-credit-card {
+    background: url(../font-awesome/black/fa-credit-card.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crop-alt {
+    background: url(../font-awesome/black/fa-crop-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-database {
+    background: url(../font-awesome/black/fa-database.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-money {
+    background: url(../font-awesome/black/fa-money.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-piggy-bank {
+    background: url(../font-awesome/black/fa-piggy-bank.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-shopping-bag {
+    background: url(../font-awesome/black/fa-shopping-bag.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-shopping-cart {
+    background: url(../font-awesome/black/fa-shopping-cart.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-store {
+    background: url(../font-awesome/black/fa-store.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-wallet {
+    background: url(../font-awesome/black/fa-wallet.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-address-book {
+    background: url(../font-awesome/black/fa-address-book.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-address-card {
+    background: url(../font-awesome/black/fa-address-card.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-alipay {
+    background: url(../font-awesome/black/fa-alipay.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-apple {
+    background: url(../font-awesome/black/fa-apple.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-android {
+    background: url(../font-awesome/black/fa-android.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-down {
+    background: url(../font-awesome/black/fa-angle-double-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-left {
+    background: url(../font-awesome/black/fa-angle-double-left.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-right {
+    background: url(../font-awesome/black/fa-angle-double-right.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-double-up {
+    background: url(../font-awesome/black/fa-angle-double-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-down {
+    background: url(../font-awesome/black/fa-angle-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-left {
+    background: url(../font-awesome/black/fa-angle-left.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-right {
+    background: url(../font-awesome/black/fa-angle-right.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-angle-up {
+    background: url(../font-awesome/black/fa-angle-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-down {
+    background: url(../font-awesome/black/fa-arrow-alt-circle-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-left {
+    background: url(../font-awesome/black/fa-arrow-alt-circle-left.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-right {
+    background: url(../font-awesome/black/fa-arrow-alt-circle-right.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-alt-circle-up {
+    background: url(../font-awesome/black/fa-arrow-alt-circle-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-down {
+    background: url(../font-awesome/black/fa-arrow-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-left {
+    background: url(../font-awesome/black/fa-arrow-left.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-right {
+    background: url(../font-awesome/black/fa-arrow-right.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrows-alt {
+    background: url(../font-awesome/black/fa-arrows-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-arrow-up {
+    background: url(../font-awesome/black/fa-arrow-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-asterisk {
+    background: url(../font-awesome/black/fa-asterisk.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-baby {
+    background: url(../font-awesome/black/fa-baby.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-backspace {
+    background: url(../font-awesome/black/fa-backspace.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-backward {
+    background: url(../font-awesome/black/fa-backward.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-forward {
+    background: url(../font-awesome/black/fa-forward.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-fast-backward {
+    background: url(../font-awesome/black/fa-fast-backward.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-fast-forward {
+    background: url(../font-awesome/black/fa-fast-forward.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-ban {
+    background: url(../font-awesome/black/fa-ban.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bars {
+    background: url(../font-awesome/black/fa-bars.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bell-slash {
+    background: url(../font-awesome/black/fa-bell-slash.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bell {
+    background: url(../font-awesome/black/fa-bell.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bookmark {
+    background: url(../font-awesome/black/fa-bookmark.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-book {
+    background: url(../font-awesome/black/fa-book.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-box-open {
+    background: url(../font-awesome/black/fa-box-open.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-briefcase {
+    background: url(../font-awesome/black/fa-briefcase.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-buffer {
+    background: url(../font-awesome/black/fa-buffer.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-bullhorn {
+    background: url(../font-awesome/black/fa-bullhorn.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calculator {
+    background: url(../font-awesome/black/fa-calculator.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calendar-alt {
+    background: url(../font-awesome/black/fa-calendar-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calendar-check {
+    background: url(../font-awesome/black/fa-calendar-check.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-calendar-times {
+    background: url(../font-awesome/black/fa-calendar-times.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-camera {
+    background: url(../font-awesome/black/fa-camera.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-down {
+    background: url(../font-awesome/black/fa-caret-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-left {
+    background: url(../font-awesome/black/fa-caret-left.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-right {
+    background: url(../font-awesome/black/fa-caret-right.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-caret-up {
+    background: url(../font-awesome/black/fa-caret-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sort {
+    background: url(../font-awesome/black/fa-sort.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cart-plus {
+    background: url(../font-awesome/black/fa-cart-plus.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-chart-bar {
+    background: url(../font-awesome/black/fa-chart-bar.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-chart-line {
+    background: url(../font-awesome/black/fa-chart-line.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check-circle {
+    background: url(../font-awesome/black/fa-check-circle.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check-square {
+    background: url(../font-awesome/black/fa-check-square.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check {
+    background: url(../font-awesome/black/fa-check.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-clipboard-list {
+    background: url(../font-awesome/black/fa-clipboard-list.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-clock {
+    background: url(../font-awesome/black/fa-clock.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-clone {
+    background: url(../font-awesome/black/fa-clone.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cloud-download-alt {
+    background: url(../font-awesome/black/fa-cloud-download-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cloud-upload-alt {
+    background: url(../font-awesome/black/fa-cloud-upload-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comment-dollar {
+    background: url(../font-awesome/black/fa-comment-dollar.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comment-dots {
+    background: url(../font-awesome/black/fa-comment-dots.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comments-dollar {
+    background: url(../font-awesome/black/fa-comments-dollar.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-comments {
+    background: url(../font-awesome/black/fa-comments.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-link {
+    background: url(../font-awesome/black/fa-link.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-line {
+    background: url(../font-awesome/black/fa-line.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-weixin {
+    background: url(../font-awesome/black/fa-weixin.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-whatsapp {
+    background: url(../font-awesome/black/fa-whatsapp.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-qq {
+    background: url(../font-awesome/black/fa-qq.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-volume-up {
+    background: url(../font-awesome/black/fa-volume-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-phone-volume {
+    background: url(../font-awesome/black/fa-phone-volume.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-microphone {
+    background: url(../font-awesome/black/fa-microphone.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-headphones-alt {
+    background: url(../font-awesome/black/fa-headphones-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-headphones {
+    background: url(../font-awesome/black/fa-headphones.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-ellipsis-h {
+    background: url(../font-awesome/black/fa-ellipsis-h.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-ellipsis-v {
+    background: url(../font-awesome/black/fa-ellipsis-v.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-mobile {
+    background: url(../font-awesome/black/fa-mobile.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tablet-alt {
+    background: url(../font-awesome/black/fa-tablet-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tv {
+    background: url(../font-awesome/black/fa-tv.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-pen {
+    background: url(../font-awesome/black/fa-pen.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-edit {
+    background: url(../font-awesome/black/fa-edit.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tasks {
+    background: url(../font-awesome/black/fa-tasks.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-th-list {
+    background: url(../font-awesome/black/fa-th-list.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-server {
+    background: url(../font-awesome/black/fa-server.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-download {
+    background: url(../font-awesome/black/fa-download.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-upload {
+    background: url(../font-awesome/black/fa-upload.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file {
+    background: url(../font-awesome/black/fa-file.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-copy {
+    background: url(../font-awesome/black/fa-copy.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-paste {
+    background: url(../font-awesome/black/fa-paste.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-window-restore {
+    background: url(../font-awesome/black/fa-window-restore.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-save {
+    background: url(../font-awesome/black/fa-save.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sd-card {
+    background: url(../font-awesome/black/fa-sd-card.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sim-card {
+    background: url(../font-awesome/black/fa-sim-card.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file-image {
+    background: url(../font-awesome/black/fa-file-image.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-id-card-o {
+    background: url(../font-awesome/black/fa-id-card-o.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-image {
+    background: url(../font-awesome/black/fa-image.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-images {
+    background: url(../font-awesome/black/fa-images.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-newspaper {
+    background: url(../font-awesome/black/fa-newspaper.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-folder-open {
+    background: url(../font-awesome/black/fa-folder-open.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-plus {
+    background: url(../font-awesome/black/fa-plus.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-plus-square {
+    background: url(../font-awesome/black/fa-plus-square.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-minus {
+    background: url(../font-awesome/black/fa-minus.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-minus-square {
+    background: url(../font-awesome/black/fa-minus-square.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-minus-circle {
+    background: url(../font-awesome/black/fa-minus-circle.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-times {
+    background: url(../font-awesome/black/fa-times.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-window-close {
+    background: url(../font-awesome/black/fa-window-close.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-times-circle {
+    background: url(../font-awesome/black/fa-times-circle.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-question {
+    background: url(../font-awesome/black/fa-question.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crosshairs {
+    background: url(../font-awesome/black/fa-crosshairs.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-diamond {
+    background: url(../font-awesome/black/fa-diamond.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-dice {
+    background: url(../font-awesome/black/fa-dice.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-fish {
+    background: url(../font-awesome/black/fa-fish.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-football-ball {
+    background: url(../font-awesome/black/fa-football-ball.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-futbol {
+    background: url(../font-awesome/black/fa-futbol.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-baseball-ball {
+    background: url(../font-awesome/black/fa-baseball-ball.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-basketball-ball {
+    background: url(../font-awesome/black/fa-basketball-ball.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gamepad {
+    background: url(../font-awesome/black/fa-gamepad.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-globe-asia {
+    background: url(../font-awesome/black/fa-globe-asia.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-globe {
+    background: url(../font-awesome/black/fa-globe.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-heart {
+    background: url(../font-awesome/black/fa-heart.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-star {
+    background: url(../font-awesome/black/fa-star.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-tag {
+    background: url(../font-awesome/black/fa-tag.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-trash-alt {
+    background: url(../font-awesome/black/fa-trash-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-flag {
+    background: url(../font-awesome/black/fa-flag.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-skull {
+    background: url(../font-awesome/black/fa-skull-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-skull-crossbones {
+    background: url(../font-awesome/black/fa-skull-crossbones.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-envelope {
+    background: url(../font-awesome/black/fa-envelope.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-envelope-open-text {
+    background: url(../font-awesome/black/fa-envelope-open-text.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hourglass {
+    background: url(../font-awesome/black/fa-hourglass.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-down {
+    background: url(../font-awesome/black/fa-hand-point-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-up {
+    background: url(../font-awesome/black/fa-hand-point-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-left {
+    background: url(../font-awesome/black/fa-hand-point-left.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-hand-point-right {
+    background: url(../font-awesome/black/fa-hand-point-right.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-handshake {
+    background: url(../font-awesome/black/fa-handshake.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search {
+    background: url(../font-awesome/black/fa-search.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-dollar {
+    background: url(../font-awesome/black/fa-search-dollar.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-plus {
+    background: url(../font-awesome/black/fa-search-plus.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-search-minus {
+    background: url(../font-awesome/black/fa-search-minus.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-share {
+    background: url(../font-awesome/black/fa-share.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-share-alt {
+    background: url(../font-awesome/black/fa-share-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-sitemap {
+    background: url(../font-awesome/black/fa-sitemap.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-life-ring {
+    background: url(../font-awesome/black/fa-life-ring.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-location-arrow {
+    background: url(../font-awesome/black/fa-location-arrow.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-map-marker-alt {
+    background: url(../font-awesome/black/fa-map-marker-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-mouse {
+    background: url(../font-awesome/black/fa-mouse.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-paperclip {
+    background: url(../font-awesome/black/fa-paperclip.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-plug {
+    background: url(../font-awesome/black/fa-plug.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-print {
+    background: url(../font-awesome/black/fa-print.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-shield-alt {
+    background: url(../font-awesome/black/fa-shield-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-dolly {
+    background: url(../font-awesome/black/fa-dolly.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-frown {
+    background: url(../font-awesome/black/fa-frown.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-grin {
+    background: url(../font-awesome/black/fa-grin.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-meh {
+    background: url(../font-awesome/black/fa-meh.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gavel {
+    background: url(../font-awesome/black/fa-gavel.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-thumbs-up {
+    background: url(../font-awesome/black/fa-thumbs-up.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-thumbs-down {
+    background: url(../font-awesome/black/fa-thumbs-down.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-star-half-alt {
+    background: url(../font-awesome/black/fa-star-half-alt.png) center center no-repeat;
+    background-size: 100% auto;
+}

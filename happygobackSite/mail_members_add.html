@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" />
+    <title>快易購後台-新增會員信</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <?php include("header.html");?>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <?php include("left.html");?>
+
+    <!--右側內容-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>新增會員信</span>
+                <input type="button" onclick="javascript:location.href='Message/MailMember';" value="回會員信列表" class="btn_back">
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <!--表格-->
+                <table class="col_tb">
+                    <tbody>
+                        <tr>
+                            <th>發布人員帳號</th>
+                            <td data-th="發布人員帳號"><span name="MailMemberPersonnel" id="MailMemberPersonnel"></span></td>
+                        </tr>
+                        <tr>
+                            <th>會員帳號</th>
+                            <td data-th="會員帳號">
+                                <!-- <div class="radio_inline">
+                                    <input type="radio" id="all_mbs" name="members" class="radio_box" checked>
+                                    <label for="all_mbs">所有會員(近30日有登入者)</label>
+                                </div>
+                                <div class="radio_inline">
+                                    <input type="radio" id="online_mbs" name="members" class="radio_box">
+                                    <label for="online_mbs">在線會員</label>
+                                </div> -->
+                                <textarea id="MailMemberMemberAccount" placeholder="請輸入多個會員帳號(例 a001,a002,a003)" class="textarea100"></textarea>
+                                <div class="pw_tips text_red">* 輸入多個會員帳號，並以【小寫逗號】分隔開</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>會員信標題</th>
+                            <td data-th="會員信標題">
+                                <input type="text" id="MailMemberTitle" name="" placeholder="請輸入標題(限50字)" value="" maxlength="50" class="tb_input100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>會員信內容</th>
+                            <td data-th="會員信內容">
+                                <textarea id="MailMemberInfo" placeholder="請輸入內容" class="textarea100"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>發布時間</th>
+                            <!--請代入現在時間-->
+                            <td data-th="發布時間"><span name="MailMemberTime" id="MailMemberTime"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 按鈕 -->
+                <div class="col_btn">
+                    <input type="button" id="MailMemberReset" value="清除" class="btn_big btn_gray">
+                    <input type="button" id="MailMemberCHK" value="確認發送" class="btn_big">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_發送-->
+    <div id="popup_sendConfirm" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_sendConfirm').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要發送？</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_sendConfirm').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" id="MailMemberConfirm" value="確認" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_JS-->
+    <!-- <script>
+        //確認修改
+        let modal_send_confirm = document.getElementById('send_confirm');
+        modal_send_confirm.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_sendConfirm').style.display='block';
+        });
+    </script> -->
+    <script src="js/message.js"></script>
+</body>
+</html>

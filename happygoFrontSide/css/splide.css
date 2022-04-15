@@ -1,0 +1,347 @@
+@keyframes cm-loading {
+    0% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+.cm_container {
+    position: relative;
+    box-sizing: border-box;
+}
+.cm_list {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: -webkit-max-content;
+    width: max-content;
+    will-change: transform;
+}
+.cm.is-active .cm_list {
+    display: flex;
+}
+.cm_pagination {
+    display: inline-flex;
+    align-items: center;
+    width: 95%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+.cm_pagination li {
+    list-style-type: none;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+}
+/* .cm {
+    visibility: hidden;
+} */
+.cm, .cm_slide {
+    position: relative;
+    outline: none;
+}
+.cm_slide {
+    box-sizing: border-box;
+    list-style-type: none !important;
+    margin: 0;
+    flex-shrink: 0;
+}
+.cm_slide img {
+    vertical-align: bottom;
+}
+.cm_slider {
+    position: relative;
+}
+.cm_spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #999;
+    border-left-color: transparent;
+    animation: cm-loading 1s linear infinite;
+    -webkit-animation: cm-loading 1s linear infinite;
+}
+.cm_track {
+    position: relative;
+    z-index: 0;
+    overflow: hidden
+}
+.cm_draggable>.cm_track>.cm_list>.cm_slide {
+    -webkit-user-select: none;
+    user-select: none;
+}
+.cm_fade>.cm_track>.cm_list {
+    display: block;
+}
+.cm_fade>.cm_track>.cm_list>.cm_slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+}
+.cm_fade>.cm_track>.cm_list>.cm_slide.is-active {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+/* 文本方向設置為“從右向左” */
+.cm_rtl {
+    direction: rtl;
+}
+.cm_ttb>.cm_track>.cm_list {
+    display: block;
+}
+.cm_ttb>.cm_pagination {
+    width: auto;
+}
+.cm_arrow {
+    position: absolute;
+    top: 50%;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    background: rgba(255,255,255,.6);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: .6;
+    z-index: 1;
+}
+.cm_arrow svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+.cm_arrow:hover {
+    cursor: pointer;
+    opacity: .9;
+}
+.cm_arrow:focus {
+    outline: none;
+}
+.cm_arrow_prev {
+    left: 1em;
+}
+.cm_arrow_prev svg {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.cm_arrow_next {
+    right: 1em;
+}
+.cm_pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    padding: 0;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.cm_pagination_page {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    padding: 0;
+    background: rgba(0,0,0,.5);
+    transition: transform .2s linear;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: none;
+    opacity: .5;
+}
+.cm_pagination_page.is-active {
+    background: #fff;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.cm_pagination_page:hover {
+    cursor: pointer;
+    opacity: .9;
+}
+.cm_pagination_page:focus {
+    outline: none;
+}
+.cm_progress_bar {
+    width: 0;
+    height: 3px;
+    background: #ccc;
+}
+.cm_nav>.cm_track>.cm_list>.cm_slide {
+    border: 3px solid transparent;
+}
+.cm_nav>.cm_track>.cm_list>.cm_slide.is-active {
+    border-color: #000;
+}
+.cm_nav>.cm_track>.cm_list>.cm_slide:focus {
+    outline: none;
+}
+.cm_rtl>.cm_arrows .cm_arrow_prev,
+.cm_rtl>.cm_track>.cm_arrows .cm_arrow_prev {
+    right: 1em;
+    left: auto;
+}
+.cm_rtl>.cm_arrows .cm_arrow_prev svg,
+.cm_rtl>.cm_track>.cm_arrows .cm_arrow_prev svg {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+.cm_rtl>.cm_arrows .cm_arrow_next,
+.cm_rtl>.cm_track>.cm_arrows .cm_arrow_next {
+    left: 1em;
+    right: auto;
+}
+.cm_rtl>.cm_arrows .cm_arrow_next svg,
+.cm_rtl>.cm_track>.cm_arrows .cm_arrow_next svg {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.cm_ttb>.cm_arrows .cm_arrow,
+.cm_ttb>.cm_track>.cm_arrows .cm_arrow {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
+}
+.cm_ttb>.cm_arrows .cm_arrow_prev,
+.cm_ttb>.cm_track>.cm_arrows .cm_arrow_prev {
+    top: 1em;
+}
+.cm_ttb>.cm_arrows .cm_arrow_prev svg,
+.cm_ttb>.cm_track>.cm_arrows .cm_arrow_prev svg {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.cm_ttb>.cm_arrows .cm_arrow_next,
+.cm_ttb>.cm_track>.cm_arrows .cm_arrow_next {
+    top: auto;
+    bottom: 1em;
+}
+.cm_ttb>.cm_arrows .cm_arrow_next svg,
+.cm_ttb>.cm_track>.cm_arrows .cm_arrow_next svg {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.cm_ttb>.cm_pagination {
+    display: flex;
+    flex-direction: column;
+    bottom: 50%;
+    left: auto;
+    right: .5em;
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+}
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 901px (iPad, iPad pro)*/
+@media screen and (min-width: 901px) {
+    .cm_arrow svg {
+        width: 2.3em;
+        height: 2.3em;
+    }
+    .cm_arrow {
+        width: 3.5em;
+        height: 3.5em;
+    }
+    .cm_arrow_prev {
+        left: 1em;
+    }
+    .cm_pagination_page {
+        width: 20px;
+        height: 20px;
+    }
+    .cm_pagination {
+        bottom: 35px;
+    }
+}
+/* 寬度大於 2560px (電腦) */
+@media screen and (min-width: 2560px) {
+    .cm_slide img {
+        width: 100%;
+    }
+    .cm_arrow svg {
+        width: 2.6em;
+        height: 2.6em;
+    }
+    .cm_arrow {
+        width: 4em;
+        height: 4em;
+    }
+    .cm_pagination {
+        bottom: 40px;
+    }
+}
+/* 寬度介於 1024px - 1440px (ipad pro,舊電腦) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .cm_pagination {
+        bottom: 15px;
+    }
+}
+/* 寬度介於 680px - 960px (ipad pro,舊電腦) */
+@media screen and (min-width: 680px) and (max-width: 960px) {
+    .cm_pagination {
+        bottom: 10px;
+    }
+}

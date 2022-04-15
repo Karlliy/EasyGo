@@ -1,0 +1,161 @@
+.ui-datepicker {
+     position: fixed !important;
+     width: 220px;
+     top: 22% !important;
+     left: 37% !important;
+     z-index: 10 !important;
+}
+.ui-widget {
+     font-size: 1em;
+}
+.ui-datepicker table {
+	font-size: 1em;
+}
+.ui-widget-content {
+	border: 1px solid #aaa;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 8px;
+}
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 8px;
+}
+.ui-datepicker .ui-datepicker-prev {
+     background: url(../images/calendar/ui-arrow-l.png);
+     background-size: 100% auto;
+     cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-next {
+     background: url(../images/calendar/ui-arrow-r.png);
+     background-size: 100% auto;
+     cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-prev:active,
+.ui-datepicker .ui-datepicker-prev:focus {
+     background: url(../images/calendar/ui-arrow-l-hover.png);
+     background-size: 100% auto;
+     cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-next:hover,
+.ui-datepicker .ui-datepicker-next:active,
+.ui-datepicker .ui-datepicker-next:focus {
+     background: url(../images/calendar/ui-arrow-r-hover.png);
+     background-size: 100% auto;
+     cursor: pointer;
+}
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 2560px (電腦) */
+@media screen and (min-width: 2560px) {
+     .ui-datepicker {
+          top: 14% !important;
+          left: 35% !important;
+     }
+}
+
+/* 寬度介於 1301px - 1536px (ipad pro,舊電腦) */
+@media screen and (min-width: 1536px) and (max-width: 1900px) {
+     .ui-datepicker {
+          top: 10% !important;
+          left: 46% !important;
+     }
+}
+
+/* 寬度介於 1301px - 1535px (ipad pro,舊電腦) */
+@media screen and (min-width: 1366px) and (max-width: 1535px) {
+     .ui-datepicker {
+          top: 20% !important;
+          left: 52% !important;
+     }
+}
+
+/* 寬度介於 1280px - 1366px (ipad) */
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
+     .ui-datepicker {
+          top: 19% !important;
+          left: 52% !important;
+     }
+}
+
+/* 寬度介於 901px - 1279px (ipad) */
+@media screen and (min-width: 901px) and (max-width: 1279px) {
+     .ui-datepicker {
+          top: 19% !important;
+          left: 35% !important;
+     }
+}
+
+/* 寬度介於 823px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 823px) and (max-width: 900px) {
+     .ui-datepicker {
+          top: 36% !important;
+          left: 37% !important;
+     }
+}
+
+/* 寬度介於 751px - 822px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 822px) {
+     .ui-datepicker {
+          top: 25% !important;
+          left: 19% !important;
+     }
+}
+
+/* 寬度介於 720px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 720px) and (max-width: 750px) {
+     .ui-datepicker {
+          top: 20% !important;
+          left: 20% !important;
+     }
+}
+
+/* 寬度介於 671px - 719px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 719px) {
+     .ui-datepicker {
+          top: 38% !important;
+          left: 32% !important;
+     }
+}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+     .ui-datepicker {
+          top: 32% !important;
+          left: 32% !important;
+     }
+}
+
+/* 寬度介於 415px - 550px (iPhone 6+) */
+@media screen and (min-width: 415px) and (max-width: 550px) {
+     .ui-datepicker {
+          top: 30% !important;
+          left: 25% !important;
+     }
+}
+
+/* 寬度介於 401px - 414px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 401px) and (max-width: 414px) {
+     .ui-datepicker {
+          top: 37% !important;
+          left: 20% !important;
+     }
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+     .ui-datepicker {
+          top: 37% !important;
+          left: 15% !important;
+     }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+     .ui-datepicker {
+          top: 37% !important;
+          left: 13% !important;
+     }
+}

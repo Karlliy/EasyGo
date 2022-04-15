@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!--輪播圖JQ(class、ID名稱不能改會跑版)-->
+    <link href="css/splide.css" rel="stylesheet" type="text/css">
+    <script src="js/splide-2.4.12.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購-我的錢包</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 會員中心 -->
+    <div class="wrap member_wrap">
+        <!-- 電腦版-左側邊攔 -->
+        <?php include("left.html");?>
+
+        <!-- 右邊主畫面 -->
+        <div class="index_main">
+            <!-- 訂單列表 -->
+            <div class="orderlist_box">
+                <div class="main_title">
+                    <img src="images/member/mywallet.png" alt="">
+                    <span>我的錢包</span>
+                </div>
+
+                <!-- 錢包明細 -->
+                <div class="wallet_box">
+                    <div class="wa_item wa_surplus">
+                        <div class="col_1">
+                            <div class="title">錢包餘額</div>
+                            <input type="button" id="Withdraw" name="Withdraw" value="提款" class="btn_small btn_yellow">
+                        </div>
+                        <div class="wa_money text_red"><span name="GamePoints"></span></div>
+                    </div>
+                    <div class="vertical_line"></div>
+                    <div class="wa_item wa_well_income">
+                        <div class="col_1">
+                            <div class="title">即將撥款</div>
+                        </div>
+                        <div class="wa_money text_blue"><span name="Goingtake"></span></div>
+                    </div>
+                    <div class="vertical_line"></div>
+                    <div class="wa_item wa_get_income">
+                        <div class="col_1">
+                            <div class="title">已撥款</div>
+                        </div>
+                        <div class="wa_money text_blue"><span name="Finaltake"></span></div>
+                    </div>
+                    <div class="vertical_line"></div>
+                    <div class="wa_item wa_account">
+                        <div class="col_1">
+                            <div class="title">我的銀行帳號</div>
+                            <!--新增/刪除按鈕，擇一出現-->
+                            <input type="button" id="AddBank" name="AddBank" value="新增" class="btn_small btn_yellow" style="display: none;"> <!-- style="display: none;" -->
+                            <input type="button" id="DelBank" name="DelBank"value="刪除" class="jsDeleteInfo btn_small btn_red" style="display: none;">
+                        </div>
+                        <!-- 無銀行資料時，下方資訊關閉 -->
+                        <div class="col_1">
+                            <div class="col_inline txt">
+                                <div><span name="BankName"></span></div>
+                                <div class="text_green"><span name="BankAccount"></span></div>
+                            </div>
+                            <div class="col_inline verify_box">
+                                <input type="button" id="AddBankInfo" name="AddBankInfo" value="明細" class="btn_small btn_green">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 頁籤 -->
+                <div class="table_wrap">
+                    <div class="panel_wrap wallet_wrap">
+                        <!-- 頁籤選取按鈕(圓點隱藏)+需對應下方 label -->
+                        <input type="radio" id="pa_radio1" name="panel_radio" class="panel_control" checked>
+                        <input type="radio" id="pa_radio2" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio3" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio4" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio5" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio6" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio7" name="panel_radio" class="panel_control">
+                        <!-- 頁籤選取按鈕(此父層"panel_tab_bigwarp"勿刪除，要設定分頁拖曳用 -->
+                        <div class="panel_tab_bigwarp">
+                            <div class="panel_tab_wrap">
+                                <label for="pa_radio1" class="panel_tab_label" id="Wallet9" data-value="9">所有訂單</label>
+                                <label for="pa_radio2" class="panel_tab_label" id="Wallet1" data-value="1">訂單收入</label>
+                                <label for="pa_radio3" class="panel_tab_label" id="Wallet2" data-value="2">處理中</label>
+                                <label for="pa_radio4" class="panel_tab_label" id="Wallet3" data-value="3">已撥款</label>
+                                <label for="pa_radio5" class="panel_tab_label" id="Wallet4" data-value="4">已提款</label>
+                                <label for="pa_radio6" class="panel_tab_label" id="Wallet5" data-value="5">已退款</label>
+                                <label for="pa_radio7" class="panel_tab_label" id="Wallet6" data-value="6">錢包支付</label>
+                            </div>
+                        </div>
+                        <!-- 頁籤-內容 -->
+                        <div class="panel_content_wrap">
+                            <!-- 分頁1(所有訂單) -->
+                            <div class="pa_content pa_content1">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                <!-- <tr>
+                                                    <td>
+                                                        以下狀態四選一 
+                                                        <div>完成</div>
+                                                        <div class="text_green" style="display: none;">撥款中</div>
+                                                        <div class="text_blue" style="display: none;">提款中</div>
+                                                        <div class="text_red" style="display: none;">退款中</div>
+                                                    </td>
+                                                    <td class="text_left">
+                                                        <ul>
+                                                            <li class="text_big text_deepblue">訂單編號：<span>210831871132</span></li>
+                                                            <li class="title">3500000萬金=1000元 【1元:3,500萬金】 好再來好再來好再來好再來</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>訂單收入</td>
+                                                    <td class="text_right"><span class="text_green">4,000</span></td>
+                                                    <td class="text_right"></td>
+                                                    <td>2021-09-03 14:44:50</td>
+                                                    <td class="sktb_btn">
+                                                        <input type="button" value="明細" class="jsWalletIncome btn_small btn_yellow">
+                                                    </td>
+                                                </tr>-->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁2(訂單收入) -->
+                            <div class="pa_content pa_content2">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁3(即將撥款) -->
+                            <div class="pa_content pa_content3">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁4(已撥款) -->
+                            <div class="pa_content pa_content4">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁5(已提款) -->
+                            <div class="pa_content pa_content5">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁6(已退款) -->
+                            <div class="pa_content pa_content6">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁7(錢包支付) -->
+                            <div class="pa_content pa_content7">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無交易紀錄</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table wallet_tb">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_s">狀態</th>
+                                                    <th class="sticky">訂單</th>
+                                                    <th class="sticky cell_m">種類 / 描述</th>
+                                                    <th class="sticky cell_m">收入 / 支付</th>
+                                                    <th class="sticky cell_m">撥/提/退款</th>
+                                                    <th class="sticky cell_m">日期</th>
+                                                    <th class="sticky cell_m">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="WalletForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+	<!--浮動客服_滑出浮動視窗-->
+    <div id="popup_Service" class="on_chat">
+        <div class="chatbox">
+            <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+            <img src="images/index_logo.png" class="chat_logo">
+            <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+            <div class="chat_area">
+                <!--客服-->
+                <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+                <!--顧客-->
+                <div class="ask">沒，我只是來逛逛而已</div>
+                <!--顧客的清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+                <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+                <div class="ask">OK</div>
+            </div>
+            <div class="msgbox">
+                <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+                <input type="submit" value="傳送" class="btn_s btn_yellow">
+            </div>
+        </div>
+    </div>
+    <!--浮動客服(視窗右下角常駐按鈕)-->
+    <div class="btn_chat" onclick="ShowService()">
+        <img src="images/service.png" alt="客服">
+    </div>
+
+    <!--跳框_提款申請-->
+    <div id="popup_Withdraw" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_Withdraw').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>提款申請</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">申請日期：</div>
+                            <div class="col_inline"><span name="ApplyDate" id="ApplyDate"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">單據編號：</div>
+                            <div class="col_inline"><span name="WithdrawNumber" id="WithdrawNumber"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline">
+                                <span class="text30">提款金額：</span>
+                                <input type="text" id="TakeMoney" name="TakeMoney" placeholder="輸入金額" value="" maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'') "  class="no_width" required="">
+                            </div>
+                        </div>
+                        <div class="col_1 listset ">
+                            <div class="col_inline text30">錢包餘額：</div>
+                            <div class="col_inline">
+                                <span class="text_red" name="GamePoints" id="GamePoints"></span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">預計撥款：</div>
+                            <div class="col_inline"><span name="PredictDate" id="PredictDate"></span></div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">將撥款至：</div>
+                            <div class="col_inline">
+                                <div><span name="BankName" id="BankName"></span></div>
+                                <div><span name="BankAccount" id="BankAccount"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_2">
+                        <input type="button" value="取消" onclick="document.getElementById('popup_Withdraw').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                    <div class="col_2">
+                        <input type="button" id="ConfirmWithdraw" value="確認申請" class="btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_刪除-->
+    <div id="popup_DeleteInfo" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_DeleteInfo').style.display='none'"></div>
+                <div name="form" action="" method="post" class="popup_In">
+                    <div class="popup_title">
+                        <span>警告</span>
+                    </div>
+                    <!--內容-->
+                    <div class="popup_in">
+                        <div class="col_1 listset text_center">刪除資料，將無法回復。</div>
+                        <!-- 按鈕 -->
+                        <div class="col_2">
+                            <input type="button" value="取消" onclick="document.getElementById('popup_DeleteInfo').style.display='none'" class="btn_big btn_gray">
+                        </div>
+                        <div class="col_2">
+                            <input type="submit" id="DelBanksub" value="確認刪除" class="btn_big btn_yellow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_新增銀行-->
+    <div id="popup_AddBank" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_AddBank').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>新增銀行</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1">
+                            <div class="input_title">銀行名稱</div>
+                            <select id="BankName" class="select100">
+                                <option value="">請選擇</option>
+                                <option value="台灣銀行" selected="">台灣銀行</option>
+                                <option value="臺灣土地銀行">臺灣土地銀行</option>
+                                <option value="合作金庫商業銀行">合作金庫商業銀行</option>
+                                <option value="第一商業銀行">第一商業銀行</option>
+                                <option value="華南商業銀行">華南商業銀行</option>
+                                <option value="彰化商業銀行">彰化商業銀行</option>
+                                <option value="上海商業儲蓄銀行">上海商業儲蓄銀行</option>
+                                <option value="台北富邦商業銀行">台北富邦商業銀行</option>
+                                <option value="國泰世華商業銀行">國泰世華商業銀行</option>
+                                <option value="高雄銀行">高雄銀行</option>
+                                <option value="兆豐國際商業銀行">兆豐國際商業銀行</option>
+                                <option value="全國農業金庫">全國農業金庫</option>
+                                <option value="花旗(台灣)商業銀行">花旗(台灣)商業銀行</option>
+                                <option value="王道商業銀行">王道商業銀行</option>
+                                <option value="臺灣中小企業銀行">臺灣中小企業銀行</option>
+                                <option value="渣打國際商業銀行">渣打國際商業銀行</option>
+                                <option value="台中商業銀行">台中商業銀行</option>
+                                <option value="京城商業銀行">京城商業銀行</option>
+                                <option value="滙豐(台灣)商業銀行">滙豐(台灣)商業銀行</option>
+                                <option value="瑞興商業銀行">瑞興商業銀行</option>
+                                <option value="華泰商業銀行">華泰商業銀行</option>
+                                <option value="臺灣新光商業銀行">臺灣新光商業銀行</option>
+                                <option value="陽信商業銀行">陽信商業銀行</option>
+                                <option value="板信商業銀行">板信商業銀行</option>
+                                <option value="三信商業銀行">三信商業銀行</option>
+                                <option value="聯邦商業銀行">聯邦商業銀行</option>
+                                <option value="遠東國際商業銀行">遠東國際商業銀行</option>
+                                <option value="元大商業銀行">元大商業銀行</option>
+                                <option value="永豐商業銀行">永豐商業銀行</option>
+                                <option value="玉山銀行">玉山銀行</option>
+                                <option value="凱基商業銀行">凱基商業銀行</option>
+                                <option value="星展(台灣)商業銀行">星展(台灣)商業銀行</option>
+                                <option value="台新國際商業銀行">台新國際商業銀行</option>
+                                <option value="日盛國際商業銀行">日盛國際商業銀行</option>
+                                <option value="安泰商業銀行">安泰商業銀行</option>
+                                <option value="中國信託商業銀行">中國信託商業銀行</option>
+                                <option value="中華郵政">中華郵政</option>
+                                <option value="連線商業銀行">連線商業銀行</option>
+                                <option value="樂天國際商業銀行">樂天國際商業銀行</option>
+                            </select>
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">銀行地區</div>
+                            <select id="BankArea" class="select100">
+                                <option value="">請選擇</option>
+                                <option value="台北市">台北市</option>
+                                <option value="新北市">新北市</option>
+                                <option value="基隆市">基隆市</option>
+                                <option value="桃園市">桃園市</option>
+                                <option value="新竹縣">新竹縣</option>
+                                <option value="新竹市">新竹市</option>
+                                <option value="苗栗縣">苗栗縣</option>
+                                <option value="彰化縣">彰化縣</option>
+                                <option value="雲林縣">雲林縣</option>
+                                <option value="台中市">台中市</option>
+                                <option value="南投縣">南投縣</option>
+                                <option value="嘉義市">嘉義市</option>
+                                <option value="嘉義縣">嘉義縣</option>
+                                <option value="台南市">台南市</option>
+                                <option value="高雄市">高雄市</option>
+                                <option value="屏東縣">屏東縣</option>
+                                <option value="台東縣">台東縣</option>
+                                <option value="宜蘭縣">宜蘭縣</option>
+                                <option value="花蓮縣">花蓮縣</option>
+                                <option value="澎湖縣">澎湖縣</option>
+                                <option value="金門縣">金門縣</option>
+                                <option value="連江縣">連江縣</option>
+                            </select>
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">分行名稱</div>
+                            <input type="text" id="BranchName" placeholder="請填寫" maxlength="14" class="input100" required="">
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">銀行戶名</div>
+                            <input type="text" id="BankId" placeholder="請填寫" maxlength="64" class="input100" required="">
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">銀行帳號</div>
+                            <input type="text" id="BankAccount" placeholder="請填寫" maxlength="14" onkeyup="value=value.replace(/[^\d]/g,'') "  class="input100" required="">
+                        </div>
+                        <div class="col_1 spacing_down20">
+                            <div class="pw_tips text_red">提醒您，填寫的銀行帳戶需正確無誤，避免影響日後撥款權益。</div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_2">
+                        <input type="button" value="取消" onclick="document.getElementById('popup_AddBank').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                    <div class="col_2">
+                        <input type="submit" id="AddBankOk" value="下一步" class="btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_完成新增銀行-->
+    <div id="popup_AddBankOk" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_AddBankOk').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>確認詳情</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行名稱：</div>
+                            <div class="col_inline"><span name="BankNameOk" id="BankNameOk"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行地區：</div>
+                            <div class="col_inline"><span name="BankAreaOk" id="BankAreaOk"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">分行名稱：</div>
+                            <div class="col_inline"><span name="BranchNameOk" id="BranchNameOk"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行戶名：</div>
+                            <div class="col_inline"><span name="BankIdOk" id="BankIdOk"></span></div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">銀行帳號：</div>
+                            <div class="col_inline"><span name="BankAccountOk" id="BankAccountOk"></span></div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_2">
+                        <input type="button" value="取消" onclick="document.getElementById('popup_AddBankOk').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                    <div class="col_2">
+                        <input type="submit" id="AddBanksub" value="儲存" class="btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_銀行帳號明細-->
+    <div id="popup_AddBankInfo" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_AddBankInfo').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>銀行帳號</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行名稱：</div>
+                            <div class="col_inline"><span name="BankNameInfo"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行地區：</div>
+                            <div class="col_inline"><span name="BankAreaInfo"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">分行名稱：</div>
+                            <div class="col_inline"><span name="BranchNameInfo"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行戶名：</div>
+                            <div class="col_inline"><span name="BankIdInfo"></span></div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">銀行帳號：</div>
+                            <div class="col_inline"><span name="BankAccountInfo"></span></div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_1">
+                        <input type="button" value="關閉" onclick="document.getElementById('popup_AddBankInfo').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_訂單收入-->
+    <div id="popup_WalletIncome" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_WalletIncome').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>訂單收入</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">建立日期：</div>
+                            <div class="col_inline"><span name="CreateDate"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">款項狀態：</div>
+                            <div class="col_inline"><span name="PointChangState"></span>
+                                <!-- 狀態二選一 -->
+                                <!-- <div>已轉入</div>
+                                <div style="display: none;">處理中</div> -->
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">訂單金額：</div>
+                            <div class="col_inline">
+                                <span class="text_red" name="SumPrice"></span>
+                            </div>
+                        </div>
+                        <!-- <div class="col_1 listset">
+                            <div class="col_inline text30">扣手續費：</div>
+                            <div class="col_inline">
+                                <span class="text_green">15</span>
+                            </div>
+                        </div> -->
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">錢包餘額：</div>
+                            <div class="col_inline">
+                                <span class="text_red" name="GamePointsWallet"></span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">訂單編號：</div>
+                            <div class="col_inline">
+                                <span name="OrderNumber"></span>
+                                <!-- <input type="button" value="詳細訂單" onclick="window.open('order_info_buy.html','_self');" class="btn_small btn_yellow"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_1">
+                        <input type="submit" onclick="document.getElementById('popup_WalletIncome').style.display='none'" value="關閉" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_提款明細-->
+    <div id="popup_WithdrawIncome" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_WithdrawIncome').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>提款明細</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">建立日期：</div>
+                            <div class="col_inline"><span name="ApplyDate"></span></div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">款項狀態：</div>
+                            <div class="col_inline">
+                                <!-- 狀態二選一 -->
+                                <div><span name="WithdrawState"></span></div>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">提款金額：</div>
+                            <div class="col_inline">
+                                <span class="text_red" name="TakeMoney"></span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行名稱：</div>
+                            <div class="col_inline">
+                                <span name="BankNameDetail"></span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">銀行帳號：</div>
+                            <div class="col_inline">
+                                <span name="BankAccountDetail"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_1">
+                        <input type="submit" onclick="document.getElementById('popup_WithdrawIncome').style.display='none'" value="關閉" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_錢包提款-->
+    <div id="popup_WalletWithdraw" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_WalletWithdraw').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>錢包提款</span>
+                </div>
+                <div class="popup_in wallet_detail2">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">建立日期：</div>
+                            <div class="col_inline">2021-10-11 02:39:18</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">款項狀態：</div>
+                            <div class="col_inline">
+                                <!-- 狀態二選一 -->
+                                <div>已轉入</div>
+                                <div style="display: none;">處理中</div>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">單據編號：</div>
+                            <div class="col_inline">229396679</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">完成時間：</div>
+                            <div class="col_inline">2021-10-14 14:40:08</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">已撥款至：</div>
+                            <div class="col_inline">
+                                <div>中國信託商業銀行</div>
+                                <div>123456789012</div>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">提款金額：</div>
+                            <div class="col_inline">
+                                <span class="text_red">200</span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">錢包餘額：</div>
+                            <div class="col_inline">
+                                <span class="text_red">800</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_1">
+                        <input type="submit" onclick="document.getElementById('popup_WalletWithdraw').style.display='none'" value="關閉" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_訂單退款-->
+    <div id="popup_WalletRefund" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_WalletRefund').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>訂單退款</span>
+                </div>
+                <div class="popup_in wallet_detail1">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">建立日期：</div>
+                            <div class="col_inline">2021-10-11 02:39:18</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">款項狀態：</div>
+                            <div class="col_inline">
+                                <!-- 狀態二選一 -->
+                                <div>已轉入</div>
+                                <div style="display: none;">處理中</div>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">退款金額：</div>
+                            <div class="col_inline">
+                                <span class="text_red">300</span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">錢包餘額：</div>
+                            <div class="col_inline">
+                                <span class="text_red">1,000</span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">訂單編號：</div>
+                            <div class="col_inline">
+                                <span>124243252460</span>
+                                <input type="button" value="詳細訂單" onclick="window.open('order_info_buy.html','_self');" class="btn_small btn_yellow">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_1">
+                        <input type="submit" onclick="document.getElementById('popup_WalletRefund').style.display='none'" value="關閉" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_錢包支付-->
+    <div id="popup_WalletPay" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_WalletPay').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>錢包支付</span>
+                </div>
+                <div class="popup_in wallet_detail3">
+                    <div class="scroll_box">
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">建立日期：</div>
+                            <div class="col_inline">2021-10-11 02:39:18</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">款項狀態：</div>
+                            <div class="col_inline">
+                                <!-- 狀態二選一 -->
+                                <div>已扣除</div>
+                                <div style="display: none;">處理中</div>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">支付對象：</div>
+                            <div class="col_inline">快易購</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">交易編號：</div>
+                            <div class="col_inline">229396679</div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">扣款金額：</div>
+                            <div class="col_inline">
+                                <span class="text_red">500</span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset">
+                            <div class="col_inline text30">錢包餘額：</div>
+                            <div class="col_inline">
+                                <span class="text_red">1,000</span>
+                            </div>
+                        </div>
+                        <div class="col_1 listset spacing_down20">
+                            <div class="col_inline text30">訂單編號：</div>
+                            <div class="col_inline">
+                                <span>124243252460</span>
+                                <input type="button" value="詳細訂單" onclick="window.open('order_info_buy.html','_self');" class="btn_small btn_yellow">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_1">
+                        <input type="submit" onclick="document.getElementById('popup_WalletPay').style.display='none'" value="關閉" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

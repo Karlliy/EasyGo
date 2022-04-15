@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, 
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, 
+summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: normal;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+/* for IE8 */
+@media \0screen {
+	img {
+        width: auto;
+    }
+}
+a {
+    display: block;
+    color: #188787;
+    /* text-decoration: none; */
+    cursor: pointer;
+}
+a:hover, a:active, a:focus {
+    color: #9c4b45;
+    text-decoration: underline;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input, select, textarea {
+    font-family: Arial, "Microsoft JhengHei", "PMingLiU", Georgia, "Times New Roman", Times, serif;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    height: 100%;
+    line-height: 1;
+    font-family: Arial, "Microsoft JhengHei", "PMingLiU", Georgia, "Times New Roman", Times, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #eae7e1;
+}
+input[type="button"], input[type="submit"] {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, "Microsoft JhengHei";
+    border: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all ease-in .15s;
+    -moz-transition: all ease-in .15s;
+    -o-transition: all ease-in .15s;
+    transition: all ease-in .15s;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*Input 的 Placeholder 設定*/
+::placeholder { /* CSS 3 標準 */
+    color: #aaa;
+}
+::-webkit-input-placeholder { /* Chrome, Safari */
+    color: #aaa;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #aaa;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #aaa;
+    opacity: 1;
+}
+/*Input 的"禁止"設定*/
+input[type="text"]:disabled, input[type="password"]:disabled, 
+input[type="data"]:disabled, input[type="time"]:disabled, 
+input[type="email"]:disabled, select:disabled, textarea:disabled {
+    color: #bf9999;
+    background-color: #e6e6e6;
+    cursor: default;
+}
+/*回到頂端按鈕*/
+.btn_go_top {
+    display: none;
+    position: fixed;
+    right: 2%;
+    bottom: 6%;
+    width: 39px;
+    height: 38px;
+    background: url(../images/index_icon/go_top.png) no-repeat;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 1000;
+}
+/*JS日曆*/
+/* .tcalInput {
+	background: url(../images/calendar/cal.gif) 100% 50% no-repeat;
+	padding-right: 20px;
+	cursor: pointer;
+}
+.tcalActive {
+	background-image: url(../images/calendar/no_cal.gif);
+} */
+/* container of calendar's pop-up */
+#tcal {
+	position: absolute;
+	visibility: hidden;
+    width: 175px;
+    margin-top: 2px;
+    padding: 0 2px 2px 2px;
+    background-color: #fff;
+    border: 1px solid #b7b7b7;
+    -moz-box-shadow: 1px solid #b7b7b7;
+    -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, .5);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, .5);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='rgba(0, 0, 0, .5)')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='rgba(0, 0, 0, .5)');
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    z-index: 35;
+}
+/* table containing navigation and current month */
+#tcalControls {
+	border: 0;
+}
+#tcalControls td {
+	width: 16px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#tcalControls th {
+	line-height: 27px;
+	font-size: 14px;
+	text-align: center;
+	font-family: Arial, Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+}
+#tcalPrevYear {
+    background-image: url(../images/calendar/prev_year.gif);
+}
+#tcalPrevMonth {
+    background-image: url(../images/calendar/prev_mon.gif);
+}
+#tcalNextMonth {
+    background-image: url(../images/calendar/next_mon.gif);
+}
+#tcalNextYear {
+    background-image: url(../images/calendar/next_year.gif);
+}
+/* table containing week days header and calendar grid */
+#tcalGrid {
+	border: 1px solid #ddd;
+}
+#tcalGrid th {
+    padding: 3px 0;
+    text-align: center;
+    font-family: Arial, Tahoma, Geneva, sans-serif;
+    color: #fff;
+    font-size: 13px;
+    background-color: #05659e;
+    border: 1px solid #05659e;
+}
+#tcalGrid td {
+	width: 14%;
+	font-size: 13px;
+	padding: 2px 0;
+	text-align: center;
+	font-family: Arial, Tahoma, Geneva, sans-serif;
+	cursor: pointer;
+}
+#tcalGrid td.tcalOtherMonth {
+    color: silver;
+}
+#tcalGrid td.tcalWeekend {
+    background-color: #bfe4ff;
+}
+#tcalGrid td.tcalToday {
+    border: 1px solid #f00;
+}
+#tcalGrid td.tcalSelected {
+    background-color: #ffced5;
+}

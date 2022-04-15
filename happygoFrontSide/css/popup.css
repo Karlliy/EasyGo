@@ -1,0 +1,697 @@
+/***********共用文字顏色***********/
+.popup .text_right {
+    text-align: right;
+}
+.popup .text_left {
+    text-align: left;
+}
+.popup .text_center {
+    text-align: center;
+}
+/***********跳框***********/
+.popup_windows {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    overflow: auto;
+    z-index: 999;
+}
+.popup_container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,-30%);
+}
+.popup {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background-color: #fff;
+}
+.btn_close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon/fa-times.png) center center no-repeat #fff;
+    background-size: 50% auto;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+    transition: transform .4s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: .8;
+    cursor: pointer;
+}
+.btn_close:hover, .btn_close:active, .btn_close:focus {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+/* 輸入框(無標題+有圖示) */
+.popup_in .input50, .popup_in .input100 {
+    width: calc(100% - 55px);
+    padding: 10px 15px 10px 40px;
+    margin-bottom: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+/*跳框_標題*/
+.popup_title {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    background-color: #a2eadf;
+}
+.popup_title span {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.popup_title span.fa {
+    width: 27px;
+    height: 30px;
+    margin: 0 8px 0 0;
+}
+.popup_title img {
+    width: 86px;
+}
+/*跳框內容*/
+.popup_in {
+    padding: 25px;
+    margin: 0 auto;
+    color: #666;
+    text-align: left;
+}
+.scroll_box {
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.popup_in .listset {
+    position: relative;
+    font: normal normal 1.15em/1.2em Arial, "Microsoft JhengHei";
+}
+.listset.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e4f9b;
+}
+.tips_text {
+    padding: 0 0 0 20px;
+    list-style: decimal;
+    box-sizing: border-box;
+}
+.tips_text > li {
+    padding-bottom: 5px;
+}
+.list_txt {
+    padding: 10px 0 0 30px;
+    line-height: 1.5;
+    list-style: initial;
+}
+.listset .cell1, .listset .cell2,
+.listset .cell3, .listset .cell4 {
+    display: inline-block;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.listset .cell1 {
+    width: 25%;
+    margin: 2px 0 0 0;
+    font-weight: bold;
+}
+.listset .cell2 {
+    width: 63%;
+}
+.listset .cell3 {
+    width: 99%;
+    margin: 0 0 3px 0;
+}
+/* 複製按鈕新增cell4---中間的文字範圍 */
+.listset .cell4 {
+    width: 53%;
+}
+.copy_btn {
+    display: inline-block;
+}
+.copy_btn .btn_small {
+    width: 70px;
+    font-size: 1em;
+    vertical-align: middle;
+}
+.popup_in .input,
+.popup_in .select,
+.popup_in .list_text,
+.popup_in .tips_text {
+    padding: 10px 0 10px 10px;
+}
+.popup_in .tips {
+    color: #d20000;
+    font: normal normal 1.14em/1.2em Arial, "Microsoft JhengHei";
+}
+.popup_in .tips_text {
+    padding: 0 0 0 30px;
+    font: normal normal 1.14em/1.2em Arial, "Microsoft JhengHei";
+    list-style: decimal;
+    background: none;
+    border: 0;
+}
+.popup_in .tips_text li {
+    line-height: 22px;
+    margin: 6px 0;
+    word-break: break-all;
+}
+.popup_in .fa {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=45)";
+    filter: alpha(opacity=45);
+    opacity: .45;
+}
+.popup_in .input, .popup_in .select {
+    width: 99%;
+    font-size: 16px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+.pd_top15, .input.pd_top15 {
+    padding-top: 15px;
+}
+.popup_in .select {
+    background: url(../images/menu_arrow_down.png) 96% center no-repeat #fff;
+    background-size: 15px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
+    cursor: pointer;
+}
+.col_2 .chktext.fg_pw {
+    width: 98%;
+    color: #d20000;
+    text-align: right;
+}
+.col_2 .chktext.fg_pw:hover {
+    color: #940000;
+    text-decoration: underline;
+}
+.col_text.disable {
+    padding: 10px 10px 10px 20px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+/* 跳框-免費註冊 */
+.go_reg {
+    margin: 10px auto 0;
+    text-align: center;
+}
+.go_reg .free {
+    margin: 0 0 0 5px;
+    color: #2196f3;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.go_reg .free:hover {
+    color: #0060ad;
+}
+/* 下方間隔 - 可用在最後一個區塊 */
+.popup_in .spacing_down10 {
+    padding-bottom: 10px;
+}
+.popup_in .spacing_down20 {
+    padding-bottom: 20px;
+}
+.popup_in .spacing_down35 {
+    padding-bottom: 35px;
+}
+/********** 頁籤 ************/
+/* 隱藏選取的原點radio */
+.login_radio,
+.register_radio {
+    display: none;
+}
+.popup_in.page_box {
+    text-align: center;
+}
+/* 頁籤分頁標題 */
+.page_box .login_label,
+.page_box .register_label {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    padding: 5px 10px;
+    margin: 0 15px 15px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid #e7e7e7;
+    cursor: pointer;
+}
+.popup_in .btn_login, .popup_in .btn_register {
+    display: inline-block;
+    width: 15%;
+    padding: 5px 10px;
+    margin: 0 15px 15px 15px;
+    color: #555;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 3px solid #e7e7e7;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.popup_in .btn_login.active,
+.popup_in .btn_login:hover,
+.popup_in .btn_login:active,
+.popup_in .btn_login:focus,
+.popup_in .btn_register.active,
+.popup_in .btn_register:hover,
+.popup_in .btn_register:active,
+.popup_in .btn_register:focus {
+    color: #009e95;
+    border-bottom: 3px solid #45d5c0;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+}
+/* 隱藏內容 */
+.page_info {
+    display: none;
+}
+/* 頁籤標題-滑鼠效果 */
+.page_box .login_label.active,
+.page_box .login_label:hover,
+.page_box .login_label:active,
+.page_box .login_label:focus,
+.page_box .register_label.active,
+.page_box .register_label:hover,
+.page_box .register_label:active,
+.page_box .register_label:focus {
+    color: #009e95;
+    border-bottom: 3px solid #45d5c0;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+}
+/* 點選後秀出隱藏的內容(父層勿刪) */
+#login_tab1:checked ~ .page_content .login_info1,
+#login_tab2:checked ~ .page_content .login_info2,
+#register_tab1:checked ~ .page_content .login_info1,
+#register_tab2:checked ~ .page_content .login_info2,
+#forgotpw_tab1:checked ~ .page_content .forgotpw_info1,
+#forgotpw_tab2:checked ~ .page_content .forgotpw_info2,
+#forgotpw_tab3:checked ~ .page_content .forgotpw_info3 {
+    display: block;
+}
+/* 點選後秀出頁籤標題綠色底線 */
+#login_tab1:checked ~ .login_la1,
+#login_tab2:checked ~ .login_la2,
+#register_tab1:checked ~ .register_la1,
+#register_tab2:checked ~ .register_la2 {
+    color: #009e95;
+    border-bottom: 3px solid #45d5c0;
+    transition: .3s;
+}
+/* 提示圖(綠色勾和紅色x)的父層定位 */
+.col_position {
+    position: relative;
+}
+/* 有圖示的input間隔設定 */
+.col_position .input {
+    padding: 10px 40px;
+    font-size: 17px;
+}
+.mark_box .mark_pic,
+.mark_box .pic_ok {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icon/fa-check2.png) center center no-repeat;
+    background-size: 100%;
+}
+.mark_box .pic_ok {
+    background: url(../images/icon/fa-check.png) center center no-repeat;
+    background-size: 100%;
+}
+.pop_checkbox {
+    font-size: 15px;
+    text-align: left;
+    padding-bottom: 10px;
+}
+.pop_checkbox a:hover,
+.pop_checkbox a:active,
+.pop_checkbox a:focus {
+    color: #b93131;
+}
+.pop_checkbox .check_label {
+    cursor: pointer;
+}
+.check_label span a,
+.listset a {
+    display: inline-block;
+    vertical-align: middle;
+}
+.check_label span {
+    display: inline-block;
+    /* width: 90%; */
+    line-height: 18px;
+    text-align: left;
+    word-break: break-all;
+    vertical-align: top;
+}
+/* 忘記密碼 */
+.forgotpw_radio,
+.forgotpw_label {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.forgotpw_radio {
+    width: 20px;
+}
+/* .forgotpw_label {
+    width: 30%;
+} */
+.forgotpw_content {
+    text-align: center;
+    margin-top: 20px;
+}
+/* input沒有圖示的間隔設定 */
+.forgotpw_content .col_position .input {
+    padding: 10px 20px;
+}
+.text30 {
+    width: 30%;
+}
+.text60 {
+    width: 60%;
+}
+/* 跳框-最新消息 */
+.popup_news {
+    max-width: 700px;
+}
+.popup .newstab_in {
+    width: 92%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.newstab_content {
+    height: 350px;
+    color: #444;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* 跳框-最新消息(手風琴下拉選單) */
+.dissbox {
+    width: 100%;
+    margin: 0 auto;
+}
+.dissbox .diss_qa {
+    margin: 0 auto 5px;
+}
+.diss_main {
+    padding: 5px 10px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px dotted #bbb;
+    cursor: pointer;
+}
+.diss_list {
+    display: inline-block;
+    width: 99%;
+    line-height: 23px;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+}
+.diss_main .title {
+    display: inline-block;
+    width: 78%;
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.diss_main .date {
+    float: right;
+    margin-right: 20px;
+    color: #009688;
+    vertical-align: middle;
+}
+.diss_list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.diss_main:after, .diss_main.open:after {
+    content: "";
+    position: relative;
+    top: 17px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-style: solid;
+    border-width: 10px 6px 0 6px;
+    border-color: #aaa transparent transparent transparent;
+    _border-color: #aaa #000 #000 #000;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#aaa');
+    -webkit-transition: .3s ease-in;
+    -moz-transition: .3s ease-in;
+    -o-transition: .3s ease-in;
+    -ms-transition: .3s ease-in;
+    transition: .3s ease-in;
+}
+.diss_main.open:after {
+    top: -12px;
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #aaa transparent;
+    _border-color: #000 #000 #aaa #000;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#aaa');
+}
+.diss_subs {
+    display: none;
+}
+.diss_subs li {
+    display: block;
+    line-height: 24px;
+    padding: 20px;
+    color: #333;
+    font-size: 1em;
+    text-align: left;
+    background: #efefef;
+}
+/* 跳框-最新消息頁碼 */
+.news_pag_wrap .page_jump {
+    width: 27%;
+}
+/* 跳框-申訴內容 */
+.complain_in .input50,
+.complain_in .input100 {
+    padding: 10px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+/* 我的錢包 */
+.wallet_detail1 .col_1,
+.wallet_detail2 .col_1,
+.wallet_detail3 .col_1 {
+    margin: 0 0 5px 0;
+}
+.wallet_detail1 .col_inline,
+.wallet_detail2 .col_inline,
+.wallet_detail3 .col_inline {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+.wallet_detail1 .col_inline span,
+.wallet_detail1 .col_inline .btn_small
+.wallet_detail2 .col_inline span,
+.wallet_detail2 .col_inline .btn_small,
+.wallet_detail3 .col_inline span,
+.wallet_detail3 .col_inline .btn_small {
+    display: inline-block;
+    vertical-align: middle;
+}
+.wallet_detail1 .text30,
+.wallet_detail2 .text30,
+.wallet_detail3 .text30 {
+    width: 100px;
+}
+
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 901px (電腦)*/
+@media screen and (min-width: 901px) {
+    /*跳框*/
+    .col_1 {
+        margin: 0 0 5px 0;
+    }
+}
+
+/* 寬度小於 900px (平板+手機)*/
+@media screen and (max-width: 900px) {
+}
+
+/* 寬度介於 751px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 900px) {
+    /*跳框*/
+    .scroll_box, .newstab_content {
+        max-height: 200px;
+    }
+}
+
+/* 寬度介於 671px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 750px) {
+    /*跳框*/
+    .scroll_box, .newstab_content {
+        max-height: 200px;
+    }
+}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /*跳框*/
+    .scroll_box, .newstab_content {
+        max-height: 160px;
+    }
+    /*最新消息*/
+    .diss_main .title {
+        width: 64%;
+    }
+}
+
+/* 寬度介於 401px - 550px (iPhone 6+) */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    /*跳框*/
+    .scroll_box, .newstab_content {
+        max-height: 300px;
+    }
+    /*最新消息*/
+    .diss_main .title {
+        width: 70%;
+    }
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /*跳框*/
+    .popup_in {
+        padding: 20px;
+    }
+    /* 忘記密碼 */
+    .forgotpw_radio {
+        margin: 0 0 10px 0;
+    }
+    .forgotpw_label {
+        margin: 0 15% 10px 0;
+    }
+    /*最新消息*/
+    .popup .newstab_in {
+        width: 88%;
+    }
+    .dissbox {
+        width: 97%;
+    }
+    .diss_main .title {
+        width: 64%;
+    }
+    .diss_subs li {
+        padding: 10px;
+    }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /*跳框*/
+    .popup_in {
+        padding: 15px;
+    }
+    /* 頁籤分頁標題 */
+    .page_box .login_label,
+    .page_box .register_label {
+        width: 25%;
+        padding: 5px 10px;
+        margin: 0 0 15px 0;
+    }
+    /* 忘記密碼 */
+    .forgotpw_radio {
+        margin: 0 0 10px 0;
+    }
+    .forgotpw_label {
+        margin: 0 15% 10px 0;
+    }
+    /*最新消息*/
+    .popup .newstab_in {
+        width: 90%;
+    }
+    .newstab_content {
+        height: 320px;
+    }
+    .dissbox {
+        width: 97%;
+    }
+    .diss_main .title {
+        width: 91%;
+    }
+    .diss_subs li {
+        padding: 10px;
+    }
+}

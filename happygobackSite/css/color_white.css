@@ -1,0 +1,544 @@
+/***********style改版色***********/
+body {
+    background-color: #ddd;
+}
+/*登入頁*/
+.index_logo div {
+    color: #ffe500;
+    text-shadow: 3px 3px 5px #000, -2px -2px 2px #000, 1px 1px 2px #000, -1px -1px 5px #000, 3px 3px 5px #000;
+}
+.login_page {
+    background: url(../images/index_icon/login_bg.jpg) top center #34b2be no-repeat;
+    background-size: cover;
+}
+/* .index_logo {
+    background: url(../images/index_icon/index_logo.png) no-repeat;
+    background-size: 100% auto;
+} */
+/*.header_logo {
+    background: url(../images/index_icon/index_logo.png) no-repeat;
+    background-size: 100% auto;
+}*/
+.navbar_bg, .slider_content, .navbar_iconset {
+    background: #fff;
+}
+.sidebar_set .bg_black {
+    background-color: #000;
+}
+.loginbox .btn_login {
+    color: #007b7b;
+    background: #bfd9d9;
+}
+.loginbox .btn_login:hover, 
+.loginbox .btn_login:focus, 
+.loginbox .btn_login:active {
+    color: #fff;
+    background: #69b9b9;
+}
+/*頁首*/
+.header_title span, .top_iconset .text, 
+.navbar_toggle, .navbar_iconset .text, .menu_btn, 
+.label_count, .navbar_text {
+    color: #555;
+}
+.submenu {
+    background: #73b5b5;
+    border-left: 0;
+}
+.submenu a {
+    color: #fff;
+}
+.submenu a:hover, .submenu a:focus, .submenu a:active {
+    color: #ffd600;
+    background:#5c9898;
+}
+.inside .link {
+    color: #444;
+}
+.inside .link:hover, .inside .link:focus, .inside .link:active {
+    color: #00c0c0;
+}
+.menu_btn::before, .menu_btn::after {
+    border-top: 3px solid #aaa;
+}
+.menu_btn::after {
+    border-bottom: 3px solid #aaa;
+}
+/*頁首_上層跑馬燈*/
+.top_iconset .running, .navbar_iconset .running {
+    color: #333;
+    background: #e6e6e6;
+}
+/*登出*/
+.navbar_text:hover, .navbar_text:focus, .navbar_text:active {
+    color: #FF9800;
+}
+/*下拉MENU_箭頭(需索引字型)*/
+.inside .icon_arrow {
+    border: 6px solid;
+    border-color: #555 transparent transparent transparent;
+}
+.inside .open .icon_arrow {
+    color: #ffd600;
+}
+/*手機版_隱藏的下拉選單列+側邊選單按鈕*/
+/*.menu_btn:hover, .menu_btn:focus {
+    color: #ffd600;
+    border: 2px solid #ffd600;
+}*/
+/*首頁_左側欄(會員資訊)*/
+.member_info {
+    background: url(../images/index_icon/admin_bg.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.member_id {
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+/*未讀訊息*/
+.label_count {
+    background-color: #f00;
+}
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 901px (iPad, iPad pro)*/
+@media screen and (min-width: 901px) {
+    /*左側選單*/
+    /* .slider_content {
+        border-right: 5px solid #73b5b5;
+        border-left: 5px solid #73b5b5;
+    } */
+}
+/***********共用文字顏色***********/
+.text_yellow, .col_text.text_yellow, .fixed_table td.text_yellow {
+    color: #ffeb00;
+}
+.text_red, .col_text.text_red, .fixed_table td.text_text_red {
+    color: #bf0000;
+}
+.text_green, .col_text.text_green, .fixed_table td.text_green {
+    color: #00980c;
+}
+.text_blue, .col_text.text_blue, .fixed_table td.text_blue {
+    color: #000fff;
+}
+.text_lightblue, .col_text.text_lightblue, .fixed_table td.text_lightblue {
+    color: #0092e6;
+}
+.text_orange, .col_text.text_orange, .fixed_table td.text_orange {
+    color: #ff8000;
+}
+.text_pink, .col_text.text_pink, .fixed_table td.text_pink {
+    color: #f0f;
+}
+.text_gray, .col_text.text_gray, .fixed_table td.text_gray {
+    color: #555;
+}
+/***********改顏色***********/
+input[type="text"]:disabled, input[type="password"]:disabled, 
+input[type="email"]:disabled, select:disabled, textarea:disabled {
+    color: #bf9999;
+    background-color: #e6e6e6;
+    cursor: default !important;
+}
+/*項目標題*/
+.boxset {
+    background: #f5f5f5 !important;
+}
+.box_title {
+    color: #666;
+    background: #fff;
+    border-left: 10px solid #73b5b5;
+    border-bottom: 1px solid #ccc;
+}
+.box_pink {
+    border-left: 10px solid #ffafca;
+}
+.box_yellow {
+    border-left: 10px solid #ffd679;
+}
+.box_green {
+    border-left: 10px solid #7dd4b8;
+}
+.box_blue {
+    border-left: 10px solid #87c8ff;
+}
+.box_gray {
+    border-left: 10px solid #999;
+}
+/*表格*/
+.content_r .box_inside {
+    color: #777;
+}
+.col_text, .col_text50 {
+    color: #444;
+    background: #e8e8e8;
+    border: 1px solid #d6d6d6;
+    /* color: #008eb9;
+    background: #e4ecec; */
+}
+input.no_width, select.no_width, 
+.input50, .select50, .textarea50, 
+.input100, .select100, .textarea100, 
+.col_date, .col_date50, 
+.tb_input100, .tb_input50, 
+.fixed_table input[type="text"], 
+.fixed_table input[type="password"], 
+.fixed_table input[type="email"], 
+.fixed_table select, .fixed_table textarea {
+    color: #555;
+    border: 1px solid #d6d6d6;
+}
+input.no_width, select.no_width, 
+.input50, .select50, .textarea50, 
+.input100, .select100, .textarea100,
+.col_date, .col_date50, 
+.tb_input100, .tb_input50 {
+    background-color: #fff;
+}
+.fixed_table input[type="text"], 
+.fixed_table input[type="password"], 
+.fixed_table input[type="email"], 
+.fixed_table select, .fixed_table textarea {
+    background: #fff;
+}
+select.select100, select.select50 {
+    background: url(../images/index_icon/menu_arrow_down.png) 97% center no-repeat #fff;
+}
+select.no_width, .popup_select {
+    background: url(../images/index_icon/menu_arrow_down.png) 97% center no-repeat #fff;
+}
+.fixed_table select {
+    background: url(../images/index_icon/menu_arrow_down.png) 97% center no-repeat #fff;
+}
+/* .col_date, .col_date50 {
+    background: url(../images/index_icon/icon_date.png) 96% center no-repeat #fff;
+    background-size: auto 68%;
+} */
+/*首列凍結功能*/
+.fixed_table {
+    color: #555;
+    background: #fff;
+}
+table caption, .tb_caption {
+    color: #957043;
+}
+.fixed_table th {
+    color: #fff;
+    background: #666;
+}
+.fixed_table td {
+    border-bottom: 1px solid #ccc;
+}
+.fixed_table thead tr:nth-of-type(odd) {
+    background: #666;
+}
+.fixed_table thead tr:nth-of-type(even) {
+    background: #888;
+}
+.fixed_table thead th:nth-of-type(2n) {
+    background: #797979;
+}
+.fixed_table tbody tr:nth-of-type(2n+1) {
+    background: #f8f9e8;
+}
+.fixed_table tbody tr:hover, 
+.fixed_table tbody tr:active, 
+.fixed_table tbody tr:focus, 
+.fixed_table tbody tr:nth-of-type(2n+1):hover {
+    background: #f7ebef;
+}
+.fixed_table tfoot tr {
+    background: #c8dfe4;
+}
+/* .fixed_table tfoot td {
+    color: #f00;
+} */
+/*小按鈕*/
+.btn_small {
+    color: #28655f;
+    background: #afdcd6;
+}
+.btn_small:hover, .btn_small:active, .btn_small:focus {
+    color: #fff;
+    background: #53a59e;
+}
+.btn_back, .btn_small.btn_yellow, 
+.btn_big.btn_yellow, 
+.popup_btn .btn_left, 
+.popup_btn .btn_center {
+    color: #655c19;
+    background: #deddb7;
+}
+.btn_back:hover, .btn_back:active, .btn_back:focus, 
+.btn_small.btn_yellow:hover, 
+.btn_small.btn_yellow:active, 
+.btn_small.btn_yellow:focus, 
+.btn_big.btn_yellow:hover, 
+.btn_big.btn_yellow:active, 
+.btn_big.btn_yellow:focus, 
+.popup_btn .btn_left:hover, 
+.popup_btn .btn_left:active, 
+.popup_btn .btn_left:focus, 
+.popup_btn .btn_center:hover, 
+.popup_btn .btn_center:active, 
+.popup_btn .btn_center:focus {
+    color: #fff;
+    background: #b9b897;
+}
+/*大按鈕*/
+.btn_big, .popup_btn .btn_right {
+    color: #007b7b;
+    background: #bfd9d9;
+}
+.btn_big:hover, .btn_big:active, .btn_big:focus, 
+.popup_btn .btn_right:hover, 
+.popup_btn .btn_right:active, 
+.popup_btn .btn_right:focus {
+    color: #fff;
+    background: #69b9b9;
+}
+/*表格內按鈕*/
+.text_overflow {
+    color: #188787;
+}
+.tb_btn, .tb_btn_l {
+    color: #675600;
+    background: #e2dcb8;
+}
+.tb_btn.btn_red, .tb_btn_l.btn_red, 
+.btn_small.btn_red, .btn_big.btn_red {
+    color: #962f1c;
+    background: #eacca7;
+}
+.tb_btn.btn_blue, .tb_btn_l.btn_blue, 
+.btn_small.btn_blue, .btn_big.btn_blue {
+    color: #3c5882;
+    background: #b8dae2;
+}
+.tb_btn.btn_gray, .tb_btn_l.btn_gray, 
+.btn_small.btn_gray, .btn_big.btn_gray,
+.btn_left.btn_gray, .btn_right.btn_gray,
+.btn_center.btn_gray {
+    color: #4a4a4a;
+    background: #d6d6d6;
+}
+.tb_btn:hover, .tb_btn:active, .tb_btn:focus, 
+.tb_btn_l:hover, .tb_btn_l:active, .tb_btn_l:focus {
+    background: #ffd600;
+}
+.tb_btn.btn_red:hover, .tb_btn.btn_red:active, .tb_btn.btn_red:focus, 
+.tb_btn_l.btn_red:hover, .tb_btn_l.btn_red:active, .tb_btn_l.btn_red:focus, 
+.btn_small.btn_red:hover, .btn_small.btn_red:active, .btn_small.btn_red:focus, 
+.btn_big.btn_red:hover, .btn_big.btn_red:active, .btn_big.btn_red:focus {
+    color: #fff;
+    background: #ffa93f;
+}
+.tb_btn.btn_blue:hover, .tb_btn.btn_blue:active, .tb_btn.btn_blue:focus, 
+.tb_btn_l.btn_blue:hover, .tb_btn_l.btn_blue:active, .tb_btn_l.btn_blue:focus, 
+.btn_small.btn_blue:hover, .btn_small.btn_blue:active, .btn_small.btn_blue:focus, 
+.btn_big.btn_blue:hover, .btn_big.btn_blue:active, .btn_big.btn_blue:focus {
+    color: #fff;
+    background: #34a6c0;
+}
+.tb_btn.btn_gray:hover, .tb_btn.btn_gray:active, .tb_btn.btn_gray:focus, 
+.tb_btn_l.btn_gray:hover, .tb_btn_l.btn_gray:active, .tb_btn_l.btn_gray:focus:focus, 
+.btn_small.btn_gray:hover, .btn_small.btn_gray:active, .btn_small.btn_gray:focus:focus, 
+.btn_big.btn_gray:hover, .btn_big.btn_gray:active, .btn_big.btn_gray:focus:focus, 
+.btn_left.btn_gray:hover, .btn_left.btn_gray:active, .btn_left.btn_gray:focus, 
+.btn_right.btn_gray:hover, .btn_right.btn_gray:active, .btn_right.btn_gray:focus, 
+.btn_center.btn_gray:hover, .btn_center.btn_gray:active, .btn_center.btn_gray:focus {
+    color: #fff;
+    background: #999;
+}
+/*頁碼*/
+.pagination li a {
+    color: #4d9696;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.pagination li a.active {
+    color: #fff;
+    background-color: #4d9696;
+}
+.pagination li.paginate_button active {
+    color: #fff;
+    background-color: #4d9696;
+}
+.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+/*管理權限*/
+.chkbox_title {
+    color: #fff;
+    background: #c3bfb0;
+    background: -moz-linear-gradient(right, #b7b3a2 0%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(right, #b7b3a2 0%, #f5f5f5 100%);
+    background: linear-gradient(to right, #b7b3a2 0%, #f5f5f5 100%);
+}
+.access dt {
+    color: #0068a5;
+}
+/*會員明細*/
+.bg_white {
+    background-color: #fff;
+}
+.detail_title {
+    color: #218989;
+    background: #d2e3e3;
+}
+/*跳框*/
+.popup .popup_in, .popup_in .popup_input, .popup_in .popup_select {
+    color: #555;
+}
+.popup .text_set {
+    color: #2e82c1;
+}
+.popup_in .popup_input, .popup_in .popup_select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+/***********page_content改色***********/
+/*輸贏金額、會員人數統計*/
+.infobox {
+    color: #fff;
+}
+.infobox:hover, .infobox:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.bg_pink {
+    background-color: #ec3473;
+}
+.bg_deepblue {
+    background-color: #008dde;
+}
+.bg_blue {
+    background-color: #00a4b9;
+}
+.bg_green {
+    background-color: #48a548;
+}
+.bg_yellow {
+    background-color: #bfb100;
+}
+.bg_orange {
+    background-color: #f18e27;
+}
+.bg_red {
+    background-color: #a54343;
+}
+.infobox .icon_bg {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.icon_money {
+    background: url(../images/index_icon/icon_money.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_deposit {
+    background: url(../images/index_icon/icon_deposit.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_consignment {
+    background: url(../images/index_icon/icon_consignment.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_group {
+    background: url(../images/index_icon/icon_group.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_points {
+    background: url(../images/index_icon/icon_points.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_leave {
+    background: url(../images/index_icon/icon_leave.png) no-repeat;
+    background-size: 100% auto;
+}
+.rightbar_content, .rightbar_content:hover, 
+.rightbar_content:focus, .rightbar_content:active {
+    color: #fff;
+}
+/*總金額收入*/
+.ratebox {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.ratebox .title_set {
+    border-left: 10px solid #008dde;
+    border-bottom: 1px solid #ccc;
+}
+.rate {
+    background: #fff;
+}
+.rate tr:nth-of-type(2n) {
+    background: #f1f1f1;
+}
+.rate td {
+    color: #777;
+}
+.content_set .rate tr:nth-of-type(2n+1) {
+    background: #fff;
+}
+/*總金額收入_長條棒*/
+.progress {
+    background-color: #999;
+}
+.progress_bar {
+    color: #fff;
+    background-color: #666;
+}
+.progress .bg_green {
+    color: #000;
+    background-color: #85d63c;
+}
+.progress .bg_deepgreen {
+    background-color: #16961f;
+}
+.progress .bg_blue {
+    background-color: #2196F3;
+}
+.progress .bg_lightblue {
+    color: #000;
+    background-color: #00d4ef;
+}
+.progress .bg_orange {
+    background-color: #ff8d00;
+}
+.progress .bg_red {
+    background-color: #f00;
+}
+.progress .bg_yellow {
+    color: #000;
+    background-color: #ffe000;
+}
+.progress .bg_pink {
+    background-color: #ff00c8;
+}
+.progress .bg_purple {
+    background-color: #8800ef;
+}
+.progress .bg_gray {
+    background-color: #000;
+}
+/*訂單明細表格*/
+table .bg_gray_red {
+    background-color: #956072;
+}
+table .bg_gray_green {
+    background-color: #4e7a59;
+}
+table .bg_gray_blue {
+    background-color: #4b7f8b;
+}
+/*總租賃會員數*/
+.agentbox {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.agentbox .title_set {
+    border-left: 10px solid #ffb100;
+    border-bottom: 1px solid #ccc;
+}
+.img_agent_circle {
+    background: url(../images/index_icon/agent_circle.png) no-repeat;
+    background-size: 100% auto;
+}

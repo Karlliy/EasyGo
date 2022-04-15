@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購-會員中心</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 會員中心 -->
+    <div class="wrap member_wrap">
+        <!-- 電腦版-左側邊攔 -->
+        <?php include("left.html");?>
+
+        <!-- 右邊主畫面 -->
+        <div class="index_main">
+            <!-- 交易資訊 -->
+            <div class="transaction_box">
+                <div onclick="window.open('Member/Wallet','_self');" class="item balance_item">
+                    <div class="txt">錢包餘額</div>
+                    <div class="number">$<span name="GamePoints"></span></div>
+                </div>
+                <div onclick="window.open('Member/Order_buy','_self');" class="item buy_item">
+                    <div class="list">
+                        <div class="s_item">
+                            <span name="OrderNumber"></span>
+                            <div>訂單</div>
+                        </div>
+                        <div class="s_item">
+                            <span name="Daifu"></span>
+                            <div>待付款</div>
+                        </div>
+                        <div class="s_item">
+                            <span name="Daishowho"></span>
+                            <div>待收貨</div>
+                        </div>
+                        <div class="s_item">
+                            <span name="Evaluate"></span>
+                            <div>待評價</div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="window.open('Member/Order_sell','_self');" class="item sell_item">
+                    <div class="list">
+                        <div class="s_item">
+                            <span name="ProductNumber"></span>
+                            <div>訂單</div>
+                        </div>
+                        <div class="s_item">
+                            <span name="Daishow"></span>
+                            <div>待收款</div>
+                        </div>
+                        <div class="s_item">
+                            <span name="Daichu"></span>
+                            <div>待移交</div>
+                        </div>
+                        <div class="s_item">
+                            <span name="ChiuHsiao"></span>
+                            <div>取消</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 評價資訊 -->
+            <div class="evaluate_box">
+                <!-- <div onclick="window.open('qa_sell.html','_self');" class="item ev_item1"> -->
+                <div class="item ev_item1"> 
+                    <div class="pic"></div>
+                    <div class="txt">
+                        <span>交易訊息</span>
+                        <div class="number"><span name="Information"></span></div>
+                    </div>
+                </div>
+                <div onclick="window.open('Order/MailMembers','_self');" class="item ev_item2">
+                    <div class="pic"></div>
+                    <div class="txt">
+                        <span>站內公告</span>
+                        <div class="number"><span name="Announcement"></span></div>
+                    </div>
+                </div>
+                <div onclick="window.open('Order/CommentBuy','_self');" class="item ev_item3">
+                    <div class="pic"></div>
+                    <div class="txt">
+                        <span>買家評價</span>
+                        <div class="number"><span name="BuyEvaluate"></span></div>
+                    </div>
+                </div>
+                <div onclick="window.open('Order/CommentSell','_self');" class="item ev_item4">
+                    <div class="pic"></div>
+                    <div class="txt">
+                        <span>賣家評價</span>
+                        <div class="number"><span name="SellEvaluate"></span></div>
+                    </div>
+                </div>
+                <div class="item ev_item5">
+                    <input type="button" onclick="window.open('Order/AddOrder','_self');" value="免費刊登販售" class="btn_big btn_blue">
+                </div>
+            </div>
+            <!-- 常用服務 -->
+            <div class="service_box">
+                <div class="main_title">
+                    <div class="pic">
+                        <img src="images/member/title.png" alt="">
+                    </div>
+                    <span>常用服務</span>
+                </div>
+                <div class="service_info">
+                    <a href="Member/Order_buy" class="item">
+                        <img src="images/member/service01.png" alt="">
+                        <div class="txt">購物訂單</div>
+                    </a>
+                    <a href="Member/Order_buy" class="item">
+                        <img src="images/member/service02.png" alt="">
+                        <div class="txt">待付款</div>
+                    </a>
+                    <a href="Member/Order_buy" class="item">
+                        <img src="images/member/service04.png" alt="">
+                        <div class="txt">待收貨</div>
+                    </a>
+                    <a href="Member/Wallet" class="item">
+                        <img src="images/member/service14.png" alt="">
+                        <div class="txt">我的錢包</div>
+                    </a>
+                    <a href="Order/CommentBuy" class="item">
+                        <img src="images/member/service05.png" alt="">
+                        <div class="txt">賣方評價</div>
+                    </a>
+                    <a href="Order/CommentSell" class="item">
+                        <img src="images/member/service06.png" alt="">
+                        <div class="txt">買方評價</div>
+                    </a>
+                    <a href="Order/MailMembers" class="item">
+                        <img src="images/member/service07.png" alt="">
+                        <div class="txt">站內公告</div>
+                    </a>
+                    <a href="Order/QABuy" class="item">
+                        <img src="images/member/service08.png" alt="">
+                        <div class="txt">交易訊息</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <!--浮動客服_滑出浮動視窗-->
+    <div id="popup_Service" class="on_chat">
+        <div class="chatbox">
+            <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+            <img src="images/index_logo.png" class="chat_logo">
+            <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+            <div class="chat_area">
+                <!--客服-->
+                <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+                <!--顧客-->
+                <div class="ask">沒，我只是來逛逛而已</div>
+                <!--顧客的清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+                <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+                <div class="ask">OK</div>
+            </div>
+            <div class="msgbox">
+                <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+                <input type="submit" value="傳送" class="btn_s btn_yellow">
+            </div>
+        </div>
+    </div>
+    <!--浮動客服(視窗右下角常駐按鈕)-->
+    <div class="btn_chat" onclick="ShowService()">
+        <img src="images/service.png" alt="客服">
+    </div>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

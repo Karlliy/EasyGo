@@ -1,0 +1,6703 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+body {
+    background: url(../images/bg-pic.jpg) top -10px left 0 repeat-x #d5d5d5;
+}
+/* 清除 float:right 浮動 */
+.clear {
+    clear: both;
+}
+/***********共用文字顏色***********/
+.text_blod {
+    font-weight: bold;
+}
+.text_normal {
+    font-weight: normal;
+}
+.text_yellow, .col_text.text_yellow {
+    color: #ffde00;
+}
+.text_orange, .col_text.text_orange {
+    color: #FF9800;
+}
+.text_deeporange, .col_text.text_deeporange {
+    color: #ff7000;
+}
+.text_red, .col_text.text_red {
+    color: #f00;
+}
+.text_deepred, .col_text.text_deepred {
+    color: #ba0000;
+}
+.text_blue, .col_text.text_blue {
+    color: #005aff;
+}
+.text_deepblue {
+    color: #003abb;
+}
+.text_green {
+    color:#00966c;
+}
+.text_grayred {
+    color: #b18585;
+}
+.text_lightpink {
+    color: #ff8062;
+}
+.text_pink, .col_text.text_pink {
+    color: #ff0080;
+}
+.text_gray {
+    color: #aaa;
+}
+.text_darkgray {
+    color: #666;
+}
+/***********共用文字樣式***********/
+.text_right {
+    text-align: right;
+}
+.text_left {
+    text-align: left;
+}
+.text_center {
+    text-align: center;
+}
+.float_r {
+    float: right;
+}
+.float_l {
+    float: left;
+}
+.no_float {
+    float: none;
+}
+.line {
+    border-bottom: 1px solid #ccc;
+}
+/***********共用樣式***********/
+.col_1 {
+    width: 99%;
+    margin: 0 0 10px 0;
+}
+.col_2, .col_3, .col_4, .col_5, .col_6,
+.col_7, .col_8, .col_9, .col_10 {
+    display: inline-block;
+    margin: 0 1% 5px 0;
+    vertical-align: top;
+}
+.col_1, .col_2, .col_3 {
+    margin: 0 1% 10px 0;
+    text-align: left;
+    vertical-align: middle;
+}
+.col_2 {
+    width: calc(100% / 2 - 1.8%);
+}
+.col_3 {
+    width: calc(100% / 3 - 1.6%);
+}
+.col_4 {
+    width: calc(100% / 4 - 1.5%);
+}
+.col_5 {
+    width: calc(100% / 5 - 1.45%);
+}
+.col_6 {
+    width: calc(100% / 6 - 1.43%);
+}
+.col_7 {
+    width: calc(100% / 7 - 1.4%);
+}
+.col_8 {
+    width: calc(100% / 8 - 1.35%);
+}
+.col_9 {
+    width: calc(100% / 9 - 1.33%);
+}
+.col_10 {
+    width: calc(100% / 10 - 1.3%);
+}
+.col50_left, .col50_right {
+    float: left;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.col50_right {
+    float: right;
+}
+.col50_left span, .col50_right span {
+    display: inline-block;
+}
+.col_1:after, .col_2:after, .col_3:after,
+.col_4:after, .col_5:after, .col_6:after,
+.col_7:after, .col_8:after, .col_9:after,
+.col_10:after, .popup_btn:after, .box_title:after,
+.pop_checkbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.input_title {
+    display: block;
+    line-height: 22px;
+    margin: 0 0 3px 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.text_disabled {
+    color: #b18585;
+    background-color: #e6e6e6;
+    cursor: default;
+}
+.col_text, .col_text50 {
+    display: inline-block;
+    width: calc(100% - 20px);
+    min-height: 20px;
+    padding: 10px;
+    line-height: 22px;
+    font-size: 18px;
+    text-align: justify;
+    word-break: break-word;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+.col_text50 {
+    width: 50%;
+}
+input.no_width, select.no_width,
+.input50, .select50, .textarea50,
+.input100, .select100, .textarea100,
+.col_date, .col_date50 {
+    font-size: 18px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+input.no_width, select.no_width,
+.col_date, .col_date50, .input50,
+.select50, .textarea50, .input100,
+.select100, .textarea100 {
+    color: #666;
+    background-color: #fff;
+    border: 1px solid #d6d6d6;
+}
+input[type="file"] {
+    padding: 5px 10px;
+    width: 65%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.col_date, .col_date50 {
+    display: inline-block;
+    width: 110px;
+    padding: 5px 12px 5px 8px;
+    background: url(../images/index_icon/icon_date.png) 96% center no-repeat #fff;
+    background-size: auto 68%;
+    cursor: pointer;
+}
+.col_time {
+    display: inline-block;
+    width: 110px;
+    padding: 5px 12px 5px 8px;
+    cursor: pointer;
+}
+.input50, .select50, .textarea50,
+.input100, .select100, .textarea100 {
+    display: block;
+    width: calc(100% - 32px);
+    padding: 10px 15px;
+    margin: 0 0 5px 0;
+}
+.input50, .select50, .textarea50 {
+    display: inline-block;
+    width: 38%;
+    vertical-align: top;
+}
+.dash {
+    display: inline-block;
+    padding: 10px 0;
+    vertical-align: top;
+}
+.textarea100 {
+    height: 100px;
+    line-height: 20px;
+    resize: none;
+}
+input.no_width {
+    display: inline-block;
+    width: 170px;
+    padding: 5px 10px;
+}
+.no_width.width_l {
+    width: 300px;
+}
+select.select100 {
+    width: 99%;
+}
+select.select50 {
+    width: 45%;
+}
+select.no_width {
+    display: inline-block;
+    line-height: 22px;
+    padding: 3px 35px 3px 10px;
+}
+.select100, .select50 {
+    background: url(../images/menu_arrow_down.png) 97% center no-repeat #fff;
+}
+.col_inline, .radio_inline, .loginbox .chktext,
+.radio_inline label, .radio_inline span,
+.col_1 div.title, .col_1 span.title,
+.col_1 .chktext, .col_2 .chktext,
+.col_3 .chktext, .col_4 .chktext,
+.col_5 .chktext, .col_6 .chktext,
+.col_7 .chktext, .col_8 .chktext,
+.col_9 .chktext, .col_10 .chktext {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.col_1 .chktext, .col_2 .chktext,
+.col_3 .chktext, .col_4 .chktext,
+.col_5 .chktext, .col_6 .chktext,
+.col_7 .chktext, .col_8 .chktext,
+.col_9 .chktext, .col_10 .chktext {
+    line-height: 22px;
+}
+.col_inline, .radio_inline {
+    margin: 0 10px 5px 0;
+}
+.check_set {
+    padding: 0 0 0 10px;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.ckbox_set {
+    display: inline-block;
+    min-width: 100px;
+    vertical-align: middle;
+}
+.check_box, .qa_radio input[type="radio"],
+.radio_inline input[type="radio"],
+.sk_fixed_table input[type="radio"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.ckbox_1 {
+    width: 100%;
+}
+.check_box {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+.chkbox_outside {
+    width: calc(100% - 42px);
+    line-height: 30px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border: 2px dotted #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.chkbox_outside.bg_pink {
+    background: #ffe2f7;
+}
+.chkbox_outside.bg_green {
+    background: #d9fff1;
+}
+.chkbox_inside, .detail_inside {
+    width: 100%;
+    height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.no_height {
+    height: auto;
+}
+/***********共用按鈕***********/
+input.btn_big, input.btn50, input.btn33 {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 0;
+    color: #555;
+    font: normal bold 1.2em/1.2em Arial, "Microsoft JhengHei";
+    border: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all ease-in .15s;
+    -moz-transition: all ease-in .15s;
+    -ms-transition: all ease-in .15s;
+    -o-transition: all ease-in .15s;
+    transition: all ease-in .15s;
+    outline: none;
+    cursor: pointer;
+}
+input.btn_big {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    letter-spacing: 1px;
+}
+input.btn50 {
+    width: 48%;
+}
+input.btn33 {
+    width: 32%;
+}
+.col_btn {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+.btn_small {
+    display: inline-block;
+    margin: 2px 5px 2px 0;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+input.btn_yellow {
+    background: #ffa200;
+}
+input.btn_yellow:hover,
+input.btn_yellow:active,
+input.btn_yellow:focus,
+input.btn_yellow.selected  {
+    background: #c37c00;
+    outline: none;
+}
+input.btn_blue {
+    background: #00a1ec;
+}
+input.btn_blue:hover,
+input.btn_blue:active,
+input.btn_blue:focus {
+    background: #007bb5;
+    outline: none;
+}
+input.btn_green {
+    background: #10aba2;
+}
+input.btn_green:hover,
+input.btn_green:active,
+input.btn_green:focus {
+    background: #11827b;
+    outline: none;
+}
+input.btn_pink {
+    background: #ff67a7;
+}
+input.btn_pink:hover,
+input.btn_pink:active,
+input.btn_pink:focus {
+    background: #ea3581;
+    outline: none;
+}
+input.btn_red {
+    background: #ef0000;
+}
+input.btn_red:hover,
+input.btn_red:active,
+input.btn_red:focus,
+input.btn_red.selected  {
+    background: #a50000;
+    outline: none;
+}
+input.btn_lightgray {
+    background: #ccc;
+}
+input.btn_lightgray:hover,
+input.btn_lightgray:active,
+input.btn_lightgray:focus {
+    background: #888;
+    outline: none;
+}
+input.btn_gray {
+    background: #999;
+}
+input.btn_gray:hover,
+input.btn_gray:active,
+input.btn_gray:focus {
+    background: #666;
+    outline: none;
+}
+input.btn_disabled {
+    background: #ccc;
+}
+input.btn_gradual {
+    padding: 10px 0;
+    background: #ff8e44;
+    background: -moz-linear-gradient(-45deg,  #ff8e44 0%, #ff0058 100%);
+    background: -webkit-linear-gradient(-45deg,  #ff8e44 0%,#ff0058 100%);
+    background: linear-gradient(135deg,  #ff8e44 0%,#ff0058 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8e44', endColorstr='#ff0058',GradientType=1 );
+}
+input.btn_gradual:hover,
+input.btn_gradual:active,
+input.btn_gradual:focus {
+    background: #ed6c10;
+    background: -moz-linear-gradient(-45deg,  #ed6c10 0%, #990007 100%);
+    background: -webkit-linear-gradient(-45deg,  #ed6c10 0%,#990007 100%);
+    background: linear-gradient(135deg,  #ed6c10 0%,#990007 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed6c10', endColorstr='#990007',GradientType=1 );
+    outline: none;
+}
+input[type="submit"], input[type="button"] {
+    color: #fff;
+}
+/* .btn_yellow:hover, .btn_yellow:active, .btn_yellow:focus,
+.btn_blue:hover, .btn_blue:active, .btn_blue:focus,
+.btn_green:hover, .btn_green:active, .btn_green:focus,
+.btn_pink:hover, .btn_pink:active, .btn_pink:focus,
+.btn_gray:hover, .btn_gray:active, .btn_gray:focus {
+    color: #ddd;
+}
+.btn_back, .btn_small.btn_yellow,
+.popup_btn .btn_left, .popup_btn .btn_center {
+    color: #655c19;
+    background: #deddb7;
+} */
+.btn_back:hover, .btn_back:active, .btn_back:focus,
+.btn_small.btn_yellow:hover, .btn_small.btn_yellow:active, .btn_small.btn_yellow:focus,
+.popup_btn .btn_left:hover, .popup_btn .btn_left:active, .popup_btn .btn_left:focus,
+.popup_btn .btn_center:hover, .popup_btn .btn_center:active, .popup_btn .btn_center:focus {
+    background: #c37c00;
+}
+/***********鏤空按鈕(白底+顏色框線)***********/
+/* 黃色鏤空 */
+input.btn_filigree {
+    background-color: #fff;
+}
+input.btn_filigree:hover,
+input.btn_filigree:active,
+input.btn_filigree:focus {
+    color: #fff;
+    outline: none;
+}
+input.flg_yellow {
+    color: #ea9500;
+    border: 2px solid #ffa200;
+}
+input.flg_yellow:hover,
+input.flg_yellow:active,
+input.flg_yellow:focus {
+    background: #de8d00;
+}
+/* 綠色鏤空 */
+input.flg_green {
+    color: #009e95;
+    border: 2px solid #009e95;
+}
+input.flg_green:hover,
+input.flg_green:active,
+input.flg_green:focus {
+    background: #008b83;
+}
+/* 藍色鏤空 */
+input.flg_blue {
+    color: #ea9500;
+    border: 2px solid #ffa200;
+}
+input.flg_blue:hover,
+input.flg_blue:active,
+input.flg_blue:focus {
+    background: #de8d00;
+}
+/* 紅色鏤空 */
+input.flg_red {
+    color: #ea9500;
+    border: 2px solid #ffa200;
+}
+input.flg_red:hover,
+input.flg_red:active,
+input.flg_red:focus {
+    background: #de8d00;
+}
+/* 管理權限 */
+.chkbox_title, .detail_title {
+    padding: 2px 5px;
+    margin: 2px 0;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.detail_title {
+    color: #218989;
+    font-size: 20px;
+    margin: 10px 0;
+    background: #d2e3e3;
+}
+/* 商品類型(文字帶框) */
+[class*='border_']{
+    padding: 1px 4px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.border_orange {
+    color: #ea5507;
+    border: 1px solid #ff9c00;
+}
+.border_blue {
+    color: #006fec;
+    border: 1px solid #006fec;
+}
+.border_green {
+    color: #0b9c00;
+    border: 1px solid #0b9c00;
+}
+.border_pink {
+    color: #ff00f0;
+    border: 1px solid #ff00f0;
+}
+.border_red {
+    color: #f00;
+    border: 1px solid #f00;
+}
+.border_purple {
+    color: #9d5dde;
+    border: 1px solid #9d5dde;
+}
+.border_lightgreen {
+    color: #00ad9f;
+    border: 1px solid #00ad9f;
+}
+.border_lightblue {
+    color: #00c0ff;
+    border: 1px solid #00c0ff;
+}
+.border_gray {
+    color: #888;
+    border: 1px solid #888;
+}
+.border_black {
+    color: #000;
+    border: 1px solid #000;
+}
+.sk_fixed_table .text_center,
+.popup_in .tips_text.text_center,
+.sc_tb .text_center,
+.shopcart_box .text_center,
+.sk_fixed_table .text_center {
+    text-align: center;
+}
+.sk_fixed_table .text_right,
+.popup_in .tips_text.text_right,
+.sc_tb .text_right,
+.shopcart_box .text_right,
+.sk_fixed_table .text_right {
+    text-align: right;
+}
+.sk_fixed_table .text_left,
+.popup_in .tips_text.text_left {
+    text-align: left;
+}
+/* 紅愛心 */
+.heart_red,
+.heart_white {
+    width: 21px;
+    height: 20px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    background: url(../images/member/heart1.png) center center no-repeat;
+    background-size: auto;
+    cursor: pointer;
+}
+/* 空愛心 */
+.heart_white {
+    background: url(../images/member/heart2.png) center center no-repeat;
+    background-size: auto;
+}
+/* 搜尋框 */
+.search_item {
+    display: inline-block;
+    position: relative;
+    width: 34%;
+    font-size: 0;
+    vertical-align: middle;
+}
+.search_item i {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    width: 20px;
+    height: 20px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: .3;
+}
+.search_item .se_input,
+.search_item .se_btn {
+    display: inline-block;
+}
+.search_item .se_input {
+    width: 54%;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 0 0 35px;
+    font-size: 18px;
+    color: #666;
+    background-color: #fff;
+    border: 2px solid #d5d5d5;
+    border-right: 0;
+    -webkit-border-radius: 50px 0 0 50px;
+    -moz-border-radius: 50px 0 0 50px;
+    -ms-border-radius: 50px 0 0 50px;
+    -o-border-radius: 50px 0 0 50px;
+    border-radius: 50px 0 0 50px;
+    vertical-align: middle;
+}
+.search_item .se_btn {
+    width: 30%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -ms-border-radius: 50px 50px 50px 50px;
+    -o-border-radius: 50px 50px 50px 50px;
+    border-radius: 50px 50px 50px 50px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*共用樣式*/
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+/* 共用標題 */
+.main_title {
+    padding: 10px 0 0 0;
+    color: #555;
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 2px solid #e7e7e7;
+}
+.main_title div,
+.main_title span {
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 共用陰影+圓角 */
+.slider_menu,
+.transaction_box,
+.balance_item,
+.buy_item, .sell_item,
+.orderlist_box,
+.evaluate_box,
+.service_box {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+/* 共用陰影 */
+.slider_menu,
+.transaction_box,
+.orderlist_box,
+.evaluate_box,
+.service_box {
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    -o-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+}
+/************* 表格首列凍結(純css) *************/
+/* 買家-訂單列表-所有訂單 */
+.sk_tbbox {
+    width: 100%;
+    height: 400px; /*要限制高度，首列固定為上功能才會出現*/
+    margin: 0 auto;
+    color: #666;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sk_fixed_table {
+    table-layout: fixed; /*首列永遠固定於上*/
+    min-width: 350px;
+    text-align: center;
+    background: #fff;
+}
+/*首列凍結*/
+.sticky {
+    position: -webkit-sticky; /* Chrome、Safari */
+    position: -moz-sticky; /* FireFox */
+    position: -ms-sticky; /* IE */
+    position: -o-sticky; /* Opera */
+    position: sticky;
+    top: -1px;
+}
+.sk_fixed_table th {
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    font-size: 15px;
+    font-weight: bold;
+    background: #d9fff1;
+    border-bottom: 1px solid #ccc;
+    vertical-align: middle;
+}
+.sk_fixed_table th:first-child {
+    z-index: 50;
+}
+.sk_fixed_table td {
+    line-height: 16px;
+    padding: 5px;
+    font-size: 15px;
+    vertical-align: top;
+}
+.sk_fixed_table tr {
+    border-bottom: 1px solid #ccc;
+}
+/* .sk_fixed_table tr:last-child {
+    border-bottom: 0;
+}
+.sk_fixed_table td:first-child {
+    border-left: 1px solid #ccc;
+} */
+.sk_fixed_table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+.sk_tbbox .sk_fixed_table tr:hover {
+    background: #fefff4;
+}
+.sk_fixed_table .cell_ss {
+    width: 3%;
+}
+.sk_fixed_table .cell_s {
+    width: 6%;
+}
+.sk_fixed_table .cell_m {
+    width: 12%;
+}
+.sk_fixed_table .cell_mm {
+    width: 14%;
+}
+.sk_fixed_table .cell_l {
+    width: 22%;
+}
+.sk_fixed_table .cell_xl {
+    width: 60%;
+}
+.sk_fixed_table ul {
+    padding: 0 10px 10px 10px;
+}
+.sk_fixed_table li {
+    line-height: 1.2;
+    padding-bottom: 4px;
+}
+.sk_fixed_table .title {
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+/* 按鈕 */
+.sk_fixed_table .btn_big {
+    padding: 5px 0;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+/* 刪除按鈕圖示 */
+.sk_fixed_table .del_skbtn {
+    cursor: pointer;
+}
+/***********客服***********/
+.btn_chat {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 55px;
+    height: 55px;
+    color: #fff;
+    text-align: center;
+    background-color: #ff547c;
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+    -moz-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+    -ms-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+}
+.btn_chat img {
+    margin: 10px 0 0 0;
+}
+.btn_chat:hover,
+.btn_chat:active,
+.btn_chat:focus {
+    background-color: #df385f;
+}
+/*滑出視窗*/
+.on_chat {
+    display: none;
+    position: fixed;
+    right: 5%;
+    bottom: 2%;
+    width: 350px;
+    color: #666;
+    background: #fff;
+    border: 1px solid #f39e83;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    -ms-border-radius: .3em;
+    -o-border-radius: .3em;
+    border-radius: .3em;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    -o-box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    z-index: 100;
+}
+.chatbox {
+    position: relative;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+    font: normal normal 1em/1.5em Arial, "Microsoft JhengHei";
+}
+.btn_close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    background: url(../font-awesome/black/fa-times.png) center center no-repeat #fff;
+    background-size: 50% auto;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+    transition: transform .4s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: .8;
+    cursor: pointer;
+}
+.chatbox .btn_close {
+    position: absolute;
+    top: -13px;
+    right: -5px;
+    border: 1px solid #f39e83;
+}
+.btn_close:hover,
+.btn_close:active,
+.btn_close:focus {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.chatbox img {
+    margin: 0 auto 10px;
+}
+.chatbox .title {
+    margin: 0 0 10px 0;
+    color: #e38700;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.chatbox .chat_area,
+.chatbox .input_m {
+    font-size: 1em;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    -ms-border-radius: .3em;
+    -o-border-radius: .3em;
+    border-radius: .3em;
+    outline: none;
+}
+.chatbox .chat_area {
+    width: 93%;
+    height: 110px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: left;
+    font: normal normal 1.2em/1.2em Arial, "Microsoft JhengHei";
+    background: #eee;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.chatbox .input_m {
+    display: inline-block;
+    width: 69%;
+    padding: 7px;
+    background: #fff;
+    border: 1px solid #aaa;
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
+    -o-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
+    vertical-align: middle;
+    resize: none;
+}
+.chatbox .text,
+.chatbox .answer,
+.chatbox .ask {
+    display: block;
+    width: 100%;
+    line-height: 20px;
+    margin: 0 0 10px 0;
+    font-size: 15px;
+}
+.chatbox .ask {
+    float: right;
+    width: 80%;
+    padding: 0 0 0 20%;
+    text-align: right;
+}
+.chatbox .msgbox {
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+.chatbox .btn_s {
+    display: inline-block;
+    width: 22%;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+}
+.chatbox .input_m:focus,
+.chatbox .btn_s:focus {
+    outline: none;
+}
+/*回到頂端按鈕*/
+.go_top {
+    display: none;
+    position: fixed;
+    right: 2%;
+    bottom: 9%;
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 99;
+}
+.go_top:focus {
+    outline: none;
+}
+/* 頁首-功能列 */
+.hd_wrap {
+    margin: 10px auto 30px;
+}
+.hd_logo {
+    cursor: pointer;
+}
+.hd_login, .hd_member {
+    float: right;
+    vertical-align: middle;
+}
+.hd_member a {
+    display: inline-block;
+    padding: 10px 5px;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+}
+.hd_member a:last-child {
+    color: #bd002c;
+}
+.hd_member a:hover {
+    color: #bd002c;
+    background: url(../images/cloud.png) center center no-repeat;
+    background-size: 90% 85%;
+}
+.hd_member span {
+    vertical-align: middle;
+}
+.hd_login {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+.hd_login .nav_btn {
+    padding: 3px 10px;
+    margin-left: 5px;
+    font-size: 20px;
+    color: #fff;
+    border: 2px solid #fff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.hd_login .nav_btn:hover {
+    border: 2px solid #ccc;
+}
+/* 漢堡圖 */
+.menu-trigger {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #000;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: middle;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: .8;
+    z-index: 60;
+    outline: none;
+    cursor: pointer;
+}
+/* 左側滑入選單 */
+.menu-container {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #38c0ad;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    transition: .4s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 200;
+}
+.position-right.open {
+    right: 0;
+}
+.position-right {
+    right: -270px;
+}
+/* 黑色背景 */
+.dim-overlay {
+    display: none;
+    cursor: pointer;
+}
+.dim-overlay:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 199;
+}
+.menu-items > li,
+.menu-items .has-sub > ul > li {
+    line-height: 35px;
+    padding: 0 0 0 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    background: #38c0ad;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    vertical-align: middle;
+    cursor: pointer;
+}
+.menu-items > li:hover,
+.menu-items > li:active,
+.menu-items > li:focus,
+.menu-items > li.selected {
+    background: #00988f;
+    border-bottom: 1px solid #46d5c1;
+}
+.menu-items .has-sub > ul > li {
+    padding: 0 0 0 10px;
+    background: transparent;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+.menu-items li.has-sub > ul > li:hover,
+.menu-items li.has-sub > ul > li:active,
+.menu-items li.has-sub > ul > li:focus,
+.menu-items li.has-sub > ul > li.selected {
+    background: #002973;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+.menu-items li.has-sub > ul > li.selected {
+    background: #a22700;
+}
+.menu-items li.has-sub > ul > li.selected span {
+    color: #ff0;
+}
+.menu-items .has-sub > ul {
+    height: 0;
+    background: #003698;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    transition: .4s;
+    overflow: hidden;
+}
+.menu-items > li > i,
+.dropdown-heading i,
+.has-sub > ul > li > i {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.menu-items > li > span {
+    vertical-align: middle;
+}
+.menu-items > li > ul > li > span,
+.dropdown-heading {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: middle;
+}
+.dropdown-heading {
+    position: relative;
+    width: 78%;
+    padding: 0 0 0 5px;
+}
+.dropdown-heading .arrow {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    border: 7px solid;
+    border-color: #fff transparent transparent transparent;
+}
+.menu-items > li.has-sub > .dropdown-heading:hover .arrow,
+.menu-items > li.has-sub > .dropdown-heading:active .arrow,
+.menu-items > li.has-sub > .dropdown-heading:focus .arrow,
+.menu-items > li.has-sub > .dropdown-heading.selected .arrow {
+    top: 5px;
+    border: 7px solid;
+    border-color: transparent transparent #fff transparent;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    transition: .1s;
+}
+.menu-items > li:last-child {
+    border-bottom: 0;
+}
+/* 最新消息+輪播 */
+.banner_wrap {
+    max-width: 1200px;
+    padding: 10px 0 30px 0;
+    text-align: center;
+    font-size: 0;
+}
+.news_info, .slider_box {
+    display: inline-block;
+    vertical-align: top;
+}
+.news_info {
+    width: 375px;
+    margin: 0 0 0 25px;
+    text-align: left;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    -o-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+.banner_wrap .txt {
+    font-size: 0;
+    padding: 10px 15px;
+}
+.banner_wrap .title {
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px rgba(0, 0, 0, .2);
+    background: url(../images/title01.jpg) left top no-repeat #45d5c0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+.help_item .title {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+.news_item .txt a, 
+.help_item .txt a {
+    font-size: 16px;
+    line-height: 1.6;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.news_item .txt a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.banner_wrap .txt a:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0 5px 0 0;
+    border-style: solid;
+    border-width: 5px 0 5px 9px;
+    border-color: transparent transparent transparent #fbb034;
+    line-height: 0px;
+    _border-color: #000 #000 #000 #fbb034;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000');
+}
+.help_item .txt li {
+    display: inline-block;
+    width: 50%;
+}
+/* 輪播圖 */
+.slider_box {
+    max-width: 800px;
+    height: auto;
+    background-color: #ccc;
+    overflow: hidden;
+}
+/* 買賣流程+搜尋列 */
+.search_wrap {
+    background: #fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    -o-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+.se_item1,
+.search_wrap .buy_info,
+.search_wrap .title,
+.search_wrap .txt,
+.search_wrap .txt li {
+    display: inline-block;
+    vertical-align: middle;
+}
+.se_item1 {
+    width: 670px;
+    font-size: 0;
+}
+.se_info .title {
+    width: 100px;
+    padding: 10px 0 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px rgba(0, 0, 0, .2);
+    color: #fff;
+}
+.buy_info .title {
+    background: url(../images/title02.png) left 0 top 0 no-repeat;
+    -webkit-border-radius: 15px 0 0 0;
+    -moz-border-radius: 15px 0 0 0;
+    -ms-border-radius: 15px 0 0 0;
+    -o-border-radius: 15px 0 0 0;
+    border-radius: 15px 0 0 0;
+}
+.sell_info .title {
+    background: url(../images/title03.png) left 0 top 0 no-repeat;
+    -webkit-border-radius: 0 0 0 15px;
+    -moz-border-radius: 0 0 0 15px;
+    -ms-border-radius: 0 0 0 15px;
+    -o-border-radius: 0 0 0 15px;
+    border-radius: 0 0 0 15px;
+}
+.buy_info .txt, .se_info .txt {
+    line-height: 38px;
+    color: #666;
+    font-size: 16px;
+    font-weight: bold;
+}
+.buy_info .txt {
+    border-bottom: 1px dashed #ccc;
+}
+.se_info .txt li {
+    width: 100px;
+}
+.se_info .txt li:before {
+    content: '1';
+    display: inline-block;
+    width: 20px;
+    margin-right: 8px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #f2a6b8;
+}
+.sell_info .txt li:before {
+    background-color: #91c2e5;
+}
+.se_info .txt li:nth-child(2):before {
+    content: '2';
+}
+.se_info .txt li:nth-child(3):before {
+    content: '3';
+}
+.se_info .txt li:nth-child(4):before {
+    content: '4';
+}
+.se_info .txt li:nth-child(5):before {
+    content: '5';
+}
+.search_wrap .search_item .se_input {
+    background-color: #e5e5e5;
+    border: 2px solid #e5e5e5;
+}
+/* 遊戲頁籤 */
+.game_wrap {
+    padding: 20px 0 40px 0;
+    margin: 30px auto;
+    text-align: center;
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.gametype {
+    font-size: 0;
+}
+/* 隱藏內容 */
+.game_content > div {
+    display: none;
+}
+/* 隱藏選取的原點radio */
+.game_radio1, .game_radio2, .game_radio3 {
+    display: none;
+}
+.game_radio1:checked + .game_label1,
+.game_radio2:checked + .game_label2,
+.game_radio3:checked + .game_label3 {
+    color: #ce9853;
+    border-bottom: 3px solid #ffa200;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+/* 點選後秀出隱藏的內容(父層勿刪) */
+.game_radio1:checked ~ .game_content .ga_page1,
+.game_radio2:checked ~ .game_content .ga_page2,
+.game_radio3:checked ~ .game_content .ga_page3 {
+    display: block;
+}
+.game_wrap .game_label1,
+.game_wrap .game_label2,
+.game_wrap .game_label3 {
+    display: inline-block;
+    width: 15%;
+    padding: 10px 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 3px solid #e7e7e7;
+    cursor: pointer;
+}
+.game_wrap .game_label1:hover,
+.game_wrap .game_label2:hover,
+.game_wrap .game_label3:hover,
+.game_wrap .game_label1:active,
+.game_wrap .game_label2:active,
+.game_wrap .game_label3:active,
+.game_wrap .game_label1:focus,
+.game_wrap .game_label2:focus,
+.game_wrap .game_label3:focus {
+    color: #ce9853;
+    border-bottom: 3px solid #ffa200;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+}
+.game_content {
+    width: 95%;
+    margin: -3px auto 0;
+    padding: 2px 0;
+    text-align: left;
+    border-top: 3px solid #e7e7e7;
+}
+.ga_item {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    margin: 10px;
+    padding: 15px;
+    color: #666;
+    font-size: 16px;
+    vertical-align: top;
+    background-color: #faf5e3;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ga_item:hover {
+    color: #6e26ef;
+    background-color: #f3e8c3;
+}
+.ga_pic {
+    width: 100%;
+    margin: 0 0 10px 0;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.ga_title {
+    width: 90%;
+    line-height: 1.3;
+    margin: 0 auto;
+}
+.ga_shopping {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    line-height: 40px;
+    background: #ffa200;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.ga_shopping:hover {
+    background: #c37c00;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+}
+.ga_shopping input {
+    width: 25px;
+    height: 25px;
+    margin: 0 0 0 7px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+.ga_shopping:hover input {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+/* 頁碼 */
+.pagination {
+    display: -webkit-box;
+    display: flex;
+    margin: 0 auto;
+    list-style: none;
+    white-space: nowrap;
+    justify-content: center;
+    -webkit-box-align: center;
+}
+.pagination img{
+    width: 15px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.pagination li a {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    margin: 0 5px 0 0px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ececec;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
+}
+.pagination li:first-child a,
+.pagination li:last-child a {
+    width: 26px;
+    height: 26px;
+    padding: 0;
+}
+.pagination .previous:after,
+.pagination .next:after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/icon/fa-angle-left.png) center center no-repeat;
+    background-size: cover;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.pagination .previous:after {
+    left: 6px;
+}
+.pagination .next:after {
+    right: 6px;
+    background: url(../images/icon/fa-angle-right.png) center center no-repeat;
+    background-size: cover;
+}
+.pagination li a.active {
+    color: #fff;
+    background-color: #009e95;
+}
+.pagination li a:hover:not(.active),
+.pagination li a:active:not(.active),
+.pagination li a:focus:not(.active) {
+    color: #fff;
+    background-color: #009e95;
+}
+/*頁碼(跳頁設定)*/
+.pagination_wrap {
+    margin: 20px auto 0;
+    font-size: 15px;
+    text-align: center;
+}
+.page_number, .page_jump,
+.pagination_box,
+.page_number span,
+.page_jump span,
+.page_jump .page_input,
+.page_jump .page_btn,
+.page_jump .btn_page,
+.page_jump .btn_big  {
+    display: inline-block;
+    vertical-align: middle;
+}
+.page_jump .page_input {
+    padding-right: 10px;
+}
+.page_jump .btn_page {
+    width: 50px;
+    font-size: 14px;
+    padding: 3px 0;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.page_jump .page_btn {
+    width: 60px;
+}
+.page_jump .btn_big {
+    padding: 5px 0 3px 0;
+}
+/* 頁尾 */
+.footer_box {
+    padding: 25px 0;
+}
+.footer_wrap {
+    padding: 15px 0;
+    text-align: center;
+    background-color: #fff;
+}
+.footer_wrap a,
+.footer_wrap p {
+    display: inline-block;
+}
+.footer_wrap a {
+    padding-right: 30px;
+}
+.footer_wrap a img {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: .8;
+}
+.footer_wrap p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+}
+/* 會員中心 */
+.member_wrap {
+    max-width: 1200px;
+}
+.slider_menu, .index_main {
+    display: inline-block;
+    vertical-align: top;
+}
+.slider_menu {
+    width: 230px;
+    padding: 0;
+}
+/* 會員中心-左側邊欄選單 */
+.slider_menu .section {
+    width: 100%;
+}
+.member_info {
+    padding: 10px;
+    border-bottom: 2px solid #45d5c0;
+}
+.member_info .in_pic {
+    position: relative;
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.member_info .in_id {
+    width: 95%;
+    line-height: 1.2;
+    margin: 15px auto 0;
+    color: #001eb3;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+/* 上線狀態 */
+.state_box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.state {
+    position: absolute;
+    bottom: -60px;
+    right: 10px;
+}
+ul.state_box ul {
+    display: none;
+}
+ul.state_box li:hover > ul {
+    display: block;
+}
+.online_state, .offline_state,
+.leave_state {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 50px;
+    padding: 3px 5px;
+    margin-bottom: 1px;
+    font-size: 15px;
+    color: #333;
+    background-color: #fff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+    -o-box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+    vertical-align: middle;
+}
+.online_state:before,
+.offline_state:before,
+.leave_state:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background-color: #0cff00;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.offline_state:before {
+    background-color: #ccc;
+}
+.online_state:before {
+    background-color: #0cff00;
+}
+.leave_state:before {
+    background-color: #ff9800;
+}
+.offline_state:hover,
+.online_state:hover,
+.leave_state:hover {
+    background-color: #fff7ad;
+}
+/* 綠線條 */
+.member_list {
+    padding: 10px;
+    line-height: 18px;
+    color: #555;
+    text-align: left;
+    border-bottom: 2px solid #45d5c0;
+}
+.sell_info_menu .member_list {
+    border-bottom: 0;
+}
+.li_title, .li_txt {
+    display: inline-block;
+    line-height: 16px;
+    font-size: 15px;
+    text-align: left;
+    word-break: break-all;
+    vertical-align: top;
+}
+.li_title {
+    width: 75px;
+    font-weight: bold;
+}
+.member_list .li_pic {
+    width: 19px;
+    height: 19px;
+}
+.member_list li:not(:last-child) {
+    padding-bottom: 5px;
+}
+.pc_menu .member_list {
+    padding: 10px 20px;
+}
+/* 下拉選單 */
+.pc_menu {
+    padding: 0 0 10px 0;
+    margin: 0 10px 20px 0;
+}
+.slider_menu .section input[type='radio'] {
+    display: none;
+}
+.slider_menu .section input[type='radio']:checked + label {
+    background: #9ceae4;
+}
+.slider_menu .section label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.slider_menu .section label:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #fff;
+}
+.slider_menu .section label:hover {
+    background: #9ceae4;
+}
+.slider_menu .section label span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    vertical-align: middle;
+}
+/* 下拉選單-內頁 */
+.slider_menu .content {
+    position: relative;
+    max-height: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    overflow-y: hidden;
+    cursor: pointer;
+}
+.slider_menu .section input[type='radio']:checked~.content {
+    max-height: 500px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    /* z-index: 10; */
+}
+.slider_menu .content ul li {
+    position: relative;
+}
+/* 箭頭 */
+.slider_menu .content ul li:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 11px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-style: solid;
+    border-width: 5px 8px 5px;
+    border-color: transparent transparent transparent #ff9bab;
+    _border-color: #000 #000 #000 #ff9bab;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000');
+}
+.slider_menu .content li span {
+    display: block;
+    padding: 8px 0 8px 25px;
+    margin: 0 15px;
+    color: #333;
+    font-size: 15px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.slider_menu .content li:last-of-type span {
+    border-bottom: 0;
+}
+.slider_menu .content ul li:hover {
+    background: #fffae6;
+}
+/* 右邊內容 */
+.index_main {
+    width: 78%;
+    color: #555;
+}
+.transaction_box {
+    padding: 20px;
+    margin: 0 auto 20px;
+    text-align: center;
+    font-size: 0;
+}
+.transaction_box .item {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    vertical-align: top;
+    cursor: pointer;
+}
+.transaction_box .item:last-child {
+    margin: 0;
+}
+.balance_item {
+    width: 290px;
+    margin: 0 10px 0 0;
+    background: url(../images/member/wallet-filled.jpg) center center no-repeat;
+    background-size: cover;
+}
+.balance_item .txt {
+    padding: 65px 10px 10px 0;
+    font-size: 18px;
+    text-align: right;
+}
+.balance_item .number {
+    padding: 16px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #db0202;
+    text-align: right;
+    background-color: rgba(255, 255, 255, .5);
+}
+.buy_item, .sell_item {
+    width: 270px;
+    padding: 10px;
+    font-size: 0;
+    background: url(../images/member/buy.jpg) center center  no-repeat;
+    background-size: cover;
+    border: 1px solid #45d5c0;
+}
+.sell_item {
+    background: url(../images/member/sell.jpg) center center no-repeat;
+    background-size: cover;
+    border: 1px solid #ffa0c2;
+}
+.buy_item .list,
+.sell_item .list {
+    padding-top: 65px;
+}
+.buy_item .list .s_item,
+.sell_item .list .s_item {
+    display: inline-block;
+    width: 22%;
+    margin: 0 5px 0 0;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #45d5c0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.sell_item .list .s_item {
+    border: 2px solid #ffa0c2;
+}
+.buy_item .list .s_item:last-child,
+.sell_item .list .s_item:last-child {
+    margin: 0;
+}
+.buy_item .list .s_item span,
+.sell_item .list .s_item span {
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #f00;
+}
+.buy_item .list .s_item div,
+.sell_item .list .s_item div {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #009e95;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    -o-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.sell_item .list .s_item div {
+    background-color: #ef568c;
+}
+/* 訊息與評價+申訴 */
+.evaluate_box {
+    padding: 20px 10px 10px 10px;
+    margin: 0 auto 10px;
+}
+.evaluate_box .item {
+    width: 18%;
+    padding: 10px 0px 10px 10px;
+    margin: 0 0 10px 0;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+}
+.evaluate_box .item:last-child {
+    border-right: 0;
+}
+.evaluate_box .item,
+.evaluate_box .item .pic,
+.evaluate_box .item .txt {
+    display: inline-block;
+    vertical-align: middle;
+}
+.evaluate_box .item .pic {
+    width: 45px;
+    height: 45px;
+    margin: 0 10px 0 0;
+    background: url(../images/icon/notification-bell.png) center center no-repeat #c7f2ec;
+    background-size: 45% auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.evaluate_box .ev_item2 .pic {
+    background: url(../images/icon/marketing.png) center center no-repeat #c7f2ec;
+    background-size: 65% auto;
+}
+.evaluate_box .ev_item3 .pic {
+    background: url(../images/icon/like4.png) center center no-repeat #c7f2ec;
+    background-size: 50% auto;
+}
+.evaluate_box .ev_item4 .pic {
+    background: url(../images/icon/validation.png) center center no-repeat #c7f2ec;
+    background-size: 60% auto;
+}
+.evaluate_box .item .txt {
+    width: 55%;
+}
+.evaluate_box .item span {
+    display: block;
+    padding: 0 0 10px 0;
+}
+.evaluate_box .item .number {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    color: #ff7e00;
+}
+/* 會員中心 */
+.service_box {
+    margin: 0 auto 10px;
+    color: #666;
+}
+.service_info {
+    padding: 30px;
+    font-size: 0;
+}
+.service_info .item {
+    display: inline-block;
+    width: 21.3%;
+    padding: 20px 10px;
+    margin: 0 10px 10px 0;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    vertical-align: top;
+}
+.service_info .item:hover {
+    border: 1px solid #e0da8b;
+    background-color: #f3f3e5;
+}
+.service_info .item:hover span{
+    color: #f00;
+}
+.service_info .item img,
+.service_info .item div {
+    padding: 0;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.service_info .item img {
+    padding: 0 0 15px 0;
+}
+/* 商品訊息 */
+.buystore_wrap, .create_goods_wrap {
+    width: 96%;
+    color: #666;
+    padding: 0 0 20px 0;
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.search_list {
+    padding: 15px 20px 0 20px;
+    margin: 0 auto;
+}
+.search_select,
+.search_input {
+    display: inline-block;
+    width: 16%;
+    height: 40px;
+    padding: 0 0 0 10px;
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+    border: 2px solid #d5d5d5;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.search_select {
+    background: url(../images/menu_arrow_down.png) top 50% right 10px no-repeat #fff;
+}
+.search_list .btn_big {
+    float: right;
+    width: 16%;
+    height: 40px;
+    vertical-align: middle;
+}
+.sequence_content {
+    width: 95%;
+    margin: 10px auto 0;
+    padding: 5px;
+    background: #f5f5f5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+/* 賣場-麵包屑 */
+.sequence_content .item,
+.sequence_content .item li,
+.sequence_content .item span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.sequence_content .item li {
+    position: relative;
+    padding-right: 10px;
+    font-size: 14px;
+}
+.sequence_content .item li a {
+    line-height: 26px;
+    color: #0089ff;
+}
+.sequence_content .item li a:hover {
+    color: #ba0000;
+}
+.sequence_content .item li a:after {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    margin-top: -2px;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.sequence_content .item span {
+    font-size: 14px;
+    color: #666;
+}
+.sequence_content .se_item {
+    float: right;
+    width: 25%;
+    text-align: right;
+}
+.sequence_content .search_select {
+    width: 100px;
+    height: 30px;
+    line-height: 28px;
+    font-size: 15px;
+}
+.sequence_content .btn_small {
+    display: inline-block;
+    width: 60px;
+    padding: 5px;
+}
+.sequence_content .select_item {
+    width: 40%;
+}
+.sequence_content .select_item .search_select {
+    height: auto;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+.sequence_content .select_item:after {
+    top: 11px;
+    right: 11px;
+    border-width: 7px 4px 4px;
+}
+.sequence_content .btn_item {
+    width: 20%;
+}
+.sequence_content input.btn_big {
+    padding: 5px;
+    font-size: 14px;
+}
+/***********表格首列凍結***********/
+.table_wrap {
+    width: 95%;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+/*外表格盒子*/
+.tbbox, .free_tbbox {
+    width: 100%;
+    margin: 0 auto 30px;
+    overflow: auto;
+}
+.tbbox {
+	height: 450px; /*要限制高度，首列固定為上功能才會出現*/
+    border: 1px solid #ccc;
+}
+.fixed_table {
+    table-layout: fixed; /*首列永遠固定於上*/
+    text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+    background: #fff;
+}
+.fht-table-wrapper .fixed_table {
+    width: 100% !important;
+}
+.fixed_table th,
+.fixed_table td {
+    line-height: 18px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    word-break: break-all;
+    vertical-align: middle;
+}
+.fixed_table th {
+    color: #666;
+    font-weight: bold;
+    background: #ccc;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+/* 價格(紅色大字) */
+.fixed_table .text_big,
+.sc_info .text_big,
+.sk_fixed_table .text_big {
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 購買按鈕 */
+.fixed_table input.btn_big {
+    padding: 3px 0;
+    font-size: 15px;
+}
+/* 表格顏色 */
+.fixed_table thead th:nth-of-type(2n) {
+    background: #bbb;
+}
+.fixed_table tbody tr:nth-of-type(2n+1) {
+    background: #f3fffb;
+}
+.fixed_table tbody tr:hover,
+.fixed_table tbody tr:nth-of-type(2n+1):hover {
+    background: #fafde8;
+}
+.fixed_table tfoot tr {
+    background: #f0f1df;
+}
+.fixed_table tfoot tr.subtotal {
+    background: #e4e3b8;
+}
+/*表格寬度*/
+.fixed_table .cell_ss {
+    width: 5%;
+}
+.fixed_table .cell_s {
+    width: 7%;
+}
+.fixed_table .cell_m {
+    width: 13%;
+}
+.fixed_table .cell_l {
+    width: 17%;
+}
+.fixed_table .cell_xl {
+    width: 21%;
+}
+.fixed_table .cell_xxl {
+    width: 26%;
+}
+.text_overflow, .td_overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* 商品訊息(賣場商品) */
+.sell_info_content {
+    width: 100%;
+    max-width: 1050px;
+    margin: 20px auto;
+    color: #666;
+    text-align: center;
+}
+.sell_info_content .item {
+    display: inline-block;
+    width: 100%;
+    max-width: 820px;
+    margin: 0 10px 0 0;
+    text-align: left;
+    vertical-align: top;
+}
+.sell_info_content .item:last-child {
+    width: 200px;
+    margin: 0;
+    text-align: center;
+}
+.sell_info_content .info_title {
+    padding: 0 0 0 10px;
+    margin: 0 0 10px 0;
+    line-height: 26px;
+    color: #555;
+    font-size: 24px;
+    font-weight: bold;
+    word-break: break-all;
+    border-left: 10px solid #ff007e;
+}
+.info_description {
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.goods_price {
+    padding: 15px;
+    margin: 0 auto 10px;
+    background: #fff8eb;
+}
+.goods_price .txt,
+.goods_price .txt span,
+.goods_price .btn,
+.goods_price .btn .track,
+.goods_price .btn .notice {
+    display: inline-block;
+    vertical-align: middle;
+}
+.goods_price span {
+    font-size: 15px;
+    font-weight: bold;
+}
+.goods_price .text_big {
+    font-size: 26px;
+    font-weight: bold;
+}
+.goods_price .btn,
+.goods_info .pic {
+    float: right;
+}
+.goods_price .btn input {
+    width: 80px;
+    padding: 3px 5px 3px 10px;
+    color: #666;
+    text-align: right;
+    background: #fff;
+    border: 1px solid #ff96bf;
+}
+.goods_price .btn input:hover {
+    background: #ffdddd;
+    border: 1px solid #ff91bc;
+}
+.goods_price .notice input {
+    border: 1px solid #aaa;
+}
+.goods_price .track,
+.goods_price .notice {
+    position: relative;
+}
+.goods_price .track i {
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/sell_info/s_heart.png) center center no-repeat;
+    background-size: auto;
+}
+.goods_price .notice .fa {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+}
+/* 賣場商品描述 */
+.goods_info .txt,
+.goods_info .pic {
+    display: inline-block;
+    vertical-align: top;
+}
+.goods_info .txt {
+    width: 75%;
+    padding: 0 0 0 15px;
+}
+.goods_info .txt li {
+    position: relative;
+    padding: 0 0 8px 0;
+    line-height: 1.3;
+}
+.goods_info .txt li:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: -13px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-style: solid;
+    border-width: 5px 8px 5px;
+    border-color: transparent transparent transparent #666;
+    _border-color: #000 #000 #000 #666;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000');
+}
+/* 賣場商品圖片與刊登日 */
+.goods_info .pic {
+    width: 160px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.goods_info .pic .time {
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+/* 賣場商品庫存數量 */
+.info_btn {
+    padding: 20px 0 20px 20px;
+}
+.info_btn .stock_btn,
+.info_btn .buy_btn,
+.stock_btn .btn span,
+.stock_btn .st_btn_l,
+.stock_btn .st_input,
+.stock_btn .st_btn_r {
+    display: inline-block;
+    vertical-align: middle;
+}
+.info_btn .stock_btn,
+.info_btn .buy_btn {
+    vertical-align: top;
+}
+.stock_btn .btn,
+.stock_btn .txt {
+    font-size: 16px;
+}
+.stock_btn .btn {
+    padding: 0 0 10px 0;
+}
+.stock_btn .st_btn_l,
+.stock_btn .st_btn_r {
+    width: 45px;
+    height: 40px;
+    margin: 0 -4px 0 0;
+    background: url(../images/sell_info/sign01.png) center center no-repeat #f3fefd;
+    background-size: 45% auto;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 50px 0 0 50px;
+    -moz-border-radius: 50px 0 0 50px;
+    -ms-border-radius: 50px 0 0 50px;
+    -o-border-radius: 50px 0 0 50px;
+    border-radius: 50px 0 0 50px;
+}
+.stock_btn .st_btn_r {
+    margin: 0 0 0 -6px;
+    background: url(../images/sell_info/sign02.png) center center no-repeat #f3fefd;
+    background-size: 45% auto;
+    -webkit-border-radius: 0 50px 50px 0;
+    -moz-border-radius: 0 50px 50px 0;
+    -ms-border-radius: 0 50px 50px 0;
+    -o-border-radius: 0 50px 50px 0;
+    border-radius: 0 50px 50px 0;
+}
+.stock_btn .st_input {
+    width: 90px;
+    height: 36px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-left: 0;
+}
+.stock_btn .txt .text_pink {
+    font-weight: bold;
+}
+.info_btn .buy_btn {
+    float: right;
+    width: 240px;
+    font-size: 24px;
+}
+/* 右側賣家資訊 */
+.sell_info_menu {
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+.sell_info_menu .title {
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e7e7e7;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+.sell_info_menu .member_info {
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+    border-bottom: 0;
+}
+/* 表格_綠色 */
+.tb_green .fixed_table thead th {
+    background: #d9fff1;
+}
+.tb_green .fixed_table tfoot tr {
+    background:#dfeff3;
+}
+.tb_green .fixed_table tfoot tr.subtotal {
+    background: #c2e1e8;
+}
+/* 灰線條 */
+.sell_info_menu .line {
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #d6d6d6;
+}
+.sell_info_menu .member_btn {
+    width: 65%;
+    margin: 10px auto;
+}
+input.btn_filigree {
+    padding: 5px 0;
+    margin: 0 0 10px 0;
+}
+/* 商品說明頁籤 */
+.ga_in_page_box {
+    width: 95%;
+    margin: 0 auto;
+}
+.ga_in_page_wrap {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 0 10px 10px 10px;
+    -moz-border-radius: 0 10px 10px 10px;
+    -ms-border-radius: 0 10px 10px 10px;
+    -o-border-radius: 0 10px 10px 10px;
+    border-radius: 0 10px 10px 10px;
+}
+/* 隱藏內容 */
+.ga_in_page_wrap > .ga_in_con1,
+.ga_in_page_wrap > .ga_in_con2,
+.ga_in_page_wrap > .ga_in_con3 {
+    display: none;
+}
+/* 隱藏選取的原點radio */
+.game_info_radio1, .game_info_radio2, .game_info_radio3 {
+    display: none;
+}
+.game_info_label {
+    position: relative;
+    display: inline-block;
+    width: 22%;
+    padding: 10px 0;
+    margin: 0 0 -3px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 5px solid #fff;
+    background-color: #fff;
+    -webkit-border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -ms-border-radius: 20px 20px 0 0;
+    -o-border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 0 0;
+    z-index: 1;
+}
+.game_info_label:hover,
+.game_info_label:focus,
+.game_info_label:active {
+    color: #b9416c;
+    cursor: pointer;
+}
+/* 選取到標題的效果 */
+.game_info_radio1:checked + .game_info_label,
+.game_info_radio2:checked + .game_info_label,
+.game_info_radio3:checked + .game_info_label {
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 5px solid #45d5c0;
+    color: #666;
+}
+/* 點選後秀出隱藏的內容(父層勿刪) */
+.game_info_radio1:checked ~ .ga_in_page_wrap .ga_in_con1,
+.game_info_radio2:checked ~ .ga_in_page_wrap .ga_in_con2,
+.game_info_radio3:checked ~ .ga_in_page_wrap .ga_in_con3 {
+    display: block;
+}
+.ga_in_con1 {
+    padding: 20px;
+    line-height: 22px;
+    font-size: 16px;
+}
+.ga_in_con2,
+.ga_in_con3 {
+    padding: 20px 0;
+}
+.ga_in_con2 .gi_qa {
+    padding: 0 20px 20px 20px;
+}
+.gi_qa textarea {
+    display: inline-block;
+    width: 82%;
+    height: 60px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    line-height: 1.3;
+    border: 1px solid #009e95;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    resize: none;
+}
+.gi_qa .qa_btn {
+    display: inline-block;
+    width: 13%;
+}
+.qa_title {
+    padding: 7px 15px;
+    background: #b8f5ec;
+}
+.qa_title span {
+    display: inline-block;
+    height: 26px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
+.qa_title span:before {
+    content: '';
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-right: 5px;
+    background: url(../images/sell_info/qa.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.qa_radio {
+    float: right;
+    line-height: 26px;
+}
+/* 問答專區 */
+.qa_content {
+    width: 96%;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    border-bottom: 1px solid #ccc;
+}
+.qa_box {
+    width: 80%;
+}
+.gi_qa textarea, .gi_qa .qa_btn,
+.qa_title, .qa_title span, .qa_title span:before,
+.qa_radio, input[type=radio],
+.qa_label {
+    vertical-align: middle;
+}
+.qa_radio {
+    font-size: 15px;
+    color: #666;
+}
+.qa_radio, input[type=radio],
+.qa_label {
+    cursor: pointer;
+}
+.qa_box .date,
+.answer_main .qa_box,
+.answer_main .qa_box .pic,
+.answer_main .qa_box .txt {
+    float: right;
+}
+.answer_box {
+    margin-left: auto;
+}
+.qa_box .pic, .qa_box .txt,
+.qa_box .name, .qa_box .date {
+    display: inline-block;
+    vertical-align: top;
+}
+.ask_main, .answer_main {
+    margin: 0 0 15px 0;
+}
+.qa_head_l {
+    margin: 0 10px 0 0;
+}
+.qa_head_r {
+    float: right;
+    margin: 0 0 0 15px;
+}
+.qa_box .pic {
+    width: 50px;
+}
+.ask_main .qa_box .txt,
+.answer_main .qa_box .txt {
+    position: relative;
+    width: 85%;
+    line-height: 20px;
+    padding: 10px;
+    font-size: 16px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.qa_box .name {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+.qa_box .date {
+    margin: 0 0 5px 0;
+}
+.ask_main .qa_box .txt {
+    background: #fff8eb;
+}
+.answer_main .qa_box .txt {
+    background: #f2f2f2;
+}
+/* 問答小箭頭 */
+.qa_box .txt:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px;
+}
+.ask_main .qa_box .txt:after {
+    left: -20px;
+    border-color: transparent #fff8eb transparent transparent;
+    _border-color: #000 #fff8eb #000 #000;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000');
+}
+.answer_main .qa_box .txt:after {
+    right: -20px;
+    border-color: transparent transparent transparent #f2f2f2;
+    _border-color: #000 #000 #000 #f2f2f2;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000');
+}
+.ga_in_con2 .pagination_wrap {
+    padding: 10px 0;
+}
+input[type=radio] {
+    position: relative;
+}
+/* 分頁3(查看評價) */
+.ga_in_con3 .qa_title span:before {
+    background: url(../images/sell_info/medal.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.ga_in_con3 .qa_content {
+    border-bottom: 0;
+}
+.qa_tbbox {
+    width: 100%;
+    height: 385px;
+    margin: 0 auto 20px;
+    border: 0;
+}
+.qa_tb thead th {
+    background: #fffeed;
+}
+.qa_tb th:nth-of-type(2n) {
+    background: #f3f3f3;
+}
+.qa_tb thead th,
+.qa_tb tbody td {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+}
+.qa_tb tr:nth-child(even) {
+    background-color: #fff;
+}
+.qa_tb td:first-child {
+    border-left: 0;
+}
+.qa_tb thead tr {
+    border: 0;
+}
+.qa_tb tbody td {
+    line-height: 18px;
+    padding: 5px 0 5px 5px;
+    font-size: 15px;
+    word-break: break-all;
+}
+/* 購物車 */
+.shopcart_content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.shopcart_pic {
+    margin: 30px auto;
+    text-align: center;
+}
+.shopcart_box {
+    width: 90%;
+    margin: 0 auto 20px;
+    border: 1px solid #29b9a4;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.sc_tb {
+    min-width: 700px;
+    font-size: 15px;
+    text-align: left;
+    overflow-x: auto;
+}
+.sc_tb .cell_m {
+    width: 14%;
+}
+.sc_tb .cell_l {
+    width: 22%;
+}
+.sc_tb .cell_xl {
+    width: 50%;
+}
+.sc_title {
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #29b9a4;
+    vertical-align: middle;
+}
+.sc_info {
+    border-bottom: 2px dotted #ccc;
+}
+.sc_info:last-child {
+    border-bottom: 0;
+}
+.sc_info td {
+    padding: 10px;
+    line-height: 1.4;
+    vertical-align: top;
+}
+.txt_top span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+.txt_top span:last-child {
+    font-size: 14px;
+}
+.txt_title {
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff8e4;
+}
+.txt_info {
+    margin: 0 0 0 10px;
+}
+.sc_tb_foot {
+    padding: 0 10px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #d9fdf8;
+    border-top: 1px solid #29b9a4;
+    vertical-align: middle;
+}
+.sc_tb_foot .buy_btn {
+    margin: 10px auto;
+}
+.payment_box {
+    width: 90%;
+    padding: 5px;
+    margin: 0 auto 20px;
+    text-align: left;
+    border: 1px solid #8bc34a;
+}
+.top_title {
+    padding: 10px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #8bc34a;
+}
+.pay_methods {
+    width: 93%;
+    padding: 10px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.pay_title {
+    margin: 0 0 10px 0;
+    padding: 5px 0 10px 0;
+    line-height: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px dotted #e9e9e9;
+}
+.pay_verify {
+    float: right;
+    font-size: 16px;
+    font-weight: normal;
+}
+.pay_methods .pay_title span,
+.pay_methods a {
+    display: inline-block;
+    vertical-align: middle;
+}
+.pay_set {
+    position: relative;
+    padding: 20px 20px 10px 20px;
+    margin: 5px;
+    text-align: center;
+    background: #fff6f0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.pay_set:before, .pay_set:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px;
+    border-color: transparent transparent #fff4f4 transparent;
+}
+.pay_set:before {
+    top: -21px;
+    left: 37px;
+}
+.pay_set:after {
+    top: -18px;
+    left: 38px;
+    border-width: 10px;
+    border-color: transparent transparent #fff4f4 transparent;
+}
+.pay_tips {
+    display: inline-block;
+    width: calc(100% - 20px);
+    margin: 0 auto 10px;
+    padding: 10px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    word-break: break-word;
+    background: #f1e9e4;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.pay_tips ul {
+    padding: 0 0 0 20px;
+}
+.pay_tips li {
+    list-style-type: disc;
+    padding: 0;
+}
+/* 銀行列表 */
+.bank_list {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 10px 0;
+}
+.btn_bank {
+    display: inline-block;
+    width: 144px;
+    height: 44px;
+    margin: 0 0 3px 0;
+    border: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+/***** 錢包餘額繳款 *****/
+.wallet {
+    background: url(../images/shopping_cart/bank/mywallet.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.wallet:hover, .wallet:active,
+.wallet:focus, .wallet.selected {
+    background: url(../images/shopping_cart/bank/mywallet.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/***** 線上繳款 *****/
+/* 臺灣銀行 */
+.bank_001bot {
+    background: url(../images/shopping_cart/bank/bank_001bot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_001bot:hover, .bank_001bot:active,
+.bank_001bot:focus, .bank_001bot.selected {
+    background: url(../images/shopping_cart/bank/bank_001bot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 臺灣土地銀行 */
+.bank_002lbot {
+    background: url(../images/shopping_cart/bank/bank_002lbot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_002lbot:hover, .bank_002lbot:active,
+.bank_002lbot:focus, .bank_002lbot.selected {
+    background: url(../images/shopping_cart/bank/bank_002lbot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 合作金庫商業銀行 */
+.bank_003tcb {
+    background: url(../images/shopping_cart/bank/bank_003tcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_003tcb:hover, .bank_003tcb:active,
+.bank_003tcb:focus, .bank_003tcb.selected {
+    background: url(../images/shopping_cart/bank/bank_003tcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 第一商業銀行 */
+.bank_004fcb {
+    background: url(../images/shopping_cart/bank/bank_004fcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_004fcb:hover, .bank_004fcb:active,
+.bank_004fcb:focus, .bank_004fcb.selected {
+    background: url(../images/shopping_cart/bank/bank_004fcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 華南商業銀行 */
+.bank_005hncb {
+    background: url(../images/shopping_cart/bank/bank_005hncb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_005hncb:hover, .bank_005hncb:active,
+.bank_005hncb:focus, .bank_005hncb.selected {
+    background: url(../images/shopping_cart/bank/bank_005hncb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 彰化商業銀行 */
+.bank_006chb {
+    background: url(../images/shopping_cart/bank/bank_006chb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_006chb:hover, .bank_006chb:active,
+.bank_006chb:focus, .bank_006chb.selected {
+    background: url(../images/shopping_cart/bank/bank_006chb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 上海商業儲蓄銀行 */
+.bank_007scsb {
+    background: url(../images/shopping_cart/bank/bank_007scsb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_007scsb:hover, .bank_007scsb:active,
+.bank_007scsb:focus, .bank_007scsb.selected {
+    background: url(../images/shopping_cart/bank/bank_007scsb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 台北富邦商業銀行 */
+.bank_008tcb {
+    background: url(../images/shopping_cart/bank/bank_008tcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_008tcb:hover, .bank_008tcb:active,
+.bank_008tcb:focus, .bank_008tcb.selected {
+    background: url(../images/shopping_cart/bank/bank_008tcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 國泰世華商業銀行 */
+.bank_009cub {
+    background: url(../images/shopping_cart/bank/bank_009cub.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_009cub:hover, .bank_009cub:active,
+.bank_009cub:focus, .bank_009cub.selected {
+    background: url(../images/shopping_cart/bank/bank_009cub.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 高雄銀行 */
+.bank_010bok {
+    background: url(../images/shopping_cart/bank/bank_010bok.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_010bok:hover, .bank_010bok:active,
+.bank_010bok:focus, .bank_010bok.selected {
+    background: url(../images/shopping_cart/bank/bank_010bok.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/***** ATM繳款 *****/
+/* 兆豐國際商業銀行 */
+.bank_011micb {
+    background: url(../images/shopping_cart/bank/bank_011micb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_011micb:hover, .bank_011micb:active,
+.bank_011micb:focus, .bank_011micb.selected {
+    background: url(../images/shopping_cart/bank/bank_011micb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 全國農業金庫  */
+.bank_012abot {
+    background: url(../images/shopping_cart/bank/bank_012abot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_012abot:hover, .bank_012abot:active,
+.bank_012abot:focus, .bank_012abot.selected {
+    background: url(../images/shopping_cart/bank/bank_012abot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 花旗(台灣)商業銀行 */
+.bank_013ctl {
+    background: url(../images/shopping_cart/bank/bank_013ctl.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_013ctl:hover, .bank_013ctl:active,
+.bank_013ctl:focus, .bank_013ctl.selected {
+    background: url(../images/shopping_cart/bank/bank_013ctl.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 王道商業銀行  */
+.bank_014ob {
+    background: url(../images/shopping_cart/bank/bank_014ob.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_014ob:hover, .bank_014ob:active,
+.bank_014ob:focus, .bank_014ob.selected {
+    background: url(../images/shopping_cart/bank/bank_014ob.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 臺灣中小企業銀行  */
+.bank_015tbb {
+    background: url(../images/shopping_cart/bank/bank_015tbb.jpg)  0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_015tbb:hover, .bank_015tbb:active,
+.bank_015tbb:focus, .bank_015tbb.selected {
+    background: url(../images/shopping_cart/bank/bank_015tbb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 渣打國際商業銀行 */
+.bank_016sc {
+    background: url(../images/shopping_cart/bank/bank_016sc.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_016sc:hover, .bank_016sc:active,
+.bank_016sc:focus, .bank_016sc.selected {
+    background: url(../images/shopping_cart/bank/bank_016sc.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 台中商業銀行 */
+.bank_017tcb {
+    background: url(../images/shopping_cart/bank/bank_017tcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_017tcb:hover, .bank_017tcb:active,
+.bank_017tcb:focus, .bank_017tcb.selected {
+    background: url(../images/shopping_cart/bank/bank_017tcb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 京城商業銀行 */
+.bank_018ktb {
+    background: url(../images/shopping_cart/bank/bank_018ktb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_018ktb:hover, .bank_018ktb:active,
+.bank_018ktb:focus, .bank_018ktb.selected {
+    background: url(../images/shopping_cart/bank/bank_018ktb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 滙豐(台灣)商業銀行 */
+.bank_019hsbc {
+    background: url(../images/shopping_cart/bank/bank_019hsbc.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_019hsbc:hover, .bank_019hsbc:active,
+.bank_019hsbc:focus, .bank_019hsbc.selected {
+    background: url(../images/shopping_cart/bank/bank_019hsbc.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 瑞興商業銀行 */
+.bank_020tsb {
+    background: url(../images/shopping_cart/bank/bank_020tsb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_020tsb:hover, .bank_020tsb:active,
+.bank_020tsb:focus, .bank_020tsb.selected {
+    background: url(../images/shopping_cart/bank/bank_020tsb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 華泰商業銀行 */
+.bank_021hb {
+    background: url(../images/shopping_cart/bank/bank_021hb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_021hb:hover, .bank_021hb:active,
+.bank_021hb:focus, .bank_021hb.selected {
+    background: url(../images/shopping_cart/bank/bank_021hb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 臺灣新光商業銀行 */
+.bank_022skb {
+    background: url(../images/shopping_cart/bank/bank_022skb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_022skb:hover, .bank_022skb:active,
+.bank_022skb:focus, .bank_022skb.selected {
+    background: url(../images/shopping_cart/bank/bank_022skb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 陽信商業銀行 */
+.bank_023sb {
+    background: url(../images/shopping_cart/bank/bank_023sb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_023sb:hover, .bank_023sb:active,
+.bank_023sb:focus, .bank_023sb.selected {
+    background: url(../images/shopping_cart/bank/bank_023sb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 板信商業銀行 */
+.bank_024bop {
+    background: url(../images/shopping_cart/bank/bank_024bop.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_024bop:hover, .bank_024bop:active,
+.bank_024bop:focus, .bank_024bop.selected {
+    background: url(../images/shopping_cart/bank/bank_024bop.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 三信商業銀行 */
+.bank_025cota {
+    background: url(../images/shopping_cart/bank/bank_025cota.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_025cota:hover, .bank_025cota:active,
+.bank_025cota:focus, .bank_025cota.selected {
+    background: url(../images/shopping_cart/bank/bank_025cota.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 聯邦商業銀行 */
+.bank_026ubot {
+    background: url(../images/shopping_cart/bank/bank_026ubot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_026ubot:hover, .bank_026ubot:active,
+.bank_026ubot:focus, .bank_026ubot.selected {
+    background: url(../images/shopping_cart/bank/bank_026ubot.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 遠東國際商業銀行 */
+.bank_027feib {
+    background: url(../images/shopping_cart/bank/bank_027feib.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_027feib:hover, .bank_027feib:active,
+.bank_027feib:focus, .bank_027feib.selected {
+    background: url(../images/shopping_cart/bank/bank_027feib.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 元大商業銀行 */
+.bank_028ycb {
+    background: url(../images/shopping_cart/bank/bank_028ycb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_028ycb:hover, .bank_028ycb:active,
+.bank_028ycb:focus, .bank_028ycb.selected {
+    background: url(../images/shopping_cart/bank/bank_028ycb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 永豐商業銀行 */
+.bank_029bs {
+    background: url(../images/shopping_cart/bank/bank_029bs.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_029bs:hover, .bank_029bs:active,
+.bank_029bs:focus, .bank_029bs.selected {
+    background: url(../images/shopping_cart/bank/bank_029bs.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 玉山商業銀行 */
+.bank_030esun {
+    background: url(../images/shopping_cart/bank/bank_030esun.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_030esun:hover, .bank_030esun:active,
+.bank_030esun:focus, .bank_030esun.selected {
+    background: url(../images/shopping_cart/bank/bank_030esun.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 凱基商業銀行 */
+.bank_031kgi {
+    background: url(../images/shopping_cart/bank/bank_031kgi.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_031kgi:hover, .bank_031kgi:active,
+.bank_031kgi:focus, .bank_031kgi.selected {
+    background: url(../images/shopping_cart/bank/bank_031kgi.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 星展(台灣)商業銀行 */
+.bank_032dbs {
+    background: url(../images/shopping_cart/bank/bank_032dbs.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_032dbs:hover, .bank_032dbs:active,
+.bank_032dbs:focus, .bank_032dbs.selected {
+    background: url(../images/shopping_cart/bank/bank_032dbs.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 台新國際商業銀行 */
+.bank_033tib {
+    background: url(../images/shopping_cart/bank/bank_033tib.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_033tib:hover, .bank_033tib:active,
+.bank_033tib:focus, .bank_033tib.selected {
+    background: url(../images/shopping_cart/bank/bank_033tib.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 日盛國際商業銀行 */
+.bank_034jsib {
+    background: url(../images/shopping_cart/bank/bank_034jsib.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_034jsib:hover, .bank_034jsib:active,
+.bank_034jsib:focus, .bank_034jsib.selected {
+    background: url(../images/shopping_cart/bank/bank_034jsib.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 安泰商業銀行 */
+.bank_035ecb {
+    background: url(../images/shopping_cart/bank/bank_035ecb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_035ecb:hover, .bank_035ecb:active,
+.bank_035ecb:focus, .bank_035ecb.selected {
+    background: url(../images/shopping_cart/bank/bank_035ecb.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 中國信託商業銀行 */
+.bank_036ctbc {
+    background: url(../images/shopping_cart/bank/bank_036ctbc.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_036ctbc:hover, .bank_036ctbc:active,
+.bank_036ctbc:focus, .bank_036ctbc.selected {
+    background: url(../images/shopping_cart/bank/bank_036ctbc.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 中華郵政 */
+.bank_037post {
+    background: url(../images/shopping_cart/bank/bank_037post.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_037post:hover, .bank_037post:active,
+.bank_037post:focus, .bank_037post.selected {
+    background: url(../images/shopping_cart/bank/bank_037post.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 連線商業銀行 */
+.bank_038line {
+    background: url(../images/shopping_cart/bank/bank_038line.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_038line:hover, .bank_038line:active,
+.bank_038line:focus, .bank_038line.selected {
+    background: url(../images/shopping_cart/bank/bank_038line.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 樂天國際商業銀行 */
+.bank_038line {
+    background: url(../images/shopping_cart/bank/bank_038line.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.bank_038line:hover, .bank_038line:active,
+.bank_038line:focus, .bank_038line.selected {
+    background: url(../images/shopping_cart/bank/bank_038line.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/***** 超商繳款 *****/
+/* 7-11 */
+.store_711 {
+    background: url(../images/shopping_cart/store/store_711.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.store_711:hover, .store_711:active,
+.store_711:focus, .store_711.selected {
+    background: url(../images/shopping_cart/store/store_711.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 超商-全家 */
+.store_family {
+    background: url(../images/shopping_cart/store/store_family.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.store_family:hover, .store_family:active,
+.store_family:focus, .store_family.selected {
+    background: url(../images/shopping_cart/store/store_family.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 超商-萊爾富 */
+.store_hilife {
+    background: url(../images/shopping_cart/store/store_hilife.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.store_hilife:hover, .store_hilife:active,
+.store_hilife:focus, .store_hilife.selected {
+    background: url(../images/shopping_cart/store/store_hilife.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+/* 超商-OK */
+.store_ok {
+    background: url(../images/shopping_cart/store/store_ok.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #fff;
+}
+.store_ok:hover, .store_ok:active,
+.store_ok:focus, .store_ok.selected {
+    background: url(../images/shopping_cart/store/store_ok.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border: 1px solid #f00;
+}
+.bank_list:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.pay_checkout {
+    padding: 0;
+    margin: 15px auto;
+    border: 0;
+}
+.pay_checkout, .pay_checkout div,
+input.pay_btn {
+    display: inline-block;
+    vertical-align: middle;
+}
+.pay_checkout .total1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.pay_checkout .total2 {
+    font-size: 16px;
+}
+.pay_checkout .pay_btn {
+    width: 150px;
+    margin: 10px;
+}
+/********** 買家-訂單列表頁籤 ************/
+.panel_wrap {
+    margin: 0 auto;
+}
+/* 隱藏選取的radio(圓點) */
+.panel_control {
+    display: none;
+    position: absolute;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+/* 頁籤分頁的外層(讓分頁超出畫面可滑動設定) */
+.panel_tab_bigwarp {
+    width: 100%;
+    margin-bottom: -2px;
+    overflow: auto;
+}
+.panel_tab_wrap {
+    display: flex;
+    text-align: center;
+}
+/* 頁籤分頁標題 */
+.panel_tab_label {
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    padding: 10px;
+    margin-right: 1px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-bottom: 5px solid transparent;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+.panel_tab_label:last-child {
+    margin-right: 0;
+}
+/* 頁籤內容(讓分頁超出畫面可滑動設定) */
+.panel_content_wrap {
+    min-height: 450px;
+    padding: 20px;
+    margin: 0 auto 20px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    overflow: auto;
+}
+/* 隱藏頁籤內容 */
+.pa_content {
+    display:none;
+}
+/* 點選後秀出隱藏的內容 */
+#pa_radio1:checked ~ .panel_content_wrap .pa_content1,
+#pa_radio2:checked ~ .panel_content_wrap .pa_content2,
+#pa_radio3:checked ~ .panel_content_wrap .pa_content3,
+#pa_radio4:checked ~ .panel_content_wrap .pa_content4,
+#pa_radio5:checked ~ .panel_content_wrap .pa_content5,
+#pa_radio6:checked ~ .panel_content_wrap .pa_content6,
+#pa_radio7:checked ~ .panel_content_wrap .pa_content7 {
+    display:block;
+    text-align: left;
+    color: #666;
+}
+/* 選取頁籤標題的效果 */
+#pa_radio1:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio1"],
+#pa_radio2:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio2"],
+#pa_radio3:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio3"],
+#pa_radio4:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio4"],
+#pa_radio5:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio5"],
+#pa_radio6:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio6"],
+#pa_radio7:checked ~ .panel_tab_bigwarp .panel_tab_wrap [for="pa_radio7"] {
+    background-color: #fff;
+    border-bottom: 5px solid #45d5c0;
+}
+/* 頁籤標題-滑鼠效果 */
+.panel_tab_label:hover,
+.panel_tab_label:focus,
+.panel_tab_label:active {
+    background-color: #fdfdfd;
+    border-bottom: 5px solid #93f3e5;
+    cursor: pointer;
+}
+/* 查無訂單 */
+.no-orderlist_box {
+    margin: 50px auto 30px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #aaa;
+    text-align: center;
+}
+.no-orderlist_box span {
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 賣家-訂單列表 */
+.pink_table th {
+    background: #ffe4f3;
+}
+/* .pink_table tr:nth-child(even) {
+    background: #fff6fc;
+}
+.pink_table tr:hover {
+    background: #fdffe2;
+} */
+/* 免費刊登販售 */
+.create_goods_content {
+    width: 95%;
+    padding: 25px 0 0 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.create_goods_content .select_item .search_select {
+    padding: 5px 20px;
+}
+.create_goods_content .select_item:after {
+    top: 13px;
+    right: 10px;
+}
+.create_goods_content .search_item img {
+    top: 8px;
+}
+.create_goods_content .input_item .text_input {
+    padding: 5px 20px;
+    font-size: 17px;
+}
+.create_goods_content .input_item {
+    width: 25%;
+    margin: 0 10px 10px 0;
+}
+.create_goods_content .select_item {
+    width: 20%;
+}
+.create_top, .create_mid, .create_end {
+    padding: 20px;
+    margin-bottom: 20px;
+    font: normal normal 1.15em/1.2em Arial, "Microsoft JhengHei";
+    background: #f5f5f5;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px dotted #ccc;
+}
+.create_goods_label {
+    border: 2px solid #bddb9a;
+    border-bottom: 5px solid transparent;
+}
+.create_content_wrap {
+    border: 2px solid #bddb9a;
+}
+.create_mid .line,
+.chkbox_outside .line {
+    width: 99%;
+    margin: 20px auto;
+    border-bottom: 4px dotted #d6d6d6;
+}
+.create_tips {
+    width: 97%;
+    padding: 10px;
+    background: #d2e3e3;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.create_tips .col_text {
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 15px;
+    background: #deebeb;
+}
+.other_setup {
+    margin: 10px 0 0 0;
+    padding-top: 20px;
+    border-top: 1px dotted #ccc;
+}
+#CheckSet:checked ~ .other_setup {
+    display: none;
+}
+.remind_text {
+    font-size: 16px;
+    padding: 0 0 0 20px;
+    list-style-type: disc;
+}
+.remind_text li {
+    line-height: 20px;
+    margin: 0 0 8px 0;
+    text-align: justify;
+    text-justify:inter-ideograph;
+}
+.remind_text a {
+    display: inline-block;
+    color: #2196f3;
+}
+.appraise_label {
+    cursor: pointer;
+}
+/* 評價記分板 */
+.bulletin {
+    position: relative;
+    width: 85%;
+    padding: 15px;
+    margin: 15px auto;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 3px rgba(100, 100, 100, .2);
+    -moz-box-shadow: 0 1px 3px rgba(100, 100, 100, .2);
+    -o-box-shadow: 0 1px 3px rgba(100, 100, 100, .2);
+    box-shadow: 0 1px 3px rgba(100, 100, 100, .2);
+}
+.sell_box {
+    border: 1px solid #f69ddc;
+}
+.buy_box {
+    border: 1px solid #7cd6b4;
+}
+.vertical_line {
+    display: inline-block;
+    width: 1px;
+    height: 88px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    vertical-align: middle;
+}
+.bu_score, .bu_count,
+.bu_history {
+    margin: auto;
+}
+.bu_score, .bu_count,
+.bu_count .pic,
+.bu_history,
+.bulletin span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.bu_score {
+    width: 17%;
+    font-size: 22px;
+    font-weight: bold;
+}
+.bu_count {
+    width: 55%;
+    font-size: 22px;
+    font-weight: bold;
+}
+.bu_count .pic img {
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+.bu_count .good_pic img {
+    width: 64%;
+}
+.bu_count span {
+    margin: 0 15px;
+    text-align: center;
+}
+.bu_history {
+    width: 25%;
+    text-align: center;
+}
+.bu_history li {
+    padding: 0 0 5px 0;
+}
+.bu_history li span {
+    width: 50px;
+}
+/* 排序區 */
+.comment_content {
+    width: 90%;
+    margin: 0 auto;
+}
+.comment_content .se_item {
+    float:none;
+    text-align: left;
+}
+/* 訂單詳情 */
+.order_title {
+    font-size: 17px;
+    margin: 0 0 5px 0;
+}
+.info_tbbox {
+    height: auto;
+}
+.buy_boxset {
+    padding: 0 0 10px 0;
+    background-color: #fff;
+    border: 2px dotted #ccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.buy_boxset .pagination_wrap {
+    padding: 10px 0;
+}
+.qa_date {
+    padding: 10px 15px 0 15px;
+}
+/********** 訂單列表 ************/
+/* 詳細訂單 */
+.qa_date {
+    padding: 10px 15px 0 15px;
+}
+/********** 站內公告 ************/
+/* 查看系統信*/
+.chkbox_title {
+    color: #fff;
+    background: #c3bfb0;
+    background: -moz-linear-gradient(right, #b7b3a2 0%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(right, #b7b3a2 0%, #f5f5f5 100%);
+    background: linear-gradient(to right, #b7b3a2 0%, #f5f5f5 100%);
+}
+.col_tb_wrap {
+    width: 89%;
+    margin: 30px auto;
+}
+.col_tb {
+    color: #555;
+    font-size: 16px;
+    border: 1px solid #999;
+}
+.col_tb th, .col_tb td {
+    line-height: 24px;
+    word-break: break-word;
+    vertical-align: top;
+}
+.col_tb th {
+    width: 15%;
+    padding: 7px 10px;
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    background-color: #666;
+    border-bottom: 1px solid #999;
+}
+.col_tb td {
+    width: 80%;
+    padding: 7px 0 7px 10px;
+    /* margin: 0 0 0 -5px; */
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    background-color: #fff;
+}
+.col_tb td:first-of-type {
+    border-top: 1px solid #bbb;
+}
+table .bg_gray_blue {
+    background-color: #4b7f8b;
+}
+/********** 帳號管理 ************/
+/* 審核中.已認證.未認證文字設定 */
+.verify_text {
+    padding: 0 3px;
+    font-size: 14px;
+    font-weight: bold;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+a.verify_text {
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* 身分證下方文字 */
+.idcard_box .pw_tips {
+    padding-left: 25px;
+    list-style: disc;
+}
+.pw_tips {
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 0 0 5px;
+    margin:  0 0 5px 0;
+    font-size: 15px;
+    list-style: decimal;
+    vertical-align: top;
+}
+/* 評價管理 */
+.buy_fixed_table td, .sell_table td {
+    vertical-align: top;
+}
+.reply_box {
+    padding: 5px 0;
+    border-top: 3px dotted #e3e3e3;
+}
+.ms_txt {
+    display: inline-block;
+    width: 90%;
+    margin: 0 0 5px 0;
+    vertical-align: top;
+}
+.ms_date {
+    padding: 8px 0 0 0;
+}
+.buy_fixed_table, .sell_table {
+    text-align: left;
+}
+.buy_fixed_table th, .sell_table th {
+    text-align: center;
+}
+.buy_fixed_table .cell_s,
+.sell_table .cell_s {
+    width: 9%;
+}
+.buy_fixed_table .cell_m,
+.sell_table .cell_m {
+    width: 13%;
+}
+.sell_table thead th {
+    background: #ffe2f7;
+}
+.buy_fixed_table tr:nth-child(even),
+.sell_table tr:nth-child(even) {
+    background: #fafafa;
+}
+.buy_fixed_table thead th,
+.buy_fixed_table tbody td,
+.sell_table tbody td {
+    border: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
+}
+.buy_fixed_table  td:first-child,
+.sell_table  td:first-child {
+    border-left: 0;
+}
+.buy_fixed_table thead tr,
+.sell_table thead tr {
+    border: 0;
+}
+.buy_fixed_table tbody td,
+.sell_table tbody td {
+    line-height: 18px;
+    padding: 5px;
+    word-break: break-all;
+    vertical-align: middle;
+}
+.buy_fixed_table .btn_disabled,
+.sell_table .btn_disabled {
+    cursor: unset;
+}
+/* 問題申訴 */
+.complain_table td {
+    vertical-align: middle;
+}
+.complain_table th {
+    background: #fbeedb;
+}
+.complain_table tr:nth-child(even) {
+    background: #fbf8f4;
+}
+.complain_table .cell_l {
+    width: 16%;
+}
+.complain_table .cell_s {
+    width: 7%;
+}
+/********** 新手幫助 ************/
+/* 新手幫助 */
+.help_wrap {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.help_wrap .service_info .item {
+    width: 15%;
+}
+.help_box {
+    padding: 30px 20px;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: left;
+    border-top: 3px dotted #ccc;
+}
+.help_ol .title {
+    display: inline-block;
+    padding: 0 0 10px 0;
+    font-size: 23px;
+    font-weight: bold;
+}
+.help_ol .fa {
+    vertical-align: top;
+}
+.help_ul_s {
+    padding: 5px 0 5px 20px;
+    list-style: circle;
+    font-size: 16px;
+}
+/********** 浮動視窗_會員大頭照 ************/
+.popup_share {
+    position: fixed;
+    top: 40px;
+    right: 0;
+    z-index: 60;
+}
+.share_btn {
+    position: relative;
+}
+.share_btn .share_show, .share_btn .share_hide {
+    position: absolute;
+    top: -31px;
+    right: 55px;
+    width: 100px;
+    padding: 5px;
+    color: #fff;
+    font-size: 1em;
+    text-align: right;
+    background: url(../images/member/fa-angle-double-left-w.png) 10px 50% no-repeat #f90;
+    background-size: 15% auto;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+.share_btn .share_show {
+    background: url(../images/member/fa-angle-double-right-w.png) 10px 50% no-repeat #f90;
+    background-size: 15% auto;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+.rwd_menu {
+    max-height: 500px;
+    overflow-y: auto;
+}
+/***** 商品列表 *****/
+/* 表格 */
+.store_wrap .sk_fixed_table .cell_ss {
+    width: 5%;
+}
+.store_wrap .sk_fixed_table .cell_s {
+    width: 7%;
+}
+.store_wrap .sk_fixed_table th,
+.store_wrap .sk_fixed_table td {
+    line-height: 18px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    word-break: break-all;
+    vertical-align: middle;
+}
+.store_wrap .cell_ss {
+    width: 5%;
+}
+.store_wrap .cell_s {
+    width: 7%;
+}
+.store_wrap .panel_content_wrap {
+    padding: 0;
+    border: 0;
+    overflow: unset;
+}
+/***** 我的錢包 *****/
+.wallet_box {
+    width: 92%;
+    padding: 10px 10px 0 10px;
+    margin: 20px auto 0;
+    border: 1px solid #cddc39;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.wa_item {
+    display: inline-block;
+    width: 20%;
+    padding: 0 0 5px 5px;
+    line-height: 20px;
+    color: #666;
+    text-align: left;
+    vertical-align: top;
+}
+.wa_item .title:before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    margin: 0 5px 0 0;
+    border-right: 5px solid #fbb034;
+    vertical-align: middle;
+}
+.wallet_box .vertical_line {
+    height: 70px;
+}
+.verify_box, .wa_item .title,
+.wa_item .txt, .wa_money {
+    display: inline-block;
+    vertical-align: middle;
+}
+.wa_surplus {
+    width: 24%;
+}
+.wa_account {
+    width: 29%;
+}
+.wa_item div.title {
+    width: 68%;
+    height: 30px;
+    line-height: 22px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.wa_money {
+    width: 67%;
+    padding: 0 0 0 15px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    word-break: break-all;
+}
+.wa_item .txt {
+    width: 60%;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 0 0 15px;
+}
+.wallet_tb th {
+    line-height: 18px;
+    padding: 3px 0;
+}
+.wallet_tb .cell_s {
+    width: 7%;
+}
+.wallet_tb .title {
+    font-weight: normal;
+}
+/* 清除 float:right 浮動 */
+.check_box:after,
+.hd_wrap:after,
+.hd_menu:after
+.sequence_content:after,
+.goods_price:after,
+.goods_info:after,
+.sell_info_content .info_btn:after,
+.qa_title:after,
+.qa_box:after,
+.qa_head_r:after,
+.qa_box .txt:after,
+.answer_main:after,
+.ask_main .qa_box:after,
+.ask_main .qa_box .txt:after,
+.answer_main .qa_box:after,
+.answer_main .qa_box .txt:after,
+.txt_top:after,
+.pay_methods .title:after,
+.talk_box:after,
+.reply_box:after,
+.qa_title:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 901px (電腦)*/
+@media screen and (min-width: 901px) {
+    /* 表格內的ScrollBar樣式設定 */
+    :-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    :-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 2px #bbb;
+        -moz-box-shadow: inset 0 0 2px #bbb;
+        -o-box-shadow: inset 0 0 2px #bbb;
+        box-shadow: inset 0 0 2px #bbb;
+        background: #e8e8e8;
+    }
+    :-webkit-scrollbar-thumb {
+        background: #bbb;
+    }
+    :-webkit-scrollbar-thumb:hover,
+    :-webkit-scrollbar-thumb:active,
+    :-webkit-scrollbar-thumb:focus {
+        background: #888;
+    }
+    /* 頁首-功能列 */
+    .hd_login .nav_btn {
+        width: 100px;
+    }
+    /* 漢堡圖 */
+    .menu-trigger {
+        display: none;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        min-height: 240px;
+    }
+    /* 凍結表格(內表格) */
+    .sk_fixed_table tfoot tr th,
+    .sk_fixed_table tfoot tr td .sk_fixed_table tfoot tr.subtotal th,
+    .sk_fixed_table tfoot tr.subtotal td {
+        padding-right: 20px !important;
+    }
+    /* 會員中心 */
+    .index_main {
+        min-height: 480px;
+    }
+    /* 表格+頁籤 */
+    .panel_wrap {
+        max-width: 900px;
+    }
+    .store_wrap {
+        max-width: 1100px;
+    }
+    /* 浮動視窗_會員大頭照 */
+    .popup_share {
+        display: none;
+    }
+}
+
+/* 寬度小於 900px (平板+手機)*/
+@media screen and (max-width: 900px) {
+    body {
+        background: url(../images/bg-pic.jpg) top -40px left 0 repeat-x #d5d5d5;
+    }
+    /* 頁首-功能列 */
+    .hd_wrap {
+        margin: 10px auto;
+    }
+    .hd_logo {
+        width: 120px;
+        margin: 0 0 0 5px;
+    }
+    .hd_login .nav_btn {
+        padding: 3px 15px;
+        font-size: 18px;
+    }
+    .hd_member {
+        display: none;
+    }
+    .hd_member a {
+        padding: 5px 10px;
+    }
+    /* 凍結表格(內表格) */
+    .sk_fixed_table {
+        min-width: 1100px;
+    }
+    /* 頁籤外層(讓頁籤超出畫面可滑動設定) */
+    .panel_wrap {
+        width: 100%;
+        overflow: hidden;
+    }
+    .create_gd_wrap .panel_tab_wra,
+    .wallet_wrap .panel_tab_wrap {
+        min-width: 600px;
+    }
+    .panel_content_wrap {
+        width: 94.5%;
+        margin: 0 auto;
+    }
+    .panel_tab_label {
+        padding: 8px 0 5px 0;
+        margin-right: 2px;
+        font-size: 18px;
+    }
+    .orderlist_group {
+        width: 100%;
+        overflow: auto;
+    }
+    .sk_tbbox {
+        overflow: auto;
+    }
+    .info_tbbox .sk_fixed_table {
+        min-width: 900px;
+    }
+    /* 頁碼 */
+    .page_number {
+        width: 140px;
+    }
+    .page_jump {
+        width: 200px;
+    }
+    /* 麵包屑 */
+    .sequence_content {
+        line-height: 25px;
+    }
+    /* 會員中心 */
+    .slider_menu.pc_menu {
+        width: 230px;
+    }
+    /* 商品訊息 */
+    .sell_info_content .item {
+        width: 73%;
+        min-width: 530px;
+    }
+    .sell_info_menu {
+        width: 190px;
+    }
+    .info_btn .stock_btn {
+        padding: 0 0 10px 0;
+    }
+    .info_btn .buy_btn {
+        float: none;
+    }
+    .goods_info {
+        padding: 5px;
+    }
+    .gi_qa textarea {
+        margin: 0 0 10px 0;
+    }
+    .gi_qa .qa_btn {
+        width: 32%;
+    }
+    .sk_fixed_table.qa_tb {
+        min-width: 650px;
+    }
+    /* 首頁 */
+    .banner_wrap {
+        padding: 5px 0 0 0;
+    }
+    .news_info {
+        display: block;
+        width: 95%;
+        margin: 10px auto 20px;
+    }
+    .help_item .txt li {
+        width: 20%;
+    }
+    .slider_box {
+        display: block;
+        width: 71%;
+        margin: 0 auto;
+    }
+    .banner_wrap .title {
+        padding: 8px;
+    }
+    /* 搜尋框 */
+    .search_wrap {
+        width: 95%;
+    }
+    .se_item1 {
+        width: 100%;
+    }
+    .sell_info .title {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .se_info .txt li {
+        width: 19%;
+    }
+    .se_info .txt li:before {
+        width: 16px;
+    }
+    .buy_info .txt, .se_info .txt {
+        width: 83%;
+        vertical-align: top;
+    }
+    .search_wrap .buy_info {
+        width: 100%;
+    }
+    .search_wrap .se_item1 {
+        border-bottom: 1px dashed #ccc;
+    }
+    .search_wrap .search_item {
+        width: 97%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .search_wrap .search_item img {
+        top: 21px;
+        left: 21px;
+    }
+    .search_wrap .search_item .se_input {
+        width: 64%;
+        font-size: 20px;
+    }
+    .search_wrap .search_item .se_btn {
+        width: 30%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .banner_wrap .txt a:before {
+        margin: 0 5px;
+    }
+    .search_select {
+        width: 19%;
+        height: 39px;
+        line-height: 39px;
+        vertical-align: top;
+    }
+    .search_input {
+        width: 20%;
+        height: 35px;
+        line-height: 35px;
+        vertical-align: top;
+    }
+    .search_item {
+        width: 32%;
+        vertical-align: top;
+    }
+    .search_item .se_input {
+        width: 52%;
+        height: 34px;
+        line-height: 34px;
+    }
+    .search_item .se_btn {
+        height: 38px;
+        line-height: 37px;
+        font-size: 18px;
+    }
+    /* 遊戲分類 */
+    .game_content {
+        width: 95%;
+        padding: 10px 0;
+    }
+    .game_wrap .game_label1,
+    .game_wrap .game_label2,
+    .game_wrap .game_label3 {
+        width: 31%;
+        padding: 0 0 10px 0;
+        font-size: 22px;
+    }
+    .ga_item {
+        min-height: 260px;
+    }
+    /* 購物車 */
+    .shopcart_pic {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .btn_bank {
+        margin: 0;
+    }
+    /* 商品訊息 */
+    .buystore_wrap, .create_goods_wrap,
+    .index_main {
+        width: 100%;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .sell_info_content {
+        width: 96%;
+    }
+    /* 會員中心 */
+    .col_tb th {
+        width: 32%;
+        padding: 5px;
+    }
+    .col_tb td {
+        width: 80%;
+        padding: 5px 0 5px 5px;
+    }
+    .transaction_box .item {
+        margin: 0 10px 10px 0;
+    }
+    .service_info .item {
+        width: 20%;
+    }
+    .buy_item, .sell_item {
+        width: 320px;
+    }
+    /* 新手幫助 */
+    .help_wrap {
+        width: 95%;
+    }
+    /* 會員中心-左側 */
+    .pc_menu {
+        display: none;
+    }
+    /* 問答專區 */
+    .qa_box {
+        width: 100%;
+    }
+    .ask_main .qa_box .txt,
+    .answer_main .qa_box .txt {
+        width: 75%;
+    }
+    /* 我的錢包 */
+    .wa_item {
+        width: 48%;
+        padding: 5px 0;
+        margin: 0 5px 5px 0;
+    }
+    .wa_item::nth-child(odd) {
+        border-right: 1px solid #ccc;
+    }
+    .wa_item .txt {
+        width: 60%;
+        padding: 0 0 0 15px;
+    }
+    .wa_money {
+        padding: 0 0 0 15px;
+    }
+    .col_inline.verify_box {
+        margin: 0;
+    }
+}
+
+/* 寬度大於 2560px (iMac) */
+@media screen and (min-width: 2560px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        right: 4%;
+        bottom: 10%;
+    }
+    /*浮動客服*/
+    .btn_chat {
+        right: 4%;
+        bottom: 5%;
+    }
+    .on_chat {
+        right: 6%;
+        bottom: 5%;
+    }
+}
+
+/* 寬度介於 1301px - 1900px (ipad pro,舊電腦) */
+@media screen and (min-width: 1301px) and (max-width: 1900px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 8%;
+    }
+    /*浮動客服*/
+    .on_chat {
+        right: 7%;
+    }
+}
+
+/* 寬度介於 901px - 1300px (ipad) */
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 13%;
+    }
+    /* 首頁 */
+    .banner_wrap {
+        padding: 5px 0 15px 0;
+    }
+    .news_info {
+        width: 25%;
+        margin: 0px 10px;
+    }
+    .slider_box {
+        width: 71%;
+    }
+    .banner_wrap .title {
+        padding: 5px;
+        font-size: 18px;
+    }
+    .news_item .txt a,
+    .help_item .txt a {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    .buy_info .txt,
+    .se_info .txt {
+        padding: 0 0 0 10px;
+    }
+    .search_wrap {
+        width: 98%;
+    }
+    .se_item1 {
+        width: 68%;
+    }
+    .se_item1 .se_info,
+    .se_item1 .sell_info {
+        background-size: 65px 40px;
+    }
+    .se_info .title {
+        width: 70px;
+        padding: 10px 0 10px 15px;
+        font-size: 21px;
+    }
+    .se_info .txt {
+        font-size: 15px;
+    }
+    .se_info .txt li {
+        width: 85px;
+    }
+    .se_info .txt li:before {
+        width: 16px;
+    }
+    .search_wrap .search_item {
+        width: 30%;
+    }
+    .search_wrap .search_item .se_input {
+        width: 60%;
+    }
+    .search_wrap .search_item .se_btn {
+        width: 25%;
+    }
+    .se_item1 .se_info {
+        background-size: 84px 40px;
+    }
+    .banner_wrap .txt a:before {
+        margin: 0 5px;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        width: 19%;
+        min-height: 280px;
+    }
+    .se_info .title {
+        width: 110px;
+        padding: 10px 0 10px 15px;
+        font-size: 21px;
+    }
+    /* 會員中心-左側 */
+    .rwd_menu {
+        max-height: 400px;
+    }
+    .slider_menu.pc_menu {
+        width: 180px;
+        margin: 0 5px 0 10px;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        padding: 20px 0;
+        margin: 0 auto 10px;
+    }
+    .transaction_box .item {
+        margin: 0 10px 0 0;
+        padding: 5px;
+    }
+    .buy_item .list, .sell_item .list {
+        padding-top: 54px;
+    }
+    .item.balance_item {
+        width: 225px;
+        padding: 0;
+    }
+    .balance_item .txt {
+        padding: 38px 10px 10px 0;
+        font-size: 18px;
+    }
+    .balance_item .number {
+        padding: 16px;
+        font-size: 26px;
+    }
+    .buy_item, .sell_item {
+        width: 225px;
+        padding: 5px;
+    }
+    .buy_item .list .s_item, .sell_item .list .s_item {
+        width: 21%;
+        margin: 0 5px 0 0;
+    }
+    .buy_item .list .s_item span,
+    .sell_item .list .s_item span {
+        padding: 5px 0;
+        font-size: 20px;
+    }
+    .evaluate_box .item {
+        width: 19%;
+        padding: 0;
+    }
+    .evaluate_box .item .pic {
+        margin: 0;
+    }
+    .evaluate_box .item .txt {
+        width: 60%;
+    }
+    .service_info {
+        padding: 20px;
+    }
+    .service_info .item {
+        width: 24%;
+        padding: 20px 0;
+        margin: 0 5px 5px 0;
+    }
+    .slider_menu.sell_info_menu {
+        width: 190px;
+    }
+    /* 表格 */
+    .sk_tbbox {
+        overflow: auto;
+    }
+    .sk_fixed_table.sell_table {
+        min-width: 900px;
+        overflow-x: auto;
+    }
+    /* 商品訊息(賣場商品) */
+    .sell_info_content .item {
+        width: 75%;
+        min-width: 680px;
+        margin: 0 5px 0 0;
+    }
+    .goods_info .txt {
+        width: 70%;
+    }
+    .li_title, .li_txt {
+        font-size: 16px;
+    }
+    .li_title {
+        width: 80px;
+    }
+    .ask_main .qa_box .txt,
+    .answer_main .qa_box .txt {
+        width: 90%;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 12%;
+        font-size: 22px;
+    }
+    .bu_count {
+        width: 48%;
+        font-size: 20px;
+        border-left: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 192px;
+        margin: 10px auto 0;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 60px;
+        height: 20px;
+        line-height: 22px;
+        border-right: 1px solid #ccc;
+    }
+    /* 我的錢包 */
+    .create_gd_wrap .panel_tab_wra,
+    .wallet_wrap .panel_tab_wrap {
+        min-width: 900px;
+        overflow-x: auto;
+    }
+    .sk_fixed_table {
+        min-width: 900px;
+    }
+    #popup_AddBank .scroll_box {
+        max-height: 300px;
+    }
+    .wa_item, .wa_surplus, .wa_account {
+        width: 48%;
+        padding: 0 0 10px 5px;
+    }
+    .wa_item div.title {
+        width: 66%;
+    }
+    .wa_item .col_1 {
+        margin: 0;
+    }
+    .wa_item .col_1.col_inline {
+        margin: 0 10px 5px 0;
+    }
+}
+
+/* 寬度介於 751px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 900px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 15%;
+    }
+    /* 首頁 */
+    .banner_wrap {
+        padding: 5px 0 15px 0;
+    }
+    .news_info {
+        display: inline-block;
+        width: 25%;
+        margin: 0 0 0 10px;
+    }
+    .slider_box {
+        display: inline-block;
+        width: 69%;
+    }
+    .help_item .txt li {
+        width: 50%;
+    }
+    .banner_wrap .txt {
+        padding: 10px 10px 20px 10px;
+        height: 81px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    /* 搜尋框 */
+    .search_item i {
+        top: 8px;
+    }
+    .search_wrap i {
+        top: 19px;
+        left: 17px;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        width: 25%;
+    }
+    /* 商品訊息-搜尋框 */
+    .search_select {
+        width: 16%;
+    }
+    .search_item {
+        width: 29%;
+    }
+    .search_list .btn_big {
+        display: inline-block;
+        float: none;
+        width: 20%;
+    }
+    .sequence_content .se_item {
+        width: 33%;
+    }
+    /* 商品訊息(賣場商品) */
+    .info_btn {
+        padding: 20px 0 0 0;
+    }
+    .stock_btn .st_btn_l, .stock_btn .st_btn_r {
+        width: 40px;
+        height: 40px;
+    }
+    .stock_btn .st_input {
+        width: 80px;
+    }
+    .info_btn .buy_btn {
+        float: right;
+        width: 180px;
+        font-size: 22px;
+    }
+    .ga_in_con2 .gi_qa {
+        padding: 0 20px;
+    }
+    .gi_qa textarea {
+        width: 75%;
+    }
+    .gi_qa .qa_btn {
+        width: 20%;
+    }
+    .goods_info .txt {
+        width: 60%;
+    }
+    /* 會員中心-左側 */
+    .rwd_menu {
+        max-height: 400px;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        width: 92%;
+        padding: 20px 10px;
+    }
+    .transaction_box .item {
+        margin: 0 10px 0 0;
+        padding: 5px;
+    }
+    .item.balance_item, .buy_item, .sell_item {
+        width: 220px;
+    }
+    .item.balance_item {
+        padding: 0;
+    }
+    .balance_item .number {
+        padding: 10px;
+        font-size: 22px;
+    }
+    .balance_item .txt {
+        padding: 53px 10px 10px 0;
+    }
+    .buy_item .list, .sell_item .list {
+        padding-top: 53px;
+    }
+    .buy_item .list .s_item, .sell_item .list .s_item {
+        width: 21%;
+    }
+    .buy_item .list .s_item span,
+    .sell_item .list .s_item span {
+        font-size: 20px;
+    }
+    .evaluate_box {
+        width: 92%;
+    }
+    .evaluate_box .item {
+        width: 19%;
+        padding: 0;
+    }
+    .evaluate_box .item .pic {
+        margin: 0;
+    }
+    .evaluate_box .item .txt {
+        width: 60%;
+    }
+    .service_box {
+        width: 95%;
+    }
+    .service_info {
+        padding: 20px;
+    }
+    .service_info .item {
+        width: 21%;
+        margin: 0;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 12%;
+        font-size: 22px;
+    }
+    .bu_count {
+        width: 48%;
+        font-size: 20px;
+        border-left: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 192px;
+        margin: 10px auto 0;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 60px;
+        height: 20px;
+        line-height: 22px;
+        border-right: 1px solid #ccc;
+    }
+    /* 表格 */
+    .sk_fixed_table.sell_table {
+        min-width: 900px;
+    }
+    /* 我的錢包 */
+    .wa_item div.title {
+        width: 66%;
+    }
+}
+
+/* 寬度介於 671px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 750px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 18%;
+    }
+    /* 首頁 */
+    .buy_info .txt, .se_info .txt {
+        width: 81%;
+    }
+    /* 首頁-搜尋框 */
+    .search_wrap .search_item i {
+        top: 21px;
+        left: 20px;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        width: 25%;
+    }
+    /* 頁籤外層(讓頁籤超出畫面可滑動設定) */
+    .panel_tab_bigwarp {
+        width: 99%;
+        margin: 0 auto -4px 0;
+    }
+    .panel_tab_wrap {
+        min-width: 500px;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .panel_content_wrap {
+        width: 94%;
+    }
+    .pa_content {
+        width: 100%;
+    }
+    .panel_tab_label {
+        width: 18.5%;
+        padding: 8px 0 5px 0;
+        margin-right: 0px;
+        font-size: 18px;
+    }
+    .orderlist_group {
+        width: 100%;
+        overflow: auto;
+    }
+    /* 賣場-麵包屑 */
+    .sequence_content .se_item {
+        width: 40%;
+    }
+    /* 商品訊息(賣場商品) */
+    .goods_price .txt {
+        margin: 0 0 10px 0;
+    }
+    .goods_info .txt {
+        width: 60%;
+    }
+    .goods_info .pic {
+        width: 140px;
+        padding: 0;
+        border: 0;
+    }
+    .sell_info_content .item {
+        width: 68%;
+        min-width: 400px;
+    }
+    .info_btn {
+        padding: 10px 0;
+    }
+    .li_title {
+        width: 80px;
+    }
+    .li_title, .li_txt {
+        font-size: 16px;
+    }
+    .stock_btn .st_input {
+        width: 60px;
+    }
+    .stock_btn .st_btn_l,
+    .stock_btn .st_btn_r {
+        width: 40px;
+    }
+    .info_btn .buy_btn {
+        float: right;
+        width: 110px;
+        font-size: 18px;
+    }
+    .sell_info_menu {
+        width: 190px;
+        margin: 0;
+    }
+    .ga_in_con2 .gi_qa {
+        padding: 0 10px 10px 20px;
+    }
+    .gi_qa textarea {
+        width: 75%;
+    }
+    .gi_qa .qa_btn {
+        width: 20%;
+    }
+    /* 搜尋框 */
+    .search_list {
+        padding: 15px 15px 0 15px;
+    }
+    .search_select, .search_input {
+        width: 47%;
+        height: 35px;
+        padding: 0 0 0 10px;
+        margin: 0 0 5px 0;
+        vertical-align: top;
+    }
+    .search_select {
+        width: 32%;
+    }
+    .search_item {
+        width: 49%;
+    }
+    .search_item .se_input {
+        width: 58%;
+    }
+    .search_list .btn_big {
+        display: inline-block;
+        float: none;
+        width: 48%;
+    }
+    /* col 共用版 */
+    .col_4, .col_5, .col_6,
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    /* .col_2, .col_3 {
+        width: calc(100% - 2%);
+    } */
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    /* 會員中心-左側 */
+    .rwd_menu {
+        max-height: 300px;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        width: 85%;
+        padding: 20px 20px 10px 20px;
+    }
+    .item.balance_item {
+        width: 340px;
+    }
+    .transaction_box .item {
+        margin: 0 10px 10px 0;
+    }
+    .buy_item, .sell_item {
+        width: 260px;
+    }
+    .evaluate_box {
+        width: 90%;
+    }
+    .evaluate_box .item {
+        width: 22%;
+    }
+    .evaluate_box .item .pic {
+        margin: 0 10px 0 0;
+    }
+    .evaluate_box .item:last-child {
+        width: 96%;
+    }
+    .service_box {
+        width: 95%;
+    }
+    .service_info {
+        padding: 20px;
+    }
+    .service_info .item {
+        width: 21%;
+        margin: 0;
+    }
+    /* 新手幫助 */
+    .help_wrap {
+        width: 95%;
+    }
+    .help_wrap .service_info .item {
+        width: 16%;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 12%;
+        font-size: 22px;
+    }
+    .bu_count {
+        width: 48%;
+        font-size: 20px;
+        border-left: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 192px;
+        margin: 10px auto 0;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 60px;
+        height: 20px;
+        line-height: 22px;
+        border-right: 1px solid #ccc;
+    }
+    /* 我的錢包 */
+    .wa_item div.title {
+        width: 66%;
+    }
+}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 16%;
+    }
+    /* 首頁 */
+    .buy_info .txt, .se_info .txt {
+        width: 77%;
+    }
+    .search_wrap .search_item i {
+        top: 19px;
+        left: 19px;
+    }
+    .search_list {
+        padding: 10px 10px 0 10px;
+    }
+    .search_select {
+        height: 39px;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_select, .search_input {
+        width: 47%;
+    }
+    .search_item {
+        width: 47%;
+    }
+    .search_input {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_list .btn_big {
+        float: none;
+        width: 99%;
+        height: 35px;
+        padding: 0;
+        margin: 0 auto 5px;
+    }
+    .member_wrap .search_item {
+        width: 49%;
+    }
+    .search_wrap .search_item .se_input {
+        width: 63%;
+        height: 35px;
+    }
+    .search_item .se_input {
+        width: 59%;
+        font-size: 16px;
+    }
+    .search_item .se_btn {
+        width: 26%;
+        height: 38px;
+        font-size: 16px;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        width: 24%;
+        min-height: 230px;
+        font-size: 16px;
+    }
+    /* 頁碼(跳頁設定) */
+    .pagination_wrap {
+        margin: 5px auto;
+        font-size: 15px;
+    }
+    .page_number, .pagination_box, .page_jump {
+        width: 95%;
+        padding: 10px 0 0 0;
+    }
+    /* col 共用版 */
+    .col_4, .col_5, .col_6,
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    /* .col_2, .col_3 {
+        width: calc(100% - 2%);
+    } */
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    /* 賣場-麵包屑 */
+    .sequence_content .item {
+        float: none;
+        width: 100%;
+        margin: 2px 0;
+        font-size: 15px;
+        text-align: left;
+    }
+    /* 商品訊息(賣場商品) */
+    .sell_info_content .item {
+        width: 100%;
+        margin: 0;
+    }
+    .goods_info .txt {
+        width: 62%;
+        margin: 0;
+    }
+    .li_title {
+        width: 80px;
+    }
+    .li_title, .li_txt {
+        font-size: 16px;
+    }
+    .goods_info .pic {
+        float: none;
+        width: auto;
+        border: 0;
+    }
+    .info_btn {
+        padding: 10px;
+    }
+    .stock_btn .st_input {
+        width: 60px;
+    }
+    .info_btn .buy_btn {
+        float: right;
+        width: 160px;
+        font-size: 20px;
+    }
+    .sell_info_menu {
+        width: 50%;
+        margin: 10px 0;
+    }
+    .ga_in_con2 .gi_qa {
+        padding: 0 10px;
+    }
+    .gi_qa textarea {
+        width: 69%;
+    }
+    .gi_qa .qa_btn {
+        width: 25%;
+    }
+    /* 會員中心-左側 */
+    .rwd_menu {
+        max-height: 300px;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        width: 83%;
+        padding: 20px 20px 10px 20px;
+    }
+    .transaction_box .item {
+        margin: 0 10px 10px 0;
+    }
+    .item.balance_item {
+        width: 340px;
+    }
+    .evaluate_box {
+        width: 90%;
+    }
+    .evaluate_box .item {
+        width: 22%;
+        padding: 0 5px;
+    }
+    .evaluate_box .item .txt {
+        width: 96%;
+        margin: 5px 0 0 0;
+    }
+    .evaluate_box .item:last-child {
+        width: 96%;
+    }
+    .service_box {
+        width: 95%;
+    }
+    .service_info {
+        padding: 20px;
+    }
+    .service_info .item {
+        width: 20.5%;
+        margin: 0;
+    }
+    /* 新手幫助 */
+    .help_wrap {
+        width: 95%;
+    }
+    .service_info {
+        padding: 10px;
+        text-align: left;
+    }
+    .help_wrap .service_info .item {
+        width: 15%;
+    }
+    /* 訂單明細 */
+    .orderlist_box {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    /* 浮動視窗-客服 */
+    .on_chat {
+        position: fixed;
+        right: 1%;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 12%;
+        font-size: 22px;
+    }
+    .bu_count {
+        width: 48%;
+        font-size: 20px;
+        border-left: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 192px;
+        margin: 10px auto 0;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 60px;
+        height: 20px;
+        line-height: 22px;
+        border-right: 1px solid #ccc;
+    }
+    /* 我的錢包 */
+    .wa_item div.title {
+        width: 70%;
+    }
+}
+
+/* 寬度介於 401px - 550px (iPhone 6+) */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 12%;
+    }
+    /* 首頁 */
+    .news_info {
+        width: 95%;
+    }
+    .ga_item {
+        width: 37%;
+        min-height: 255px;
+        font-size: 18px;
+    }
+    /* 新手幫助 */
+    .help_item .txt li {
+        width: 25%;
+    }
+    .service_info {
+        padding: 10px 5px;
+        text-align: left;
+    }
+    .help_wrap .service_info .item {
+        width: 15%;
+        padding: 15px 8px;
+    }
+    .service_info .item span {
+        font-size: 14px;
+    }
+    /* 買賣流程+搜尋列 */
+    .buy_info .txt, .se_info .txt {
+        width: 98%;
+        line-height: 30px;
+        padding: 5px;
+    }
+    .se_info .txt li {
+        width: 32%;
+        vertical-align: top;
+    }
+    /* 搜尋框 */
+    .search_wrap .search_item {
+        width: 95%;
+    }
+    .search_wrap .search_item .se_input {
+        width: 59%;
+    }
+    .search_item i {
+        top: 8px;
+    }
+    .search_wrap i {
+        top: 19px;
+        left: 17px;
+    }
+    .search_wrap .search_item .se_input {
+        height: 35px;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        width: 37%;
+        min-height: 240px;
+        font-size: 18px;
+    }
+    /* 頁碼(跳頁設定) */
+    .pagination_wrap {
+        margin: 5px auto;
+        font-size: 15px;
+    }
+    .page_number, .pagination_box, .page_jump {
+        width: 95%;
+        padding: 10px 0 0 0;
+    }
+    /* 站內公告 */
+    .col_tb th {
+        display: block;
+        width: 97%;
+        padding: 7px 0 7px 3%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_tb td {
+        display: block;
+        width: 92%;
+        padding: 7px 5%;
+        border-right: 0;
+        border-bottom: 0;
+    }
+    .col_tb td:first-of-type {
+        border-top: 0;
+    }
+    /* col 共用版 */
+    .col_3, .col_4, .col_5, .col_6,
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    /* .col_2, .col_3 {
+        width: calc(100% - 2%);
+    } */
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    .col_date {
+        width: 100px;
+    }
+    /* 頁籤外層(讓頁籤超出畫面可滑動設定) */
+    .create_content_wrap {
+        width: 91%;
+    }
+    .panel_tab_wrap {
+        min-width: 390px;
+        overflow-x: auto;
+    }
+    .panel_tab_label {
+        font-size: 17px;
+    }
+    /* 賣場-麵包屑 */
+    .sequence_content {
+        line-height: 20px;
+    }
+    .sequence_content .item {
+        width: 100%;
+        margin: 0;
+        font-size: 15px;
+    }
+    /* 商品訊息(賣場商品) */
+    .sell_info_content {
+        width: 96%;
+    }
+    .sell_info_content .item {
+        width: 100%;
+        min-width: 400px;
+        margin: 0;
+    }
+    .goods_info .txt {
+        width: 55%;
+    }
+    .goods_info .txt li {
+        padding: 0 0 5px 0;
+    }
+    .li_title {
+        width: 80px;
+        font-size: 16px;
+    }
+    .li_txt {
+        font-size: 16px;
+    }
+    .goods_info .pic {
+        padding: 0;
+        border: 0;
+    }
+    .goods_info .pic img {
+        width: 90%;
+    }
+    .goods_info .pic .time {
+        margin: 5px 0 0 0;
+    }
+    .info_btn {
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .sell_info_menu {
+        width: 60%;
+    }
+    .sell_info_menu .title {
+        font-size: 20px;
+    }
+    .stock_btn .st_input {
+        width: 80px;
+        font-size: 22px;
+    }
+    .ga_in_con1 {
+        padding: 15px;
+    }
+    .ga_in_con2, .ga_in_con3 {
+        padding: 15px 0;
+    }
+    .gi_qa textarea {
+        width: 95%;
+    }
+    .gi_qa .qa_btn {
+        width: 40%;
+    }
+    .game_info_label {
+        width: 28%;
+        font-size: 18px;
+    }
+    /* 購物車 */
+    .btn_bank {
+        width: 169px;
+        height: 52px;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        width: 83%;
+        padding: 20px 20px 10px 20px;
+    }
+    .item.balance_item {
+        width: 345px;
+    }
+    .evaluate_box {
+        width: 90%;
+    }
+    .evaluate_box .item {
+        width: 45%;
+    }
+    .evaluate_box .item:last-child {
+        width: 96%;
+    }
+    .service_box {
+        width: 95%;
+    }
+    .service_info {
+        padding: 20px;
+    }
+    .service_info .item {
+        width: 42%;
+        margin: 0;
+    }
+    /* 新手幫助 */
+    .help_wrap {
+        width: 95%;
+    }
+    .help_wrap .service_info .item {
+        width: 27%;
+    }
+    /* 訂單明細 */
+    .orderlist_box {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .search_list {
+        padding: 10px 10px 0 10px;
+    }
+    .search_select {
+        width: 49%;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .sequence_content .search_select {
+        margin: 3px 0 0 0;
+    }
+    .search_input {
+        width: 45%;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_list .btn_big {
+        float: none;
+        width: 99%;
+        height: 35px;
+        padding: 0;
+        margin: 0 auto 5px;
+    }
+    .search_item {
+        width: 49%;
+    }
+    .search_item .se_input {
+        width: 54%;
+        height: 30px;
+        line-height: 31px;
+        font-size: 16px;
+    }
+    .search_item .se_btn {
+        width: 26%;
+        height: 34px;
+        line-height: 34px;
+        font-size: 16px;
+    }
+    /* 浮動視窗-客服 */
+    .on_chat {
+        right: 14%;
+    }
+    /* 問答專區 */
+    .ask_main .qa_box .txt,
+    .answer_main .qa_box .txt {
+        width: 70%;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 20%;
+        font-size: 22px;
+    }
+    .bu_count {
+        width: 78%;
+        font-size: 20px;
+        border-left: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 252px;
+        margin: 10px auto 0;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 80px;
+        height: 20px;
+        line-height: 22px;
+        border-right: 1px solid #ccc;
+    }
+    /* 我的錢包 */
+    .wallet_box {
+        width: 85%;
+        padding: 0 10px;
+    }
+    .wa_item {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        margin: 10px 0;
+        border-bottom: 1px dashed #ccc;
+    }
+    .wa_item:last-child {
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+    }
+    .wa_item div.title {
+        width: 66%;
+    }
+    .wa_money {
+        padding: 0 0 0 15px;
+    }
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /* 回到頂端按鈕 */
+    .go_top {
+        bottom: 12%;
+    }
+    /* 共用樣式 */
+    input[type="file"] {
+        padding: 5px 10px;
+        width: 90%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    /* 頁首-功能列 */
+    .hd_logo {
+        width: 110px;
+    }
+    /* 新手幫助 */
+    .help_item .txt li {
+        width: 33%;
+    }
+    .help_wrap .service_info .item {
+        width: 12%;
+    }
+    /* 買賣流程+搜尋列 */
+    .buy_info .txt, .se_info .txt {
+        width: 97%;
+        line-height: 25px;
+        padding: 5px;
+    }
+    .se_info .txt li {
+        width: 32%;
+    }
+    /* 搜尋框 */
+    .search_wrap .search_item {
+        width: 95%;
+    }
+    .search_item i {
+        top: 8px;
+    }
+    .search_wrap i {
+        top: 19px;
+        left: 17px;
+    }
+    .search_wrap .search_item .se_input {
+        width: 58%;
+        height: 35px;
+    }
+    /* 遊戲分類 */
+    .ga_item {
+        width: 38%;
+        margin: 5px;
+        min-height: 215px;
+        font-size: 16px;
+    }
+    /* 頁碼(跳頁設定) */
+    .pagination_wrap {
+        font-size: 15px;
+    }
+    .page_number, .pagination_box, .page_jump {
+        width: 95%;
+        padding: 10px 0 0 0;
+    }
+    /* col 共用版 */
+    .col_2, .col_3, .col_4, .col_5, .col_6,
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% - 2%);
+    }
+    /* 頁籤外層(讓頁籤超出畫面可滑動設定) */
+    .member_edit_wrap {
+        width: 98%;
+    }
+    .create_content_wrap {
+        width: 87%;
+    }
+    .member_edit_wrap .chkbox_outside {
+        margin: 0 auto;
+    }
+    .table_wrap {
+        width: 90%;
+    }
+    .panel_tab_wrap {
+        min-width: 400px;
+        overflow-x: auto;
+    }
+    .panel_tab_label {
+        font-size: 16px;
+    }
+    /* 賣場-麵包屑 */
+    .sequence_content .item {
+        float: none;
+        width: 100%;
+        margin: 2px 0;
+        font-size: 15px;
+        text-align: left;
+    }
+    /* 免費刊登 */
+    .radio_inline input[type="radio"],
+    .radio_inline label,
+    input[type="checkbox"].check_box,
+    .col_1 .chktext {
+        margin: 0 0 5px 0;
+    }
+    .other_setup {
+        margin: 0;
+        padding-top: 10px;
+    }
+    /* 商品訊息(賣場商品) */
+    .sell_info_content .item {
+        width: 100%;
+        min-width: auto;
+    }
+    .sell_info_content .info_title {
+        line-height: 24px;
+        font-size: 22px;
+    }
+    .info_description {
+        padding: 10px 0 0 0;
+    }
+    .goods_price .txt {
+        margin: 0 0 10px 0;
+    }
+    .goods_info .txt li {
+        padding: 0 0 5px 0;
+    }
+    .game_info_label {
+        width: 28%;
+        padding: 7px 0;
+        font-size: 18px;
+    }
+    .goods_info .txt {
+        width: 98%;
+    }
+    .goods_info .pic {
+        float: none;
+        width: 100%;
+        padding: 0;
+        border: 0;
+    }
+    .goods_info .pic .time {
+        margin: 5px 0 0 0;
+        text-align: center;
+    }
+    .li_title {
+        width: 80px;
+        font-size: 16px;
+    }
+    .sell_info_menu {
+        width: 96%;
+    }
+    .info_btn {
+        padding: 15px 5px;
+        text-align: center;
+    }
+    .st_tips {
+        margin: 10px auto 0;
+    }
+    .sequence_content .search_select {
+        margin: 4px 0 0 0;
+    }
+    .gi_qa textarea {
+        width: 92%;
+        height: 75px;
+    }
+    .gi_qa .qa_btn {
+        width: 35%;
+    }
+    .ga_in_con2 .gi_qa {
+        padding: 0 10px 10px 10px;
+    }
+    .ga_in_con1 {
+        padding: 15px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .ga_in_con2, .ga_in_con3 {
+        padding: 15px 0;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        width: 83%;
+        padding: 20px 20px 10px 20px;
+    }
+    .item.balance_item {
+        width: 305px;
+    }
+    .buy_item, .sell_item {
+        width: 285px;
+    }
+    .evaluate_box {
+        width: 90%;
+    }
+    .evaluate_box .item {
+        width: 45%;
+    }
+    .evaluate_box .item:last-child {
+        width: 96%;
+    }
+    .service_box {
+        width: 95%;
+    }
+    .service_info {
+        padding: 20px;
+    }
+    .service_info .item {
+        width: 42%;
+        margin: 0;
+    }
+    /* 新手幫助 */
+    .help_wrap .service_info {
+        padding: 20px 0;
+    }
+    .help_wrap .service_info .item {
+        width: 26%;
+    }
+    /* 訂單明細 */
+    .orderlist_box {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .search_list {
+        padding: 10px 10px 0 10px;
+    }
+    .search_select {
+        width: 49%;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_input {
+        width: 45%;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_list .btn_big {
+        float: none;
+        width: 99%;
+        height: 35px;
+        padding: 0;
+        margin: 0 auto 5px;
+    }
+    .search_item {
+        width: 49%;
+    }
+    .search_item .se_input {
+        width: 54%;
+        height: 30px;
+        line-height: 31px;
+        padding: 0 0 0 30px;
+        font-size: 16px;
+    }
+    .search_item .se_btn {
+        width: 26%;
+        height: 34px;
+        line-height: 34px;
+        font-size: 16px;
+    }
+    /* 浮動視窗-客服 */
+    .on_chat {
+        right: 1%;
+    }
+    /* 問答專區 */
+    .ask_main .qa_box .txt,
+    .answer_main .qa_box .txt {
+        width: 80%;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 20%;
+        font-size: 22px;
+    }
+    .bu_count {
+        width: 78%;
+        font-size: 20px;
+        border-left: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 312px;
+        margin: 10px auto 0;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 100px;
+        height: 22px;
+        line-height: 24px;
+        border-right: 1px solid #ccc;
+    }
+    /* 我的錢包 */
+    .wallet_box {
+        width: 85%;
+        padding: 0 10px;
+    }
+    .wa_item {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        margin: 10px 0;
+        border-bottom: 1px dashed #ccc;
+    }
+    .wa_item:last-child {
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+    }
+    .wa_item .txt {
+        width: 60%;
+        padding: 0 0 0 15px;
+    }
+    .wa_money {
+        padding: 0 0 0 15px;
+    }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        bottom: 13%;
+    }
+    .on_chat {
+        right: 2%;
+        width: 280px;
+        height: 360px !important;
+    }
+    /* 共用樣式 */
+    input.no_width, select.no_width,
+    .input50, .select50, .textarea50,
+    .input100, .select100, .textarea100,
+    .col_date, .col_date50 {
+        font-size: 16px;
+    }
+    /* 頁首-功能列 */
+    .hd_logo {
+        width: 110px;
+    }
+    .hd_member a {
+        padding: 5px;
+    }
+    /* 首頁-買賣流程+搜尋列 */
+    .buy_info .txt, .se_info .txt {
+        width: 97%;
+        line-height: 25px;
+        padding: 5px;
+    }
+    .se_info .txt li {
+        width: 32%;
+    }
+    /* 首頁-搜尋框 */
+    .search_wrap .search_item {
+        width: 95%;
+    }
+    .search_item i {
+        top: 8px;
+    }
+    .search_wrap i {
+        top: 19px;
+        left: 17px;
+    }
+    .search_wrap .search_item .se_input {
+        height: 35px;
+    }
+    /* 搜尋框 */
+    .se_info .title {
+        width: 92%;
+    }
+    .buy_info .txt, .se_info .txt {
+        width: 95%;
+        line-height: 28px;
+        padding: 0 0 0 10px;
+    }
+    .se_info .txt li {
+        width: 49%;
+    }
+    .search_wrap .search_item i {
+        top: 21px;
+        left: 20px;
+    }
+    .search_wrap .search_item .se_input {
+        width: 55%;
+        font-size: 18px;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 0 0 35px;
+    }
+    /* 新手幫助 */
+    .help_item .txt li {
+        width: 50%;
+    }
+    .service_info {
+        padding: 5px;
+    }
+    .help_wrap .service_info .item {
+        width: 15%;
+        padding: 10px 5px;
+    }
+    /* 遊戲分類 */
+    .news_info {
+        margin: 10px auto;
+    }
+    .game_wrap {
+        padding: 20px 0;
+        margin: 20px auto 0;
+    }
+    .game_wrap .game_label1,
+    .game_wrap .game_label2,
+    .game_wrap .game_label3 {
+        width: 31%;
+        padding: 0 0 10px 0;
+        font-size: 20px;
+    }
+    .game_content {
+        width: 95%;
+        padding: 0;
+    }
+    .ga_item {
+        width: 80%;
+        padding: 20px;
+        font-size: 18px;
+    }
+    /* 頁碼(跳頁設定) */
+    .pagination_wrap {
+        margin: 0 auto;
+    }
+    .page_number, .pagination_box, .page_jump {
+        width: 95%;
+        padding: 10px 0 0 0;
+    }
+    /* col 共用版 */
+    .col_2, .col_3, .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% - 2%);
+    }
+    /* 頁籤外層(讓頁籤超出畫面可滑動設定) */
+    .create_content_wrap {
+        width: 90%;
+        padding: 10px;
+    }
+    .create_top, .create_mid, .create_end {
+        padding: 10px;
+        margin: 0 0 10px 0;
+    }
+    .remind_outside {
+        width: 90%;
+        margin: 20px auto 0;
+        padding: 10px;
+    }
+    .pa_content {
+        width: 100%;
+    }
+    .table_wrap {
+        width: 90%;
+    }
+    .panel_tab_wrap {
+        min-width: 400px;
+        overflow-x: auto;
+    }
+    .panel_tab_label {
+        font-size: 16px;
+    }
+    /* 賣場-麵包屑 */
+    .sequence_content .item {
+        float: none;
+        width: 100%;
+        margin: 2px 0;
+        font-size: 15px;
+        text-align: left;
+    }
+    /* 購物車 */
+    .btn_bank {
+        width: 110px;
+        height: 34px;
+    }
+    .pay_set {
+        padding: 10px;
+        margin: 0;
+    }
+    /* 商品訊息(賣場商品) */
+    .sell_info_content .item {
+        width: 100%;
+        min-width: auto;
+    }
+    .goods_info .pic {
+        float: none;
+        width: 100%;
+        padding: 0;
+        border: 0;
+    }
+    .goods_info .pic .time {
+        margin: 5px 0 0 0;
+        text-align: center;
+    }
+    .sell_info_menu {
+        width: 80%;
+        margin: 10px 0;
+    }
+    .info_btn {
+        padding: 10px;
+        text-align: center;
+    }
+    .stock_btn .btn {
+        line-height: 26px;
+        text-align: center;
+    }
+    .goods_price {
+        padding: 10px 20px;
+    }
+    .goods_price .txt {
+        margin: 0 0 10px 0;
+    }
+    .goods_price .text_big {
+        font-size: 25px;
+    }
+    .goods_info .txt {
+        width: 98%;
+        padding: 0 0 0 10px;
+    }
+    .goods_info .txt li {
+        padding: 0 0 5px 0;
+    }
+    .li_title {
+        width: 80px;
+    }
+    .li_title, .li_txt {
+        font-size: 16px;
+    }
+    .game_info_label {
+        width: 30%;
+        padding: 6px 0;
+        font-size: 17px;
+    }
+    .ga_in_con1 {
+        padding: 10px;
+    }
+    .ga_in_con2, .ga_in_con3 {
+        padding: 10px 0;
+    }
+    .gi_qa textarea {
+        width: 90%;
+        height: 80px;
+    }
+    .gi_qa .qa_btn {
+        width: 45%;
+    }
+    .qa_btn .btn_big {
+        padding: 5px 0;
+    }
+    .qa_title {
+        padding: 5px;
+    }
+    /* 免費刊登 */
+    .radio_inline input[type="radio"],
+    .radio_inline label,
+    input[type="checkbox"].check_box,
+    .col_1 .chktext {
+        margin: 0 0 5px 0;
+    }
+    .other_setup {
+        margin: 0;
+        padding-top: 10px;
+    }
+    .service_info .item div,
+    .remind_text {
+        font-size: 17px;
+    }
+    /* 會員中心-右側 */
+    .transaction_box {
+        width: 89%;
+        padding: 20px 10px 10px 10px;
+    }
+    .item.balance_item {
+        width: 250px;
+    }
+    .transaction_box .item {
+        margin: 0 0 10px 0;
+    }
+    .buy_item, .sell_item {
+        width: 228px;
+        background-size: 100% auto;
+    }
+    .buy_item .list, .sell_item .list {
+        padding-top: 50px;
+    }
+    .buy_item .list .s_item,
+    .sell_item .list .s_item {
+        width: 21.5%;
+    }
+    .buy_item .list .s_item span,
+    .sell_item .list .s_item span {
+        font-size: 20px;
+    }
+    .evaluate_box {
+        width: 90%;
+    }
+    .evaluate_box .item {
+        width: 45%;
+        padding: 0 9px 0 0;
+    }
+    .evaluate_box .item .pic {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+    .evaluate_box .item .txt {
+        width: 60%;
+    }
+    .evaluate_box .item span {
+        padding: 10px 0 5px 0;
+    }
+    .evaluate_box .item:last-child {
+        width: 96%;
+    }
+    .service_box {
+        width: 95%;
+    }
+    .service_info {
+        padding: 15px;
+    }
+    .service_info .item {
+        width: 40%;
+        padding: 10px;
+        margin: 0;
+    }
+    .service_info .item img {
+        width: 70%;
+        padding: 0 0 10px 0;
+    }
+    /* 新手幫助 */
+    .help_wrap {
+        width: 100%;
+    }
+    .help_wrap .service_info .item {
+        width: 40%;
+    }
+    /* 訂單明細 */
+    .orderlist_box {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .search_list {
+        padding: 10px 10px 0 10px;
+    }
+    .search_select {
+        width: 49%;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_input {
+        width: 43%;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+    .search_list .btn_big {
+        float: none;
+        width: 99%;
+        height: 35px;
+        padding: 0;
+        margin: 0 auto 5px;
+    }
+    .search_item {
+        width: 49%;
+    }
+    .search_item .se_input {
+        width: 50%;
+        height: 30px;
+        line-height: 31px;
+        padding: 0 0 0 30px;
+        font-size: 16px;
+    }
+    .search_item .se_btn {
+        width: 24%;
+        height: 34px;
+        line-height: 34px;
+        padding: 0;
+        font-size: 16px;
+    }
+    .search_item i {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+    }
+    /* 問答專區 */
+    .ask_main .qa_box .txt,
+    .answer_main .qa_box .txt {
+        width: 73%;
+        line-height: 22px;
+        font-size: 16px;
+    }
+    /* 排序 */
+    .sequence_content .btn_small {
+        margin: 0;
+        vertical-align: top;
+    }
+    /* 評價 */
+    .bulletin {
+        width: 90%;
+        padding: 10px;
+    }
+    .bu_score {
+        width: 100%;
+        margin: 10px auto;
+    }
+    .bu_count {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 20px;
+        border-top: 1px solid #ccc;
+    }
+    .bu_count span {
+        margin: 0;
+    }
+    .vertical_line {
+        display: none;
+    }
+    .bu_history {
+        width: 245px;
+        margin: 10px auto;
+        font-weight: bold;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .bu_history li {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .bu_history li span {
+        width: 77px;
+        height: 24px;
+        line-height: 26px;
+        border-right: 1px solid #ccc;
+    }
+    /* 我的錢包 */
+    .wallet_box {
+        width: 85%;
+        padding: 0 10px;
+    }
+    .wa_item {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        margin: 10px 0;
+        border-bottom: 1px dashed #ccc;
+    }
+    .wa_item:last-child {
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+    }
+    .wa_item .txt {
+        width: 60%;
+        padding: 0 0 0 15px;
+    }
+    .wa_money {
+        padding: 0 0 0 15px;
+    }
+}

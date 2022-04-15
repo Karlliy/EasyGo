@@ -1,0 +1,818 @@
+/*********  登入頁  *********/
+.login_page {
+    margin: 0;
+    transition: all 0.5s;
+    overflow-x: hidden;
+}
+.index_logo {
+    max-width: 210px;
+    max-height: 120px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+.index_logo div {
+    position: relative;
+    width: 100%;
+    padding: 30px 0;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(0, 0, 0, .2);
+}
+.loginbox {
+    position: fixed;
+    top: 20%;
+    left: 35%;
+    width: 300px;
+    max-width: 300px;
+    padding: 20px 30px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.loginbox dt {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+.icon_login_id {
+    background: url(../images/index_icon/loginID.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_login_pw {
+    background: url(../images/index_icon/loginPW.png) no-repeat;
+    background-size: 100% auto;
+}
+.loginbox dd {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.input_group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.loginbox .input_set {
+    width: 84%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.loginbox .login_input {
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    font-size: 18px;
+    color: #555;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    box-shadow: none;
+    vertical-align: middle;
+    z-index: 2;
+}
+.loginbox .btn_login {
+    width: 100%;
+    padding: 7px 0;
+    font-size: 20px;
+    font-weight: bold;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12); */
+    box-shadow: none;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all ease-in .15s;
+    -moz-transition: all ease-in .15s;
+    -o-transition: all ease-in .15s;
+    transition: all ease-in .15s;
+    border: none;
+    cursor: pointer;
+}
+.input_group .error {
+    max-width: 100%;
+    margin: 5px 10px 5px 0;
+    font-size: 12px;
+    color: #ca5400;
+    text-align: right;
+}
+
+/*登入頁_記住密碼*/
+.chkbox_set {
+    width: calc(100% - 45px);
+    padding: 0 0 0 45px;
+    margin-bottom: 20px;
+    color: #777;
+    text-align: left;
+}
+.btn_login.btn50 {
+    width: calc(98% /2 - 10px);
+    margin-right: 10px;
+}
+
+/*驗證碼*/
+.verification_set {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    vertical-align: bottom;
+}
+.loginbox .check_code {
+    width: 58%;
+    border-bottom: 1px solid #ddd;
+    vertical-align: bottom;
+}
+.loginbox .RegNumber {
+    display: inline-block;
+    width: 63px;
+    height: 29px;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: bottom;
+}
+/*********  首頁_上層  *********/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, .2);
+    -ms-box-shadow: 1px 0 3px rgba(0, 0, 0, .2);
+    box-shadow: 1px 0 3px rgba(0, 0, 0, .2);
+    z-index: 50;
+    overflow: hidden;
+}
+.navbar_bg {
+    width: 100%;
+    height: 80px;
+}
+.navbar_box {
+    width: calc(100% - 40px);
+    height: 80px;
+    line-height: 80px;
+    padding: 0 50px;
+}
+.header_title {
+    display:inline-block;
+    vertical-align: middle;
+}
+.header_logo {
+    display: inline-block;
+    max-width: 160px;
+    max-height: 65px;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
+.header_title span {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.top_iconset {
+    float: right;
+    width: 51%;
+    line-height: 40px;
+    text-align: right;
+}
+.top_iconset .text {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 0.85em;
+}
+.top_iconset .top_member, .navbar_iconset .top_member, 
+.navbar_box .logout_set, .navbar_iconset .logout_set {
+    display: inline-block;
+}
+.logout_set {
+    text-decoration: none;
+}
+.icon_bell, .icon_logout, .icon_bighead, .top_iconset .icon_mailbox, .navbar_iconset .icon_mailbox, .icon_account {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.icon_bell {
+    background: url(../images/index_icon/icon_bell.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_logout {
+    background: url(../images/index_icon/icon_logout.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_bighead {
+    background: url(../images/index_icon/icon_bighead.png) no-repeat;
+    background-size: 100% auto;
+}
+.label_count { /*未讀訊息*/
+    position: relative;
+    top: -10px;
+    right: 15px;
+    padding: 3px 7px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    -webkit-border-radius: 99px;
+    -moz-border-radius: 99px;
+    -ms-border-radius: 99px;
+    border-radius: 99px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.navbar_text {
+    padding-left: 1px;
+    font-size: 1em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+/*首頁_上層跑馬燈*/
+.top_iconset .marquee_set {
+    display: block;
+    width: 100%;
+    line-height: 20px;
+    margin-top: 5px;
+}
+.top_iconset .marquee_set, 
+.navbar_iconset .marquee_set {
+    text-decoration: none;
+}
+.top_iconset .running, .navbar_iconset .running {
+    height: 26px;
+    line-height: 26px;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    vertical-align: middle;
+}
+.top_iconset .running {
+    width: 84%;
+}
+/*首頁_隱藏的下拉選單列*/
+.navbar_toggle {
+    position: absolute;
+    top: 26px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    background: url(../images/index_icon/icon_toggle.png) no-repeat;
+    background-size: 100% auto;
+}
+.navbar_toggle .text {
+    position: relative;
+    top: 5px;
+    right: -4px;
+}
+.navbar_iconset {
+    clear: both;
+    position: relative;
+    line-height: 30px;
+    padding: 5px 10px;
+    text-align: left;
+    z-index: 40;
+}
+.navbar_iconset .text {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 0.85em;
+}
+.navbar_iconset .logout_set {
+    float: right;
+}
+/*個人信箱*/
+.navbar_iconset .dropdown {
+    float: right;
+    margin-right: -15px;
+}
+/*首頁_隱藏的下拉選單列_跑馬燈*/
+.navbar_iconset .icon_announcement {
+    margin: 0 5px 0 0;
+}
+.navbar_iconset .marquee_set {
+    display: inline-block;
+    width: 100%;
+}
+.navbar_iconset .running {
+    width: 85%;
+}
+/*手機版_側邊選單按鈕*/
+.menu_btn {
+    position: fixed;
+    top: 22px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    vertical-align: middle;
+    cursor: pointer;
+    z-index: 60;
+}
+.menu_btn .text {
+    position: relative;
+    top: 5px;
+    right: -4px;
+}
+/*側邊選單_漢堡按鈕*/
+.menu_btn::after {
+    display: block;
+    content: '';
+    height: 10px;
+    width: 25px;
+}
+.menu_btn::before {
+    display: block;
+    content: '';
+    height: 7px;
+    width: 25px;
+}
+/*********  首頁_左側欄  *********/
+.sidebar_set {
+    position: relative;
+    top: 80px;
+    left: -200px;
+    z-index: 30;
+}
+.slider_content {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    /* -webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 2px 0 5px rgba(0, 0, 0, .2);
+    -ms-box-shadow: 2px 0 5px rgba(0, 0, 0, .2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, .2); */
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 10;
+}
+.sidebar_set .bg_black {
+    position: fixed;
+    width: 150%;
+    height: 100%;
+    opacity: 0.5;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    filter:alpha(opacity=50);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 9;
+}
+/*首頁_左側欄(會員資訊)*/
+.member_info {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+}
+.member_info .icon_bighead {
+    width: 30px;
+    height: 30px;
+    margin: 23px 10px 5px 10px;
+}
+.member_id {
+    padding: 8px 10px;
+    font-size: 1em;
+    text-align: left;
+    background-color: rgba(0, 0, 0, .3);
+}
+/*下拉MENU_按下效果(要JS)*/
+.inside {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    line-height: 34px;
+    padding: 0;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    cursor: pointer;
+}
+.inside .link {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.inside li:last-child .link {
+    border-bottom: 0;
+}
+/*下拉MENU_按下效果(要JS)*/
+.submenu {
+    display: none;
+    font-size: 16px;
+}
+.submenu a {
+    line-height: 25px;
+    padding: 0 0 0 35px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+/*下拉MENU_箭頭(需索引字型)*/
+.inside .icon_arrow {
+    float: right;
+    margin: 15px 25px 0 0;
+    vertical-align: top;
+}
+.inside .open .icon_arrow {
+    margin: 8px 25px 0 0;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+/*左側選單icon*/
+.icon_home, .icon_announcement, .sidebar_set .icon_account, 
+.icon_member, .icon_report, .sidebar_set .icon_mailbox, 
+.icon_message, .icon_promotions, .icon_search, .icon_service, 
+.sidebar_set .icon_logout, .icon_coins, .icon_web, .icon_people, 
+.icon_trading_record, .icon_location, .icon_earth, .icon_bank, 
+.icon_list, .icon_system, .icon_item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 10px;
+    vertical-align: middle;
+}
+.icon_home {
+    background: url(../images/index_icon/icon_home.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_announcement {
+    background: url(../images/index_icon/icon_announcement.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_member {
+    background: url(../images/index_icon/icon_member.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_account {
+    background: url(../images/index_icon/icon_account.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_item {
+    background: url(../images/index_icon/icon_item.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_report {
+    background: url(../images/index_icon/icon_report.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_coins {
+    background: url(../images/index_icon/icon_coins.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_mailbox {
+    background: url(../images/index_icon/icon_mailbox.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_message {
+    background: url(../images/index_icon/icon_message.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_search {
+    background: url(../images/index_icon/icon_search.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_promotions {
+    background: url(../images/index_icon/icon_promotions.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_service {
+    background: url(../images/index_icon/icon_service.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_web {
+    background: url(../images/index_icon/icon_web.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_trading_record {
+    background: url(../images/index_icon/icon_trading_record.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_people {
+    background: url(../images/index_icon/icon_people.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_location {
+    background: url(../images/index_icon/icon_location.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_earth {
+    background: url(../images/index_icon/icon_earth.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_bank {
+    background: url(../images/index_icon/icon_bank.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_list {
+    background: url(../images/index_icon/icon_list.png) no-repeat;
+    background-size: 100% auto;
+}
+.icon_system {
+    background: url(../images/index_icon/icon_system.png) no-repeat;
+    background-size: 100% auto;
+}
+.text_bold {
+    font-weight: bold;
+}
+
+/*********  以下為 各不同寬度螢幕_設定  *********/
+/* 寬度大於 901px (iPad, iPad pro)*/
+@media screen and (min-width: 901px) {
+
+}
+
+/* 寬度大於 1901px (電腦) */
+@media screen and (min-width: 1901px) {
+    /*登入頁*/
+    .loginbox {
+        left: 40%;
+    }
+    /*首頁*/
+    .header_title span.hide_text {
+        display: none;
+    }
+    .navbar_toggle, .menu_btn {
+        display: none;
+    }
+    .sidebar_set {
+        display: block !important;
+        left: 0;
+    }
+    .navbar_box {
+        padding: 0 20px;
+    }
+}
+
+/* 寬度介於 1025px - 1900px (電腦) */
+@media screen and (min-width: 1025px) and (max-width: 1900px) {
+    /*首頁*/
+    .header_title span.hide_text {
+        display: none;
+    }
+    .navbar_toggle, .menu_btn {
+        display: none;
+    }
+    .sidebar_set {
+        display: block !important;
+        left: 0;
+    }
+    .navbar_box {
+        padding: 0 20px;
+    }
+}
+
+/* 寬度介於 901px - 1024px (電腦) */
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+    /*首頁*/
+    .header_title span.hide_text {
+        display: none;
+    }
+    .navbar_toggle, .menu_btn {
+        display: none;
+    }
+    .sidebar_set {
+        display: block !important;
+        left: 0;
+    }
+    .navbar_box {
+        padding: 0 20px;
+    }
+}
+
+/* 寬度介於 701px - 899px */
+@media screen and (min-width: 701px) and (max-width: 899px) {
+    /*登入頁*/
+    .loginbox {
+        top: 5%;
+        left: 28%;
+    }
+    /*首頁*/
+    .header_logo {
+        display: none;
+    }
+    .navbar_toggle {
+        display: none;
+    }
+    .navbar_box {
+        width: calc(100% - 70px);
+        padding: 0 45px;
+    }
+    .top_iconset {
+        width: 65%;
+    }
+    .top_iconset .running {
+        width: 75%;
+    }
+}
+
+/* 寬度介於 640px - 700px */
+@media screen and (min-width: 640px) and (max-width: 700px) {
+    /*登入頁*/
+    .loginbox {
+        top: 5%;
+        left: 25%;
+    }
+    .input_group {
+        margin-bottom: 15px;
+    }
+    /*首頁*/
+    .header_logo {
+        display: none;
+    }
+    .navbar_toggle {
+        display: none;
+    }
+    .navbar_box {
+        width: calc(100% - 55px);
+        padding: 0 45px;
+    }
+    .top_iconset {
+        width: 64%;
+    }
+    .top_iconset .text {
+        margin-right: 10px;
+    }
+    .navbar_text {
+        display: none;
+    }
+}
+
+/* 寬度介於 571px - 639px */
+@media screen and (min-width: 571px) and (max-width: 639px) {
+    /*登入頁*/
+    .loginbox {
+        top: 5%;
+        left: 16%;
+    }
+    .input_group {
+        margin-bottom: 15px;
+    }
+    /*首頁*/
+    .header_logo {
+        display: none;
+    }
+    .navbar_toggle {
+        display: none;
+    }
+    .navbar_box {
+        width: calc(100% - 60px);
+        padding: 0 45px;
+    }
+    .top_iconset {
+        width: 70%;
+    }
+    .top_iconset .text {
+        margin-right: 8px;
+    }
+    .index_content {
+        width: 90%;
+    }
+}
+
+/* 寬度介於 421px - 570px */
+@media screen and (min-width: 421px) and (max-width: 570px) {
+    /*登入頁*/
+    .loginbox {
+        top: 5%;
+        left: 14%;
+    }
+    .input_group {
+        margin-bottom: 15px;
+    }
+    /*首頁*/
+    .header_logo, .top_iconset, .navbar_box .logout_set, 
+    .top_iconset .marquee_set, .navbar_text {
+        display: none;
+    }
+    .navbar_box {
+        width: calc(100% - 50px);
+        padding: 0 45px;
+    }
+    .header_title span {
+        font-size: 22px;
+    }
+    .top_iconset {
+        width: 61%;
+    }
+    .top_iconset .text {
+        margin-right: 8px;
+    }
+    .top_iconset .running {
+        width: 78%;
+    }
+    .index_content {
+        width: 90%;
+    }
+}
+
+/* 寬度小於 420px */
+@media screen and (max-width: 420px) {
+    /*登入頁*/
+    .loginbox {
+        left: 9%;
+        width: 280px;
+        max-width: 280px;
+    }
+    .check_code {
+        width: 55%;
+    }
+    /*首頁*/
+    .navbar_box {
+        width: calc(100% - 70px);
+        padding: 0 45px;
+    }
+    .navbar_iconset {
+        padding: 5px;
+    }
+    .navbar_iconset .text {
+        margin-right: 15px;
+    }
+    .top_iconset {
+        width: 80%;
+    }
+    .top_iconset .running {
+        width: 88%;
+    }
+    .header_logo {
+        display: none;
+    }
+    .top_iconset, .navbar_box .logout_set {
+        display: none;
+    }
+    .searchbox .box_inside {
+        width: 90%;
+    }
+    .index_content {
+        width: 90%;
+    }
+    .tab_list {
+        margin: 0;
+    }
+}
+
+/* 寬度小於 375px */
+@media screen and (max-width: 375px) {
+    /*登入頁*/
+    .loginbox {
+        left: 4%;
+    }
+    /*頁首*/
+    .navbar_iconset .icon_account, 
+    .navbar_iconset .icon_coins {
+        display: none;
+    }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /*登入頁*/
+    .loginbox {
+        width: 250px;
+        max-width: 250px;
+        padding: 20px;
+    }
+    /*右側內容*/
+    .searchbox .box_inside {
+        width: 90%;
+    }
+}

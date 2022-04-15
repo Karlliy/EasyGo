@@ -1,0 +1,79 @@
+<div class="wrap hd_wrap">
+    <img src="images/index_logo.png" onclick="javascript:location.href='Index/index'" tabindex="1" alt="logo" class="hd_logo">
+
+    <!-- 1.登入註冊紐(登入後隱藏，並改出現"2.電腦版-登入後選單"或"3.手機板-漢堡選單") -->
+    <div class="hd_login"  id="hd_login" style="display: none;">
+        <input type="button" name="" value="註冊" class="jsRegister nav_btn btn_yellow">
+        <input type="button" name="" value="登入" class="jsLogin nav_btn btn_blue">
+    </div>
+
+    <!-- 3.漢堡選單(登入後開啟) -->
+    <div class="menu-trigger" tabindex="2" style="display: none;">
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <!-- 2.電腦版-登入後選單(登入後開啟) -->
+    <div class="hd_member" id="hd_member" style="display: none;">
+        <a href="Member/Center">
+            <i class="fa fa-user"></i>
+            <span>會員中心</span>
+        </a>
+        <a href="Member/Order_buy">
+            <i class="fa fa-comment-dollar"></i>
+            <span>我是買家</span>
+        </a>
+        <a href="Member/Order_sell">
+            <i class="fa fa-money"></i>
+            <span>我是賣家</span>
+        </a>
+        <a href="Member/Wallet">
+            <i class="fa fa-wallet"></i>
+            <span>我的錢包</span>
+        </a>
+        <a href="Member/Logout">
+            <i class="fa fa-sign-out-alt"></i>
+            <span>登出</span>
+        </a>
+    </div>
+
+    <!-- 3.手機版-登入後選單(登入後，只在手機上顯示) -->
+    <div class="menu-container">
+        <ul class="menu-items">
+            <li onclick="window.open('index.html','_self');" class="selected">
+                <i class="fas fa-home-w"></i>
+                <span>首頁</span>
+            </li>
+            <li onclick="window.open('member.html','_self');">
+                <i class="fa fa-user-w"></i>
+                <span>會員中心</span>
+            </li>
+            <li onclick="window.open('order_list_buy.html','_self');">
+                <i class="fa fa-comment-dollar-w"></i>
+                <span>我是買家</span>
+            </li>
+            <li onclick="window.open('order_list_sell.html','_self');">
+                <i class="fa fa-money-w"></i>
+                <span>我是賣家</span>
+            </li>
+            <li onclick="window.open('index.html','_self');">
+                <i class="fa fa-sign-out-alt-w"></i>
+                <span>登出</span>
+            </li>
+        </ul>
+    </div>
+    <!-- 選單後面的全版黑背景 -->
+    <div class="dim-overlay"></div>
+    <!-- 手機版-登入後選單 JQ -->
+    <script>
+    $(document).ready(function(){
+        $(".menu-container").jSideMenu({
+            // 滑出位置靠左 position-left 或靠右 position-right
+            jSidePosition: "position-right",
+            // 選單固定在頂部，false則設置為靜態
+            jSideSticky: true,
+        });
+    });
+    </script>
+    <!--清除float浮動跑版(此行不可刪)-->
+    <div class="clear"></div>
+</div>

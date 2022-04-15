@@ -1,0 +1,13 @@
+ ---------------- 開始 ---------------- 
+ IPV4  >> 2813554502
+ IP    >> 167.179.111.70
+key =>RtnCode  val=>1
+key =>RtnMessage  val=>交易成功
+key =>MerTradeID  val=>EG1122815000700702620
+key =>MerProductID  val=>888888888888888
+key =>MerUserID  val=>9580113
+key =>Amount  val=>116
+key =>PaymentDate  val=>2021-12-28 15:04:41
+key =>Validate  val=>463e1cf657c2a0582396b81b65f78115
+key =>StoreName  val=>
+key =>StoreID  val=>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購後台-輪播圖管理</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <?php include("header.html");?>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <?php include("left.html");?>
+
+    <!--右側內容-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>輪播圖管理(最少2張)</span>
+                <input type="button" id="item_add" value="新增輪播圖" class="btn_back">
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 表格 -->
+                    <div class="tbbox tbfree">
+                        <table class="fixed_table table_m">
+                            <thead>
+                                <tr>
+                                    <th class="freeze cell_m">操作</th>
+                                    <th class="freeze cell_s">排序</th>
+                                    <th class="freeze cell_l">說明</th>
+                                    <th class="freeze">輪播圖檔(限800*400px，jpg格式)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="BannerListForm">
+                                <!--無資料-->
+                                <!-- <tr>
+                                    <td colspan="4" data-th="" class="text_center">無資料內容</td>
+                                </tr> -->
+                                <!--有資料-->
+                                <!-- <tr>
+                                    <td data-th="操作">
+                                        <input type="button" id="item_edit" value="編輯" class="btn_small">
+                                        <input type="button" id="item_del" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <td data-th="排序">1</td>
+                                    <td data-th="說明">天堂2</td>
+                                    <td data-th="輪播圖檔(限800*400px，jpg格式)">
+                                        <a href="#">cm20211007_01.jpg</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <td data-th="排序">2</td>
+                                    <td data-th="說明">生日同樂會</td>
+                                    <td data-th="輪播圖檔(限800*400px，jpg格式)">
+                                        <a href="#">cm20211005_01.jpg</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <td data-th="排序">3</td>
+                                    <td data-th="說明">新會員大放送</td>
+                                    <td data-th="輪播圖檔(限800*400px，jpg格式)">
+                                        <a href="#">cm20211002_01.jpg</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <td data-th="排序">4</td>
+                                    <td data-th="說明">RO友情大作戰</td>
+                                    <td data-th="輪播圖檔(限800*400px，jpg格式)">
+                                        <a href="#">cm20210928_01.jpg</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <td data-th="排序">5</td>
+                                    <td data-th="說明">test</td>
+                                    <td data-th="輪播圖檔(限800*400px，jpg格式)">
+                                        <a href="#">cm20210928_02.jpg</a>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_新增-->
+    <div id="popup_itemadd" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_itemadd').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>新增輪播圖</span>
+                </div>
+                <form id="BannerForm" name="BannerForm" method="post" enctype="multipart/form-data">
+                    <div class="popup_in">
+                        <div class="col_1">
+                            <div class="input_title">圖片排序(數字越小優先)</div>
+                            <input type="text" id="Id" name="Id" placeholder="" value="" maxlength="2" class="input100" required>
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">圖片說明</div>
+                            <input type="text" id="BannerInfo" name="BannerInfo" placeholder="" value="" maxlength="20" class="input100" required>
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">選擇檔案 (限800*400px)</div>
+                            <input type="file" id="BannerUrl" name="BannerUrl" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                        </div>
+                        <!--按鈕-->
+                        <div class="popup_btn">
+                            <input type="button" onclick="document.getElementById('popup_itemadd').style.display='none'" value="取消" class="btn_left btn_gray">
+                            <input type="submit" id="add_confirm" value="確認新增" class="btn_right">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_確認新增-->
+    <!-- <div id="popup_confirmAdd" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_confirmAdd').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要新增？</div> -->
+                    <!--按鈕-->
+                    <!-- <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_confirmAdd').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" id='confirmBanner' value="確認新增" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--跳框_編輯-->
+    <div id="popup_itemedit" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_itemedit').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>編輯輪播圖</span>
+                </div>
+                <form id="EditBannerForm" name="EditBannerForm" method="post" enctype="multipart/form-data">
+                    <div class="popup_in">
+                        <div class="col_1">
+                            <div class="input_title">圖片排序(數字越小優先)</div>
+                            <input type="text" id="EditId" name="EditId" placeholder="" value="" maxlength="2" class="input100" required>
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">圖片說明</div>
+                            <input type="text" id="EditBannerInfo" name="EditBannerInfo" placeholder="" value="" maxlength="20" class="input100" required>
+                        </div>
+                        <div class="col_1">
+                            <div class="input_title">選擇檔案 (限800*400px)</div>
+                            <input type="file" id="EditBannerUrl" name="EditBannerUrl" class="input100">
+                        </div>
+                        <!--按鈕-->
+                        <div class="popup_btn">
+                            <input type="button" onclick="document.getElementById('popup_itemedit').style.display='none'" value="取消" class="btn_left btn_gray">
+                            <input type="submit" id="edit_confirm" value="確認修改" class="btn_right">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_確認修改-->
+    <!-- <div id="popup_confirmEdit" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_confirmEdit').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要修改？</div> -->
+                    <!--按鈕-->
+                    <!-- <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_confirmEdit').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" value="確認修改" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--跳框_刪除-->
+    <div id="popup_del" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_del').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要刪除？</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_del').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" id="confirmDel" value="確認刪除" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_JS-->
+    <script>
+        //新增
+        let modal_item_add = document.getElementById('item_add');
+        modal_item_add.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_itemadd').style.display='block';
+        });
+        //確認新增
+        // let modal_add_confirm = document.getElementById('add_confirm');
+        // modal_add_confirm.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_confirmAdd').style.display='block';
+        // });
+        //編輯
+        // let modal_item_edit = document.getElementById('item_edit');
+        // modal_item_edit.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_itemedit').style.display='block';
+        // });
+        //確認修改
+        // let modal_edit_confirm = document.getElementById('edit_confirm');
+        // modal_edit_confirm.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_confirmEdit').style.display='block';
+        // });
+        //刪除
+        // let modal_item_del = document.getElementById('item_del');
+        // modal_item_del.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_del').style.display='block';
+        // });
+    </script>
+    <script src="js/home.js"></script>
+</body>
+</html>

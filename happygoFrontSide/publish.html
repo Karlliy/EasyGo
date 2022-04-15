@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購-免費刊登販售</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 賣場刊登 -->
+    <div class="wrap create_goods_wrap">
+        <!-- 標題 -->
+        <div class="main_title">
+            <div class="pic">
+                <img src="images/member/fa-file-text-o-w.png" alt="遊戲列表">
+            </div>
+            <span>免費刊登販售</span>
+        </div>
+
+        <!-- 賣場表格-頁籤 -->
+        <div class="table_wrap">
+            <div class="panel_wrap create_gd_wrap">
+                <!-- 頁籤選取按鈕(圓點隱藏)+需對應下方 label -->
+                <input type="radio" id="pa_radio1" name="panel_radio" class="panel_control" checked>
+                <input type="radio" id="pa_radio2" name="panel_radio" class="panel_control">
+                <input type="radio" id="pa_radio3" name="panel_radio" class="panel_control">
+                <input type="radio" id="pa_radio4" name="panel_radio" class="panel_control">
+                <input type="radio" id="pa_radio5" name="panel_radio" class="panel_control">
+                <input type="radio" id="pa_radio6" name="panel_radio" class="panel_control">
+                <input type="radio" id="pa_radio7" name="panel_radio" class="panel_control">
+                <!-- 頁籤選取按鈕(此父層"panel_tab_bigwarp"勿刪除，要設定分頁拖曳用 -->
+                <div class="panel_tab_bigwarp">
+                    <div class="panel_tab_wrap">
+                        <label for="pa_radio1" class="panel_tab_label create_goods_label" id="GameCurrency" data-value="2">遊戲幣</label>
+                        <label for="pa_radio2" class="panel_tab_label create_goods_label" id="GameAccount" data-value="3">帳號</label>
+                        <label for="pa_radio3" class="panel_tab_label create_goods_label" id="GamePointCard" data-value="1">點數卡</label>
+                        <label for="pa_radio4" class="panel_tab_label create_goods_label" id="Gameprops" data-value="6">道具</label>
+                        <label for="pa_radio5" class="panel_tab_label create_goods_label" id="GameMall" data-value="7">商城</label>
+                        <label for="pa_radio6" class="panel_tab_label create_goods_label" id="GameGift" data-value="8">送禮</label>
+                        <label for="pa_radio7" class="panel_tab_label create_goods_label" id="GameOther" data-value="9">其他</label>
+                    </div>
+                </div>
+
+                <!-- 頁籤-內容 -->
+                <div class="panel_content_wrap create_content_wrap">
+                    <!-- 分頁1(遊戲幣) -->
+                    <div class="pa_content pa_content1">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- <form id="GameCurrency" name="GameCurrency"> -->
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="2"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">遊戲幣價格(單位：遊戲幣)</div>
+                                    <input type="text" id="Price" name="Price" placeholder="例 10 或 1000000" minlength="2" maxlength="7" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">遊戲幣數量(單位：個)</div>
+                                    <input type="text" id="GameCoinQuantity" name="GameCoinQuantity" placeholder="1-999999" minlength="1" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">幣別</div>
+                                    <select id="Currency" name="Currency" class="select100" required>
+                                        <option value="" selected="">選擇幣別</option>
+                                        <option value="1">台幣</option>
+                                    </select>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">幣值</div>
+                                    <input type="text" id="CurrencyValue" name="CurrencyValue" placeholder="請輸入1:遊戲幣比值，例 1:1" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">出售件數</div>
+                                    <input type="text" id="OrderQuantity" name="OrderQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">庫存數量</div>
+                                    <input type="text" id="KuTsuenQuantity" name="KuTsuenQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise1" name="appraise" class="radio_box" checked>
+                                                <label for="appraise1" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise2" name="appraise" class="radio_box">
+                                                <label for="appraise2" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise3" name="appraise" class="radio_box">
+                                                <label for="appraise3" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GameCurrencyForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 分頁2(帳號) -->
+                    <div class="pa_content pa_content2">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="3"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="file" name="youfile" class="input100">
+                                    <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                            </div>
+                            <!-- 中間區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50"  class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">帳號價格</div>
+                                    <input type="text" id="Price" name="Price" placeholder="1-999999" minlength="1" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="line"></div>
+
+                                <!--註解-->
+                                <div class="account_set" style="/*display: none;*/">
+                                    <div class="col_1 create_tips">
+                                        <div class="title">帳號屬性</div>
+                                        <div class="col_1 col_text">為保證您的帳號順利賣出，您需移交註冊遊戲帳號的相關資料給買家（<span class="text_deepred">包含：官方帳密、註冊信箱帳密、身份證字號</span>），若您無法提交或不願移交，<span class="text_deepred">可以先將您的郵箱、官網密碼等資料變更，再進行刊登。以免被他人利用</span>。
+                                        </div>
+                                        <div class="col_1 text_blod text_red">遊戲帳號和角色名在移交帳號資料前，任何人都無法查看</div>
+                                    </div>
+
+                                    <div class="col_2">
+                                        <div class="input_title">遊戲帳號</div>
+                                        <input type="text" id="GameAccount" name="GameAccount" placeholder="輸入遊戲帳號" class="input100" required>
+                                    </div>
+                                    <div class="col_2">
+                                        <div class="input_title">遊戲角色名</div>
+                                        <input type="text" id="CharacterName" name="CharacterName" placeholder="輸入角色名" class="input100" required>
+                                    </div>
+                                    <div class="col_2">
+                                        <div class="input_title">等級</div>
+                                        <input type="text" id="CharacterLevel" name="CharacterLevel" placeholder="輸入等級" minlength="1" maxlength="5" onkeyup="value=value.replace(/[^\d]/g,'') "class="input100" required>
+                                    </div>
+                                    <div class="col_2">
+                                        <div class="input_title">職業</div>
+                                        <input type="text" id="CharacterProfession" name="CharacterProfession" placeholder="輸入職業" class="input100" required>
+                                    </div>
+                                    <div class="col_2">
+                                        <div class="input_title">角色性別</div>
+                                        <input type="text" id="CharacterSex" name="CharacterSex" placeholder="男性或女性" class="input100" required>
+                                    </div>
+                                    <div class="col_2">
+                                        <div class="input_title">官網密碼可否更改</div>
+                                        <select id="ChangePassword" name="ChangePassword" class="select100" required>
+                                            <option value="" selected="">請選擇</option>
+                                            <option value="1">可以</option>
+                                            <option value="0">不行</option>
+                                        </select>
+                                    </div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo1" id="FileInfo1" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo2" id="FileInfo2" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise4" name="appraise" class="radio_box" checked>
+                                                <label for="appraise4" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise5" name="appraise" class="radio_box">
+                                                <label for="appraise5" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise6" name="appraise" class="radio_box">
+                                                <label for="appraise6" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GameAccountForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 分頁3(點數卡) -->
+                    <div class="pa_content pa_content3">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="1"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="file" name="youfile" class="input100">
+                                    <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">點數卡種類</div>
+                                    <input type="text" id="PointCardKind" name="PointCardKind" placeholder="例 GASH-1000點" value="" maxlength="20" class="input100" required>
+                                </div>
+                            </div>
+                            <!-- 中間區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">點數卡價格</div>
+                                    <input type="text" id="Price" name="Price" placeholder="1-99999" minlength="1" maxlength="5" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">出售件數</div>
+                                    <input type="text" id="OrderQuantity" name="OrderQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">庫存數量</div>
+                                    <input type="text" id="KuTsuenQuantity" name="KuTsuenQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo1" id="FileInfo1" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo2" id="FileInfo2" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise7" name="appraise" class="radio_box" checked>
+                                                <label for="appraise7" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise8" name="appraise" class="radio_box">
+                                                <label for="appraise8" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise9" name="appraise" class="radio_box">
+                                                <label for="appraise9" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GamePointCardForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 分頁4(道具) -->
+                    <div class="pa_content pa_content4">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="6"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="file" name="youfile" class="input100">
+                                    <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                            </div>
+                            <!-- 中間區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">道具價格</div>
+                                    <input type="text" id="Price" name="Price" placeholder="1-99999" minlength="1" maxlength="5" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">出售件數</div>
+                                    <input type="text" id="OrderQuantity" name="OrderQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">庫存數量</div>
+                                    <input type="text" id="KuTsuenQuantity" name="KuTsuenQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo1" id="FileInfo1" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo2" id="FileInfo2" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise10" name="appraise" class="radio_box" checked>
+                                                <label for="appraise10" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise11" name="appraise" class="radio_box">
+                                                <label for="appraise11" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise12" name="appraise" class="radio_box">
+                                                <label for="appraise12" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GamepropsForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 分頁5(商城) -->
+                    <div class="pa_content pa_content5">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="7"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="file" name="youfile" class="input100">
+                                    <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                            </div>
+                            <!-- 中間區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">商城價格</div>
+                                    <input type="text" id="Price" name="Price" placeholder="1-99999" minlength="1" maxlength="5" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">出售件數</div>
+                                    <input type="text" id="OrderQuantity" name="OrderQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">庫存數量</div>
+                                    <input type="text" id="KuTsuenQuantity" name="KuTsuenQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo1" id="FileInfo1" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo2" id="FileInfo2" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise13" name="appraise" class="radio_box" checked>
+                                                <label for="appraise13" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise14" name="appraise" class="radio_box">
+                                                <label for="appraise14" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise15" name="appraise" class="radio_box">
+                                                <label for="appraise15" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GameMallForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 分頁6(送禮) -->
+                    <div class="pa_content pa_content6">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="8"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="file" name="youfile" class="input100">
+                                    <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                            </div>
+                            <!-- 中間區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">送禮價格</div>
+                                    <input type="text" id="Price" name="Price" placeholder="1-999999" minlength="1" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">出售件數</div>
+                                    <input type="text" id="OrderQuantity" name="OrderQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">庫存數量</div>
+                                    <input type="text" id="KuTsuenQuantity" name="KuTsuenQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo1" id="FileInfo1" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo2" id="FileInfo2" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise16" name="appraise" class="radio_box" checked>
+                                                <label for="appraise16" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise17" name="appraise" class="radio_box">
+                                                <label for="appraise17" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise18" name="appraise" class="radio_box">
+                                                <label for="appraise18" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GameGiftForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 分頁7(其他) -->
+                    <div class="pa_content pa_content7">
+                        <form id="OrderForm" name="OrderForm" method="post" enctype="multipart/form-data">
+                            <!-- 上方區塊內容 -->
+                            <div class="create_top">
+                                <div class="col_1">
+                                    <div class="input_title">商品編號(系統自動生成)</div>
+                                    <div class="col_text text_disabled"><span id="ProductNumber"></span>
+                                        <input type="hidden" id="ProductNumber" name="ProductNumber">
+                                        <input type="hidden" id="TypeId" name="TypeId" value="9"></div>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品圖(限165*165px，jpg或png檔)</div>
+                                    <input type="file" name="FileName" id="FileName" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="file" name="youfile" class="input100">
+                                    <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">商品主分類</div>
+                                    <select id="ProductId" name="ProductId" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">遊戲平台</div>
+                                    <select id="GamePlatform" name="GamePlatform" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="1">Android</option>
+                                        <option value="2">iOS</option>
+                                        <option value="3">電腦</option>
+                                        <option value="4">Steam</option>
+                                    </select>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">伺服器</div>
+                                    <input type="text" id="GameServer" name="GameServer" placeholder="限20個字" value="" maxlength="20" class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">遊戲名稱</div>
+                                    <select id="GameName" name="GameName" class="select100" required>
+                                        <option value="" selected="">請選擇</option>
+                                    </select>
+                                    <!-- <input type="text" id="GameName" name="GameName" placeholder="限25個字" value="" maxlength="25" class="input100" required> -->
+                                </div>
+                            </div>
+                            <!-- 中間區塊內容 -->
+                            <div class="create_mid">
+                                <div class="col_1">
+                                    <div class="input_title">商品標題</div>
+                                    <input type="text" id="ProductTitle" name="ProductTitle" placeholder="限50個字" maxlength="50" class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">其他價格</div>
+                                    <input type="text" id="Price" name="Price" placeholder="1-999999" minlength="1" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">出售件數</div>
+                                    <input type="text" id="OrderQuantity" name="OrderQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_3">
+                                    <div class="input_title">庫存數量</div>
+                                    <input type="text" id="KuTsuenQuantity" name="KuTsuenQuantity" placeholder="1-999" minlength="1" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                </div>
+                                <div class="col_1">
+                                    <div class="input_title">商品說明(限1000字)</div>
+                                    <textarea id="ProductInfo" name="ProductInfo" placeholder="請輸入商品描述" maxlength="1000" class="textarea100" required></textarea>
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo1" id="FileInfo1" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                                <div class="col_2">
+                                    <div class="input_title">說明圖片1(最大800*600px，jpg檔)</div>
+                                    <input type="file" name="FileInfo2" id="FileInfo2" class="input100" accept="image/png, image/jpg, image/jpeg" required>
+                                    <!-- <input type="button" value="上傳" class="btn_small btn_yellow"> -->
+                                </div>
+                            </div>
+                            <!-- 下方區塊內容 -->
+                            <div class="create_end">
+                                <div class="col_1 text_blod">購買設定 (商品有效期 <span class="title text_red">30天</span>)</div>
+                                <!-- 購買設定 checkbox -->
+                                <div class="col_1">
+                                    <div class="col_inline">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <label for="" class="chktext">指定會員編號為</label>
+                                        <input type="text" id="" name="" placeholder="輸入編號" value="" maxlength="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="no_width">
+                                    </div>
+                                    <div class="col_inline">的買家才能購買本商品</div>
+                                </div>
+
+                                <!-- 若勾選上方的"購買設定checkbox" 則會關閉下方資訊 -->
+                                <div class="col_1">
+                                    <div class="other_setup">
+                                        <div class="col_1 text_blod">其他設定 <span class="text_deepred text_normal">(買家48小時內未付款，取消交易時給予評價)</span></div>
+                                        <div class="col_1">
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise19" name="appraise" class="radio_box" checked>
+                                                <label for="appraise19" class="appraise_label">不用評價</label>
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise20" name="appraise" class="radio_box">
+                                                <label for="appraise20" class="appraise_label">普通評價</label>
+                                                <input type="text" id="" name="" placeholder="希望下次能繼續交易" value="" class="no_width">
+                                            </div>
+                                            <div class="radio_inline">
+                                                <input type="radio" id="appraise21" name="appraise" class="radio_box">
+                                                <label for="appraise21" class="appraise_label">負面評價</label>
+                                                <input type="text" id="" name="" placeholder="下次記得付款" value="" class="no_width">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 刊登按鈕 -->
+                            <div class="col_3">
+                                <input type="submit" id="GameOtherForm" value="確認刊登" class="jsSentFail btn_big btn_yellow">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 注意事項 -->
+                <div class="chkbox_outside remind_outside">
+                    <div class="detail_inside no_height">
+                        <div class="col_1">
+                            <span class="title">溫馨提醒：</span>
+                        </div>
+                        <ul class="remind_text">
+                            <li>當您登錄完成後，請您至個人資料再次確認您的聯絡電話是否正確。當您加入會員時候所填寫的電話如果有誤，可能導致日後無法與您取得聯絡而取消該筆交易。依服務條款規定，我們將停止您使用本服務。</li>
+                            <li>請勿在此處填寫任何聯絡方式(遊戲ID、電話、即時通、電子信箱等)，如有發現將取消這筆交易。</li>
+                            <li>有關於您登錄的物品交易狀態，請經常至【<a href="member.html" class="text_blue">會員中心</a>】確認，謝謝。</li>
+                            <li>本站商品列表使用緩存技術，您刊登可能要稍後才會出現在列表中。</li>
+                            <li>錢包餘額內，必須有足夠金額。不足請選擇其他繳款方式。</li>
+                            <li>因為遊戲幣和代練交易具有時效性，為方便會員交易，系統將會自動刪除15天前的賣場。</li>
+                            <li class="text_red">當您選擇手動發卡刊登時，請在買家付款後，及時將卡號密碼發在交易留言裡，若不留及留下虛假卡號密碼而引發買家投訴，由賣家承擔。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <!--浮動客服_滑出浮動視窗-->
+    <div id="popup_Service" class="on_chat">
+        <div class="chatbox">
+            <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+            <img src="images/index_logo.png" class="chat_logo">
+            <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+            <div class="chat_area">
+                <!--問：客服-->
+                <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+                <!--答：顧客-->
+                <div class="ask">沒，我只是來逛逛而已</div>
+                <!--問：客服-->
+                <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+                <!--答：顧客-->
+                <div class="ask">OK</div>
+
+                <!--清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+            </div>
+            <div class="msgbox">
+                <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+                <input type="submit" value="傳送" class="btn_s btn_yellow">
+            </div>
+        </div>
+    </div>
+    <!--浮動客服(視窗右下角常駐按鈕)-->
+    <div class="btn_chat" onclick="ShowService()">
+        <img src="images/service.png" alt="客服">
+    </div>
+
+    <!--跳框_登入才可刊登-->
+    <div id="popup_LoginPublish" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="col_1 listset text_center">請先登入會員，方可刊登商品</div>
+                    <!--按鈕-->
+                    <div class="col_1">
+                        <input type="button" value="關閉" onclick="document.getElementById('popup_LoginPublish').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_成功-->
+    <div id="popup_SentSuccess" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_SentSuccess').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>提示</span>
+                </div>
+                <div class="popup_in">
+                    <div class="col_1 listset text_center">成功！</div>
+                    <!--按鈕-->
+                    <div class="col_1">
+                        <input type="button" value="關閉" onclick="document.getElementById('popup_SentSuccess').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_資訊有誤-->
+    <!--<div id="popup_SentFail" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_SentFail').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="col_1 listset text_center">資訊有誤，請重新檢查後再送出。</div>-->
+                    <!--按鈕-->
+                    <!--<div class="col_1">
+                        <input type="button" value="關閉" onclick="document.getElementById('popup_SentFail').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

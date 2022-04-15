@@ -1,0 +1,2486 @@
+/***********共用文字***********/
+.text_s {
+    font-size: 14px;
+    line-height: 16px;
+}
+.text_m {
+    font-size: 18px;
+    line-height: 20px;
+}
+.text_l {
+    font-size: 22px;
+    line-height: 24px;
+}
+hr {
+    border: 1px dashed #ccc;
+}
+/*********  page_content登入後首頁  *********/
+/*首頁_右側(內容)*/
+.tab_content, .index_content {
+    position: relative;
+    top: 80px;
+    width: 89%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+/*快速連結標籤(共用)*/
+.tab_content {
+    padding-top: 20px;
+}
+.tab_set {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 36px;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.tab_list {
+    display: inline-block;
+    *display: inline;
+    line-height: 30px;
+    margin: 0 2px 5px 0;
+    padding: 0 0 0 5px;
+    border: 1px solid #a8a8a8;
+    color: #666;
+    font-size: 14px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.tab_list .tabbox a {
+    color: #666;
+}
+.tab_list:hover, .tab_list:active, .tab_list:focus, .tab_list.selected {
+    color: #fff;
+    background-color: #b87ce8;
+    border: 1px solid #855bb1;
+}
+.tab_list.selected .tabbox a {
+    color: #fff;
+    /*background-color: #b87ce8;*/
+    border: 0;
+}
+.tab_list .tabbox a:hover, .tab_list .tabbox a:active {
+    color: #fff;
+}
+.icon_tab {
+    display: inline-block;
+    *display: inline;
+    width: 14px;
+    height: 14px;
+    background: url(../images/index_icon/icon_tab.png) no-repeat;
+    background-size: 100% auto;
+    vertical-align: middle;
+}
+.tab_list .tabbox .text {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+}
+.tab_close {
+    display: inline-block;
+    *display: inline;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    border: 0;
+    background: url(../images/index_icon/btn_close.png) no-repeat;
+    background-size: 100% auto;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*首頁右側_快速連結標籤_右鍵選單(共用)*/
+.tab_menu {
+    position: absolute;
+    top: 50px;
+    left: 270px;
+    width: 130px;
+    list-style: none;
+    border: 1px solid #c9c9c9;
+    border-bottom: none;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+.tab_menu li {
+    width: 110px;
+    height: 25px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 20px;
+    background: #fff;
+    cursor: pointer;
+}
+.tab_menu li a {
+    color: #333;
+    padding-left: 5px;
+}
+.tab_menu li:hover, .tab_menu li:active  {
+    background-color: #9bc6da;
+    background-image: url(../images/index_icon/icon_tabarrow.png);
+    background-repeat: no-repeat;
+    background-size: 9px 7px;
+    background-position: 10px;
+}
+/*輸贏金額、會員人數統計*/
+.rightbar_set {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+.infobox {
+    display: inline-block;
+    *display: inline;
+    width: 48%;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.infobox:hover, .infobox:active {
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+.bg_pink, .bg_deepblue, .bg_blue, .bg_green, .bg_yellow, .bg_orange, .bg_red {
+    margin: 0 10px 10px 0;
+}
+.infobox .icon_bg {
+    float: left;
+    width: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+.infobox .icon_money, .icon_deposit, 
+.icon_consignment, .icon_group, 
+.icon_points, .icon_leave {
+    display: inline-block;
+    *display: inline;
+    width: 65px;
+    height: 65px;
+    margin: 7px auto;
+    text-align: center;
+    opacity: 0.75;
+    -webkit-opacity: 0.7;
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    filter:alpha(opacity=70);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+}
+.rightbar_content {
+    float: left;
+    padding: 15px 0 13px 15px;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: default;
+}
+.rightbar_content:hover {
+    text-decoration: none;
+}
+.rightbar_content .text {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+.rightbar_content .number {
+    font-size: 2em;
+}
+/*總金額收入*/
+.ratebox {
+    float: left;
+    width: 69%;
+    height: 400px;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ratebox .title_set {
+    line-height: 50px;
+    padding-left: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.ratebox .content_set {
+    width: 96%;
+    height: 300px;
+    margin: 22px auto;
+    text-align: left;
+    overflow: auto;
+}
+.rate {
+    min-width: 100%;
+    font-size: 1em;
+    overflow: hidden;
+}
+.rate th {
+    padding: 0 0.5em 0.5em 0.5em;
+    text-align: left;
+}
+.rate td {
+    padding: 0.8em;
+    text-align: left;
+    word-wrap: break-word;
+}
+.rate td:before {
+    display: none;
+}
+.rate .cell1 {
+    width: 30%;
+}
+/*總金額收入_長條棒*/
+.progress {
+    position: relative;
+    top: 0;
+    height: 13px;
+    line-height: 13px;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.progress_bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    text-align: center;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+/*總租賃會員數*/
+.agentbox {
+    float: left;
+    width: 30%;
+    height: 400px;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.agentbox .title_set {
+    line-height: 50px;
+    padding-left: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.agentbox .content_set {
+    position: relative;
+    top: -15px;
+    text-align: center;
+}
+.agent_title {
+    position: relative;
+    top: 150px;
+}
+.agent_title .name {
+    font-size: 2.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.agent_title .ratio {
+    font-size: 1.5em;
+}
+.img_agent_circle {
+    display: inline-block;
+    *display: inline;
+    width: 237px;
+    height: 238px;
+}
+/*總租賃會員數_圓餅圖*/
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.canvas_holder {
+    width: 300px;
+    margin: 0 auto;
+}
+/***********新右側內容***********/
+.content_r {
+    position: relative;
+    top: 100px;
+    left: 220px;
+    width: calc(98% - 220px);
+    margin-bottom: 40px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+.boxset {
+    width: 100%;
+    margin: 0 0 20px 0;
+    background: #f5f5f5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.content_r .box_inside {
+    width: calc(100% - 50px);
+    padding: 25px;
+    text-align: left;
+    overflow: hidden;
+}
+.text_overflow, .td_overflow {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* .text_overflow {
+    width: 98%;
+    font-weight: bold;
+    text-decoration: underline;
+} */
+.tb_btn, .tb_btn_l {
+    display: inline-block;
+    line-height: 18px;
+    margin: 2px 0;
+    padding: 5px 10px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all ease-in .15s;
+    -moz-transition: all ease-in .15s;
+    -o-transition: all ease-in .15s;
+    transition: all ease-in .15s;
+    vertical-align: middle;
+}
+a.tb_btn, a.tb_btn_l {
+    text-decoration: none;
+}
+.tb_btn {
+    max-width: 70px;
+}
+.tb_btn_l {
+    max-width: 100px;
+}
+/*項目標題*/
+.box_title {
+    line-height: 22px;
+    padding: 15px 0 15px 10px;
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+}
+.box_title span {
+    display: inline-block;
+    width: calc(100% - 160px);
+    word-break: break-word;
+}
+.box_title .btn_close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/index_icon/btn_close.png);
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    background-position: center;
+    cursor: pointer;
+}
+.col_btn {
+    margin: 10px auto 10px;
+    text-align: center;
+}
+/*小按鈕*/
+.btn_small {
+    display: inline-block;
+    margin: 2px 5px 2px 0;
+    padding: 5px 17px;
+    font-size: 15px;
+}
+.btn_back {
+    float: right;
+    margin: -5px 10px 0 0;
+    padding: 5px 17px;
+    font-size: 15px;
+}
+/*大按鈕*/
+.btn_big, .popup_btn .btn_right {
+    display: inline-block;
+    width: 15%;
+    min-width: 120px;
+    padding: 8px 0;
+    margin: 2px 5px 2px 0;
+    font-size: 20px;
+}
+/***********表格首列凍結***********/
+.tbbox, .free_tbbox {
+    width: 100%;
+    margin: 0 auto 20px;
+    overflow: auto;
+}
+.tbbox {
+    height: 570px; /*要限制高度，首列固定為上功能才會出現*/
+}
+.tbfree {
+    height: auto; /*無限制高度*/
+}
+.tb10 {
+    height: 477px; /*10筆資料的高度*/
+}
+.tb20 {
+    height: 906px; /*20筆資料的高度*/
+}
+.tb30 {
+    height: 1336px; /*30筆資料的高度*/
+}
+.tb40 {
+    height: 1766px; /*40筆資料的高度*/
+}
+.tb50 {
+    height: 2196px; /*50筆資料的高度*/
+}
+.fixed_table {
+    table-layout: fixed; /*首列永遠固定於上*/
+    min-width: 1500px;
+    text-align: left;
+}
+.fixed_table.table_s {
+    min-width: 250px;
+}
+table caption, .tb_caption {
+    padding: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+/*首列凍結功能*/
+.freeze {
+    position: -webkit-sticky; /* Chrome、Safari */
+    position: -moz-sticky; /* FireFox */
+    position: -ms-sticky; /* IE */
+    position: -o-sticky; /* Opera */
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+}
+.fixed_table th {
+    height: 30px;
+    line-height: 18px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 1px solid #8e8e8e;
+    vertical-align: middle;
+}
+.fixed_table td {
+    line-height: 20px;
+    padding: 5px;
+    font-size: 16px;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.fixed_table tfoot tr {
+    font-size: 18px;
+    font-weight: bold;
+}
+.fixed_table .cell_ss, .col_table .cell_ss {
+    width: 3.5%;
+}
+.fixed_table .cell_s1, .col_table .cell_s1 {
+    width: 4%;
+}
+.fixed_table .cell_s, .col_table .cell_s {
+    width: 6%;
+}
+.fixed_table .cell_m, .col_table .cell_m {
+    width: 12%;
+}
+.fixed_table .cell_mm, .col_table .cell_mm {
+    width: 14%;
+}
+.fixed_table .cell_l, .col_table .cell_l {
+    width: 20%;
+}
+.fixed_table .cell_xl, .col_table .cell_xl {
+    width: 30%;
+}
+.fixed_table .cell_xxl, .col_table .cell_xxl {
+    width: 40%;
+}
+.fixed_table .cell_xxxl, .col_table .cell_xxxl {
+    width: 55%;
+}
+/***********文字過長省略***********/
+.text_omit {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/***********表格範例***********/
+.col_table {
+    width: 100%;
+    margin: 0 auto 30px;
+    color: #555;
+    font-size: 18px;
+    background-color: #fff;
+}
+.col_table .col_title {
+    width: 10%;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    word-break: break-word;
+    background-color: #666;
+}
+.col_table td, .col_table .col_td {
+    line-height: 20px;
+    padding: 10px;
+    vertical-align: middle;
+}
+.col_table input[type="text"], 
+.col_table input[type="password"], 
+.col_table input[type="email"], 
+.col_table select, .col_table textarea {
+    width: calc(100% - 18px);
+    padding: 5px 10px 5px 5px;
+    color: #555;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #d6d6d6;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    /*移除箭頭樣式*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.box_inside .text_disabled {
+    color: #b18585;
+    background-color: #e6e6e6;
+    cursor: default;
+}
+/*IE隱藏箭頭樣式*/
+select::-ms-expand {
+    display: none;
+}
+/***********表格***********/
+.col_1 {
+    width: 99%;
+    margin: 0 0 10px 0;
+}
+.col_2, .col_3, .col_4, .col_5, .col_6, 
+.col_7, .col_8, .col_9, .col_10 {
+    display: inline-block;
+    margin: 0 1% 5px 0;
+    vertical-align: top;
+}
+.col_2 {
+    width: calc(100% / 2 - 1.7%);
+}
+.col_3 {
+    width: calc(100% / 3 - 1.6%);
+}
+.col_4 {
+    width: calc(100% / 4 - 1.5%);
+}
+.col_5 {
+    width: calc(100% / 5 - 1.45%);
+}
+.col_6 {
+    width: calc(100% / 6 - 1.43%);
+}
+.col_7 {
+    width: calc(100% / 7 - 1.4%);
+}
+.col_8 {
+    width: calc(100% / 8 - 1.35%);
+}
+.col_9 {
+    width: calc(100% / 9 - 1.33%);
+}
+.col_10 {
+    width: calc(100% / 10 - 1.3%);
+}
+.col50_left, .col50_right {
+    float: left;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.col50_right {
+    float: right;
+}
+.col50_left span, .col50_right span {
+    display: inline-block;
+}
+.col_1:after, .col_2:after, .col_3:after, 
+.col_4:after, .col_5:after, .col_6:after, 
+.col_7:after, .col_8:after, .col_9:after, 
+.col_10:after, .popup_btn:after, .box_title:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.input_title {
+    display: block;
+    line-height: 22px;
+    margin: 0 0 3px 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.col_text, .col_text50 {
+    display: inline-block;
+    width: calc(100% - 20px);
+    min-height: 20px;
+    padding: 10px;
+    line-height: 24px;
+    font-size: 18px;
+    text-align: justify;
+    word-break: break-word;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+.col_text50 {
+    width: 50%;
+}
+input.no_width, select.no_width, 
+.input50, .select50, .textarea50, 
+.input100, .select100, .textarea100, 
+.col_date, .col_date50, 
+.tb_input100, .tb_input50, 
+.fixed_table input[type="text"], 
+.fixed_table input[type="password"], 
+.fixed_table input[type="email"], 
+.fixed_table select, .fixed_table textarea {
+    font-size: 18px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+input[type="file"] {
+    padding: 5px 10px;
+    width: 95%;
+    display: inline-block;
+    vertical-align: middle;
+}
+input[type="file"].input50 {
+    width: 55%;
+}
+.fixed_table input[type="text"], 
+.fixed_table input[type="password"], 
+.fixed_table input[type="email"], 
+.fixed_table select, 
+.fixed_table textarea {
+    width: calc(90% - 20px);
+    padding: 5px 10px;
+}
+.col_date, .col_date50 {
+    display: inline-block;
+    width: 115px;
+    padding: 5px 12px 5px 8px;
+    background: url(../images/index_icon/icon_date.png) 96% center no-repeat #fff;
+    background-size: auto 68%;
+    cursor: pointer;
+}
+.col_table input[type="text"].col_date50 {
+    width: calc(100% / 2 - 25px) !important;
+    background: url(../images/index_icon/icon_date.png) 96% center no-repeat #fff;
+    background-size: auto 68%;
+}
+.col_time {
+    display: inline-block;
+    width: 110px;
+    padding: 5px 12px 5px 8px;
+    cursor: pointer;
+}
+.input50, .select50, .textarea50, 
+.input100, .select100, .textarea100 {
+    display: block;
+    width: calc(100% - 32px);
+    padding: 10px 15px;
+    margin: 0 0 5px 0;
+}
+.input50, .select50, .textarea50 {
+    display: inline-block;
+    width: 38%;
+    vertical-align: top;
+}
+.dash {
+    display: inline-block;
+    padding: 10px 0;
+    vertical-align: top;
+}
+.textarea100 {
+    height: 100px;
+    line-height: 20px;
+    resize : none;
+}
+input.no_width {
+    display: inline-block;
+    width: 150px;
+    padding: 5px 10px;
+}
+.no_width.width_l {
+    width: 300px;
+}
+select.select100 {
+    width: 99%;
+}
+select.select50 {
+    width: 45%;
+}
+select.no_width {
+    display: inline-block;
+    line-height: 22px;
+    padding: 3px 35px 3px 10px;
+}
+.fixed_table select {
+    display: inline-block;
+    width: calc(100% - 20px);
+}
+.col_inline, .radio_inline, .loginbox .chktext, 
+.radio_inline label, .radio_inline span, 
+.col_1 div.title, .col_1 span.title,
+.col_1 .chktext, .col_2 .chktext, 
+.col_3 .chktext, .col_4 .chktext, 
+.col_5 .chktext, .col_6 .chktext, 
+.col_7 .chktext, .col_8 .chktext, 
+.col_9 .chktext, .col_10 .chktext {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    line-height: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.radio_inline label {
+    cursor: pointer;
+}
+.col_1 .chktext, .col_2 .chktext, 
+.col_3 .chktext, .col_4 .chktext, 
+.col_5 .chktext, .col_6 .chktext, 
+.col_7 .chktext, .col_8 .chktext, 
+.col_9 .chktext, .col_10 .chktext {
+    line-height: 22px;
+}
+.col_inline, .radio_inline {
+    margin: 0 10px 5px 0;
+}
+.check_set {
+    padding: 0 0 0 10px;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.ckbox_set {
+    display: inline-block;
+    min-width: 100px;
+    vertical-align: middle;
+}
+.check_box, 
+.radio_inline input[type="radio"], 
+.fixed_table input[type="radio"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.ckbox_1 {
+    width: 100%;
+}
+.chkbox_outside {
+    width: calc(100% - 42px);
+    line-height: 30px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: 2px dotted #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.chkbox_inside, .detail_inside {
+    width: 100%;
+    height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.no_height {
+    height: auto;
+}
+/*管理權限*/
+.chkbox_title, .detail_title {
+    padding: 2px 5px;
+    margin: 5px 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.access {
+    display: inline-block;
+    width: 98%;
+    line-height: 20px;
+    margin: 3px auto;
+    text-align: center;
+    border-bottom: 1px dotted #aaa;
+}
+.access dt {
+    display: inline-block;
+    width: 100px;
+    padding-left: 5px;
+    color: #0068a5;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+}
+.access dd {
+    display: inline-block;
+    width: calc(99% - 105px);
+    word-break: break-word;
+    text-align: justify;
+    vertical-align: top;
+}
+.access:last-child {
+    border-bottom: 0;
+}
+/*訂單明細表格*/
+.col_tb {
+    margin: 0 auto 10px;
+    color: #555;
+    font-size: 18px;
+    border: 1px solid #999;
+}
+.col_tb th, .col_tb td {
+    line-height: 24px;
+    word-break: break-word;
+    vertical-align: top;
+}
+.col_tb th {
+    width: 12%;
+    padding: 7px 10px;
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    background-color: #666;
+    border-bottom: 1px solid #999;
+}
+.col_tb td {
+    width: 86%;
+    padding: 7px 0 7px 10px;
+    margin: 0 0 0 -5px;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    background-color: #fff;
+}
+.col_tb th:last-child {
+    border-bottom: 0;
+}
+.col_tb td:first-of-type {
+    border-top: 1px solid #bbb;
+}
+.tb_input100, .tb_input50, .textarea100 {
+    width: 97%;
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+.tb_input50 {
+    width: 48%;
+}
+.col_dl {
+    width: 100%;
+    margin: 0 auto 10px;
+    color: #555;
+    font-size: 18px;
+}
+.col_dl dt, .col_dl dd {
+    display: inline-block;
+    line-height: 20px;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.col_dl dt {
+    width: 12%;
+    padding: 8px;
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    background-color: #666;
+    border-bottom: 1px solid #999;
+}
+.col_dl dt:first-of-type {
+    border-top: 1px solid #666;
+}
+.col_dl dd {
+    width: 86%;
+    padding: 8px 0 8px 8px;
+    margin: 0 0 0 -5px;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    background-color: #fff;
+}
+.col_dl dd:first-of-type {
+    border-top: 1px solid #bbb;
+}
+/*財務報表*/
+.bg_white {
+    background-color: #fff;
+}
+/*備註*/
+.pw_tips {
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    list-style: decimal;
+    vertical-align: top;
+}
+/*頁碼*/
+.pagination {
+    display: flex;
+    margin: 0 0 8px 0;
+    list-style: none;
+    white-space: nowrap;
+    justify-content: flex-end;
+}
+.pagination li a {
+    position: relative;
+    display: block;
+    padding: 7px 10px;
+    margin-left: -1px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
+    text-decoration: none;
+}
+/*滑動Switch開關*/
+.onoffswitch {
+    position: relative;
+    width: 70px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block;
+    border: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "開";
+    padding-left: 12px;
+    color: #fff;
+    background-color: #34A7C1;
+}
+.onoffswitch-inner:after {
+    content: "關";
+    padding-right: 12px;
+    color: #fff;
+    text-align: right;
+    background-color: #aaa;
+}
+.onoffswitch-switch {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 40px;
+    display: block;
+    width: 22px;
+    margin: 4px;
+    background: #fff;
+    border: 2px solid none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.3s ease-in 0s;
+    -moz-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0;
+}
+/***** 跳框 *****/
+.popup_windows {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    z-index: 10000;
+}
+.popup_container {
+    position: absolute;
+    width: 100%;
+    top: 48%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    z-index: 10000;
+}
+.popup {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #fff;
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+.popup .btn_close {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/index_icon/popup_close.png);
+    background-repeat: no-repeat;
+    background-size: 40% auto;
+    background-position: center;
+    cursor: pointer;
+}
+.popup .popup_title {
+    padding: 12px 35px;
+    color: #333;
+    text-align: center;
+    font: normal bold 22px/1em "微軟正黑體";
+    background-color: #ccc;
+    -webkit-border-radius: 0.2em 0.2em 0 0;
+    -moz-border-radius: 0.2em 0.2em 0 0;
+    -ms-border-radius: 0.2em 0.2em 0 0;
+    -o-border-radius: 0.2em 0.2em 0 0;
+    border-radius: 0.2em 0.2em 0 0;
+}
+.popup .popup_in {
+    padding: 20px;
+}
+.popup .text_set {
+    margin: 0.5em 0 0.8em 0;
+    line-height: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+.popup .text_title,
+.popup .text_center, 
+.popup .text_right {
+    margin: 10px 0;
+    font: normal bold 20px/26px "微軟正黑體";
+    text-align: left;
+}
+.text_right, .popup .text_right {
+    text-align: right;
+}
+.text_center, .popup .text_center {
+    text-align: center;
+}
+.popup .text {
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+.popup .text .cell1 {
+    display: inline-block;
+    width: 30%;
+    margin: 2px 0 0 0;
+    font-weight: bold;
+    letter-spacing: -1px;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.popup .text .cell2 {
+    display: inline-block;
+    width: 65%;
+    font-size: 18px;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.popup .tips {
+    margin: 0.5em 0;
+    font: italic bold 0.9em/1em "微軟正黑體";
+    text-align: center;
+}
+.popup_in .popup_input, .popup_in .popup_select {
+    display: inline-block;
+    padding: 5px;
+    font: normal normal 17px/22px "微軟正黑體";
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+    border-radius: 0.2em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.popup_in .popup_input {
+    width: calc(95% - 10px);
+}
+.popup_in .popup_select {
+    width: calc(100% - 10px);
+}
+.popup .popup_btn {
+    width: 100%;
+    margin: 15px auto 0;
+    text-align: center;
+}
+.popup_btn .btn_left, 
+.popup_btn .btn_right, 
+.popup_btn .btn_center {
+    float: left;
+    margin: 5px 5px 5px 0;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.popup_btn .btn_left, .popup_btn .btn_right {
+    width: 47%;
+}
+.popup_btn .btn_center {
+    float: none;
+    width: 70%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 901px (iPad, iPad pro)*/
+@media screen and (min-width: 901px) {
+    /*首列凍結功能*/
+    .fixed_table .cell_ss, .col_table .cell_ss {
+        width: 3%;
+    }
+    /* 表格內的ScrollBar樣式設定 */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        /* box-shadow: inset 0 0 2px #bbb; */
+        background: #e8e8e8;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #bbb;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
+}
+
+/* 寬度大於 1901px (電腦) */
+@media screen and (min-width: 1901px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        padding-left: 220px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .infobox {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+    /*新表格*/
+    .content_r {
+        left: 240px;
+        width: calc(98% - 240px);
+    }
+}
+
+/* 寬度大於 2560px (電腦) */
+@media screen and (min-width: 2560px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 90%;
+        padding-left: 220px;
+    }
+}
+
+/* 寬度介於 1441px - 1900px (ipad pro,舊電腦) */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 86%;
+        padding-left: 220px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .ratebox {
+        width: 66.5%;
+    }
+    .agentbox {
+        width: 32%;
+    }
+    /*新表格*/
+    .col_5, .col_6, .col_7, 
+    .col_8, .col_9, .col_10 {
+        width: calc(100% / 4 - 1.43%);
+    }
+    .btn_small {
+        margin: 0 5px 5px 0;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        width: 15%;
+    }
+    .col_tb td {
+        width: 85%;
+    }
+    .col_dl dt {
+        width: 25%;
+    }
+    .col_dl dd {
+        width: 70%;
+    }
+}
+
+/* 寬度介於 1301px - 1440px (ipad pro,舊電腦) */
+@media screen and (min-width: 1301px) and (max-width: 1440px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 85%;
+        padding-left: 220px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .ratebox {
+        width: 66%;
+    }
+    .agentbox {
+        width: 32%;
+    }
+    /*新表格*/
+    .col_5, .col_6, .col_7, 
+    .col_8, .col_9, .col_10 {
+        width: calc(100% / 3 - 1.43%);
+    }
+    .btn_small {
+        margin: 0 0 10px 0;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        width: 15%;
+    }
+    .col_tb td {
+        width: 85%;
+    }
+    .col_dl dt {
+        width: 25%;
+    }
+    .col_dl dd {
+        width: 70%;
+    }
+}
+
+/* 寬度介於 901px - 1300px (ipad) */
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 77%;
+        padding-left: 220px;
+    }
+    /*代理金額比例*/
+    .ratebox {
+        width: 58%;
+    }
+    .agentbox {
+        width: 40%;
+    }
+    /*新表格*/
+    .col_table {
+        min-width: 1200px;
+    }
+    .col_5, .col_6, .col_7, 
+    .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 1.43%);
+    }
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    .btn_small {
+        margin: 0 0 10px 0;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        width: 20%;
+    }
+    .col_tb td {
+        width: 80%;
+    }
+    .col_dl dt {
+        width: 25%;
+    }
+    .col_dl dd {
+        width: 70%;
+    }
+}
+
+/* 寬度介於 751px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 900px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 95%;
+        padding-left: 20px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .infobox {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .ratebox {
+        width: 58%;
+    }
+    .agentbox {
+        width: 40%;
+    }
+    .rightbar_content {
+        padding: 15px 0 0 10px;
+    }
+    /*代理金額比例*/
+    .ratebox .content_set {
+        width: 90%;
+    }
+    .rate {
+        font-size: 0.95em;
+    }
+    .rate th {
+        display: none;
+        padding: 0.5em;
+    }
+    .rate td {
+        display: block;
+        padding: 0.5em;
+    }
+    .rate td:before {
+        content: attr(data-th) "";
+        font-weight: bold;
+        width: 5.5em;
+        display: inline-block;
+        *display: inline;
+    }
+    .rate .data:before {
+        display: table-cell;
+    }
+    .rate th, .rate td:before {
+        color: #000;
+    }
+    .rate th:last-child, .rate td:last-child {
+        padding-right: 0;
+    }
+    .progress {
+        width: 98%;
+    }
+    /*登入頁*/
+    .login_page {
+        margin: 0;
+    }
+    /*新表格*/
+    .fixed_table.table_l {
+        min-width: 900px;
+    }
+    .fixed_table.table_l .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_l .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_l .cell_m {
+        width: 18%;
+    }
+    .fixed_table.table_l .cell_l {
+        width: 25%;
+    }
+    .col_table {
+        min-width: 1200px;
+    }
+    .content_r {
+        left: 3%;
+        width: calc(97% - 3%);
+    }
+    .col_2, .col_3, .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    .btn_small {
+        margin: 0 0 10px 0;
+    }
+    .btn_small {
+        margin: 0 0 10px 0;
+    }
+    .btn_big {
+        width: 35%;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        width: 20%;
+    }
+    .col_tb td {
+        width: 80%;
+    }
+    .col_dl dt {
+        width: 25%;
+    }
+    .col_dl dd {
+        width: 70%;
+    }
+    /*跳框*/
+    .popup .text .cell1, .popup .text .cell2 {
+        display: block;
+        width: auto;
+        margin: 0 0 7px 0;
+    }
+}
+
+/* 寬度介於 671px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 750px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 93%;
+        padding-left: 20px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .infobox {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .ratebox {
+        width: 49%;
+    }
+    .agentbox {
+        width: 49%;
+    }
+    /*代理金額比例*/
+    .ratebox .content_set {
+        width: 90%;
+    }
+    .rate {
+        font-size: 0.95em;
+    }
+    .rate th {
+        display: none;
+        padding: 0.5em;
+    }
+    .rate td {
+        display: block;
+        padding: 0.5em;
+    }
+    .rate td:before {
+        content: attr(data-th) "";
+        font-weight: bold;
+        width: 5.5em;
+        display: inline-block;
+        *display: inline;
+    }
+    .rate .data:before {
+        display: table-cell;
+    }
+    .rate th, .rate td:before {
+        color: #000;
+    }
+    .rate th:last-child, .rate td:last-child {
+        padding-right: 0;
+    }
+    .progress {
+        width: 98%;
+    }
+    /*登入頁*/
+    .login_page {
+        margin: 0;
+    }
+    /*新表格*/
+    .fixed_table.table_l {
+        min-width: 900px;
+    }
+    .fixed_table.table_l .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_l .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_l .cell_m {
+        width: 18%;
+    }
+    .fixed_table.table_l .cell_l {
+        width: 25%;
+    }
+    .col_table {
+        min-width: 1200px;
+    }
+    .content_r {
+        left: 3%;
+        width: calc(97% - 3%);
+    }
+    .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    .col_2, .col_3 {
+        width: calc(100% - 2%);
+    }
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    .btn_small {
+        margin: 0 0 10px 0;
+    }
+    .btn_big {
+        width: 35%;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        width: 25%;
+    }
+    .col_tb td {
+        width: 75%;
+    }
+    .col_dl dt {
+        width: 25%;
+    }
+    .col_dl dd {
+        width: 70%;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 58%;
+    }
+    .popup .text .cell1, .popup .text .cell2 {
+        display: block;
+        width: auto;
+        margin: 0 0 7px 0;
+    }
+}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 94%;
+        padding-left: 20px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .infobox {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .ratebox, .agentbox {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    /*代理金額比例*/
+    .ratebox .content_set {
+        width: 90%;
+    }
+    .rate {
+        font-size: 0.95em;
+    }
+    .rate th {
+        display: none;
+        padding: 0.5em;
+    }
+    .rate td {
+        display: block;
+        padding: 0.5em;
+    }
+    .rate td:before {
+        content: attr(data-th) "";
+        font-weight: bold;
+        width: 5.5em;
+        display: inline-block;
+        *display: inline;
+    }
+    .rate .data:before {
+        display: table-cell;
+    }
+    .rate th, .rate td:before {
+        color: #000;
+    }
+    .rate th:last-child, .rate td:last-child {
+        padding-right: 0;
+    }
+    .progress {
+        width: 98%;
+    }
+    /*新表格*/
+    .fixed_table.table_s {
+        min-width: 250px;
+    }
+    .fixed_table.table_s .cell_ss {
+        width: 14%;
+    }
+    .fixed_table.table_s .cell_s {
+        width: 22%;
+    }
+    .fixed_table.table_s .cell_m {
+        width: 31%;
+    }
+    .fixed_table.table_s .cell_l {
+        width: 42%;
+    }
+    .fixed_table.table_m {
+        min-width: 480px;
+    }
+    .fixed_table.table_m .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_m .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_m .cell_m {
+        width: 15%;
+    }
+    .fixed_table.table_m .cell_l {
+        width: 22%;
+    }
+    .fixed_table.table_l {
+        min-width: 900px;
+    }
+    .fixed_table.table_l .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_l .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_l .cell_m {
+        width: 18%;
+    }
+    .fixed_table.table_l .cell_l {
+        width: 25%;
+    }
+    .col_table {
+        min-width: 1200px;
+    }
+    .content_r {
+        left: 3%;
+        width: calc(97% - 3%);
+    }
+    .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    .col_2, .col_3 {
+        width: calc(100% - 2%);
+    }
+    .col_inline, .radio_inline {
+        margin: 0 10px 10px 0;
+    }
+    .col_date {
+        margin: 0 0 10px 0;
+    }
+    .btn_small {
+        margin: 3px 0 7px 0;
+    }
+    .btn_big {
+        width: 45%;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        display: block;
+        width: 98%;
+        padding: 7px 0 7px 2%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_tb td {
+        display: block;
+        width: 95%;
+        padding: 7px 3%;
+        border-right: 0;
+        border-bottom: 0;
+    }
+    .col_tb td:first-of-type {
+        border-top: 0;
+    }
+    .col_dl dt {
+        width: 25%;
+    }
+    .col_dl dd {
+        width: 70%;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 58%;
+    }
+    .popup .text .cell1, .popup .text .cell2 {
+        display: block;
+        width: auto;
+        margin: 0 0 7px 0;
+    }
+}
+
+/* 寬度介於 401px - 550px (iPhone 6+) */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        padding-left: 20px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .infobox {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .ratebox, .agentbox {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    /*代理金額比例*/
+    .ratebox .content_set {
+        width: 90%;
+    }
+    .rate {
+        font-size: 0.95em;
+    }
+    .rate th {
+        display: none;
+        padding: 0.5em;
+    }
+    .rate td {
+        display: block;
+        padding: 0.5em;
+    }
+    .rate td:before {
+        content: attr(data-th) "";
+        font-weight: bold;
+        width: 5.5em;
+        display: inline-block;
+        *display: inline;
+    }
+    .rate .data:before {
+        display: table-cell;
+    }
+    .rate th, .rate td:before {
+        color: #000;
+    }
+    .rate th:last-child, .rate td:last-child {
+        padding-right: 0;
+    }
+    .progress {
+        width: 98%;
+    }
+    /*新表格*/
+    .fixed_table.table_s {
+        min-width: 250px;
+    }
+    .fixed_table.table_s .cell_ss {
+        width: 14%;
+    }
+    .fixed_table.table_s .cell_s {
+        width: 22%;
+    }
+    .fixed_table.table_s .cell_m {
+        width: 31%;
+    }
+    .fixed_table.table_s .cell_l {
+        width: 42%;
+    }
+    .fixed_table.table_m {
+        min-width: 480px;
+    }
+    .fixed_table.table_m .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_m .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_m .cell_m {
+        width: 15%;
+    }
+    .fixed_table.table_m .cell_l {
+        width: 22%;
+    }
+    .fixed_table.table_l {
+        min-width: 900px;
+    }
+    .fixed_table.table_l .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_l .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_l .cell_m {
+        width: 18%;
+    }
+    .fixed_table.table_l .cell_l {
+        width: 25%;
+    }
+    .col_table {
+        min-width: 1200px;
+    }
+    .content_r {
+        left: 5%;
+        width: calc(95% - 5%);
+    }
+    .col50_left, .col50_right {
+        margin: 0 0 10px 0;
+    }
+    .col_3, .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% / 2 - 2%);
+    }
+    .col_2, .col_3 {
+        width: calc(100% - 2%);
+    }
+    .col_inline, .radio_inline {
+        display: block;
+        margin: 0 10px 10px 0;
+    }
+    .col_inline .title, .ckbox_set {
+        display: block;
+        margin: 0 0 5px 0;
+    }
+    .col50_left .col_inline, .col50_left .radio_inline, 
+    .col50_right .col_inline, .col50_right .radio_inline, 
+    .col50_left .col_inline .title, .col50_left .ckbox_set, 
+    .col50_right .col_inline .title, .col50_right .ckbox_set {
+        display: inline-block;
+    }
+    .col_date {
+        width: 41%;
+        margin: 0 0 10px 0;
+    }
+    select.no_width {
+        width: 220px;
+        font-size: 17px;
+        margin: 0 0 10px 0;
+        padding: 5px 35px 5px 10px;
+    }
+    .col50_left select.no_width, 
+    .col50_left select.no_width {
+        width: auto;
+    }
+    input.no_width {
+        width: 40%;
+        margin: 0 0 10px 0;
+    }
+    .btn_small {
+        margin: 3px 0 7px 0;
+    }
+    .btn_big {
+        min-width: 150px;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        display: block;
+        width: 97%;
+        padding: 7px 0 7px 3%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_tb td {
+        display: block;
+        width: 92%;
+        padding: 7px 5%;
+        border-right: 0;
+        border-bottom: 0;
+    }
+    .col_tb td:first-of-type {
+        border-top: 0;
+    }
+    .col_dl dt {
+        width: 94%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_dl dd {
+        width: 96%;
+        padding: 8px 0 8px 8px;
+        margin: 0;
+        border: 1px solid #bbb;
+        border-top: 0;
+    }
+    /*跳框*/
+    .popup .text .cell1, .popup .text .cell2 {
+        display: block;
+        width: auto;
+        margin: 0 0 7px 0;
+    }
+}
+
+/* 寬度介於 540px - 570px */
+@media screen and (min-width: 540px) and (max-width: 570px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 94%;
+    }
+    .function_set .page_set {
+        margin: 10px 10px 0 0;
+    }
+}
+
+/* 寬度介於 401px - 414px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 401px) and (max-width: 414px) {
+    /*新表格*/
+    .col50_right {
+        float: left;
+    }
+    .col_date {
+        width: 120px;
+    }
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 90%;
+        padding-left: 20px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .ratebox, .agentbox {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .infobox {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .rightbar_content {
+        padding: 15px 0 0 10px;
+    }
+    /*代理金額比例*/
+    .ratebox .content_set {
+        width: 90%;
+    }
+    .rightbar_content .number {
+        font-size: 1.9em;
+    }
+    .rate {
+        font-size: 0.95em;
+    }
+    .rate th {
+        display: none;
+        padding: 0.5em;
+    }
+    .rate td {
+        display: block;
+        padding: 0.5em;
+    }
+    .rate td:before {
+        content: attr(data-th) "";
+        font-weight: bold;
+        width: 5.5em;
+        display: inline-block;
+        *display: inline;
+    }
+    .rate .data:before {
+        display: table-cell;
+    }
+    .rate th, .rate td:before {
+        color: #000;
+    }
+    .rate th:last-child, .rate td:last-child {
+        padding-right: 0;
+    }
+    .progress {
+        width: 98%;
+    }
+    /*右側內容*/
+    .searchbox .box_inside {
+        width: 90%;
+    }
+    .box_title span {
+        width: 170px;
+    }
+    /*新表格*/
+    .fixed_table.table_s {
+        min-width: 250px;
+    }
+    .fixed_table.table_s .cell_ss {
+        width: 14%;
+    }
+    .fixed_table.table_s .cell_s {
+        width: 22%;
+    }
+    .fixed_table.table_s .cell_m {
+        width: 31%;
+    }
+    .fixed_table.table_s .cell_l {
+        width: 42%;
+    }
+    .fixed_table.table_m {
+        min-width: 480px;
+    }
+    .fixed_table.table_m .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_m .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_m .cell_m {
+        width: 15%;
+    }
+    .fixed_table.table_m .cell_l {
+        width: 22%;
+    }
+    .fixed_table.table_l {
+        min-width: 900px;
+    }
+    .fixed_table.table_l .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_l .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_l .cell_m {
+        width: 18%;
+    }
+    .fixed_table.table_l .cell_l {
+        width: 25%;
+    }
+    .col_table {
+        min-width: 1200px;
+    }
+    .content_r {
+        left: 5%;
+        width: calc(95% - 5%);
+    }
+    .col50_right {
+        float: left;
+    }
+    .col_inline, .radio_inline {
+        display: block;
+        /* margin: 0 10px 10px 0; */
+    }
+    .col_inline .title, .ckbox_set {
+        display: block;
+        margin: 0 0 5px 0;
+    }
+    .col50_left .col_inline, .col50_left .radio_inline, 
+    .col50_right .col_inline, .col50_right .radio_inline, 
+    .col50_left .col_inline .title, .col50_left .ckbox_set, 
+    .col50_right .col_inline .title, .col50_right .ckbox_set {
+        display: inline-block;
+    }
+    .col_date {
+        width: 92%;
+        margin: 0 0 10px 0;
+    }
+    .chkbox_outside {
+        width: calc(100% - 22px);
+        padding: 10px;
+    }
+    .col50_left, .col50_right {
+        margin: 0 0 10px 0;
+    }
+    .col_2, .col_3, .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% - 2%);
+    }
+    select.select100 {
+        padding: 10px;
+        background-position-x: 95%;
+    }
+    select.select50 {
+        padding: 10px;
+        background-position-x: 95%;
+    }
+    .input50, .select50, .textarea50 {
+        width: 91%;
+    }
+    select.no_width {
+        width: 100%;
+        font-size: 16px;
+        margin: 0 0 10px 0;
+        padding: 5px 35px 5px 10px;
+    }
+    .col50_left select.no_width, 
+    .col50_left select.no_width {
+        width: auto;
+    }
+    input.no_width {
+        width: 92%;
+        margin: 0 0 10px 0;
+    }
+    .pagination li a {
+        padding: 8px;
+    }
+    .btn_small {
+        margin: 3px 0 7px 0;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        display: block;
+        width: 97%;
+        padding: 7px 0 7px 3%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_tb td {
+        display: block;
+        width: 92%;
+        padding: 7px 5%;
+        border-right: 0;
+        border-bottom: 0;
+    }
+    .col_tb td:first-of-type {
+        border-top: 0;
+    }
+    .col_dl dt {
+        width: 94%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_dl dd {
+        width: 96%;
+        padding: 8px 0 8px 8px;
+        margin: 0;
+        border: 1px solid #bbb;
+        border-top: 0;
+    }
+    /*跳框*/
+    .popup .text .cell1, .popup .text .cell2 {
+        display: block;
+        width: auto;
+        margin: 0 0 7px 0;
+    }
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /*首頁_右側(內容)*/
+    .tab_content, .index_content {
+        width: 93%;
+        padding-left: 10px;
+    }
+    /*輸贏金額、會員人數統計*/
+    .ratebox, .agentbox {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .infobox {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .infobox .icon_bg {
+        width: 65px;
+    }
+    /*代理金額比例*/
+    .rightbar_content {
+        padding: 15px 0 0 7px;
+    }
+    .ratebox .content_set {
+        width: 90%;
+    }
+    .rightbar_content .number {
+        font-size: 1.9em;
+    }
+    .rate {
+        font-size: 0.95em;
+    }
+    .rate th {
+        display: none;
+        padding: 0.5em;
+    }
+    .rate td {
+        display: block;
+        padding: 0.5em;
+    }
+    .rate td:before {
+        content: attr(data-th) "";
+        font-weight: bold;
+        width: 5.5em;
+        display: inline-block;
+        *display: inline;
+    }
+    .rate .data:before {
+        display: table-cell;
+    }
+    .rate th, .rate td:before {
+        color: #000;
+    }
+    .rate th:last-child, .rate td:last-child {
+        padding-right: 0;
+    }
+    .progress {
+        width: 98%;
+    }
+    /*右側內容*/
+    .searchbox .box_inside {
+        width: 90%;
+    }
+    .box_title span {
+        width: 90%;
+    }
+    .btn_back {
+        float: left;
+        margin: 10px 5px 0 0;
+    }
+    .content_r .box_inside {
+        width: 85%;
+        padding: 20px;
+    }
+    /*新表格*/
+    .fixed_table.table_s {
+        min-width: 250px;
+    }
+    .fixed_table.table_s .cell_ss {
+        width: 14%;
+    }
+    .fixed_table.table_s .cell_s {
+        width: 22%;
+    }
+    .fixed_table.table_s .cell_m {
+        width: 31%;
+    }
+    .fixed_table.table_s .cell_l {
+        width: 42%;
+    }
+    .fixed_table.table_m {
+        min-width: 480px;
+    }
+    .fixed_table.table_m .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_m .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_m .cell_m {
+        width: 15%;
+    }
+    .fixed_table.table_m .cell_l {
+        width: 22%;
+    }
+    .fixed_table.table_l {
+        min-width: 900px;
+    }
+    .fixed_table.table_l .cell_ss {
+        width: 4%;
+    }
+    .fixed_table.table_l .cell_s {
+        width: 8%;
+    }
+    .fixed_table.table_l .cell_m {
+        width: 18%;
+    }
+    .fixed_table.table_l .cell_l {
+        width: 25%;
+    }
+    .col_table {
+        min-width: 1200px;
+    }
+    .content_r {
+        left: 5%;
+        width: calc(95% - 5%);
+    }
+    .col50_right {
+        float: left;
+    }
+    .col_inline, .radio_inline {
+        display: block;
+        margin: 0 10px 10px 0;
+    }
+    .col_inline .title, .ckbox_set {
+        display: block;
+        margin: 0 0 5px 0;
+    }
+    .col50_left .col_inline, .col50_left .radio_inline, 
+    .col50_right .col_inline, .col50_right .radio_inline, 
+    .col50_left .col_inline .title, .col50_left .ckbox_set, 
+    .col50_right .col_inline .title, .col50_right .ckbox_set {
+        display: inline-block;
+    }
+    .col_date {
+        width: 85%;
+        margin: 0 0 10px 0;
+    }
+    .input50.col_date {
+        width: 31%;
+    }
+    .chkbox_outside {
+        width: calc(100% - 22px);
+        padding: 10px;
+    }
+    .col50_left, .col50_right {
+        margin: 0 0 10px 0;
+    }
+    .col_2, .col_3, .col_4, .col_5, .col_6, 
+    .col_7, .col_8, .col_9, .col_10 {
+        width: calc(100% - 2%);
+    }
+    select.select100 {
+        padding: 10px;
+        background-position-x: 95%;
+    }
+    select.no_width {
+        width: 100%;
+        font-size: 16px;
+        width: 192px;
+        margin: 0 0 10px 0;
+        padding: 5px 35px 5px 10px;
+    }
+    .col50_left select.no_width, 
+    .col50_left select.no_width {
+        width: auto;
+    }
+    input.no_width {
+        width: 190px;
+        margin: 0 0 10px 0;
+    }
+    .radio_inline input.no_width {
+        width: 90px;
+    }
+    .col_inline, .radio_inline, .loginbox .chktext, 
+    .radio_inline label, .radio_inline span, 
+    .col_1 .chktext, .col_2 .chktext, .col_3 .chktext, 
+    .col_4 .chktext, .col_5 .chktext, .col_6 .chktext, 
+    .col_7 .chktext, .col_8 .chktext, .col_9 .chktext, 
+    .col_10 .chktext {
+        font-size: 16px;
+    }
+    .pagination li a {
+        padding: 7px;
+    }
+    .btn_small {
+        margin: 3px 0 7px 0;
+    }
+    .btn_big {
+        min-width: 110px;
+        margin: 0;
+    }
+    /*訂單明細表格*/
+    .col_tb th {
+        display: block;
+        width: 97%;
+        padding: 7px 0 7px 3%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_tb td {
+        display: block;
+        width: 92%;
+        padding: 7px 5%;
+        border-right: 0;
+        border-bottom: 0;
+    }
+    .col_tb td:first-of-type {
+        border-top: 0;
+    }
+    .col_dl dt {
+        width: 94%;
+        text-align: left;
+        border-bottom: 0;
+    }
+    .col_dl dd {
+        width: 96%;
+        padding: 8px 0 8px 8px;
+        margin: 0;
+        border: 1px solid #bbb;
+        border-top: 0;
+    }
+    /*跳框*/
+    .popup .text .cell1, .popup .text .cell2 {
+        display: block;
+        width: auto;
+        margin: 0 0 7px 0;
+    }
+}

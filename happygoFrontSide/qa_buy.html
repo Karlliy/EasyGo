@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <!--繁中日曆JQ-->
+    <link href="css/ion.calendar.css" rel="stylesheet" type="text/css">
+    <script src="js/moment.min.js"></script>
+    <title>快易購-來自賣家回答</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 會員中心 -->
+    <div class="wrap member_wrap">
+        <!-- 電腦版-左側邊攔 -->
+        <?php include("left.html");?>
+
+        <!-- 手機版-左側邊欄 -->
+        <div class="popup_share">
+            <div class="share_btn">
+                <input type="button" value="快捷選單" class="share_show">
+                <input type="button" value="隱藏選單" class="share_hide" style="display: none;">
+            </div>
+            <!-- 左側邊欄 -->
+            <div class="slider_menu rwd_menu" style="display: none;">
+                <!-- 會員資料 -->
+                <div class="section">
+                    <div class="member_info">
+                        <div class="in_pic">
+                            <img src="images/member/pic01.png" alt="大頭照">
+                            <ul class="state_box">
+                                <!-- 在線狀態(三選一，只能同時存在一個) -->
+                                <li class="online_state">在線</li>
+                                <li class="leave_state">離開</li>
+                                <li class="offline_state">離線</li>
+                            </ul>
+                        </div>
+                        <div class="in_id">jojowang543</div>
+                    </div>
+                    <ul class="member_list">
+                        <li>
+                            <span class="li_title">會員編號：</span>
+                            <span class="li_txt">1234567890</span>
+                        </li>
+                        <li>
+                            <span class="li_title">買家評價：</span>
+                            <span class="li_txt text_green">89%</span>
+                        </li>
+                        <li>
+                            <span class="li_title">賣家評價：</span>
+                            <span class="li_txt text_pink">99.51%</span>
+                        </li>
+                        <li>
+                            <span class="li_title">最近登入：</span>
+                            <span class="li_txt">2021-09-09</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 下拉選單 -->
+                <div class="section">
+                    <input type="radio" id="section-m1" name="slider_menu1">
+                    <label for="section-m1">
+                        <img src="images/member/title_s01.png" alt="">
+                        <span>我是買家</span>
+                    </label>
+                    <div class="content">
+                        <ul>
+                            <li onclick="window.open('order_list_buy.html','_self');"><span>購物訂單查詢</span></li>
+                            <li onclick="window.open('order_list_buy.html','_self');"><span>待付款</span></li>
+                            <li onclick="window.open('order_list_buy.html','_self');"><span>待收貨</span></li>
+                            <li onclick="window.open('order_list_buy.html','_self');"><span>取消交易</span></li>
+                            <li onclick="window.open('comment_sell.html','_self');"><span>評價管理</span></li>
+                            <li onclick="window.open('qa_buy.html','_self');"><span>交易訊息</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section">
+                    <input type="radio" id="section-m2" name="slider_menu1">
+                    <label for="section-m2">
+                        <img src="images/member/title_s02.png" alt="">
+                        <span>我是賣家</span>
+                    </label>
+                    <div class="content">
+                        <ul>
+                            <li onclick="window.open('order_list_sell.html','_self');"><span>銷售訂單查詢</span></li>
+                            <li onclick="window.open('order_list_sell.html','_self');"><span>待出貨</span></li>
+                            <li onclick="window.open('order_list_sell.html','_self');"><span>待收款</span></li>
+                            <li onclick="window.open('order_list_sell.html','_self');"><span>取消交易</span></li>
+                            <li onclick="window.open('comment_buy.html','_self');"><span>評價管理</span></li>
+                            <li onclick="window.open('qa_sell.html','_self');"><span>交易訊息</span></li>
+                            <li onclick="window.open('publish.html','_self');"><span>免費刊登販售</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section">
+                    <input type="radio" id="section-m3" name="slider_menu1">
+                    <label for="section-m3">
+                        <img src="images/member/title_s03.png" alt="">
+                        <span>帳戶管理</span>
+                    </label>
+                    <div class="content">
+                        <ul>
+                            <li onclick="window.open('members_edit.html','_self');"><span>修改資料</span></li>
+                            <li onclick="window.open('members_edit.html','_self');"><span>變更帳戶密碼</span></li>
+                            <li onclick="window.open('members_edit.html','_self');"><span>變更支付密碼</span></li>
+                            <li onclick="window.open('members_edit.html','_self');"><span>身分驗證</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section">
+                    <input type="radio" id="section-m4" name="slider_menu1">
+                    <label for="section-m4">
+                        <img src="images/member/title_s04.png" alt="">
+                        <span>我的錢包</span>
+                    </label>
+                    <div class="content">
+                        <ul>
+                            <li onclick="window.open('my_wallet.html','_self');"><span>訂單收入</span></li>
+                            <li onclick="window.open('my_wallet.html','_self');"><span>已提款</span></li>
+                            <li onclick="window.open('my_wallet.html','_self');"><span>已退款</span></li>
+                            <li onclick="window.open('my_wallet.html','_self');"><span>錢包支付</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section">
+                    <input type="radio" id="section-m5" name="slider_menu1">
+                    <label for="section-m5">
+                        <img src="images/member/title_s05.png" alt="">
+                        <span>客服服務</span>
+                    </label>
+                    <div class="content">
+                        <ul>
+                            <li onclick="window.open('mail_members.html','_self');"><span>站內公告</span></li>
+                            <li onclick="window.open('complain.html','_self');"><span>問題申訴</span></li>
+                            <li onclick="ShowService()"><span>線上客服</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section" onclick="window.open('index.html','_self');">
+                    <input type="radio" id="section-m6" name="slider_menu1">
+                    <label for="section-m6">
+                        <img src="images/member/title_s06.png" alt="">
+                        <span>登出</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右邊主畫面 -->
+        <div class="index_main">
+            <!-- 訂單列表 -->
+            <div class="orderlist_box">
+                <div class="main_title">
+                    <img src="images/member/fa-file-text-o-w.png" alt="">
+                    <span>來自賣家回答</span>
+                </div>
+                <!-- 內容 -->
+                <div class="table_wrap">
+                    <!-- 表格 -->
+                    <div class="panel_wrap">
+                        <!-- 頁籤選取按鈕(圓點隱藏)+需對應下方 label -->
+                        <input type="radio" id="pa_radio1" name="panel_radio" class="panel_control" checked>
+                        <input type="radio" id="pa_radio2" name="panel_radio" class="panel_control">
+                        <!-- 頁籤選取按鈕(此父層"panel_tab_bigwarp"勿刪除，要設定分頁拖曳用 -->
+                        <div class="panel_tab_bigwarp">
+                            <div class="panel_tab_wrap">
+                                <label for="pa_radio1" class="panel_tab_label">未回答</label>
+                                <label for="pa_radio2" class="panel_tab_label">已回答</label>
+                            </div>
+                        </div>
+                        <!-- 頁籤-內容 -->
+                        <div class="panel_content_wrap">
+                            <!-- 分頁1(訂單未回) -->
+                            <div class="pa_content pa_content1">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>暫無訊息</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_m">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="sticky cell_s">數量</th>
+                                                    <th class="sticky cell_m">訂單金額</th>
+                                                    <th class="sticky cell_m">付款方式</th>
+                                                    <!-- <th class="sticky cell_m">操作</th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <!--以下狀態2選1-->
+                                                        <div class="text_red">待付款</div>
+                                                        <div style="display: none;">完成</div>
+                                                    </td>
+                                                    <td class="text_left">
+                                                        <ul>
+                                                            <li class="title text_deepblue">Mycard 10000點 (ﾉヮ)ﾉ*:･ﾟ文民科技，官方卡密，24小時可儲值</li>
+                                                            <li class="text_green">訂單編號：<span>210831871130</span></li>
+                                                            <li>下單時間：<span>2021-09-03 14:44:50</span></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td >1</td>
+                                                    <td class="text_red text_big">123,456</td>
+                                                    <td >超商-全家</td>
+                                                    <!-- <td class="sktb_btn">
+                                                        <input type="button" id="" name="" value="查看" onclick="window.open('Order/Order_info_buy','_self');" class="btn_small btn_green" >
+                                                    </td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!--以下狀態2選1-->
+                                                        <div class="text_red" style="display: none;">待付款</div>
+                                                        <div>完成</div>
+                                                    </td>
+                                                    <td class="text_left">
+                                                        <ul>
+                                                            <li class="title text_deepblue">3500000萬金=1000元 【1元:3,500萬金】 好再來便利店 需要的請...</li>
+                                                            <li class="text_green">訂單編號：<span>210831871130</span></li>
+                                                            <li>下單時間：<span>2021-09-03 14:44:50</span></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td >2</td>
+                                                    <td class="text_red text_big">1,500</td>
+                                                    <td >ATM</td>
+                                                    <!-- <td class="sktb_btn">
+                                                        <input type="button" id="" name="" value="查看" onclick="window.open('Order/Order_info_buy','_self');" class="btn_small btn_green" >
+                                                    </td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- 分頁2(已回答) -->
+                            <div class="pa_content pa_content2">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無訂單</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sticky cell_m">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="sticky cell_s">數量</th>
+                                                    <th class="sticky cell_m">訂單金額</th>
+                                                    <th class="sticky cell_m">付款方式</th>
+                                                    <!-- <th class="sticky cell_m">操作</th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <!--以下狀態2選1-->
+                                                        <div class="text_red" style="display: none;">待付款</div>
+                                                        <div>完成</div>
+                                                    </td>
+                                                    <td class="text_left">
+                                                        <ul>
+                                                            <li class="title text_deepblue">Mycard 10000點 (ﾉヮ)ﾉ*:･ﾟ文民科技，官方卡密，24小時可儲值</li>
+                                                            <li class="text_green">訂單編號：<span>210831871130</span></li>
+                                                            <li>下單時間：<span>2021-09-03 14:44:50</span></li>
+                                                        </ul>
+                                                    </td>
+                                                    <td >1</td>
+                                                    <td class="text_red text_big">123,456</td>
+                                                    <td >超商-全家</td>
+                                                    <!-- <td class="sktb_btn">
+                                                        <input type="button" id="" name="" value="查看" onclick="window.open('order_info_buy.html','_self');" class="btn_small btn_green" >
+                                                    </td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <!--浮動客服_滑出浮動視窗-->
+    <div id="popup_Service" class="on_chat">
+        <div class="chatbox">
+            <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+            <img src="images/index_logo.png" class="chat_logo">
+            <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+            <div class="chat_area">
+                <!--問：客服-->
+                <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+                <!--答：顧客-->
+                <div class="ask">沒，我只是來逛逛而已</div>
+                <!--問：客服-->
+                <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+                <!--答：顧客-->
+                <div class="ask">OK</div>
+
+                <!--清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+            </div>
+            <div class="msgbox">
+                <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+                <input type="submit" value="傳送" class="btn_s btn_yellow">
+            </div>
+        </div>
+    </div>
+    <!--浮動客服(視窗右下角常駐按鈕)-->
+    <div class="btn_chat" onclick="ShowService()">
+        <img src="images/service.png" alt="客服">
+    </div>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

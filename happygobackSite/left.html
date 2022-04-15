@@ -1,0 +1,111 @@
+<!--左側選單_下拉按鈕(共用)-->
+<a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+<!--左側選單_滑出資訊(共用)-->
+<div id="sidebar" class="sidebar_set" style="display: none;">
+    <div id="slider_content" class="slider_content">
+        <!--會員資訊-->
+        <div class="member_info">
+            <div class="icon_bighead"></div>
+            <div class="member_id">abc543</div>
+        </div>
+
+        <!--選單列滑出效果-->
+        <ul id="inside" class="inside">
+            <li class="sidebar_list">
+                <div class="link" onclick="javascript:location.href='Home/Dashboard';">
+                    <div class="icon_home"></div>
+                    <span class="text_orange">首頁</span>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="javascript:location.href='Home/Banner'">
+                    <div class="icon_web"></div>
+                    <span>輪播圖管理</span>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="icon_item"></div>
+                    <span>商品管理</span>
+                    <div class="icon_arrow"></div>
+                </div>
+                <ul id="" class="submenu">
+                    <li><a href="Product/Games_type" class="submenu_item">商品主分類</a></li>
+                    <!-- <li><a href="Product/Product_type" class="submenu_item">商品類型管理</a></li> -->
+                    <!-- <li><a href="Product/Currency" class="submenu_item">幣別管理</a></li> -->
+                    <li><a href="Product/Product" class="submenu_item">上架商品管理</a></li>
+                    <li><a href="Product/Games_info" class="submenu_item">遊戲管理</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="icon_member"></div>
+                    <span>會員管理</span>
+                    <div class="icon_arrow"></div>
+                </div>
+                <ul id="" class="submenu">
+                    <li><a href="Member/Members" class="submenu_item">會員列表</a></li>
+                    <li><a href="Member/Members_ip" class="submenu_item">登入IP紀錄</a></li>
+                    <li><a href="Member/Payment_record" class="submenu_item">存提匯款紀錄</a></li>
+                    <li><a href="Member/Verification_code" class="submenu_item">手機認證碼</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="icon_coins"></div>
+                    <span>訂單管理</span>
+                    <div class="icon_arrow"></div>
+                </div>
+                <ul id="" class="submenu">
+                    <li><a href="Order/Order" class="submenu_item">訂單總報表</a></li>
+                    <li><a href="Order/Deposit" class="submenu_item">存款管理</a></li>
+                    <li><a href="Order/Withdrawal" class="submenu_item">提款管理</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="icon_bank"></div>
+                    <span>銀行管理</span>
+                    <div class="icon_arrow"></div>
+                </div>
+                <ul id="" class="submenu">
+                    <li><a href="Home/Bank" class="submenu_item">銀行存款審核</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link">
+                    <div class="icon_mailbox"></div>
+                    <span>訊息管理</span>
+                    <div class="icon_arrow"></div>
+                </div>
+                <ul id="" class="submenu">
+                    <li><a href="Message/News" class="submenu_item">最新消息管理</a></li>
+                    <li><a href="Message/MailSystem" class="submenu_item">站內信管理</a></li>
+                    <li><a href="Message/Complain" class="submenu_item">申訴管理</a></li>
+                    <li><a href="Message/QA" class="submenu_item">問答管理</a></li>
+                </ul>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="javascript:location.href='Home/Permission'">
+                    <div class="icon_system"></div>
+                    <span>權限設置</span>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="javascript:location.href='Home/Change_pw'">
+                    <div class="icon_account"></div>
+                    <span>變更密碼</span>
+                </div>
+            </li>
+            <li class="sidebar_list">
+                <div class="link" onclick="javascript:location.href='Index/Logout'">
+                    <div class="icon_logout"></div>
+                    <span>登出</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--側選單_滑出的黑色背景-->
+    <div id="BlackBG" class="bg_black" style="display: none;"></div>
+</div>
+<script src="js/script.js"></script>

@@ -1,0 +1,272 @@
+<!-- 電腦版-左側邊攔 -->
+<div id="slider_menu" class="slider_menu pc_menu">
+    <!-- 會員資料 -->
+    <div class="section">
+        <div class="member_info">
+            <div class="in_pic">
+                <img src="images/member/pic01.png" alt="大頭照">
+                <ul class="state_box">
+                    <!-- 在線狀態(三選一，只能同時存在一個) -->
+                    <li class="online_state"><span id="online_state"></span></li>
+                    <!-- <li class="leave_state">離開</li> -->
+                    <li class="offline_state"><span id="offline_state"></span></li>
+                </ul>
+            </div>
+            <div class="in_id" id="in_id"><?echo $MemberId?></div>
+        </div>
+        <!-- <ul class="member_list">
+            <li>
+                <span class="li_title">會員編號：</span>
+                <span class="li_txt">1234567890</span>
+            </li>
+            <li>
+                <span class="li_title">買家評價：</span>
+                <span class="li_txt text_green">89%</span>
+            </li>
+            <li>
+                <span class="li_title">賣家評價：</span>
+                <span class="li_txt text_pink">99.51%</span>
+            </li>
+            <li>
+                <span class="li_title">最近登入：</span>
+                <span class="li_txt">2021-09-09</span>
+            </li>
+        </ul> -->
+        <ul class="member_list">
+            <li>
+                <span class="li_title">會員帳號：</span>
+                <span class="li_txt" name="MemberAccount" id="MemberAccount"></span>
+            </li>
+            <li>
+                <span class="li_title">好評評價：</span>
+                <span class="li_txt text_pink" name="Evalu"></span>
+            </li>
+            <li>
+                <span class="li_title">交易次數：</span>
+                <span class="li_txt" name="CountOrder"></span>
+            </li>
+            <li>
+                <span class="li_title">最近登入：</span>
+                <span class="li_txt" id="LastLoginDate"></span>
+            </li>
+        </ul>
+    </div>
+    <!-- 下拉選單 -->
+    <div class="section">
+        <input type="radio" id="section-pc1" name="slider_menu1">
+        <label for="section-pc1">
+            <img src="images/member/title_s01.png" alt="">
+            <span>我是買家</span>
+        </label>
+        <div class="content">
+            <ul>
+                <a href="Member/Order_buy"><li><span>購物訂單查詢</span></li></a>
+                <a href="Member/Order_buy"><li><span>待付款</span></li></a>
+                <a href="Member/Order_buy"><li><span>待收貨</span></li></a>
+                <a href="Member/Order_buy"><li><span>取消交易</span></li></a>
+                <a href="Order/CommentSell"><li><span>評價管理</span></li></a>
+                <a href="Order/QABuy"><li><span>交易訊息</span></li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <input type="radio" id="section-pc2" name="slider_menu1">
+        <label for="section-pc2">
+            <img src="images/member/title_s02.png" alt="">
+            <span>我是賣家</span>
+        </label>
+        <div class="content">
+            <ul>
+                <a href="Member/Order_sell"><li><span>銷售訂單查詢</span></li></a>
+                <a href="Member/Order_sell"><li><span>待出貨</span></li></a>
+                <a href="Member/Order_sell"><li><span>待收款</span></li></a>
+                <a href="Member/Order_sell"><li><span>取消交易</span></li></a>
+                <a href="Order/CommentBuy"><li><span>評價管理</span></li></a>
+                <a href="Order/QASell"><li><span>交易訊息</span></li></a>
+                <a href="Order/AddOrder"><li><span>免費刊登販售</span></li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <input type="radio" id="section-pc3" name="slider_menu1">
+        <label for="section-pc3">
+            <img src="images/member/title_s03.png" alt="">
+            <span>帳戶管理</span>
+        </label>
+        <div class="content">
+            <ul>
+                <a href="Member/Members_edit"><li><span>修改資料</span></li></a>
+                <a href="Member/Members_edit"><li><span>變更帳戶密碼</span></li></a>
+                <a href="Member/Members_edit"><li><span>變更支付密碼</span></li></a>
+                <a href="Member/Members_edit"><li><span>身分驗證</span></li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <input type="radio" id="section-pc4" name="slider_menu1">
+        <label for="section-pc4">
+            <img src="images/member/title_s04.png" alt="">
+            <span>我的錢包</span>
+        </label>
+        <div class="content">
+            <ul>
+                <a href="Member/Wallet"><li><span>訂單收入</span></li></a>
+                <a href="Member/Wallet"><li><span>已提款</span></li></a>
+                <a href="Member/Wallet"><li><span>已退款</span></li></a>
+                <a href="Member/Wallet"><li><span>錢包支付</span></li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <input type="radio" id="section-pc5" name="slider_menu1">
+        <label for="section-pc5">
+            <img src="images/member/title_s05.png" alt="">
+            <span>客服服務</span>
+        </label>
+        <div class="content">
+            <ul>
+                <a href="Order/MailMembers"><li><span>站內公告</span></li></a>
+                <a href="Order/Complain"><li><span>問題申訴</span></li></a>
+                <li onclick="ShowService()"><span>線上客服</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section" onclick="window.open('Member/Logout');">
+        <input type="radio" id="section-pc6" name="slider_menu1">
+        <label for="section-pc6">
+            <img src="images/member/title_s06.png" alt="">
+            <span>登出</span>
+        </label>
+    </div>
+</div>
+
+<!-- 手機版-左側邊攔 -->
+<!-- <div class="popup_share">
+    <div class="share_btn">
+        <input type="button" value="快捷選單" class="share_show">
+        <input type="button" value="隱藏選單" class="share_hide" style="display: none;">
+    </div> -->
+    <!-- 左側邊欄 -->
+    <!-- <div class="slider_menu rwd_menu" style="display: none;"> -->
+        <!-- 會員資料 -->
+        <!-- <div class="section">
+            <div class="member_info">
+                <div class="in_pic">
+                    <img src="images/member/pic01.png" alt="大頭照">
+                    <ul class="state_box"> -->
+                        <!-- 在線狀態(三選一，只能同時存在一個) -->
+                        <!-- <li class="online_state">在線</li>
+                        <li class="leave_state">離開</li>
+                        <li class="offline_state">離線</li>
+                    </ul>
+                </div>
+                <div class="in_id">jojowang543</div>
+            </div>
+            <ul class="member_list">
+                <li>
+                    <span class="li_title">會員編號：</span>
+                    <span class="li_txt">1234567890</span>
+                </li>
+                <li>
+                    <span class="li_title">買家評價：</span>
+                    <span class="li_txt text_green">89%</span>
+                </li>
+                <li>
+                    <span class="li_title">賣家評價：</span>
+                    <span class="li_txt text_pink">99.51%</span>
+                </li>
+                <li>
+                    <span class="li_title">最近登入：</span>
+                    <span class="li_txt">2021-09-09</span>
+                </li>
+            </ul>
+        </div> -->
+        <!-- 下拉選單 -->
+        <!-- <div class="section">
+            <input type="radio" id="section-m1" name="slider_menu1">
+            <label for="section-m1">
+                <img src="images/member/title_s01.png" alt="">
+                <span>我是買家</span>
+            </label>
+            <div class="content">
+                <ul>
+                    <li onclick="window.open('order_list_buy.html','_self');"><span>購物訂單查詢</span></li>
+                    <li onclick="window.open('order_list_buy.html','_self');"><span>待付款</span></li>
+                    <li onclick="window.open('order_list_buy.html','_self');"><span>待收貨</span></li>
+                    <li onclick="window.open('order_list_buy.html','_self');"><span>取消交易</span></li>
+                    <li onclick="window.open('comment_sell.html','_self');"><span>評價管理</span></li>
+                    <li onclick="window.open('qa_buy.html','_self');"><span>交易訊息</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" id="section-m2" name="slider_menu1">
+            <label for="section-m2">
+                <img src="images/member/title_s02.png" alt="">
+                <span>我是賣家</span>
+            </label>
+            <div class="content">
+                <ul>
+                    <li onclick="window.open('order_list_sell.html','_self');"><span>銷售訂單查詢</span></li>
+                    <li onclick="window.open('order_list_sell.html','_self');"><span>待出貨</span></li>
+                    <li onclick="window.open('order_list_sell.html','_self');"><span>待收款</span></li>
+                    <li onclick="window.open('order_list_sell.html','_self');"><span>取消交易</span></li>
+                    <li onclick="window.open('comment_buy.html','_self');"><span>評價管理</span></li>
+                    <li onclick="window.open('qa_sell.html','_self');"><span>交易訊息</span></li>
+                    <li onclick="window.open('publish.html','_self');"><span>免費刊登販售</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" id="section-m3" name="slider_menu1">
+            <label for="section-m3">
+                <img src="images/member/title_s03.png" alt="">
+                <span>帳戶管理</span>
+            </label>
+            <div class="content">
+                <ul>
+                    <li onclick="window.open('members_edit.html','_self');"><span>修改資料</span></li>
+                    <li onclick="window.open('members_edit.html','_self');"><span>變更帳戶密碼</span></li>
+                    <li onclick="window.open('members_edit.html','_self');"><span>變更支付密碼</span></li>
+                    <li onclick="window.open('members_edit.html','_self');"><span>身分驗證</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" id="section-m4" name="slider_menu1">
+            <label for="section-m4">
+                <img src="images/member/title_s04.png" alt="">
+                <span>我的錢包</span>
+            </label>
+            <div class="content">
+                <ul>
+                    <li onclick="window.open('my_wallet.html','_self');"><span>訂單收入</span></li>
+                    <li onclick="window.open('my_wallet.html','_self');"><span>已提款</span></li>
+                    <li onclick="window.open('my_wallet.html','_self');"><span>已退款</span></li>
+                    <li onclick="window.open('my_wallet.html','_self');"><span>錢包支付</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" id="section-m5" name="slider_menu1">
+            <label for="section-m5">
+                <img src="images/member/title_s05.png" alt="">
+                <span>客服服務</span>
+            </label>
+            <div class="content">
+                <ul>
+                    <li onclick="window.open('mail_members.html','_self');"><span>站內公告</span></li>
+                    <li onclick="window.open('complain.html','_self');"><span>問題申訴</span></li>
+                    <li onclick="ShowService()"><span>線上客服</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" onclick="window.open('index.html','_self');">
+            <input type="radio" id="section-m6" name="slider_menu1">
+            <label for="section-m6">
+                <img src="images/member/title_s06.png" alt="">
+                <span>登出</span>
+            </label>
+        </div>
+    </div>
+</div> -->

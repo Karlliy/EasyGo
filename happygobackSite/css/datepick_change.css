@@ -1,0 +1,239 @@
+#datepick-div {
+    /* position: fixed !important;
+    top: 22% !important;
+    left: 45% !important; */
+    width: 170px;
+    font-size: 16px;
+    line-height: 1.1;
+    border: 3px solid #469e9e;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+    -ms-box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+    z-index: 10;
+}
+.datepick-days-cell {
+    border: 1px solid #b4d3d4;
+}
+td.datepick-week-end-cell, 
+td.datepick-week-end-cell a {
+    background-color: #ffecec;
+}
+td.datepick-week-end-cell a:hover {
+    background-color: #efcfcf;
+}
+td.datepick-unselectable {
+    background-color: #fff;
+}
+.datepick-title-row th {
+	color: #675959;
+    line-height: 1.2;
+}
+.datepick-header {
+    height: 25px;
+    line-height: 25px;
+}
+.datepick-header select {
+    height: 22px;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 0 20px 0 10px;
+    padding: 0 16px 0 10px\9; /*for ie6、7、8*/
+    background: url(../images/calendar/seta-down.png) right center no-repeat #469e9e;
+    background-size: auto 70%;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+/*for ie10 、 ie11*/
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
+    .datepick-header select {
+        padding: 0 16px 0 10px;
+    }
+}
+.datepick-header:after {
+    content: "";
+    clear: both;
+}
+/*清除IE的默認選擇框樣式清除，隱藏下拉箭頭*/
+.datepick-header select::-ms-expand {
+    display: none;
+}
+.datepick-title-row th {
+	color: #ac0000;
+	font-weight: bold;
+    line-height: 1.6;
+}
+.datepick a {
+    line-height: 1.5;
+    color: #222;
+    font-weight: bold;
+}
+.datepick-current-day a {
+    background: #ff7ba8;
+    color: #fff;
+}
+.datepick-links {
+    padding: 5px 0;
+}
+.datepick-control {
+    display: none;
+    font-size: 1em;
+    padding: 10px 0;
+}
+.datepick {
+    font-size: 96%;
+}
+.datepick-links a:hover, .datepick-title-row a:hover {
+	background: #b4d1e5;
+}
+.datepick-control a, .datepick-next a,
+.datepick-prev a, .datepick-current a {
+    padding: 5px !important;
+    font-size: 14px;
+    font-weight: bold;
+    background: #ffda6b;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+.datepick-clear, .datepick-prev {
+    width: 30%;
+    margin: 0 10px 0 0;
+}
+.datepick-close, .datepick-next {
+    width: 30%;
+}
+.datepick-control a:hover, .datepick-control a:focus, .datepick-control a:active,
+.datepick-next a:hover, .datepick-next a:focus, .datepick-next a:active,
+.datepick-prev a:hover, .datepick-prev a:focus, .datepick-prev a:active,
+.datepick-current a:hover, .datepick-current a:focus, .datepick-current a:active {
+    background: #ffb836;
+}
+.datepick-today a {
+    background: #fbec88 !important;
+}
+.datepick-today a:hover, .datepick-today a:focus, .datepick-today a:active {
+    background: #fbec88;
+}
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 2560px (電腦) */
+@media screen and (min-width: 2560px) {
+    /* #datepick-div {
+        top: 14% !important;
+        left: 35% !important;
+    } */
+}
+
+/* 寬度介於 1301px - 1536px (ipad pro,舊電腦) */
+@media screen and (min-width: 1536px) and (max-width: 1900px) {
+    /* #datepick-div {
+        top: 10% !important;
+        left: 46% !important;
+    } */
+}
+
+/* 寬度介於 1301px - 1535px (ipad pro,舊電腦) */
+@media screen and (min-width: 1366px) and (max-width: 1535px) {
+    /* #datepick-div {
+        top: 20% !important;
+        left: 52% !important;
+    } */
+}
+
+/* 寬度介於 1280px - 1366px (ipad) */
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
+    /* #datepick-div {
+        top: 19% !important;
+        left: 52% !important;
+    } */
+}
+
+/* 寬度介於 901px - 1279px (ipad) */
+@media screen and (min-width: 901px) and (max-width: 1279px) {
+    /* #datepick-div {
+        top: 19% !important;
+        left: 35% !important;
+    } */
+}
+
+/* 寬度介於 823px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 823px) and (max-width: 900px) {
+    /* #datepick-div {
+        top: 36% !important;
+        left: 37% !important;
+    } */
+}
+
+/* 寬度介於 751px - 822px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 822px) {
+    /* #datepick-div {
+        top: 25% !important;
+        left: 19% !important;
+    } */
+}
+
+/* 寬度介於 720px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 720px) and (max-width: 750px) {
+    /* #datepick-div {
+        top: 20% !important;
+        left: 20% !important;
+    } */
+}
+
+/* 寬度介於 671px - 719px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 719px) {
+    /* #datepick-div {
+        top: 38% !important;
+        left: 32% !important;
+    } */
+}
+
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /* #datepick-div {
+        top: 32% !important;
+        left: 32% !important;
+    } */
+}
+
+/* 寬度介於 415px - 550px (iPhone 6+) */
+@media screen and (min-width: 415px) and (max-width: 550px) {
+    /* #datepick-div {
+        top: 30% !important;
+        left: 25% !important;
+    } */
+}
+
+/* 寬度介於 401px - 414px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 401px) and (max-width: 414px) {
+    /* #datepick-div {
+        top: 37% !important;
+        left: 20% !important;
+    } */
+}
+
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /* #datepick-div {
+        top: 37% !important;
+        left: 15% !important;
+    } */
+}
+
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /* #datepick-div {
+        top: 37% !important;
+        left: 13% !important;
+    } */
+}

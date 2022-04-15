@@ -1,0 +1,462 @@
+<!--浮動客服_滑出浮動視窗-->
+<div id="popup_Service" class="on_chat">
+    <div class="chatbox">
+        <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+        <img src="images/index_logo.png" class="chat_logo">
+        <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+        <div class="chat_area">
+            <!--問：客服-->
+            <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+            <!--答：顧客-->
+            <div class="ask">沒，我只是來逛逛而已</div>
+            <!--問：客服-->
+            <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+            <!--答：顧客-->
+            <div class="ask">OK</div>
+
+            <!--清除float浮動跑版(此行不可刪)-->
+            <div class="clear"></div>
+        </div>
+        <div class="msgbox">
+            <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+            <input type="submit" value="傳送" class="btn_s btn_yellow">
+        </div>
+    </div>
+</div>
+
+<!--浮動客服(視窗右下角常駐按鈕)-->
+<div class="btn_chat" onclick="ShowService()">
+    <img src="images/service.png" alt="客服">
+</div>
+
+<!-- 跳框_註冊 -->
+<div id="popup_Register" class="popup_windows" style="display: none;">
+    <form id="registerform" name="registerform" method="post">
+        <div class="popup_container">
+            <div class="popup">
+                <!-- 標題+關閉按鈕 -->
+                <div onclick="document.getElementById('popup_Register').style.display='none'" class="btn_close"></div>
+                <div class="popup_title">
+                    <img src="images/index_logo.png" alt="logo">
+                </div>
+                <!-- 頁籤 -->
+                <div class="popup_in page_box">
+                    <div class="scroll_box">
+                        <input type="radio" id="register_tab1" name="register_tab" class="jsLogin register_radio">
+                        <input type="radio" id="register_tab2" name="register_tab" class="register_radio" checked>
+                        <label for="register_tab1" class="register_label register_la1">登入</label>
+                        <label for="register_tab2" class="register_label register_la2">註冊</label>
+                        <!-- 分頁內容 -->
+                        <div class="page_content">
+                            <!-- 分頁2(註冊訊息) -->
+                            <div class="page_info login_info2">
+                                <!-- 註冊帳號欄 -->
+                                <div class="col_1 col_position">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" id="Account" name="Account" placeholder="帳號(6-15碼英數字)" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                    <!-- 驗證圖示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok"></span>
+                                        <span class="mark_pic" style="display: none;"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 註冊帳戶密碼欄 -->
+                                <div class="col_1 col_position">
+                                    <i class="fa fa-lock"></i>
+                                    <input type="password" id="Password" name="Password" placeholder="帳戶密碼(6-15碼英數字)" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                    <!-- 驗證圖示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok"></span>
+                                        <span class="mark_pic" style="display: none;"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 註冊支付密碼欄 -->
+                                <div class="col_1 col_position">
+                                    <i class="fa fa-dollar-sign"></i>
+                                    <input type="password" id="MoneyPassword" name="MoneyPassword" placeholder="支付密碼(6-15碼英數字)" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                    <!-- 驗證圖示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok" style="display: none;"></span>
+                                        <span class="mark_pic"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 註冊手機欄 -->
+                                <div class="col_1 col_position">
+                                    <i class="fa fa-mobile"></i>
+                                    <input type="text" id="Mobile" name="Mobile" placeholder="手機號碼" minlength="10" maxlength="14" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                    <!-- 驗證提示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok"></span>
+                                        <span class="mark_pic" style="display: none;"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 註冊驗證碼 + 發送按鈕 -->
+                                <div class="col_2 col_position">
+                                    <i class="fa fa-shield-alt"></i>
+                                    <input type="text" placeholder="驗證碼" maxlength="10" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input50" required>
+                                    <!-- 驗證提示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok"></span>
+                                        <span class="mark_pic" style="display: none;"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 驗證碼 -->
+                                <div class="col_2">
+                                    <!--步驟1-->
+                                    <input type="button" value="發送驗證碼" class="jsMobileCode btn_big btn_blue">
+                                    <!--步驟2-->
+                                    <input type="button" value="倒數100秒" class="btn_big btn_lightgray" style="display: none;">
+                                </div>
+                                <!-- 訊息提示欄 -->
+                                <div class="pop_checkbox spacing_down20">
+                                    <div class="float_l">
+                                        <label class="check_label">
+                                            <input type="checkbox" name="Terms" id="Terms" value="1">
+                                            <span>同意遵守使用條款和隱私權政策</span>
+                                        </label>
+                                    </div>
+                                    <a href="#" class="jsNoCheck float_r text_red">收不到驗證碼？</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 註冊按鈕 -->
+                    <div class="col_1" id="Register">
+                        <input type="button" value="註冊" class="jsSentSuccess btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- 跳框_登入 -->
+<div id="popup_Login" class="popup_windows" style="display: none;">
+    <form id="loginform" name="loginform" method="post" class="login_from">
+        <div class="popup_container">
+            <div class="popup">
+                <!-- 標題+關閉按鈕 -->
+                <div onclick="document.getElementById('popup_Login').style.display='none'" class="btn_close"></div>
+                <div class="popup_title">
+                    <img src="images/index_logo.png" alt="logo">
+                </div>
+                <!-- 頁籤 -->
+                <div class="popup_in page_box">
+                    <div class="scroll_box">
+                        <input type="radio" id="login_tab1" name="login_tab" class="login_radio" checked>
+                        <input type="radio" id="login_tab2" name="login_tab" class="jsRegister login_radio">
+                        <label for="login_tab1" class="login_label login_la1">登入</label>
+                        <label for="login_tab2" class="login_label login_la2">註冊</label>
+                        <!-- 分頁內容 -->
+                        <div class="page_content">
+                            <!-- 分頁1(登入訊息) -->
+                            <div class="page_info login_info1">
+                                <!-- 登入會員欄 -->
+                                <div class="col_1 col_position">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" id="Account" name="Account" placeholder="帳號(6-15碼英數字)" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                    <!-- 驗證圖示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok"></span>
+                                        <span class="mark_pic" style="display: none;"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 登入密碼欄 -->
+                                <div class="col_1 col_position">
+                                    <i class="fa fa-lock"></i>
+                                    <input type="password" id="Password" name="Password" placeholder="帳戶密碼(6-15碼英數字)" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                                    <!-- 驗證圖示 -->
+                                    <!-- <div class="mark_box">
+                                        <span class="mark_pic pic_ok" style="display: none;"></span>
+                                        <span class="mark_pic"></span>
+                                    </div> -->
+                                </div>
+                                <!-- 訊息提示欄 -->
+                                <div class="pop_checkbox spacing_down20">
+                                    <div class="float_l">
+                                        <label class="check_label">
+                                            <input type="checkbox" name="checkbox">
+                                            <span>記住帳號密碼</span>
+                                        </label>
+                                    </div>
+                                    <a href="#" id="modal_forgetPW" class="ForgotPW float_r text_red">忘記密碼？</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 登入按鈕 -->
+                    <div class="col_1" id="Login" ><!--onclick="window.open('member.html','_self');"-->
+                        <input type="button" value="登入" class="btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- 跳框_忘記密碼 -->
+<div id="popup_forgotpw" class="popup_windows" style="display: none;">
+    <div class="popup_container">
+        <div class="popup">
+            <!-- 標題+關閉按鈕 -->
+            <div onclick="document.getElementById('popup_forgotpw').style.display='none'" class="btn_close"></div>
+            <div class="popup_title">
+                <span>忘記密碼</span>
+            </div>
+            <!-- 頁籤 -->
+            <div class="popup_in">
+                <div class="scroll_box">
+                    <div class="col_1">請選擇找回途徑：</div>
+                    <input type="radio" id="forgotpw_tab1" name="forgotpw_tab" class="forgotpw_radio" checked>
+                    <label for="forgotpw_tab1" class="forgotpw_label">手機號碼</label>
+                    <input type="radio" id="forgotpw_tab2" name="forgotpw_tab" class="forgotpw_radio">
+                    <label for="forgotpw_tab2" class="forgotpw_label">E-Mail</label>
+                    <!-- 內容 -->
+                    <div class="page_content forgotpw_content">
+                        <!-- 分頁1(手機號碼) -->
+                        <div class="page_info forgotpw_info1">
+                            <div class="col_1 listset">
+                                <div class="cell3">手機號碼</div>
+                                <div class="cell3 col_position">
+                                    <i class="fa fa-mobile"></i>
+                                    <input type="text" placeholder="請輸入手機號碼" minlength="10" maxlength="14" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                    <!-- 驗證圖示 -->
+                                    <div class="mark_box">
+                                        <span class="mark_pic pic_ok"></span>
+                                        <span class="mark_pic" style="display: none;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 註冊驗證碼 + 發送按鈕 -->
+                            <div class="col_2 col_position">
+                                <i class="fa fa-key"></i>
+                                <input type="text" placeholder="驗證碼" maxlength="10" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input50" required>
+                                <!-- 驗證提示 -->
+                                <div class="mark_box">
+                                    <span class="mark_pic pic_ok"></span>
+                                    <span class="mark_pic" style="display: none;"></span>
+                                </div>
+                            </div>
+                            <!-- 驗證碼 -->
+                            <div class="col_2">
+                                <!--步驟1(先發送驗證碼)-->
+                                <input type="button" value="發送驗證碼" class="jsMobileCode btn_big btn_blue">
+                                <!--步驟2-->
+                                <input type="button" value="倒數100秒" class="btn_big btn_lightgray" style="display: none;">
+                            </div>
+                            <!-- 訊息提示 -->
+                            <div class="pop_checkbox spacing_down20">
+                                <a href="#" class="ChangeMobile float_l text_red">手機號碼已更換？</a>
+                                <a href="#" class="jsNoCheck float_r text_red">收不到驗證碼？</a>
+                            </div>
+                        </div>
+
+                        <!-- 分頁2(E-Mail) -->
+                        <div class="page_info forgotpw_info2 spacing_down20">
+                            <div class="col_1 listset">
+                                <div class="cell3">E-Mail</div>
+                                <div class="cell3 col_position">
+                                    <i class="fa fa-envelope"></i>
+                                    <input type="email" placeholder="請輸入註冊信箱" class="input100" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 按鈕 -->
+                <div class="col_2">
+                    <input type="button" value="取消" onclick="document.getElementById('popup_forgotpw').style.display='none'" class="btn_big btn_gray">
+                </div>
+                <div class="col_2">
+                    <input type="button" value="確定" class="jsSentSuccess btn_big btn_yellow">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--跳框_變更手機號碼-->
+<div id="popup_ChangeMobile" class="popup_windows" style="display: none;">
+    <div class="popup_container">
+        <div class="popup">
+            <div class="btn_close" onclick="document.getElementById('popup_ChangeMobile').style.display='none'"></div>
+            <div class="popup_title">
+                <span>變更手機號碼</span>
+            </div>
+            <div class="popup_in">
+                <div class="scroll_box">
+                    <!-- 分頁1(手機號碼訊息) -->
+                    <div class="forgotpw_info1">
+                        <!-- 原來的手機 -->
+                        <div class="col_1 listset">
+                            <div class="cell3">原來的手機號碼</div>
+                            <div class="cell3 col_position">
+                                <i class="fa fa-mobile"></i>
+                                <input type="text" placeholder="請輸入原來的手機號碼" minlength="10" maxlength="14" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                <!-- 驗證圖示 -->
+                                <div class="mark_box">
+                                    <span class="mark_pic pic_ok"></span>
+                                    <span class="mark_pic" style="display: none;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 新的手機 -->
+                        <div class="col_1 listset">
+                            <div class="cell3">新的手機號碼</div>
+                            <div class="cell3 col_position">
+                                <i class="fa fa-mobile"></i>
+                                <input type="text" placeholder="請輸入新的手機號碼" minlength="10" maxlength="14" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                                <!-- 驗證圖示 -->
+                                <div class="mark_box">
+                                    <span class="mark_pic pic_ok"></span>
+                                    <span class="mark_pic" style="display: none;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 註冊驗證碼 + 發送按鈕 -->
+                        <div class="col_2 col_position">
+                            <i class="fa fa-key"></i>
+                            <input type="text" placeholder="驗證碼" maxlength="10" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input50" required>
+                            <!-- 驗證提示 -->
+                            <div class="mark_box">
+                                <span class="mark_pic pic_ok"></span>
+                                <span class="mark_pic" style="display: none;"></span>
+                            </div>
+                        </div>
+                        <!-- 驗證碼 -->
+                        <div class="col_2">
+                            <!--步驟1-->
+                            <input type="button" value="發送驗證碼" class="jsMobileCode btn_big btn_blue">
+                            <!--步驟2-->
+                            <input type="button" value="倒數100秒" class="btn_big btn_lightgray" style="display: none;">
+                        </div>
+                        <!-- 訊息提示 -->
+                        <div class="pop_checkbox spacing_down20">
+                            <a href="#" class="jsNoCheck float_r text_red">收不到驗證碼？</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 按鈕 -->
+                <div class="col_2">
+                    <input type="button" value="取消" onclick="document.getElementById('popup_ChangeMobile').style.display='none'" class="btn_big btn_gray">
+                </div>
+                <div class="col_2">
+                    <input type="button" value="確定變更" class="jsSentSuccess btn_big btn_yellow">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--跳框_已發送驗證碼至-->
+<div id="popup_MobileCode" class="popup_windows" style="display: none;">
+    <div class="popup_container">
+        <div class="popup">
+            <div class="btn_close" onclick="document.getElementById('popup_MobileCode').style.display='none'"></div>
+            <div class="popup_title">
+                <span>提示</span>
+            </div>
+            <div class="popup_in">
+                <div class="scroll_box">
+                    <div class="col_1 listset text_center spacing_down20">已發送驗證碼至 <span class="text_blod text_red">0912345678</span></div>
+                </div>
+                <!--按鈕-->
+                <div class="col_1">
+                    <input type="button" value="關閉" onclick="document.getElementById('popup_MobileCode').style.display='none'" class="btn_big btn_gray">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--跳框_成功-->
+<div id="popup_SentSuccess" class="popup_windows" style="display: none;">
+    <div class="popup_container">
+        <div class="popup">
+            <div class="btn_close" onclick="document.getElementById('popup_SentSuccess').style.display='none'"></div>
+            <div class="popup_title">
+                <span>提示</span>
+            </div>
+            <div class="popup_in">
+                <div class="scroll_box">
+                    <div class="col_1 listset text_center spacing_down20">成功！</div>
+                </div>
+                <!--按鈕-->
+                <div class="col_1">
+                    <input type="button" value="關閉" onclick="document.getElementById('popup_SentSuccess').style.display='none'" class="btn_big btn_gray">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--跳框_失敗-->
+<div id="popup_SentFail" class="popup_windows" style="display: none;">
+    <div class="popup_container">
+        <div class="popup">
+            <div class="btn_close" onclick="document.getElementById('popup_SentFail').style.display='none'"></div>
+            <div class="popup_title">
+                <span>警告</span>
+            </div>
+            <div class="popup_in">
+                <div class="scroll_box">
+                    <div class="col_1 listset text_center spacing_down20">資訊有誤，請重新檢查後再送出。</div>
+                </div>
+                <!--按鈕-->
+                <div class="col_1">
+                    <input type="button" value="關閉" onclick="document.getElementById('popup_SentFail').style.display='none'" class="btn_big btn_gray">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 跳框_收不到驗證碼(文字說明) -->
+<div id="popup_NoCheck" class="popup_windows" style="display: none;">
+    <div class="popup_container">
+        <div class="popup">
+            <!-- 標題+關閉按鈕 -->
+            <div onclick="document.getElementById('popup_NoCheck').style.display='none'" class="btn_close"></div>
+            <div class="popup_title">
+                <span>收不到驗證碼</span>
+            </div>
+            <!-- 內容 -->
+            <div class="popup_in">
+                <div class="scroll_box">
+                    <div class="col_1 listset">如果您無法順利傳送或接收簡訊驗證碼，請嘗試按照下列步驟操作。</div>
+                    <div class="col_1 listset title text_left">STEP 1：檢查手機號碼是否正確</div>
+                    <div class="col_1 listset">確認您輸入的手機號碼正確無誤。</div>
+                    <div class="col_1 listset title text_left">STEP 2：檢查手機的 Wi-Fi 或行動數據連線品質是否良好</div>
+                    <ul class="col_1 tips_text">
+                        <li>檢查您的設定：
+                            <ul class="list_txt">
+                                <li>手機的 Wi-Fi 或行動數據必須為開啟狀態。</li>
+                                <li>飛航模式必須為關閉狀態。</li>
+                            </ul>
+                        </li>
+                        <li>移至連線訊號較佳的地方。</li>
+                        <li>測試您的連線狀況，請開啟瀏覽器，然後造訪任一網站，確認瀏覽器是否可載入網頁。</li>
+                    </ul>
+                    <div class="col_1 listset title text_left">STEP 3：確認您的手機可以接收簡訊</div>
+                    <ul class="col_1 tips_text">
+                        <li>檢查您的設定：
+                            <ul class="list_txt">
+                                <li>手機必須收得到訊號。</li>
+                                <li>飛航模式必須為關閉狀態。</li>
+                            </ul>
+                        </li>
+                        <li>請親友傳送簡訊給您，確認手機功能運作正常。</li>
+                    </ul>
+                    <div class="col_1 listset title text_left">STEP 4：索取新的驗證碼</div>
+                    <div class="col_1 listset spacing_down20">如果您的手機有訊號但並未收到簡訊，請點擊 [發送驗證碼] 要求系統重新發送，或聯繫客服解決。</div>
+                </div>
+                <!-- 按鈕 -->
+                <div class="col_1">
+                    <input type="button" value="關閉" onclick="document.getElementById('popup_NoCheck').style.display='none'" class="btn_big btn_gray">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

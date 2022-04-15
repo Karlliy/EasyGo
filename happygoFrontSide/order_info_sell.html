@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <!--繁中日曆JQ-->
+    <link href="css/ion.calendar.css" rel="stylesheet" type="text/css">
+    <script src="js/moment.min.js"></script>
+    <title>快易購-銷售訂單明細</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 會員中心 -->
+    <div class="wrap member_wrap">
+        <!-- 電腦版-左側邊攔 -->
+        <?php include("left.html");?>
+
+        <!-- 右邊主畫面 -->
+        <div class="index_main">
+            <!-- 訂單列表 -->
+            <div class="orderlist_box">
+                <div class="main_title">
+                    <img src="images/member/fa-file-text-o-w.png" alt="">
+                    <span>銷售訂單明細</span>
+                </div>
+                <div class="table_wrap">
+                    <!-- 訂單編號(系統自動生成) -->
+                    <div class="order_title">訂單編號：<span class="text_red" name="ProductNumber"></span></div>
+                    <div class="orderlist_group">
+                        <div class="sk_tbbox info_tbbox">
+                            <table class="sk_fixed_table pink_table">
+                                <thead>
+                                    <tr>
+                                        <th class="cell_m">訂單狀態</th>
+                                        <th>商品標題</th>
+                                        <th class="cell_s">數量</th>
+                                        <th class="cell_m">訂單金額</th>
+                                        <th class="cell_m">付款方式</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <!--以下狀態2選1-->
+                                            <div name="State"><span name="OrderState"></span></div>
+                                            <!-- <div style="display: none;">完成</div> -->
+                                        </td>
+                                        <td class="text_left">
+                                            <ul>
+                                                <li class="title text_deepblue"><span name="ProductTitle"></span></li>
+                                                <li class="text_green">商品編號：<span name="OrderNumber"></span></li>
+                                                <li class="text_green">買家編號：<span name="MemberId"></span></li>
+                                                <li>下單時間：<span name="CreateDate"></span></li>
+                                                <li>遊戲伺服：<span name="GamePlatform"></span></li>
+                                                <li>商品類型：<span name="TypeName"></span></li>
+                                                <li>點卡類型：<span name="PointCardKind"></span></li>
+                                            </ul>
+                                        </td>
+                                        <td>1</td>
+                                        <td class="text_red text_big"><span name="SumPrice"></span></td>
+                                        <td><span name="PaymentMethod"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- 提問內容 -->
+                    <div class="chkbox_outside bg_pink">
+                        <div class="col_1">
+                            <span class="title">回覆：</span>
+                            <!-- <div class="col_inline">
+                                <span class="title">買家編號：</span>
+                                <input type="text" id="" name="" placeholder="請輸入關鍵字" value="" class="no_width" required>
+                                <input type="button" value="搜尋" class="btn_small btn_green">
+                            </div> -->
+                        </div>
+                        <div class="col_1">
+                            <textarea placeholder="回覆提問(限500字)" id="BuyQAtext" maxlength="500" class="textarea100"></textarea>
+                        </div>
+                        <!-- 按鈕 -->
+                        <div class="col_3">
+                            <input type="submit" id="edit_confirm" value="確認回覆" class="btn_big btn_yellow">
+                        </div>
+                    </div>
+                    <!-- 問答專區 -->
+                    <div class="buy_boxset">
+                        <div class="qa_title">
+                            <span>與買家問答</span>
+                            <!-- <div class="qa_radio">
+                                <input type="radio" id="game_info_qa3_1" name="as_tabsel" class="qa_radio3_1" checked="">
+                                <label for="game_info_qa3_1" class="qa_label">未回答</label>
+                                <input type="radio" id="game_info_qa3_2" name="as_tabsel" class="qa_radio3_2">
+                                <label for="game_info_qa3_2" class="qa_label">已回答</label>
+                            </div> -->
+                            <!--清除float浮動跑版(此行不可刪)-->
+                            <div class="clear"></div>
+                        </div>
+                        <!-- 查詢區 -->
+                        <!-- <div class="qa_date">
+                            <div class="col_1"> -->
+                                <!--挑選日期(國曆)-->
+                                <!-- <div class="col_inline">
+                                    <span class="title">查詢日期</span>
+                                    <input type="text" id="pkdate_1" placeholder="起始日期" class="calendar col_date">
+                                    <span> - </span>
+                                    <input type="text" id="pkdate_2" placeholder="結束日期" class="calendar col_date">
+                                </div> -->
+                                <!--繁中日曆JQ-->
+                                <!-- <script src="js/ion.calendar.min.js"></script>
+                                <script>
+                                    $(function(){
+                                        $("#pkdate_1, #pkdate_2").each(function(){
+                                            $(this).ionDatePicker({
+                                                lang: "zh-cn",
+                                                format: "YYYY-MM-DD"
+                                            });
+                                        });
+                                    });
+                                </script>
+                                <div class="col_inline">
+                                    <span class="title">查詢內容</span>
+                                    <input type="text" id="" name="" placeholder="請輸入關鍵字" value="" class="no_width" required>
+                                </div>
+                                <div class="col_inline">
+                                    <input type="button" value="搜尋" class="btn_small btn_yellow">
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- 無問答時開啟 -->
+                        <!-- <div class="no-orderlist_box" style="display: none;">
+                            <img src="images/member/job-search.png" alt="暫無相關訊息">
+                            <span>暫無相關訊息</span>
+                        </div> -->
+                        <!-- 有問答時開啟 -->
+                        <div class="qa_group">
+                            <!--問答對話區塊(1日內)-->
+                            <div class="qa_content" id="SellQAInfo">
+                                <!--問
+                                <div class="ask_main">
+                                    <div class="qa_box">
+                                        <img src="images/sell_info/fa-user-circlei-r.png" alt="" class="qa_head_l">
+                                        <div class="txt">
+                                            <div class="name text_deepred">會員 123****890 問：</div>
+                                            <div class="date text_deepred">2021-09-23 10:28:37</div>
+                                            <div class="info">安安！在嗎？我的今日購買上限達到了，要繼續購買怎麼辦？安~我的今日購買上限達到了，要繼續購買怎麼辦？安~我的今日購買上限達到了，要繼續購買怎麼辦？</div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <!--答
+                                <div class="answer_main">
+                                    <div class="qa_box">
+                                        <img src="images/sell_info/fa-user-circlei-g.png" alt="" class="qa_head_r">
+                                        <div class="txt">
+                                            <div class="name text_blue">回覆：</div>
+                                            <div class="date text_blue">2021-09-23 14:04:18</div>
+                                            <div class="info">安安~在的，我另外開一個賣場給你，可直接下標~</div>-->
+                                            <!--清除float浮動跑版(此行不可刪)
+                                            <div class="clear"></div>
+                                        </div>-->
+                                        <!--清除float浮動跑版(此行不可刪)
+                                        <div class="clear"></div>
+                                    </div>-->
+                                    <!--清除float浮動跑版(此行不可刪)
+                                    <div class="clear"></div>
+                                </div>-->
+                            </div>
+                               
+                            <!-- 頁碼選項 -->
+                            <!-- <div class="pagination_wrap">
+                                <div class="page_number">
+                                    <span class="title">第</span>
+                                    <span class="title text_red">1</span>
+                                    <span class="title">⁄</span>
+                                    <span class="title">62100</span>
+                                    <span class="title">頁</span>
+                                </div> -->
+                                <!-- 頁碼 -->
+                                <!-- <div class="pagination_box">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" class="previous"></a>
+                                        </li>
+                                        <li><a href="#" class="active">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" class="next"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="page_jump">
+                                    <div class="page_input">
+                                        <span class="title">跳至第</span>
+                                        <input type="text" class="btn_page">
+                                        <span class="title">頁</span>
+                                    </div>
+                                    <div class="page_btn">
+                                        <input type="button" value="確定" class="btn_small btn_green">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <!--浮動客服_滑出浮動視窗-->
+    <div id="popup_Service" class="on_chat">
+        <div class="chatbox">
+            <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+            <img src="images/index_logo.png" class="chat_logo">
+            <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+            <div class="chat_area">
+                <!--問：客服-->
+                <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+                <!--答：顧客-->
+                <div class="ask">沒，我只是來逛逛而已</div>
+                <!--問：客服-->
+                <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+                <!--答：顧客-->
+                <div class="ask">OK</div>
+
+                <!--清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+            </div>
+            <div class="msgbox">
+                <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+                <input type="submit" value="傳送" class="btn_s btn_yellow">
+            </div>
+        </div>
+    </div>
+    <!--浮動客服(視窗右下角常駐按鈕)-->
+    <div class="btn_chat" onclick="ShowService()">
+        <img src="images/service.png" alt="客服">
+    </div>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

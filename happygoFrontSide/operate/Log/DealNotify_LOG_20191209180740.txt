@@ -1,0 +1,6 @@
+ ---------------- 開始 ---------------- 
+ IPV4  >> 2130706433
+ IP    >> 127.0.0.1
+key =>func  val=>TransferPoints
+key =>GameId  val=>33
+key =>WinningInfo  val=>77777777

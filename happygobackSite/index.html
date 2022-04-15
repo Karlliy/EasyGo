@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <!--國曆繁中日曆css+js-->
+    <link href="css/redmond.datepick.css" rel="stylesheet" type="text/css">
+    <link href="css/datepick_change.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.datepick.tw.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./box/jBox.min.js"></script>
+	<script type="text/javascript" src="./box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="./box/jBox.css" /> 
+	<title>快易購管理後台</title>
+</head>
+<body class="login_page">
+	<div class="loginbox">
+		<form id="sign_in" name="sign_in" method="post" novalidate="novalidate">
+			<img src="images/index_icon/index_logo.png" class="index_logo">
+			<dl class="input_group">
+				<dt class="icon_login_id"></dt>
+				<dd class="input_set">
+					<input type="text" id="txtUser" name="txtUser" class="login_input" placeholder="帳號" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" required>
+				</dd>
+				<!-- <dd id="UserName_Error" class="error" style="display: none;">帳號不可空白！</dd> -->
+			</dl>
+
+			<dl class="input_group">
+				<dt class="icon_login_pw"></dt>
+				<dd class="input_set">
+					<input type="password" id="txtPassword" name="txtPassword" class="login_input" value="" placeholder="密碼" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" required>
+				</dd>
+				<!-- <dd id="PW_Eerror" class="error" style="display: none;">密碼不可空白！</dd> -->
+			</dl>
+
+			<div class="chkbox_set">
+				<input type="checkbox" id="" class="check_box">
+				<label for="" class="chktext">記住密碼</label>
+			</div>
+
+			<div class="btn" id="Login" >
+				<!-- <input type="button" value="清除" class="btn_login btn50"> -->
+				<input type="button" value="確定" class="btn_login btn50">
+			</div>
+		</form>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>

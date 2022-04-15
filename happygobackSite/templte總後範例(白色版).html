@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="js/slider.js" type="text/javascript"></script>
+	<!--西曆繁中日曆css+js-->
+    <link href="css/jquery-ui-1.10.2.css" rel="stylesheet" type="text/css">
+    <link href="css/jqui_change.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-ui-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery.ui.datepicker-zh-TW.js" type="text/javascript"></script>
+    <!--繁中日曆css+js-->
+    <link href="css/redmond.datepick.css" rel="stylesheet" type="text/css">
+    <link href="css/datepick_change.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.datepick.tw.js" type="text/javascript"></script>
+    <title>總後_範例(白)</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <div class="navbar">
+        <div class="navbar_bg">
+            <div class="navbar_box">
+                <div class="header_title">
+                    <img src="images/index_icon/index_logo.png" onclick="javascript:location.href=''" class="header_logo">
+                    <span>管理系統</span>
+                </div>
+                <div class="top_iconset">
+                    <div class="text">
+                        <div class="icon_account"></div>
+                        <div class="top_member" onclick="javascript:location.href=''">今日新增會員 <span>1</span> 人</div>
+                    </div>
+                    <div class="text">
+                        <div class="icon_coins"></div>
+                        <div class="top_member" onclick="javascript:location.href=''">今日訂單金額 <span>150,000</span> 元</div>
+                    </div>
+                    <a href="index.html" class="logout_set">
+                        <div class="icon_logout"></div>
+                        <span class="navbar_text">登出</span>
+                    </a>
+                    <a href="" class="marquee_set">
+                        <div class="icon_announcement"></div>
+                        <marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+                            <span id="Notice">XXXX支付管理系統訊息公告</span>
+                        </marquee>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--手機版_導覽列下拉按鈕(共用)-->
+        <a href="javascript:void(0);" class="navbar_toggle"></a>
+        <div class="navbar_iconset" style="display: none;">
+            <div>
+                <div class="text">
+                    <div class="icon_account"></div>
+                    <div class="top_member" onclick="javascript:location.href=''">今日新增會員 <span>100</span> 人</div>
+                </div>
+                <div class="text">
+                    <div class="icon_coins"></div>
+                    <div class="top_member" onclick="javascript:location.href=''">今日訂單金額 <span>150,000</span> 元</div>
+                </div>
+                <a href="index.html" class="logout_set">
+                    <div class="icon_logout"></div>
+                    <span class="navbar_text">登出</span>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="marquee_set">
+                    <div class="icon_announcement"></div>
+                    <marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+                        <span id="Notice">XXXX管理系統訊息公告</span>
+                    </marquee>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <div id="sidebar" class="sidebar_set" style="display: none;">
+        <div id="slider_content" class="slider_content">
+            <!--會員資訊-->
+            <div class="member_info">
+                <div class="icon_bighead"></div>
+                <div class="member_id">abc543</div>
+            </div>
+
+            <!--選單列滑出效果-->
+            <ul id="inside" class="inside">
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='dashboard.html';">
+                        <div class="icon_home"></div>
+                        <span class="text_orange">首頁</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='banner.html'">
+                        <div class="icon_web"></div>
+                        <span>輪播圖管理</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_item"></div>
+                        <span>商品管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="games_type.html" class="submenu_item">商品主分類</a></li>
+                        <li><a href="product_type.html" class="submenu_item">商品類型管理</a></li>
+                        <li><a href="currency.html" class="submenu_item">幣別管理</a></li>
+                        <li><a href="product.html" class="submenu_item">上架商品管理</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_member"></div>
+                        <span>會員管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="members.html" class="submenu_item">會員列表</a></li>
+                        <li><a href="members_ip.html" class="submenu_item">登入IP紀錄</a></li>
+                        <li><a href="payment_record.html" class="submenu_item">存提匯款紀錄</a></li>
+                        <li><a href="verification_code.html" class="submenu_item">手機認證碼</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_coins"></div>
+                        <span>訂單管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="order.html" class="submenu_item">訂單總報表</a></li>
+                        <li><a href="deposit.html" class="submenu_item">存款管理</a></li>
+                        <li><a href="withdrawal.html" class="submenu_item">提款管理</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_bank"></div>
+                        <span>銀行管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="bank.html" class="submenu_item">銀行存款審核</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_mailbox"></div>
+                        <span>訊息管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="news.html" class="submenu_item">最新消息管理</a></li>
+                        <li><a href="mail_system.html" class="submenu_item">站內信管理</a></li>
+                        <li><a href="complain.html" class="submenu_item">申訴管理</a></li>
+                        <li><a href="qa.html" class="submenu_item">問答管理</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='permission.html'">
+                        <div class="icon_system"></div>
+                        <span>權限設置</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='change_pw.html'">
+                        <div class="icon_account"></div>
+                        <span>變更密碼</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='index.html'">
+                        <div class="icon_logout"></div>
+                        <span>登出</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--側選單_滑出的黑色背景-->
+        <div id="BlackBG" class="bg_black" style="display: none;"></div>
+    </div>
+
+    <!--右側內容(單一行-功能範例)-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>功能按鈕範例 (單一行)</span>
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!--搜尋(單一行)-->
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">查詢內容</span>
+                            <input type="text" id="" name="" placeholder="請輸入關鍵字" value="" class="no_width" required>
+                            <input type="button" value="搜尋" class="btn_small btn_yellow">
+                        </div>
+                    </div>
+
+                    <!--挑選日期(國曆-JQ版)-->
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">日期區間(國曆-JQ版)</span>
+                            <input type="text" id="datepick" autocomplete="off" class="tcal tcalInput col_date">
+                            <span> - </span>
+                            <input type="text" id="datepick0" autocomplete="off" class="tcal tcalInput col_date">
+                        </div>
+                        <!--點擊跳出國曆日曆JS-->
+                        <script language="JavaScript">
+                            $(document).ready(function(){
+                                $("#datepick").datepick();
+                                $("#datepick0").datepick();
+                            });
+                        </script>
+                    </div>
+
+                    <!--挑選日期(國曆-JQ版)-->
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">日期區間(國曆-JQ版)</span>
+                            <input type="text" id="datepick1" autocomplete="off" class="tcal tcalInput col_date">
+                            <!--開始時間-->
+                            <select name="StartHour" id="StartHour" class="no_width">
+                                <option value="0" selected="">00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>
+                            <select name="StartMinute" id="StartMinute" class="no_width">
+                                <option value="0" selected="">00</option>
+                                <option value="5">05</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                                <option value="35">35</option>
+                                <option value="40">40</option>
+                                <option value="45">45</option>
+                                <option value="50">50</option>
+                                <option value="55">55</option>
+                            </select>
+                            <span> - </span>
+                            <input type="text" id="datepick2" autocomplete="off" class="tcal tcalInput col_date">
+                            <!--結束時間-->
+                            <select name="EndHour" id="EndHour" class="no_width">
+                                <option value="0">00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23" selected="">23</option>
+                            </select>
+                            <select name="EndMinute" id="EndMinute" class="no_width">
+                                <option value="4">05</option>
+                                <option value="9">10</option>
+                                <option value="14">15</option>
+                                <option value="19">20</option>
+                                <option value="24">25</option>
+                                <option value="29">30</option>
+                                <option value="34">35</option>
+                                <option value="39">40</option>
+                                <option value="44">45</option>
+                                <option value="49">50</option>
+                                <option value="54">55</option>
+                                <option value="59" selected="">60</option>
+                            </select>
+                            <input type="button" value="昨天" class="btn_small">
+                            <input type="button" value="今天" class="btn_small btn_yellow">
+                            <input type="button" value="上週" class="btn_small">
+                            <input type="button" value="本週" class="btn_small">
+                            <input type="button" value="上月" class="btn_small">
+                            <input type="button" value="本月" class="btn_small">
+                            <input type="button" value="清除" class="btn_small btn_red">
+                        </div>
+                        <!--點擊跳出國曆日曆JS-->
+                        <script language="JavaScript">
+                            $(document).ready(function(){
+                                $("#datepick1").datepick();
+                                $("#datepick2").datepick();
+                            });
+                        </script>
+                    </div>
+
+                    <!--挑選日期(西曆-html版)-->
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">日期區間(西曆-html版)</span>
+                            <input type="date" autocomplete="off" class="no_width col_time">
+                            <span> - </span>
+                            <input type="date" autocomplete="off" class="no_width col_time">
+                            <input type="button" value="昨天" class="btn_small">
+                            <input type="button" value="今天" class="btn_small btn_yellow">
+                            <input type="button" value="上週" class="btn_small">
+                            <input type="button" value="本週" class="btn_small">
+                            <input type="button" value="上月" class="btn_small">
+                            <input type="button" value="本月" class="btn_small">
+                            <input type="button" value="清除" class="btn_small btn_red">
+                        </div>
+                    </div>
+
+                    <!--挑選日期(西曆-JQ版)-->
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">日期區間(西曆-JQ版)</span>
+                            <input type="text" id="datepick20" autocomplete="off" class="tcal tcalInput col_date">
+                            <span> - </span>
+                            <input type="text" id="datepick21" autocomplete="off" class="tcal tcalInput col_date">
+                            <input type="button" value="昨天" class="btn_small">
+                            <input type="button" value="今天" class="btn_small btn_yellow">
+                            <input type="button" value="上週" class="btn_small">
+                            <input type="button" value="本週" class="btn_small">
+                            <input type="button" value="上月" class="btn_small">
+                            <input type="button" value="本月" class="btn_small">
+                            <input type="button" value="清除" class="btn_small btn_red">
+                        </div>
+                        <!--點擊跳出西曆日曆JS-->
+                        <script language="JavaScript">
+                            $(document).ready(function(){
+                                $("#datepick20").datepicker();
+                                $("#datepick21").datepicker();
+                            });
+                        </script>
+                    </div>
+
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                            <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                            <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                        </div>
+                    </div>
+
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <div class="radio_inline">
+                                <input type="radio" id="" name="" class="radio_box">
+                                <label for="">單選</label>
+                                <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                            </div>
+                            <div class="radio_inline">
+                                <input type="radio" id="" name="" class="radio_box">
+                                <label for="">單選</label>
+                                <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">下拉選項</span>
+                            <select id="" class="no_width">
+                                <option value="" selected="">請選擇</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </div>
+                        <div class="col_inline">
+                            <span class="title">下拉選項</span>
+                            <select id="" class="no_width">
+                                <option value="" selected="">請選擇</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </div>
+                        <div class="col_inline">
+                            <span class="title">下拉選項</span>
+                            <select id="" class="no_width">
+                                <option value="" selected="">請選擇</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">輸入框</span>
+                            <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                        </div>
+                        <div class="col_inline">
+                            <span class="title">有接續的輸入框</span>
+                            <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                            <span> - </span>
+                            <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                        </div>
+                    </div>
+
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <span class="title">輸入框</span>
+                            <input type="text" id="" name="" placeholder="" value="" maxlength="10" class="no_width" required>
+                        </div>
+                        <div class="col_inline">
+                            <input type="button" onclick="" value="確認" class="btn_small">
+                        </div>
+                        <div class="col_inline">
+                            <span class="title">輸入框</span>
+                            <input type="text" id="" name="" placeholder="" value="" maxlength="10" class="no_width" required>
+                        </div>
+                        <div class="col_inline">
+                            <input type="button" onclick="" value="刪除" class="btn_small btn_red">
+                        </div>
+                        <div class="col_inline">
+                            <span class="title">輸入框</span>
+                            <input type="text" id="" name="" placeholder="" value="" maxlength="10" class="no_width" required>
+                        </div>
+                        <div class="col_inline">
+                            <input type="button" onclick="" value="刪除" class="btn_small btn_red">
+                        </div>
+                    </div>
+
+                    <div class="col_1">
+                        <input type="button" value="按鈕" class="btn_small">
+                        <input type="button" value="按鈕" class="btn_small">
+                        <input type="button" value="按鈕" class="btn_small">
+                        <input type="button" value="按鈕" class="btn_small">
+                        <input type="button" value="按鈕" class="btn_small">
+                    </div>
+
+                    <!--勾選(有卷軸+高度限制)-->
+                    <div class="chkbox_outside">
+                        <div class="col_1">
+                            <div class="col_inline">
+                                <span class="title">標題 (有卷軸+高度限制)</span>
+                                <input type="button" value="全選" class="btn_small">
+                                <input type="button" value="全清" class="btn_small btn_red">
+                            </div>
+                        </div>
+                        <!-- 勾選項目 -->
+                        <div class="chkbox_inside">
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box" checked="checked">
+                                <label for="" class="chktext">文字文字文字文字文字文字文字文字文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字文字文字文字文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_4">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--勾選(無卷軸及高度限制)-->
+                    <div class="chkbox_outside">
+                        <div class="col_1">
+                            <div class="col_inline">
+                                <span class="title">標題 (無卷軸)</span>
+                                <input type="button" value="全選" class="btn_small">
+                                <input type="button" value="全清" class="btn_small btn_red">
+                            </div>
+                        </div>
+                        <!-- 勾選項目 -->
+                        <div class="chkbox_inside no_height">
+                            <!-- 區塊 -->
+                            <div class="chkbox_title">標題</div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <!-- 區塊 -->
+                            <div class="chkbox_title">標題</div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <!-- 區塊 -->
+                            <div class="chkbox_title">標題</div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <!-- 區塊 -->
+                            <div class="chkbox_title">標題</div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                            <div class="col_5">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">文字</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(分左右兩邊-功能範例)-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_pink">
+                <span>功能按鈕範例 (分左右兩邊)</span>
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 功能按鈕(分左右兩邊的) -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <input type="button" value="按鈕" class="btn_small">
+                            <input type="button" value="按鈕" class="btn_small">
+                            <input type="button" value="按鈕" class="btn_small">
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <div class="radio_inline">
+                                <input type="radio" id="" name="" class="radio_box">
+                                <label for="">單選</label>
+                                <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                            </div>
+                            <div class="col_inline">
+                                <input type="checkbox" name="" value="" class="check_box">
+                                <label for="" class="chktext">打勾</label>
+                                <input type="text" id="" name="" placeholder="" value="" class="no_width" required>
+                            </div>
+                            <input type="button" value="按鈕" class="btn_small">
+                        </div>
+                    </div>
+
+                    <!-- 功能按鈕(分左右兩邊的) -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <div class="col_inline">
+                                <span class="title">查詢內容</span>
+                                <input type="text" id="" name="" placeholder="請輸入關鍵字" value="" class="no_width" required>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">下拉選項</span>
+                                <select id="" class="no_width">
+                                    <option value="" selected="">請選擇</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                </select>
+                            </div>
+                            <div class="col_inline">
+                                <input type="button" value="搜尋" class="btn_small btn_yellow">
+                            </div>
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <div class="radio_inline">
+                                <input type="button" value="全選" class="btn_small">
+                                <input type="button" value="全清" class="btn_small btn_red">
+                                <span class="title">功能</span>
+                                <select id="" class="no_width">
+                                    <option value="" selected="">審核中</option>
+                                    <option value="">黑名單</option>
+                                    <option value="">取消黑名單</option>
+                                    <option value="">刪除帳號</option>
+                                </select>
+                                <input type="button" value="按鈕" class="btn_small">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 功能按鈕(分左右兩邊的) -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <!--挑選日期(國曆)-->
+                            <div class="col_inline">
+                                <span class="title">日期(國曆版)</span>
+                                <input type="text" id="datepick10" autocomplete="off" class="tcal tcalInput col_date">
+                            </div>
+                            <div class="col_inline">
+                                <input type="button" value="搜尋" class="btn_small btn_yellow">
+                            </div>
+                            <script language="JavaScript">
+                                //點擊跳出國曆日曆JS
+                                $(document).ready(function(){
+                                    $("#datepick10").datepick();
+                                });
+                            </script>
+                            <!--挑選日期(西曆)-->
+                            <div class="col_inline">
+                                <span class="title">日期(西曆版)</span>
+                                <input type="text" id="datepick11" autocomplete="off" class="tcal tcalInput col_date">
+                            </div>
+                            <div class="col_inline">
+                                <input type="button" value="搜尋" class="btn_small btn_yellow">
+                            </div>
+                            <script language="JavaScript">
+                                //點擊跳出西曆日曆JS
+                                $(document).ready(function(){
+                                    $("#datepick11").datepicker();
+                                });
+                            </script>
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <div class="col_inline">
+                                <input type="button" value="按鈕" class="btn_small">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--單一行-->
+                    <div class="col_1">
+                        <span class="title">訂單共</span>
+                        <span class="title text_red">10</span>
+                        <span class="title">筆，</span>
+                        <span class="title">成功交易</span>
+                        <span class="title text_red">9</span>
+                        <span class="title">筆，</span>
+                        <span class="title">交易金額</span>
+                        <span class="title text_red">12,345</span>
+                        <span class="title">元</span>
+                    </div>
+
+                    <!-- 分左右兩邊 -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <div class="col_inline">
+                                <span class="title">訂單共</span>
+                                <span class="title text_red">10</span>
+                                <span class="title">筆</span>
+                            </div>
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <div class="col_inline">
+                                <span class="title">退款交易</span>
+                                <span class="title text_red">1</span>
+                                <span class="title">筆，</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">退款金額</span>
+                                <span class="title text_red">358</span>
+                                <span class="title">元，</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">手續費</span>
+                                <span class="title text_red">600</span>
+                                <span class="title">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--總和-->
+                    <div class="chkbox_outside bg_white">
+                        <div class="col_1">
+                            <span class="title">2021 千人在線☆★新冠天堂二★☆經典伺服器，15聖冠 x 2，15FS戰套/200龍，最高ＣＰ值，即下即發無需等待2021 千人在線☆★新冠天堂二★☆經典伺服器，15聖冠 x 2，15FS戰套/200龍，最高ＣＰ值，即下即發無需等待</span>
+                        </div>
+                        <div class="col_5">
+                            <span class="title">本頁總金額：</span>
+                            <span class="title text_blue">1,234,567,890</span>
+                        </div>
+                        <div class="col_5">
+                            <span class="title">庫存量：</span>
+                            <span class="title text_green">123,456</span>
+                        </div>
+                        <div class="col_5">
+                            <span class="title">取消量：</span>
+                            <span class="title">123,456</span>
+                        </div>
+                        <div class="col_5">
+                            <span class="title">銷售量：</span>
+                            <span class="title text_red">123,456</span>
+                        </div>
+                        <div class="col_5">
+                            <span class="title">手續費總計：</span>
+                            <span class="title text_orange">1,234,567,890</span>
+                        </div>
+                        <hr>
+                        <div class="col_4">
+                            <span class="title">本頁總金額：</span>
+                            <span class="title text_blue">1,234,567,890</span>
+                        </div>
+                        <div class="col_4">
+                            <span class="title">庫存量：</span>
+                            <span class="title text_green">123,456</span>
+                        </div>
+                        <div class="col_4">
+                            <span class="title">取消量：</span>
+                            <span class="title">123,456</span>
+                        </div>
+                        <div class="col_4">
+                            <span class="title">銷售量：</span>
+                            <span class="title text_red">123,456</span>
+                        </div>
+                        <hr>
+                        <div class="col_3">
+                            <span class="title">本頁總金額：</span>
+                            <span class="title text_blue">1,234,567,890</span>
+                        </div>
+                        <div class="col_3">
+                            <span class="title">庫存量：</span>
+                            <span class="title text_green">123,456</span>
+                        </div>
+                        <div class="col_3">
+                            <span class="title">取消量：</span>
+                            <span class="title">123,456</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(分左右兩邊-功能範例)-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_pink">
+                <span>功能按鈕範例 (分左右兩邊)</span>
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 分左右兩邊 -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <div class="col_inline">
+                                <span class="title">訂單共</span>
+                                <span class="title text_red">10</span>
+                                <span class="title">筆，</span>
+                                <span class="title">成功交易</span>
+                                <span class="title text_red">9</span>
+                                <span class="title">筆，</span>
+                                <span class="title">交易金額</span>
+                                <span class="title text_red">12,345</span>
+                                <span class="title">元</span>
+                            </div>
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <div class="col_inline">
+                                <span class="title">退款交易</span>
+                                <span class="title text_red">1</span>
+                                <span class="title">筆，</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">退款金額</span>
+                                <span class="title text_red">358</span>
+                                <span class="title">元，</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">手續費</span>
+                                <span class="title text_red">600</span>
+                                <span class="title">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 註解文字 -->
+                    <div class="tb_caption">表格範例1：要一次秀10筆資料，請在表格class名稱"tbbox"後面加上" tb10"。要一次秀20筆資料，請在class名稱"tbbox"後面加上" tb20"，依此類推...</div>
+
+                    <!-- 表格範例1 凍結表頭的表格(tbbox那層div不可拿掉) -->
+                    <div class="tbbox tb10">
+                        <table class="fixed_table">
+                            <!-- 內表格 -->
+                            <thead>
+                                <tr>
+                                    <th class="freeze cell_ss">最短<br>cell_ss</th>
+                                    <th class="freeze cell_m">按鈕<br>cell_m</th>
+                                    <th class="freeze cell_s">短<br>cell_s</th>
+                                    <th class="freeze cell_ss">最短<br>cell_ss</th>
+                                    <th class="freeze cell_m">中<br>cell_m</th>
+                                    <th class="freeze cell_l">長<br>cell_l</th>
+                                    <th class="freeze cell_xl">很長<br>cell_xl</th>
+                                    <th class="freeze">自由縮放(不需多加class)</th>
+                                    <th class="freeze">自由縮放(不需多加class)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch1" id="myonoffswitch1" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch1" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">01</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td data-th="">
+                                        <a href="#" class="text_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</a>
+                                    </td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch2" id="myonoffswitch2" class="onoffswitch-checkbox">
+                                            <label for="myonoffswitch2" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">02</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch3" id="myonoffswitch3" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch3" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">03</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch4" id="myonoffswitch4" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch4" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">04</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch5" id="myonoffswitch5" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch5" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">05</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch6" id="myonoffswitch6" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch6" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">06</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch7" id="myonoffswitch7" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch7" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">07</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch8" id="myonoffswitch8" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch8" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">08</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                    </td>
+                                    <td data-th="操作">
+                                        <input type="button" value="編輯" class="btn_small">
+                                        <input type="button" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <!--滑動Switch開關-->
+                                    <td data-th="">
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch9" id="myonoffswitch9" class="onoffswitch-checkbox" checked>
+                                            <label for="myonoffswitch9" class="onoffswitch-label">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td data-th="">09</td>
+                                    <td data-th="">文字文字文字</td>
+                                    <td data-th="">文字文字文字文字文字</td>
+                                    <td class="td_overflow">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">123</td>
+                                    <td data-th="">123</td>
+                                </tr>
+                            </tbody>
+                            <!-- 總計欄位 -->
+                            <tfoot>
+                                <tr class="tb_foot">
+                                    <td data-th=""></td>
+                                    <td data-th="">總計</td>
+                                    <td data-th="">300</td>
+                                    <td data-th="">12</td>
+                                    <td data-th="">8</td>
+                                    <td data-th="">4</td>
+                                    <td data-th="">33.33%</td>
+                                    <td data-th="">33.33%</td>
+                                    <td data-th=""></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!--單一行-->
+                    <div class="col_1">
+                        <span class="title">訂單共</span>
+                        <span class="title text_red">10</span>
+                        <span class="title">筆，</span>
+                        <span class="title">成功交易</span>
+                        <span class="title text_red">9</span>
+                        <span class="title">筆，</span>
+                        <span class="title">交易金額</span>
+                        <span class="title text_red">12,345</span>
+                        <span class="title">元</span>
+                    </div>
+
+                    <!-- 表格_範例2 -->
+                    <div class="tbbox tbfree">
+                        <div class="tb_caption">表格範例2：若要不限制高度，請在表格class名稱"tbbox"後面加上" tbfree"</div>
+                        <table class="fixed_table">
+                            <thead>
+                                <tr>
+                                    <th class="freeze cell_ss">最短<br>cell_ss</th>
+                                    <th class="freeze cell_xxl">超長(因為td的字數太長，需加class="text_overflow")<br>cell_xxl</th>
+                                    <th class="freeze">自由縮放(不需多加class)</th>
+                                    <th class="freeze">自由縮放(不需多加class)</th>
+                                    <th class="freeze cell_xl">按鈕都放在同一個 th 和 td 裡面</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="radio" id="" name="" class="radio_box">
+                                    </td>
+                                    <td data-th="">
+                                        <a href="#" class="text_overflow">有連結文字有連結文字有連結文字有連結文字有連結文字有連結文字有連結文字有連結文字有連結文字有連結文字</a>
+                                    </td>
+                                    <td data-th="">
+                                        <input type="text" id="" name="" placeholder="" value="" class="tb_input" required>
+                                    </td>
+                                    <td data-th="">
+                                        <select id="" class="tb_select">
+                                            <option value="" selected="">請選擇</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                        </select>
+                                    </td>
+                                    <td data-th="">
+                                        <input type="button" value="按鈕" class="btn_small">
+                                        <input type="button" value="按鈕" class="btn_small btn_red">
+                                        <input type="button" value="按鈕" class="btn_small btn_blue">
+                                        <input type="button" value="按鈕" class="btn_small btn_gray">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="">
+                                        <input type="radio" id="" name="" class="radio_box">
+                                    </td>
+                                    <td data-th="" class="text_overflow text_gray">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                                    <td data-th="">
+                                        <input type="text" id="" name="" placeholder="" value="" class="tb_input" required>
+                                    </td>
+                                    <td data-th="">
+                                        <select id="">
+                                            <option value="" selected="">請選擇</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                        </select>
+                                    </td>
+                                    <td data-th="">
+                                        <a href="#" title="按鈕" class="tb_btn_l">按鈕</a>
+                                        <a href="#" title="按鈕" class="tb_btn_l btn_red">按鈕</a>
+                                        <a href="#" title="按鈕" class="tb_btn btn_blue">按鈕</a>
+                                        <a href="#" title="按鈕" class="tb_btn btn_gray">按鈕</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 功能按鈕(分左右兩邊的) -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <div class="col_inline">
+                                <span class="title">共</span>
+                                <span class="title text_red">10</span>
+                                <span class="title">筆，</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">顯示</span>
+                                <select id="" class="no_width">
+                                    <option value="" selected="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                    <option value="">50</option>
+                                </select>
+                                <span class="title">筆</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">跳到第</span>
+                                <select id="" class="no_width">
+                                    <option value="" selected="">001</option>
+                                    <option value="">002</option>
+                                    <option value="">003</option>
+                                    <option value="">004</option>
+                                    <option value="">005</option>
+                                </select>
+                                <span class="title">頁</span>
+                            </div>
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <ul class="pagination">
+                                <li><a href="#" class="previous">«</a></li>
+                                <li><a href="#" class="previous">‹</a></li>
+                                <li><a href="#" class="active">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#" class="next">›</a></li>
+                                <li><a href="#" class="next">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" value="回上一頁" class="btn_big btn_yellow">
+                        <input type="button" value="清除" class="btn_big btn_gray">
+                        <input type="submit" value="確認送出" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(表格範例2)-->
+    <div id="" class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_green">
+                <span>表格範例2</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <table class="col_tb">
+                    <tbody>
+                        <tr>
+                            <th>一般文字</th>
+                            <td data-th="">210831871130</td>
+                        </tr>
+                        <tr>
+                            <th>有連結的文字</th>
+                            <td data-th="">
+                                <a href="members_edit.html">alexis881205axex</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>橘色</th>
+                            <td data-th="" class="text_orange">1234567890</td>
+                        </tr>
+                        <tr>
+                            <th class="bg_gray_blue">藍色</th>
+                            <td data-th="" class="text_blue">1,000</td>
+                        </tr>
+                        <tr>
+                            <th class="bg_gray_red">紅色</th>
+                            <td data-th="" class="text_red">400</td>
+                        </tr>
+                        <tr>
+                            <th class="bg_gray_green">綠色</th>
+                            <td data-th="" class="text_green">通過</td>
+                        </tr>
+                        <tr>
+                            <th>粉紅色</th>
+                            <td data-th="" class="text_pink">不通過</td>
+                        </tr>
+                        <tr>
+                            <th>開關顯示</th>
+                            <td data-th="">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="onoffswitch10" id="myonoffswitch10" class="onoffswitch-checkbox" checked="">
+                                    <label for="myonoffswitch10" class="onoffswitch-label">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>多行文字</th>
+                            <td data-th="">
+                                <div class="text_bold text_blue">重要文字</div>
+                                <div>號碼：<span>112190</span></div>
+                                <div>代碼：<span class="text_bold text_pink">138812017080702085476</span></div>
+                                <input type="button" id="copy_code" value="複製代碼" class="btn_small">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>輸入框1</th>
+                            <td data-th="">
+                                <input type="text" id="" name="" placeholder="請輸入內容(限50字)" value="" maxlength="50" class="tb_input100" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>輸入框2</th>
+                            <td data-th="">
+                                <textarea placeholder="請輸入內容(限300字)" class="textarea100" required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>單選+輸入大框</th>
+                            <td data-th="">
+                                <div class="radio_inline">
+                                    <input type="radio" id="all_mbs" name="members" class="radio_box" checked="">
+                                    <label for="all_mbs">所有</label>
+                                </div>
+                                <div class="radio_inline">
+                                    <input type="radio" id="online_mbs" name="members" class="radio_box">
+                                    <label for="online_mbs">單一</label>
+                                </div>
+                                <textarea placeholder="請輸入內容" class="textarea100"></textarea>
+                                <div class="pw_tips text_red">* 這裡是註解</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 按鈕 -->
+                <div class="col_btn">
+                    <input type="button" value="回上一頁" class="btn_big btn_yellow">
+                    <input type="button" value="清除" class="btn_big btn_gray">
+                    <input type="submit" value="確認送出" class="btn_big">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(表格範例3)-->
+    <div id="" class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_yellow">
+                <span>表格範例3</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 表格 -->
+                    <div class="free_tbbox">
+                        <table class="col_table">
+                            <!-- 1列 2欄 -->
+                            <tr>
+                                <td class="col_title">輸入框</td>
+                                <td colspan="3">
+                                    <input type="text" id="" name="" placeholder="" value="" required>
+                                </td>
+                                <td class="col_title">輸入框</td>
+                                <td colspan="3">
+                                    <input type="text" id="datepick3" autocomplete="off" class="tcal tcalInput col_date50">
+                                    <span> - </span>
+                                    <input type="text" id="datepick4" autocomplete="off" class="tcal tcalInput col_date50">
+                                    <!--挑選日期(西曆)-->
+                                    <script language="JavaScript">
+                                        //點擊跳出國曆日曆JS
+                                        $(document).ready(function(){
+                                            $("#datepick3").datepick();
+                                            $("#datepick4").datepick();
+                                        });
+                                    </script>
+                                </td>
+                            </tr>
+                            <!-- 1列 3欄 -->
+                            <tr>
+                                <td class="col_title">選擇日期</td>
+                                <td data-th="">
+                                    <input type="text" id="datepick5" autocomplete="off" class="tcal tcalInput col_date">
+                                    <!--挑選日期(國曆)-->
+                                    <script language="JavaScript">
+                                        //點擊跳出國曆日曆JS
+                                        $(document).ready(function(){
+                                            $("#datepick5").datepick();
+                                        });
+                                    </script>
+                                </td>
+                                <td class="col_title">下拉選單</td>
+                                <td data-th="">
+                                    <select id="" class="select100">
+                                        <option value="" selected="">請選擇</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                    </select>
+                                </td>
+                                <td class="col_title">純文字內容</td>
+                                <td colspan="3">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+                            </tr>
+                            <!-- 1列 4欄 -->
+                            <tr>
+                                <td class="col_title">標題</td>
+                                <td data-th="">
+                                    <input type="text" id="" name="" placeholder="" value="" required>
+                                </td>
+                                <td class="col_title">標題</td>
+                                <td data-th="">
+                                    <input type="text" id="" name="" placeholder="" value="" required>
+                                </td>
+                                <td class="col_title">標題</td>
+                                <td data-th="">
+                                    <input type="text" id="" name="" placeholder="" value="" required>
+                                </td>
+                                <td class="col_title">標題</td>
+                                <td data-th="">
+                                    <input type="text" id="" name="" placeholder="" value="" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(表格範例4)-->
+    <div id="" class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_blue">
+                <span>表格範例4</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!--區塊1-->
+                    <div class="chkbox_outside">
+                        <div class="detail_inside no_height">
+                            <div class="detail_title">區塊1標題</div>
+                            <div class="col_3">
+                                <div class="input_title">正常文字欄位</div>
+                                <div class="col_text">658951321321</div>
+                            </div>
+                            <div class="col_3">
+                                <div class="input_title">"看起來像"無法輸入文字欄位</div>
+                                <div class="col_text text_disabled">658951321321</div>
+                            </div>
+                            <div class="col_3">
+                                <div class="input_title">無法輸入的input</div>
+                                <input type="text" id="" name="" placeholder="658951321321" value="" class="input100" disabled>
+                            </div>
+                            <div class="col_3">
+                                <div class="input_title">會員帳號</div>
+                                <input type="text" id="" name="" placeholder="6-15字英數含底線" value="" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                            </div>
+                            <div class="col_3">
+                                <div class="input_title">會員狀態</div>
+                                <select id="" class="select100">
+                                    <option value="" selected="">請選擇</option>
+                                    <option value="">審核中</option>
+                                    <option value="">正常</option>
+                                    <option value="">黑名單</option>
+                                    <option value="">停權</option>
+                                </select>
+                            </div>
+                            <div class="col_3">
+                                <div class="input_title">手機號碼</div>
+                                <input type="text" id="" name="" placeholder="" value="" onkeyup="value=value.replace(/[^\d]/g,'') " maxlength="15" class="input50" required>
+                                <input type="button" id="mobile_code" value="發送驗證碼" class="btn_small btn_yellow">
+                            </div>
+                            <!--身分證照片檔：如要修改照片，按下"修改"按鈕則關閉步驟1，改秀步驟2-->
+                            <div class="col_3">
+                                <div class="input_title">身分證照片檔(步驟1)</div>
+                                <a href="#" class="col_text50 text_overflow">members_1234567890a.jpg</a>
+                                <input type="button" value="修改" class="btn_small btn_yellow">
+                            </div>
+                            <!--身分證照片檔：步驟2-->
+                            <div class="col_3">
+                                <div class="input_title">身分證照片檔(步驟2)</div>
+                                <input type="file" name="youfile" class="input50">
+                                <input type="button" value="上傳" class="btn_small btn_yellow">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--區塊2-->
+                    <div class="chkbox_outside">
+                        <div class="detail_inside no_height">
+                            <div class="detail_title">區塊2標題</div>
+                            <div class="col_4">
+                                <div class="col_inline">文字：<span class="text_green">2021-09-30 16:40:51</span></div>
+                            </div>
+                            <div class="col_4">
+                                <div class="col_inline">文字：<span class="text_pink">110.30.65.33</span></div>
+                            </div>
+                            <div class="col_4">
+                                <div class="col_inline">文字：<span class="text_blue">5487851515451</span></div>
+                            </div>
+                            <div class="col_4">
+                                <div class="col_inline">文字：<span>1965</span></div>
+                            </div>
+                            <div class="col_4">
+                                <div class="col_inline">按鈕：<input type="button" onclick="javascript:location.href='members_ip.html';" value="查詢" class="btn_small btn_yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" onclick="javascript:location.href='';" value="回上一頁" class="btn_big btn_gray">
+                        <input type="button" value="刪除" class="btn_big btn_red">
+                        <input type="submit" id="edit_confirm" value="確認送出" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(文字資料)-->
+    <div id="" class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_gray">
+                <span>文字資料(非input輸入框)</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <div class="col_4">
+                        <div class="input_title">姓名</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">性別</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">男性</option>
+                            <option value="">女性</option>
+                        </select>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">2選項</div>
+                        <select id="" class="select50">
+                            <option value="" selected="">1</option>
+                            <option value="">2</option>
+                        </select>
+                        <span class="dash">-</span>
+                        <select id="" class="select50">
+                            <option value="" selected="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">打勾選項</div>
+                        <div class="ckbox_set">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">文字文字</label>
+                        </div>
+                    </div>
+
+                    <!--挑選日期1欄(國曆)-->
+                    <div class="col_3">
+                        <div class="input_title">挑選日期1欄(國曆-JQ版)</div>
+                        <input type="text" id="datepick24" autocomplete="off" class="input100 tcal tcalInput col_date">
+                    </div>
+                    <script language="JavaScript">
+                        //點擊跳出國曆日曆JS
+                        $(document).ready(function(){
+                            $("#datepick24").datepick();
+                        });
+                    </script>
+                    <!--挑選日期1欄(西曆)-->
+                    <div class="col_3">
+                        <div class="input_title">挑選日期1欄(西曆-html5版)</div>
+                        <input type="date" autocomplete="off" class="input100 col_time">
+                    </div>
+                    <!--挑選日期1欄(西曆)-->
+                    <div class="col_3">
+                        <div class="input_title">挑選日期1欄(西曆-JQ版)</div>
+                        <input type="text" id="datepick18" autocomplete="off" class="input100 tcal tcalInput col_date">
+                    </div>
+                    <script language="JavaScript">
+                        //點擊跳出西曆日曆JS
+                        $(document).ready(function(){
+                            $("#datepick18").datepicker();
+                        });
+                    </script>
+
+
+                    <!--挑選日期2欄(國曆)-->
+                    <div class="col_3">
+                        <div class="input_title">挑選日期2欄(國曆-JQ版)</div>
+                        <input type="text" id="datepick26" autocomplete="off" class="input50 tcal tcalInput col_date50">
+                        <span class="dash">-</span>
+                        <input type="text" id="datepick27" autocomplete="off" class="input50 tcal tcalInput col_date50">
+                    </div>
+                    <script language="JavaScript">
+                        //點擊跳出國曆日曆JS
+                        $(document).ready(function(){
+                            $("#datepick26").datepick();
+                            $("#datepick27").datepick();
+                        });
+                    </script>
+                    <!--挑選日期2欄(西曆)-->
+                    <div class="col_3">
+                        <div class="input_title">挑選日期2欄(西曆-html5版)</div>
+                        <input type="date" autocomplete="off" class="input50 col_time">
+                        <span class="dash">-</span>
+                        <input type="date" autocomplete="off" class="input50 col_time">
+                    </div>
+                    <!--挑選日期2欄(西曆)-->
+                    <div class="col_3">
+                        <div class="input_title">挑選日期2欄(西曆-JQ版)</div>
+                        <input type="text" id="datepick22" autocomplete="off" class="input50 tcal tcalInput col_date50">
+                        <span class="dash">-</span>
+                        <input type="text" id="datepick23" autocomplete="off" class="input50 tcal tcalInput col_date50">
+                    </div>
+                    <script language="JavaScript">
+                        //點擊跳出西曆日曆JS
+                        $(document).ready(function(){
+                            $("#datepick22").datepicker();
+                            $("#datepick23").datepicker();
+                        });
+                    </script>
+
+                    <div class="col_4">
+                        <div class="input_title">發送者</div>
+                        <div class="col_text">行政院衛生署台南醫院</div>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">檔案</div>
+                        <input type="file" name="youfile" class="input100">
+                        <input type="button" value="上傳" class="btn_small btn_yellow">
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">身分證照片檔</div>
+                        <a href="#" class="col_text50 text_overflow">members_1234567890a.jpg</a>
+                        <input type="button" value="修改" class="btn_small btn_yellow">
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">有連結的文字</div>
+                        <a href="#" class="col_text text_overflow">abc543</a>
+                    </div>
+                    <!-- 文字欄位(可填寫) -->
+                    <div class="col_1">
+                        <div class="input_title">文字欄位 textarea</div>
+                        <textarea placeholder="限500字" maxlength="500" class="textarea100"></textarea>
+                    </div>
+                    <!-- 文字欄位(不可填寫) -->
+                    <div class="col_1">
+                        <div class="input_title">內容</div>
+                        <div class="col_text">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字。<br><br>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字。<br><br>文字文字文字文字文字文字文字文字文字文字文字。</div>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" value="清除" class="btn_big">
+                        <input type="submit" value="確認送出" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(輸入框範例)-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>輸入框範例</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 1欄式_輸入框 -->
+                    <div class="col_1">
+                        <div class="input_title">1欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                        <div class="pw_tips text_red">備註：這裡就是備註文字</div>
+                    </div>
+
+                    <!-- 2欄式_輸入框 -->
+                    <div class="col_2">
+                        <div class="input_title">2欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_2">
+                        <div class="input_title">2欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+
+                    <!-- 3欄式_輸入框 -->
+                    <div class="col_3">
+                        <div class="input_title">3欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_3">
+                        <div class="input_title">3欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_3">
+                        <div class="input_title">3欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+
+                    <!-- 4欄式_輸入框 -->
+                    <div class="col_4">
+                        <div class="input_title">4欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">4欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">4欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">4欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+
+                    <!-- 5欄式_輸入框 -->
+                    <div class="col_5">
+                        <div class="input_title">5欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+
+                    <!-- 6欄式_輸入框 -->
+                    <div class="col_6">
+                        <div class="input_title">6欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄輸入框</div>
+                        <input type="text" id="" name="" placeholder="" value="" class="input100" required>
+                    </div>
+
+                    <!-- 備註說明 -->
+                    <div class="col_1">
+                        <div class="pw_tips text_red">密碼規則：&emsp;</div>
+                        <ol class="pw_tips text_red">
+                            <li>字元僅允許A-Z及0-9</li>
+                            <li>不得少於6個字元數</li>
+                            <li>不可與現有密碼相同</li>
+                            <li>不可與帳號相同</li>
+                        </ol>
+                    </div>
+
+                    <!-- 送出按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" value="清除" class="btn_big">
+                        <input type="submit" value="確認送出" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(下拉選單範例)-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>下拉選單範例</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 1欄式_下拉選單 -->
+                    <div class="col_1">
+                        <div class="input_title">1欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+
+                    <!-- 2欄式_下拉選單 -->
+                    <div class="col_2">
+                        <div class="input_title">2欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_2">
+                        <div class="input_title">2欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+
+                    <!-- 3欄式_下拉選單 -->
+                    <div class="col_3">
+                        <div class="input_title">3欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_3">
+                        <div class="input_title">3欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_3">
+                        <div class="input_title">3欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+
+                    <!-- 4欄式_下拉選單 -->
+                    <div class="col_4">
+                        <div class="input_title">4欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">4欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">4欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_4">
+                        <div class="input_title">4欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+
+                    <!-- 5欄式_下拉選單 -->
+                    <div class="col_5">
+                        <div class="input_title">5欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_5">
+                        <div class="input_title">5欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+
+                    <!-- 6欄式_下拉選單 -->
+                    <div class="col_6">
+                        <div class="input_title">6欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_6">
+                        <div class="input_title">6欄下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" value="清除" class="btn_big">
+                        <input type="submit" value="確認送出" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容(勾選項目範例)-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>勾選項目範例</span>
+                <!--下面按鈕2選1出現，或是都拿掉也可以-->
+                <input type="button" onclick="history.back()" value="回上一頁" class="btn_back">
+                <div class="btn_close" onclick="document.getElementById('').style.display='none'"></div>
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 連接式_勾選項目 -->
+                    <div class="col_1">
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                        <div class="col_inline">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                    </div>
+
+                    <!-- 1欄式_勾選項目 -->
+                    <div class="col_1">
+                        <div class="ckbox_set">
+                            <input type="checkbox" name="" value="" class="check_box">
+                            <label for="" class="chktext">打勾</label>
+                        </div>
+                    </div>
+
+                    <!-- 2欄式_勾選項目 -->
+                    <div class="col_2">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_2">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+
+                    <!-- 3欄式_勾選項目 -->
+                    <div class="col_3">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_3">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_3">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+
+                    <!-- 4欄式_勾選項目 -->
+                    <div class="col_4">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_4">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_4">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_4">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+
+                    <!-- 5欄式_勾選項目 -->
+                    <div class="col_5">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_5">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_5">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_5">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_5">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+
+                    <!-- 6欄式_勾選項目 -->
+                    <div class="col_6">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_6">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_6">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_6">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_6">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_6">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+
+                    <!-- 7欄式_勾選項目 -->
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+                    <div class="col_7">
+                        <input type="checkbox" name="" value="" class="check_box">
+                        <label for="" class="chktext">打勾</label>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" value="清除" class="btn_big">
+                        <input type="submit" value="確認送出" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框-->
+    <div id="popup_msg" class="popup_windows">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_msg').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>跳框範例</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">置中的文字！</div>
+                    <div class="text_right">靠左的文字</div>
+                    <div class="text_title">靠左的文字</div>
+
+                    <hr>
+
+                    <div class="text">
+                        <div class="cell1">標題</div>
+                        <div class="cell2">文字文字文字文字文字</div>
+                    </div>
+
+                    <div class="text">
+                        <div class="cell1">輸入框</div>
+                        <div class="cell2">
+                            <input type="text" id="" name="" placeholder="請輸入內容(限20字)" value="" maxlength="20" class="popup_input">
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        <div class="cell1">下拉選單</div>
+                        <div class="cell2">
+                            <select id="" name="" class="popup_select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="col_1">
+                        <div class="radio_inline">
+                            <input type="radio" id="radio1" name="members" class="radio_box" checked="">
+                            <label for="radio1">選項1</label>
+                        </div>
+                        <div class="radio_inline">
+                            <input type="radio" id="radio2" name="members" class="radio_box">
+                            <label for="radio2">選項2</label>
+                        </div>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">下拉選單</div>
+                        <select id="" class="select100">
+                            <option value="" selected="">請選擇</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">輸入框</div>
+                        <input type="text" id="" name="" placeholder="請輸入內容(限20字)" value="" maxlength="20" class="input100" required>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">輸入大框</div>
+                        <textarea placeholder="請輸入內容" class="textarea100" required></textarea>
+                        <div class="pw_tips text_red">* 這裡是註解</div>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">選擇檔案 (限300*300px)</div>
+                        <input type="file" name="youfile" class="input100">
+                    </div>
+
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" id="item_del" value="刪除" class="btn_left btn_gray">
+                        <input type="button" value="確認送出" class="btn_right">
+                    </div>
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_msg').style.display='none'" value="關閉" class="btn_center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_刪除-->
+    <div id="popup_del" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_del').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要刪除？</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_del').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" value="刪除確認" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_JS-->
+    <script>
+        //刪除
+        let modal_item_del = document.getElementById('item_del');
+        modal_item_del.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_del').style.display='block';
+        });
+    </script>
+</body>
+</html>

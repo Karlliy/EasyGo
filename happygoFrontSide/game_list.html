@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購-商品列表</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 商品列表 -->
+    <div class="wrap buystore_wrap">
+        <!-- 標題 -->
+        <div class="main_title">
+            <img src="images/member/fa-gamepad-w.png" alt="" class="pic">
+            <span>商品列表</span>
+        </div>
+
+        <!-- 搜尋區 -->
+        <div class="search_list">
+            <select class="search_select" id="GamePlatform">
+                <option value="" selected="">平台</option>
+                <option value="1" data-value="1">Android</option>
+                <option value="2" data-value="2">iOS</option>
+                <option value="3" data-value="3">電腦</option>
+                <option value="4" data-value="4">Steam</option>
+            </select>
+            <!-- <select class="search_select" id="GameServer">
+                <option value="" selected="">伺服器</option>
+                <option value="1">台服</option>
+                <option value="">日服</option>
+                <option value="">陸服</option>
+            </select> -->
+            <select class="search_select" id="TypeId" name="TypeId">
+                <option value="" selected="">商品類型</option>
+                <!-- <option value="">點數卡</option>
+                <option value="">遊戲幣</option>
+                <option value="">帳號</option>
+                <option value="">代儲</option>
+                <option value="">代練</option>
+                <option value="">寶物</option>
+                <option value="">商城</option>
+                <option value="">送禮</option>
+                <option value="">其他</option> -->
+            </select>
+            <div class="search_item">
+                <i class="fa fa-search"></i>
+                <!-- <input type="text" placeholder="請輸入關鍵字" class="se_input"> -->
+                <input id="GameListSearch" type="button" value="搜尋" class="jsSentFail se_btn btn_yellow">
+            </div>
+            <input type="button" onclick="window.open('Order/AddOrder');" value="免費刊登販售" class="float_r btn_big btn_blue">
+            <!--清除float浮動跑版(此行不可刪)-->
+            <div class="clear"></div>
+        </div>
+
+        <!-- 麵包屑 + 排序區 -->
+        <div class="sequence_content">
+            <ul class="item">
+                <li><a href="Index/index">首頁</a></li>
+                <li><a href="Index/index" id="TopGameType"></a></li>
+                <li><span id="TopGameName"></span></li>
+            </ul>
+            <div class="item se_item">
+                <span>由低到高</span>
+                <select class="search_select" id="GameListOrder">
+                    <option value="" selected="">請選擇</option>
+                    <!-- <option value="">遊戲名稱</option> -->
+                    <option value="1">商品資訊</option>
+                    <option value="2">商品類別</option>
+                    <option value="3">平台</option>
+                    <!-- <option value="">伺服器</option>
+                    <option value="">幣別</option> -->
+                    <option value="4">單價</option>
+                    <option value="5">庫存量</option>
+                </select>
+                <input type="button" name="" id="GameListOrder" value="排序" class="btn_small btn_green">
+                <!--清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+            </div>
+            <!--清除float浮動跑版(此行不可刪)-->
+            <div class="clear"></div>
+        </div>
+
+        <!-- 賣場表格 -->
+        <div class="table_wrap">
+            <div class="panel_wrap store_wrap">
+                <div class="sk_tbbox">
+                    <table class="sk_fixed_table">
+                        <thead>
+                            <tr>
+                                <th class="sticky cell_s">遊戲名稱</th>
+                                <th class="sticky">商品資訊</th>
+                                <th class="sticky cell_s">商品類型</th>
+                                <th class="sticky cell_s">平台</th>
+                                <th class="sticky cell_s">伺服器</th>
+                                <th class="sticky cell_ss">幣別</th>
+                                <th class="sticky cell_s">單價</th>
+                                <th class="sticky cell_ss">庫存量</th>
+                                <!-- <th class="sticky cell_s">瀏覽量</th> -->
+                                <th class="sticky cell_s">購買</th>
+                            </tr><!-- 追蹤 &frasl; -->
+                        </thead>
+                        <tbody id="SellListForm">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 頁碼選項 -->
+                <!-- <div class="pagination_wrap">
+                    <div class="page_number">
+                        <span class="title">第</span>
+                        <span class="title text_red">1</span>
+                        <span class="title">&frasl;</span>
+                        <span class="title">62100</span>
+                        <span class="title">頁</span>
+                    </div> -->
+                    <!-- 頁碼 -->
+                    <!-- <div class="pagination_box">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" class="previous"></a>
+                            </li>
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" class="next"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="page_jump">
+                        <div class="page_input">
+                            <span class="title">跳至第</span>
+                            <input type="text" class="btn_page">
+                            <span class="title">頁</span>
+                        </div>
+                        <div class="page_btn">
+                            <input type="button" value="確定" class="btn_small btn_green">
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+    <?php include("jump.html");?>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

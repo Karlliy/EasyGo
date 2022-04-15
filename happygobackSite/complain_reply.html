@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./box/jBox.min.js"></script>
+	<script type="text/javascript" src="./box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="./box/jBox.css" />
+    <title>快易購後台-申訴回覆</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <?php include("header.html");?>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <?php include("left.html");?>
+
+    <!--右側內容-申訴信-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>申訴信</span>
+                <input type="button" onclick="javascript:location.href='Message/Complain';" value="回申訴管理" class="btn_back">
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <!--表格-->
+                <table class="col_tb">
+                    <tr>
+                        <th>申訴時間</th>
+                        <td data-th="申訴時間" class="text_orange"><span name="AppealDate"></span></td>
+                    </tr>
+                    <tr>
+                        <th>申訴類別</th>
+                        <td data-th="申訴類別"><span name="AppealName"></span></td>
+                    </tr>
+                    <tr>
+                        <th>申訴對象</th>
+                        <td data-th="申訴對象"><span name="AppealObject"></span></td>
+                    </tr>
+                    <tr>
+                        <th>商品編號</th>
+                        <td data-th="商品編號"><span name="ProductNumber"></span></td>
+                    </tr>
+                    <tr>
+                        <th>訂單編號</th>
+                        <td data-th="訂單編號"><span name="OrderNumber"></span></td>
+                    </tr>
+                    <tr>
+                        <th>投訴會員</th>
+                        <td data-th="投訴會員">
+                            <a href="Member/MembersEdit"><span name="MemberAccount"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>申訴主題</th>
+                        <td data-th="申訴主題"><span name="AppealTitle"></span></td>
+                    </tr>
+                    <tr>
+                        <th>申訴內容</th>
+                        <td data-th="申訴內容">
+                            <textarea name="AppealContent" placeholder="請輸入內容(限300字)" class="textarea100" readonly></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>證明文件</th>
+                        <td data-th="證明文件"><!-- <span name="Appealfile"></span> --><img name="Appealfile"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--右側內容-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title box_pink">
+                <span>回覆申訴</span>
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <!--表格-->
+                <table class="col_tb">
+                    <tr>
+                        <th>回覆時間</th>
+                        <!--請代入現在時間-->
+                        <td data-th="回覆時間" class="text_pink"><span name="ComplainTime" id="ComplainTime"></span></td>
+                    </tr>
+                    <tr>
+                        <th>受理客服</th>
+                        <td data-th="受理客服">
+                            <!-- <a href="permission_edit.html"></a> --><span id="AppealPersonnel" name="AppealPersonnel"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>回覆主題</th>
+                        <td data-th="回覆主題">
+                            <input type="text" id="ReplyTitle" name="ReplyTitle" placeholder="請輸入標題(限50字)" maxlength="50" class="tb_input100" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>回覆內容</th>
+                        <td data-th="回覆內容">
+                            <textarea id="ReplyContent" name="ReplyContent" placeholder="請輸入內容(限300字)" class="textarea100"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <!-- 按鈕 -->
+                <div class="col_btn">
+                    <input type="button" id="ComplainClean"value="清除" class="btn_big btn_gray">
+                    <input type="button" id="ComplainSend" value="確認發送" class="btn_big">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_發送-->
+    <div id="popup_sendConfirm" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_sendConfirm').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要發送？</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_sendConfirm').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" id="ComplainConfirm" value="確認" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_JS-->
+    <!-- <script>
+        //確認修改
+        let modal_send_confirm = document.getElementById('send_confirm');
+        modal_send_confirm.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_sendConfirm').style.display='block';
+        });
+    </script> -->
+    <script src="js/message.js"></script>
+</body>
+</html>

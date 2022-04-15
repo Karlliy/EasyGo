@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <title>快易購後台-編輯會員</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <?php include("header.html");?>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <?php include("left.html");?>
+
+    <!--右側內容-編輯會員-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>編輯會員資訊</span>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form id="MemberEditList" name="MemberEditList" method="post" enctype="multipart/form-data">
+                    <!--會員資訊設定-->
+                    <div class="chkbox_outside">
+                        <div class="detail_inside no_height">
+                            <div class="detail_title">會員資訊設定</div>
+                            <div class="col_4">
+                                <div class="input_title">會員編號</div>
+                                <input type="text" id="MemberId" name="MemberId" placeholder="系統自動產生" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" disabled>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">會員帳號</div>
+                                <input type="text" id="MemberAccount" name="MemberAccount" placeholder="6-15字英數含底線" minlength="6" maxlength="15" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" disabled>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">真實姓名</div>
+                                <input type="text" id="RealName" name="RealName" placeholder="" class="input100" required>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">性別</div>
+                                <select id="Sex" name="Sex" class="select100">
+                                    <option value="">請選擇</option>
+                                    <option value="1">男性</option>
+                                    <option value="0">女性</option>
+                                </select>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">手機號碼</div>
+                                <input type="text" id="CellPhone" name="CellPhone" placeholder="例 0912345678" onkeyup="value=value.replace(/[^\d]/g,'') " maxlength="15" class="input50" required>
+                                <input type="button" id="mobile_code" value="發送驗證碼" class="btn_small btn_yellow">
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">身分證號</div>
+                                <input type="text" id="IdNumber" name="IdNumber" placeholder="" maxlength="10" onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="input100" required>
+                            </div>
+
+                            <!--身分證照片檔：步驟1 (如要修改照片，按下"修改"按鈕則關閉步驟1，改秀步驟2 )-->
+                            <!-- <div class="col_4">
+                                <div class="input_title">身分證照片檔</div>
+                                <input type="text" value="members_1234567890a" class="input50" disabled>
+                                <a href="#" class="col_text50 text_overflow">.jpg</a>
+                                <input type="button" value="修改" class="btn_small btn_yellow">
+                            </div> -->
+                            <!--身分證照片檔：步驟2-->
+                            <div class="col_4">
+                                <div class="input_title">身分證照片檔<a name="IDPicUrl" onclick="document.getElementById('popup_IDPicUrlImg').style.display=''"></a></div>
+                                <!-- <img id="IDPicUrlImg" name="IDPicUrlImg" style="width: 100px;"> -->
+                                
+                                <input type="file" id="IDPicUrl" name="IDPicUrl" class="input100" accept="image/png, image/jpg, image/jpeg">
+                            </div>
+
+                            <div class="col_4">
+                                <div class="input_title">發證日期(年)</div>
+                                <input type="text" id="IDIssuanceDateY" name="IDIssuanceDateY" placeholder="發證(年)" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">發證日期(月)</div>
+                                <input type="text" id="IDIssuanceDateM" name="IDIssuanceDateM" placeholder="發證(月)" maxlength="2" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">發證日期(日)</div>
+                                <input type="text" id="IDIssuanceDateD" name="IDIssuanceDateD" placeholder="發證(日)" maxlength="2" onkeyup="value=value.replace(/[^\d]/g,'') " class="input100" required>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">發證地點</div>
+                                <select class="select100" id="IDIssuanceplace" name="IDIssuanceplace">
+                                    <option value="">請選擇</option>
+                                    <option value="北市" selected="">北市</option>
+                                    <option value="新北市">新北市</option>
+                                    <option value="桃市">桃市</option>
+                                    <option value="中市">中市</option>
+                                    <option value="南市">南市</option>
+                                    <option value="高市">高市</option>
+                                    <option value="基市">基市</option>
+                                    <option value="竹市">竹市</option>
+                                    <option value="嘉市">嘉市</option>
+                                    <option value="北縣">北縣</option>
+                                    <option value="桃縣">桃縣</option>
+                                    <option value="竹縣">竹縣</option>
+                                    <option value="苗縣">苗縣</option>
+                                    <option value="中縣">中縣</option>
+                                    <option value="彰縣">彰縣</option>
+                                    <option value="投縣">投縣</option>
+                                    <option value="雲縣">雲縣</option>
+                                    <option value="嘉縣">嘉縣</option>
+                                    <option value="南縣">南縣</option>
+                                    <option value="高縣">高縣</option>
+                                    <option value="屏縣">屏縣</option>
+                                    <option value="宜縣">宜縣</option>
+                                    <option value="花縣">花縣</option>
+                                    <option value="東縣">東縣</option>
+                                    <option value="澎縣">澎縣</option>
+                                    <option value="連江">連江</option>
+                                    <option value="金門">金門</option>
+                                </select>
+                            </div>
+                            <div class="col_4">
+                                <div class="input_title">領補換類別</div>
+                                <select id="IDIssuance" name="IDIssuance" class="select100">
+                                    <option value="">請選擇</option>
+                                    <option value="1">初發</option>
+                                    <option value="2" selected="">補發</option>
+                                    <option value="3">換發</option>
+                                </select>
+                            </div>
+
+                            <div class="col_2">
+                                <div class="input_title">E-Mail</div>
+                                <input type="text" id="Email" name="Email" placeholder="" maxlength="50" class="input100" required>
+                            </div>
+                            <div class="col_2">
+                                <div class="input_title">聯絡地址</div>
+                                <input type="text" id="Address" name="Address" placeholder="" maxlength="50" class="input100" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--管理者審核-->
+                    <div class="chkbox_outside">
+                        <div class="chkbox_inside no_height">
+                            <div class="chkbox_title">管理者審核</div>
+                            <div class="col_3">
+                                <div class="input_title">會員狀態</div>
+                                <select id="State" name="State" class="select100">
+                                    <option value="">請選擇</option>
+                                    <option value="3">審核中</option>
+                                    <option value="1">正常</option>
+                                    <option value="2" selected="">黑名單</option>
+                                    <option value="4">停權</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col_4">
+                                <div class="input_title">姓名驗證</div>
+                                <select id="" class="select100">
+                                    <option value="">請選擇</option>
+                                    <option value="">審核中</option>
+                                    <option value="">已驗證</option>
+                                    <option value="" selected="">未通過</option>
+                                </select>
+                            </div> -->
+                            <div class="col_3">
+                                <div class="input_title">手機驗證</div>
+                                <select id="PhoneVerify" name="PhoneVerify" class="select100">
+                                    <option value="">請選擇</option>
+                                    <option value="2">審核中</option>
+                                    <option value="1">已驗證</option>
+                                    <option value="3">未通過</option>
+                                </select>
+                            </div>
+                            <div class="col_3">
+                                <div class="input_title">身分證驗證</div>
+                                <select id="IDVerify" name="IDVerify" class="select100">
+                                    <option value="">請選擇</option>
+                                    <option value="2">審核中</option>
+                                    <option value="1">已驗證</option>
+                                    <option value="3">未通過</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--登入登出設定-->
+                    <div class="chkbox_outside bg_white">
+                        <div class="detail_inside no_height">
+                            <div class="detail_title">登入登出設定</div>
+                            <div class="col_3">
+                                <div class="col_inline">註冊日期：<span class="text_orange" name="CreateDate"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">註冊IP：<span class="text_orange" name="RegisterIp"></span></div>
+                            </div>
+                            <!-- <div class="col_3">
+                                <div class="col_inline">總登入次數：<span>1965</span></div>
+                            </div> -->
+                            <!-- <div class="col_4">
+                                <div class="col_inline">未登入天數：<span>0</span></div>
+                            </div> -->
+                            <div class="col_3">
+                                <div class="col_inline">最後登入時間：<span name="LastLoginDate"></span></div>
+                            </div>
+                            <!-- <div class="col_4">
+                                <div class="col_inline">最後登出時間：<span>2021-10-04 17:22:17</span></div>
+                            </div> -->
+                            <div class="col_3">
+                                <div class="col_inline">最後登入IP：<span class="text_orange" name="LastLoginIp"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">IP紀錄：<input type="button" onclick="javascript:location.href='Member/Members_ip';" value="查詢" class="btn_small btn_yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--存提匯款紀錄-->
+                    <div class="chkbox_outside bg_white">
+                        <div class="detail_inside no_height">
+                            <div class="detail_title">存提匯款紀錄</div>
+                            <!-- <div class="col_4">
+                                <div class="col_inline">存款次數：<span>38</span></div>
+                            </div> -->
+                            <div class="col_3">
+                                <div class="col_inline">錢包餘額：<span class="text_blue" name="GamePoints"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">匯款次數：<span name="Transfer"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">總匯款：<span class="text_pink" name="TransferMoney"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">提款次數：<span name="Tiquan"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">總提款：<span class="text_red" name="TiquanMoney"></span></div>
+                            </div>
+                            <div class="col_3">
+                                <div class="col_inline">存提匯款明細：<input type="button" onclick="javascript:location.href='Member/Payment_record';" value="查詢" class="btn_small btn_yellow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--備註-->
+                    <div class="col_1">
+                        <div class="input_title">備註</div>
+                        <textarea id="Remark" placeholder="限300字" maxlength="300" class="textarea100"></textarea>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" onclick="javascript:location.href='Member/Members';" value="回會員列表" class="btn_big btn_gray">
+                        <input type="button" id="item_del" value="刪除" class="btn_big btn_red">
+                        <input type="submit" value="確認修改" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_發送驗證碼-->
+    <div id="popup_mobileCode" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_mobileCode').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>提示</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">已發送驗證碼至 <span class="text_red">0912345678</span></div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_mobileCode').style.display='none'" value="關閉" class="btn_center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_確認修改-->
+    <div id="popup_confirmEdit" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_confirmEdit').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要修改？</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_confirmEdit').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" value="確認修改" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_刪除-->
+    <!-- <div id="popup_del" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_del').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>警告</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要刪除會員 <span class="text_red">1234567890</span>？</div> -->
+                    <!--按鈕-->
+                    <!-- <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_del').style.display='none'" value="取消" class="btn_left btn_gray">
+                        <input type="button" value="確認刪除" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--跳框_開啟照片檔-->
+    <div id="popup_IDPicUrlImg" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_IDPicUrlImg').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>身分證照片檔</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center"><img id="IDPicUrlImg" name="IDPicUrlImg" style="width: 500px;"></div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" onclick="document.getElementById('popup_IDPicUrlImg').style.display='none'" value="關閉" class="btn_center btn_gray">
+                        <!-- <input type="button" value="確認修改" class="btn_right"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_JS-->
+    <script>
+        //發送驗證碼
+        // let modal_mobile_code = document.getElementById('mobile_code');
+        // modal_mobile_code.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_mobileCode').style.display='block';
+        // });
+        //確認修改
+        // let modal_edit_confirm = document.getElementById('edit_confirm');
+        // modal_edit_confirm.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_confirmEdit').style.display='block';
+        // });
+        //刪除
+        // let modal_item_del = document.getElementById('item_del');
+        // modal_item_del.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     document.getElementById('popup_del').style.display='block';
+        // });
+        //開啟照片檔
+        let modal_IDPicUrlImg = document.getElementById('IDPicUrlImg');
+        modal_IDPicUrlImg.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_IDPicUrlImg').style.display='block';
+        });
+    </script>
+    <script src="js/member.js"></script>
+</body>
+</html>

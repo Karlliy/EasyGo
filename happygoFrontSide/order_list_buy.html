@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="../">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--CSS (所有頁面共用)-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-style.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--JS (所有頁面共用)-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!--回到頂端JQ (所有頁面共用)-->
+    <script src="js/goTop.js"></script>
+    <!--輪播圖JQ(class、ID名稱不能改會跑版)-->
+    <link href="css/splide.css" rel="stylesheet" type="text/css">
+    <script src="js/splide-2.4.12.js"></script>
+    <!-- 左側滑入選單JQ -->
+    <script src="js/jquery-jside-menu.js"></script>
+    <script type="text/javascript" src="box/jBox.min.js"></script>
+	<script type="text/javascript" src="box/jBox.js"></script>
+    <link type="text/css" rel="stylesheet" href="box/jBox.css" /> 
+    <title>快易購-購物訂單</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="go_top">
+        <img src="images/fa-arrow-alt-circle-up-w.png" alt="回頁首">
+    </div>
+
+    <!--上方導覽列-->
+    <?php include("header.html");?>
+
+    <!-- 會員中心 -->
+    <div class="wrap member_wrap">
+        <!-- 電腦版-左側邊攔 -->
+        <?php include("left.html");?>
+
+        <!-- 右邊主畫面 -->
+        <div class="index_main">
+            <!-- 訂單列表 -->
+            <div class="orderlist_box">
+                <div class="main_title">
+                    <img src="images/member/fa-file-text-o-w.png" alt="">
+                    <span>購物訂單</span>
+                </div>
+
+                <!-- 搜尋列 -->
+                <div class="search_list">
+                    <input type="text" id="OrderNumber" placeholder="查詢訂單號碼" class="search_input">
+                    <input type="text" id="SellMemberAccount" placeholder="查詢賣家編號" class="search_input">
+                    <input type="text" id="PaymentCode" placeholder="查詢繳款代碼" class="search_input">
+                    <div class="search_item">
+                        <!-- <i class="fa fa-search"></i>
+                        <input type="text" placeholder="請輸入關鍵字" class="se_input"> -->
+                        <input type="button" id="OrderBuySearch" value="搜尋" class="se_btn btn_yellow">
+                    </div>
+                </div>
+
+                <!-- 頁籤 -->
+                <div class="table_wrap">
+                    <div class="panel_wrap">
+                        <!-- 頁籤選取按鈕(圓點隱藏)+需對應下方 label -->
+                        <input type="radio" id="pa_radio1" name="panel_radio" class="panel_control" checked>
+                        <input type="radio" id="pa_radio2" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio3" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio4" name="panel_radio" class="panel_control">
+                        <input type="radio" id="pa_radio5" name="panel_radio" class="panel_control">
+                        <!-- 頁籤選取按鈕(此父層"panel_tab_bigwarp"勿刪除，要設定分頁拖曳用 -->
+                        <div class="panel_tab_bigwarp">
+                            <div class="panel_tab_wrap">
+                                <label for="pa_radio1" class="panel_tab_label" id="Order_buy1" data-value="9">所有訂單</label>
+                                <label for="pa_radio2" class="panel_tab_label" id="Order_buy2" data-value="1">待付款</label>
+                                <label for="pa_radio3" class="panel_tab_label" id="Order_buy3" data-value="2">待收貨</label>
+                                <label for="pa_radio4" class="panel_tab_label" id="Order_buy4" data-value="3">已完成</label>
+                                <label for="pa_radio5" class="panel_tab_label" id="Order_buy5" data-value="4">已取消</label>
+                            </div>
+                        </div>
+                        <!-- 頁籤-內容 -->
+                        <div class="panel_content_wrap">
+                            <!-- 分頁1(所有訂單) -->
+                            <div class="pa_content pa_content1">
+                                <!-- 無訂單時開啟 -->
+                                <!-- <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無訂單</span>
+                                </div> -->
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table" id="OrderBuyTable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell_m sticky">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="cell_s sticky">數量</th>
+                                                    <th class="cell_m sticky">訂單金額</th>
+                                                    <th class="cell_m sticky">付款方式</th>
+                                                    <th class="cell_m sticky">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="OrderBuyForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁2(待付款) -->
+                            <div class="pa_content pa_content2">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無訂單</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table" id="OrderBuyTable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell_m sticky">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="cell_s sticky">數量</th>
+                                                    <th class="cell_m sticky">訂單金額</th>
+                                                    <th class="cell_m sticky">付款方式</th>
+                                                    <th class="cell_m sticky">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="OrderBuyForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁3(待收貨) -->
+                            <div class="pa_content pa_content3">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無訂單</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table" id="OrderBuyTable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell_m sticky">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="cell_s sticky">數量</th>
+                                                    <th class="cell_m sticky">訂單金額</th>
+                                                    <th class="cell_m sticky">付款方式</th>
+                                                    <th class="cell_m sticky">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="OrderBuyForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁4(已完成) -->
+                            <div class="pa_content pa_content4">
+                                <!-- 無訂單時開啟 -->
+                                <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無訂單</span>
+                                </div>
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table" id="OrderBuyTable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell_m sticky">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="cell_s sticky">數量</th>
+                                                    <th class="cell_m sticky">訂單金額</th>
+                                                    <th class="cell_m sticky">付款方式</th>
+                                                    <th class="cell_m sticky">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="OrderBuyForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- 分頁5(已取消) -->
+                            <div class="pa_content pa_content5">
+                                <!-- 無訂單時開啟 -->
+                                <!-- <div class="no-orderlist_box" style="display: none;">
+                                    <img src="images/member/job-search.png" alt="">
+                                    <span>查無訂單</span>
+                                </div> -->
+                                <!-- 有訂單時開啟 -->
+                                <div class="orderlist_group">
+                                    <div class="sk_tbbox">
+                                        <table class="sk_fixed_table" id="OrderBuyTable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell_m sticky">訂單狀態</th>
+                                                    <th class="sticky">商品標題</th>
+                                                    <th class="cell_s sticky">數量</th>
+                                                    <th class="cell_m sticky">訂單金額</th>
+                                                    <th class="cell_m sticky">付款方式</th>
+                                                    <th class="cell_m sticky">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="OrderBuyForm">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- 頁碼選項 -->
+                                    <!-- <div class="pagination_wrap">
+                                        <div class="page_number">
+                                            <span class="title">第</span>
+                                            <span class="title text_red">1</span>
+                                            <span class="title">&frasl;</span>
+                                            <span class="title">62100</span>
+                                            <span class="title">頁</span>
+                                        </div> -->
+                                        <!-- 頁碼 -->
+                                        <!-- <div class="pagination_box">
+                                            <ul class="pagination">
+                                                <li>
+                                                    <a href="#" class="previous"></a>
+                                                </li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li>
+                                                    <a href="#" class="next"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="page_jump">
+                                            <div class="page_input">
+                                                <span class="title">跳至第</span>
+                                                <input type="text" class="btn_page">
+                                                <span class="title">頁</span>
+                                            </div>
+                                            <div class="page_btn">
+                                                <input type="button" value="確定" class="btn_small btn_green">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <?php include("footer.html");?>
+
+	<!--浮動客服_滑出浮動視窗-->
+    <div id="popup_Service" class="on_chat">
+        <div class="chatbox">
+            <div class="btn_close" onclick="document.getElementById('popup_Service').style.display='none'"></div>
+            <img src="images/index_logo.png" class="chat_logo">
+            <div class="text">您好，歡迎您聯繫我們！請在下方簡述您的問題並傳送給我們。(最多300字內)</div>
+            <div class="chat_area">
+                <!--客服-->
+                <div class="answer text_deepred">您好！我是客服<span>ABC</span>，請問您要詢問什麼問題嗎？</div>
+                <!--顧客-->
+                <div class="ask">沒，我只是來逛逛而已</div>
+                <!--顧客的清除float浮動跑版(此行不可刪)-->
+                <div class="clear"></div>
+                <div class="answer text_deepred">好的，歡迎您，請繼續參觀選購</div>
+                <div class="ask">OK</div>
+            </div>
+            <div class="msgbox">
+                <textarea placeholder="請輸入..." maxlength="300" class="input_m"></textarea>
+                <input type="submit" value="傳送" class="btn_s btn_yellow">
+            </div>
+        </div>
+    </div>
+    <!--浮動客服(視窗右下角常駐按鈕)-->
+    <div class="btn_chat" onclick="ShowService()">
+        <img src="images/service.png" alt="客服">
+    </div>
+
+    <!--跳框(買家取消訂單)-->
+    <div id="popup_CanclePay" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <!--標題 + 關閉按鈕-->
+                <div class="btn_close" onclick="document.getElementById('popup_CanclePay').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>確認取消訂單</span>
+                </div>
+                <!--內容-->
+                <div class="popup_in">
+                    <div class="col_1 listset text_center">取消後，繳費金額將退回您的錢包</div>
+                    <!--按鈕(2顆)-->
+                    <div class="col_2">
+                        <input type="button" value="取消" onclick="document.getElementById('popup_CanclePay').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                    <div class="col_2">
+                        <input type="button" id="DelCheck" value="確認" class="btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_給予評價-->
+    <div id="popup_BuyComment" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_BuyComment').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>給予評價</span>
+                </div>
+                <div class="popup_in">
+                    <div class="col_1">整體評價：</div>
+                    <div class="col_1">
+                        <div class="radio_inline">
+                            <input type="radio" id="radio1" value="1" name="members" class="forgotpw_radio" checked="">
+                            <img src="images/sell_info/like.png" alt="好評" class="comment_pic">
+                            <label for="radio1">好評</label>
+                        </div>
+                        <div class="radio_inline">
+                            <input type="radio" id="radio2" value="2" name="members" class="forgotpw_radio">
+                            <img src="images/sell_info/neutral.png" alt="好評" class="comment_pic">
+                            <label for="radio2">普評</label>
+                        </div>
+                        <div class="radio_inline">
+                            <input type="radio" id="radio3" value="3" name="members" class="forgotpw_radio">
+                            <img src="images/sell_info/dislike.png" alt="好評" class="comment_pic">
+                            <label for="radio2">差評</label>
+                        </div>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">評價此次交易</div>
+                        <textarea placeholder="(限100字)" id="OrderBuyEvaluInfo" maxlength="100" class="textarea100" required></textarea>
+                        <div class="pw_tips text_red">&#10026; 評價一經送出便無法再次修改，請謹慎。</div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="col_2">
+                        <input type="button" value="取消" onclick="document.getElementById('popup_BuyComment').style.display='none'" class="btn_big btn_gray">
+                    </div>
+                    <div class="col_2">
+                        <input type="button" id="ConfirmBuyEvalu" value="確認" class="btn_big btn_yellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 彈出跳框_JS (所有頁面共用) -->
+    <script src="js/all_popup.js"></script>
+    <script>all_popup();</script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>
